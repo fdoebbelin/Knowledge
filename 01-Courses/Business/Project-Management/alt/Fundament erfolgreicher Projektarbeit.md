@@ -1,0 +1,6 @@
+- **Führung und Teamarbeit** 
+	- schafft die strukturellen und zwischenmenschlichen Voraussetzungen für effektive Zusammenarbeit, während eine konstruktive
+- **Feedback-Kultur** 
+	- kontinuierliches Lernen und Verbesserung ermöglicht. 
+- **Lessons Learned** 
+	- vervollständigt diesen Kreislauf, indem systematisch Erfahrungen reflektiert und dokumentiert werden, um zukünftige Projekte und Teamprozesse zu optimieren. Gemeinsam bilden diese Elemente einen ganzheitlichen Ansatz für leistungsstarke und lernende Organisationen.

@@ -1,0 +1,2 @@
+Für jedes Modul (Mathematik, Informatik, Physik, CAD) **eine konkrete Unterrichtseinheit** mit Code-Vorlage, Quizfragen und Materialien erstellen:
+als erstes für das Modul Mathematik eine konkrete Unterrichtseinheit zum Thema Stellenwertsysteme, inklusive einem Vergleich Basis 10, 2 und 16

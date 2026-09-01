@@ -1,0 +1,15 @@
+- **Technische Hierarchie**
+  - Hardwareentwicklung als prestigeträchtiger
+  - Softwareentwicklung und Programmieren als weniger anspruchsvoll angesehen
+- **ENIAC-Programmiererinnen**
+  - Männer sahen Programmieren als weniger prestigeträchtig
+  - Frauen übernahmen die Programmieraufgaben
+- **Grace Hopper und COBOL**
+  - Programmieren und Entwicklung von Programmiersprachen als weniger anspruchsvoll angesehen
+- **Veränderte Wahrnehmung in den 1960er Jahren**
+  - Zunehmende Bedeutung und Komplexität der Software
+  - Mehr Männer wechselten in den Bereich der Softwareentwicklung
+  - Anteil der Frauen in der Softwareentwicklung ging zurück
+- **Margaret Hamilton und das Apollo-Programm**
+  - Entscheidende Beiträge zur Softwareentwicklung oft weniger gewürdigt
+  - Vergleich zu den männlichen Astronauten und Ingenieuren

@@ -1,0 +1,8 @@
+/* Zielgerichtet für Code-Blöcke */
+.markdown-rendered pre.language-log code {
+    white-space: pre !important;       /* Verhindert Zeilenumbruch */
+    font-size: 0.75em;                  /* Kleinere Schrift */
+    font-family: 'Courier New', monospace;
+    line-height: 1.1 !important;       /* Verkleinerter Zeilenabstand (Standard ist ca. 1.5) */
+    display: block;                    /* Stellt sicher, dass die line-height korrekt greift */
+}

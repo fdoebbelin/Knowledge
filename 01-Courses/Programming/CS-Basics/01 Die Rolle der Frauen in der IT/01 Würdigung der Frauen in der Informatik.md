@@ -1,0 +1,29 @@
+- **Ada Lovelace**
+  - Erste Programmiererin der Welt
+  - Arbeit mit Charles Babbage an der Analytical Engine
+  - Entwicklung des ersten Algorithmus für eine Maschine
+- **Grace Hopper**
+  - Entwicklung der Programmiersprache COBOL
+  - Prägung des Begriffs „Debugging“
+  - Programmiererin des Harvard Mark I-Computers
+- **ENIAC-Programmiererinnen**
+  - Kay McNulty, Betty Jennings, Betty Snyder, Marlyn Wescoff, Fran Bilas, Ruth Lichterman
+  - Programmierung des ENIAC-Computers
+- **Margaret Hamilton**
+  - Leitung des Teams für die Apollo-Flugsoftware
+  - Beitrag zur erfolgreichen Mondlandung von Apollo 11
+- **Katherine Johnson**
+  - Berechnung der Flugbahnen für frühe amerikanische Raumflüge
+  - Wesentliche Beiträge zur NASA
+- **Radia Perlman**
+  - Entwicklung des Spanning Tree Protocol (STP)
+  - Grundlegende Technologie für Netzwerke
+- **Karen Spärck Jones**
+  - Forschung im Bereich Information Retrieval und natürliche Sprachverarbeitung
+  - Grundlagen für moderne Suchmaschinen
+- **Barbara Liskov**
+  - Entwicklung des Liskov-Substitutionsprinzips
+  - Wichtige Beiträge zur objektorientierten Programmierung
+- **Anita Borg**
+  - Förderung von Frauen in der Informatik
+  - Gründung des Institute for Women and Technology

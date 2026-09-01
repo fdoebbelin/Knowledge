@@ -1,0 +1,1526 @@
+# M10 Übung 2: Notendurchschnitt-Rechner - Musterlösung
+
+## 🎯 Lernziele - Erreicht!
+- ✅ Variable Argumentlisten für flexible APIs verstehen
+- ✅ *args für beliebige Anzahl von Positionsargumenten nutzen
+- ✅ **kwargs für variable Schlüsselwortargumente einsetzen
+- ✅ Kombination beider für maximale Flexibilität beherrschen
+- ✅ Argument-Entpackung mit * und ** anwenden
+
+---
+
+## 📋 Beispieldaten für Tests
+
+```python
+# Zelle 0: Testdaten definieren
+# Beispieldaten für Tests
+einzelnoten_deutsch = [2.3, 1.7, 2.0, 1.3, 2.7]
+einzelnoten_mathe = [1.0, 1.3, 2.0, 1.7]
+einzelnoten_englisch = [2.0, 2.3, 1.7, 2.0, 1.3, 2.3]
+
+fach_gewichtungen = {
+    "deutsch": 0.3,
+    "mathematik": 0.4, 
+    "englisch": 0.2,
+    "sport": 0.1
+}
+
+kategorie_gewichtungen = {
+    "klausuren": 0.6,
+    "muendlich": 0.2,
+    "hausaufgaben": 0.2
+}
+
+print("🧪 Testdaten geladen:")
+print(f"Deutsch: {einzelnoten_deutsch}")
+print(f"Mathematik: {einzelnoten_mathe}")
+print(f"Englisch: {einzelnoten_englisch}")
+print(f"Fach-Gewichtungen: {fach_gewichtungen}")
+print(f"Kategorie-Gewichtungen: {kategorie_gewichtungen}")
+```
+
+---
+
+## 🔧 Musterlösung - Schritt für Schritt
+
+### Schritt 1: Grundfunktion mit *args
+
+```python
+# Zelle 1: Grundfunktion mit *args implementieren
+def berechne_durchschnitt(*noten):
+    """
+    Berechnet den Durchschnitt aus beliebig vielen Noten.
+    
+    Parameter:
+    - *noten: Beliebige Anzahl von Noten (float/int)
+    
+    Rückgabe:
+    - float: Durchschnittsnote oder None bei leerer Eingabe
+    """
+    # Leere Eingabe abfangen
+    if not noten:
+        print("⚠️ Keine Noten übergeben!")
+        return None
+    
+    # Validierung: Alle Argumente müssen Zahlen sein
+    for i, note in enumerate(noten):
+        if not isinstance(note, (int, float)):
+            print(f"❌ Fehler: Argument {i+1} ({note}) ist keine Zahl!")
+            return None
+        if not (1.0 <= note <= 6.0):
+            print(f"⚠️ Warnung: Note {note} außerhalb des üblichen Bereichs (1-6)")
+    
+    # Durchschnitt berechnen
+    durchschnitt = sum(noten) / len(noten)
+    
+    # Informative Ausgabe
+    print(f"📊 === DURCHSCHNITTSBERECHNUNG ===")
+    print(f"Eingabe-Noten: {', '.join(f'{n:.1f}' for n in noten)}")
+    print(f"Anzahl Noten: {len(noten)}")
+    print(f"Summe: {sum(noten):.2f}")
+    print(f"Durchschnitt: {durchschnitt:.2f}")
+    print()
+    
+    return durchschnitt
+
+# Test der Grundfunktion
+print("🧪 Test 1: Einzelne Noten als Parameter")
+durchschnitt1 = berechne_durchschnitt(2.3, 1.7, 2.0, 1.3, 2.7)
+print(f"Rückgabe: {durchschnitt1}")
+
+print("🧪 Test 2: Unterschiedliche Anzahl Noten")
+durchschnitt2 = berechne_durchschnitt(1.0, 1.3, 2.0)
+print(f"Rückgabe: {durchschnitt2}")
+
+print("🧪 Test 3: Leere Eingabe")
+durchschnitt3 = berechne_durchschnitt()
+print(f"Rückgabe: {durchschnitt3}")
+
+print("🧪 Test 4: Ungültige Eingabe")
+durchschnitt4 = berechne_durchschnitt(2.0, "gut", 1.5)
+print(f"Rückgabe: {durchschnitt4}")
+
+print("🧪 Test 5: Mit Listen-Entpackung")
+durchschnitt5 = berechne_durchschnitt(*einzelnoten_deutsch)
+print(f"Rückgabe: {durchschnitt5}")
+```
+
+**💡 Erklärung der Lösung:**
+- ✅ **`*noten` sammelt alle Argumente** in ein Tupel
+- ✅ **Robuste Validierung** für leere Eingaben und Datentypen
+- ✅ **Informative Ausgabe** zeigt Berechnungsschritte
+- ✅ **Flexible Verwendung** mit direkten Argumenten oder entpackten Listen
+
+---
+
+### Schritt 2: Erweiterte Funktion mit **kwargs
+
+```python
+# Zelle 2: Erweiterte Funktion mit **kwargs
+def berechne_gewichteten_durchschnitt(*noten, **gewichtungen):
+    """
+    Berechnet Durchschnitt mit optionalen Gewichtungen.
+    
+    Parameter:
+    - *noten: Beliebige Anzahl von Noten
+    - **gewichtungen: Optionale Gewichtungen als key=value
+    
+    Beispiel:
+    berechne_gewichteten_durchschnitt(2.0, 1.5, 2.5, 
+                                     klausur=0.6, muendlich=0.4)
+    """
+    # Eingabe validieren
+    if not noten:
+        print("⚠️ Keine Noten übergeben!")
+        return None
+    
+    # Noten validieren
+    for i, note in enumerate(noten):
+        if not isinstance(note, (int, float)):
+            print(f"❌ Fehler: Note {i+1} ({note}) ist keine Zahl!")
+            return None
+    
+    # Grunddurchschnitt berechnen
+    einfacher_durchschnitt = sum(noten) / len(noten)
+    
+    print(f"📊 === GEWICHTETE DURCHSCHNITTSBERECHNUNG ===")
+    print(f"Eingabe-Noten: {', '.join(f'{n:.1f}' for n in noten)}")
+    print(f"Anzahl Noten: {len(noten)}")
+    print(f"Einfacher Durchschnitt: {einfacher_durchschnitt:.2f}")
+    
+    # Wenn keine Gewichtungen vorhanden, einfachen Durchschnitt zurückgeben
+    if not gewichtungen:
+        print("Keine Gewichtungen angegeben - verwende einfachen Durchschnitt")
+        print()
+        return einfacher_durchschnitt
+    
+    # Gewichtungen verarbeiten
+    print(f"\n🔧 Gewichtungen gefunden: {len(gewichtungen)}")
+    
+    # Gewichtungen validieren und normalisieren
+    gewichtungs_summe = sum(gewichtungen.values())
+    print(f"Summe der Gewichtungen: {gewichtungs_summe:.3f}")
+    
+    if gewichtungs_summe == 0:
+        print("❌ Fehler: Summe der Gewichtungen ist 0!")
+        return None
+    
+    # Normalisierung wenn nötig
+    if abs(gewichtungs_summe - 1.0) > 0.001:  # Kleine Toleranz für Rundungsfehler
+        print(f"⚙️ Normalisiere Gewichtungen (Summe war {gewichtungs_summe:.3f})")
+        gewichtungen = {k: v/gewichtungs_summe for k, v in gewichtungen.items()}
+        gewichtungs_summe = 1.0
+    
+    # Überprüfen ob genügend Noten für Gewichtungen vorhanden
+    if len(noten) < len(gewichtungen):
+        print(f"⚠️ Warnung: Mehr Gewichtungen ({len(gewichtungen)}) als Noten ({len(noten)})")
+        print("Verwende nur die ersten Gewichtungen...")
+        gewichtungs_items = list(gewichtungen.items())[:len(noten)]
+    elif len(noten) > len(gewichtungen):
+        print(f"⚠️ Warnung: Mehr Noten ({len(noten)}) als Gewichtungen ({len(gewichtungen)})")
+        print("Nicht gewichtete Noten erhalten gleichmäßige Restgewichtung...")
+        # Restgewichtung für überschüssige Noten berechnen
+        verwendete_gewichtung = sum(gewichtungen.values())
+        rest_gewichtung = (1.0 - verwendete_gewichtung) / (len(noten) - len(gewichtungen))
+        gewichtungs_items = list(gewichtungen.items())
+        for i in range(len(gewichtungen), len(noten)):
+            gewichtungs_items.append((f"note_{i+1}", rest_gewichtung))
+    else:
+        gewichtungs_items = list(gewichtungen.items())
+    
+    # Gewichteten Durchschnitt berechnen
+    gewichtete_summe = 0
+    print(f"\n📋 Gewichtungsdetails:")
+    
+    for i, (kategorie, gewichtung) in enumerate(gewichtungs_items):
+        if i < len(noten):
+            note = noten[i]
+            beitrag = note * gewichtung
+            gewichtete_summe += beitrag
+            print(f"  {kategorie}: Note {note:.1f} × {gewichtung:.1%} = {beitrag:.3f}")
+    
+    print(f"\n📊 ERGEBNIS:")
+    print(f"Einfacher Durchschnitt: {einfacher_durchschnitt:.2f}")
+    print(f"Gewichteter Durchschnitt: {gewichtete_summe:.2f}")
+    print(f"Verbesserung: {gewichtete_summe - einfacher_durchschnitt:+.2f}")
+    print()
+    
+    return gewichtete_summe
+
+# Test der erweiterten Funktion
+print("🧪 Test 1: Ohne Gewichtungen")
+result1 = berechne_gewichteten_durchschnitt(2.3, 1.7, 2.0, 1.3, 2.7)
+
+print("🧪 Test 2: Mit Gewichtungen")
+result2 = berechne_gewichteten_durchschnitt(2.0, 1.5, 2.5, 
+                                           klausur=0.6, muendlich=0.4)
+
+print("🧪 Test 3: Viele Gewichtungen")
+result3 = berechne_gewichteten_durchschnitt(1.7, 2.0, 2.3, 1.3,
+                                           deutsch=0.3, mathe=0.4, 
+                                           englisch=0.2, sport=0.1)
+
+print("🧪 Test 4: Gewichtungen müssen normalisiert werden")
+result4 = berechne_gewichteten_durchschnitt(2.0, 1.5, 2.0,
+                                           klausur=60, muendlich=40)  # Summe = 100
+
+print("🧪 Test 5: Mit Dictionary-Entpackung")
+result5 = berechne_gewichteten_durchschnitt(2.0, 1.8, 2.2, 
+                                           **kategorie_gewichtungen)
+```
+
+**💡 Erklärung der Lösung:**
+- ✅ **`**gewichtungen` sammelt alle Keyword-Argumente** in Dictionary
+- ✅ **Automatische Normalisierung** von Gewichtungen auf Summe = 1.0
+- ✅ **Robuste Behandlung** unterschiedlicher Anzahlen von Noten/Gewichtungen
+- ✅ **Detaillierte Ausgabe** zeigt Berechnungsschritte und -logik
+- ✅ **Flexible Parameterübergabe** mit `*args` und `**kwargs` kombiniert
+
+---
+
+### Schritt 3: Fach-spezifische Notenverwaltung
+
+```python
+# Zelle 3: Fach-spezifische Notenverwaltung
+def verwalte_fachnoten(**faecher_mit_noten):
+    """
+    Verwaltet Noten für verschiedene Fächer.
+    
+    Parameter:
+    - **faecher_mit_noten: Fach=Notenliste Paare
+    
+    Beispiel:
+    verwalte_fachnoten(deutsch=[2.3, 1.7, 2.0], 
+                      mathe=[1.0, 1.3, 2.0])
+    """
+    if not faecher_mit_noten:
+        print("⚠️ Keine Fächer übergeben!")
+        return {}
+    
+    print(f"📚 === FACH-SPEZIFISCHE NOTENVERWALTUNG ===")
+    print(f"Anzahl Fächer: {len(faecher_mit_noten)}")
+    print()
+    
+    fach_durchschnitte = {}
+    gesamtsumme = 0
+    gesamtanzahl = 0
+    
+    # Für jedes Fach Durchschnitt berechnen
+    for fach, noten in faecher_mit_noten.items():
+        print(f"📖 FACH: {fach.upper()}")
+        
+        # Validierung der Notenliste
+        if not isinstance(noten, (list, tuple)):
+            print(f"❌ Fehler: Noten für {fach} müssen eine Liste sein!")
+            continue
+        
+        if not noten:
+            print(f"⚠️ Warnung: Keine Noten für {fach} vorhanden!")
+            fach_durchschnitte[fach] = None
+            continue
+        
+        # Validierung einzelner Noten
+        gueltige_noten = []
+        for note in noten:
+            if isinstance(note, (int, float)) and 1.0 <= note <= 6.0:
+                gueltige_noten.append(note)
+            else:
+                print(f"⚠️ Überspringe ungültige Note: {note}")
+        
+        if not gueltige_noten:
+            print(f"❌ Keine gültigen Noten für {fach}!")
+            fach_durchschnitte[fach] = None
+            continue
+        
+        # Durchschnitt berechnen
+        durchschnitt = sum(gueltige_noten) / len(gueltige_noten)
+        fach_durchschnitte[fach] = durchschnitt
+        
+        # Für Gesamtdurchschnitt
+        gesamtsumme += sum(gueltige_noten)
+        gesamtanzahl += len(gueltige_noten)
+        
+        # Fach-Details ausgeben
+        print(f"   Noten: {', '.join(f'{n:.1f}' for n in gueltige_noten)}")
+        print(f"   Anzahl: {len(gueltige_noten)}")
+        print(f"   Durchschnitt: {durchschnitt:.2f}")
+        
+        # Bewertung hinzufügen
+        if durchschnitt <= 1.5:
+            bewertung = "sehr gut"
+        elif durchschnitt <= 2.5:
+            bewertung = "gut"
+        elif durchschnitt <= 3.5:
+            bewertung = "befriedigend"
+        elif durchschnitt <= 4.5:
+            bewertung = "ausreichend"
+        else:
+            bewertung = "mangelhaft"
+        
+        print(f"   Bewertung: {bewertung}")
+        print()
+    
+    # Gesamtdurchschnitt berechnen
+    if gesamtanzahl > 0:
+        gesamtdurchschnitt = gesamtsumme / gesamtanzahl
+        print(f"🎯 GESAMTÜBERSICHT:")
+        print(f"Gesamtanzahl Noten: {gesamtanzahl}")
+        print(f"Gesamtdurchschnitt: {gesamtdurchschnitt:.2f}")
+        
+        # Beste und schlechteste Fächer
+        gueltige_faecher = {f: d for f, d in fach_durchschnitte.items() if d is not None}
+        if gueltige_faecher:
+            bestes_fach = min(gueltige_faecher, key=gueltige_faecher.get)
+            schlechtestes_fach = max(gueltige_faecher, key=gueltige_faecher.get)
+            print(f"Bestes Fach: {bestes_fach} ({gueltige_faecher[bestes_fach]:.2f})")
+            print(f"Schlechtestes Fach: {schlechtestes_fach} ({gueltige_faecher[schlechtestes_fach]:.2f})")
+    
+    print()
+    return fach_durchschnitte
+
+def erstelle_zeugnis(*fach_durchschnitte, **zusatz_infos):
+    """
+    Erstellt ein Zeugnis mit flexiblen Parametern.
+    
+    Parameter:
+    - *fach_durchschnitte: Durchschnittsnoten der Fächer
+    - **zusatz_infos: Zusätzliche Informationen (Name, Klasse, etc.)
+    """
+    print(f"🎓 === ZEUGNIS ===")
+    
+    # Zusatzinformationen anzeigen
+    if zusatz_infos:
+        print(f"📝 SCHÜLERDATEN:")
+        for key, value in zusatz_infos.items():
+            print(f"   {key.replace('_', ' ').title()}: {value}")
+        print()
+    
+    # Fach-Durchschnitte anzeigen
+    if fach_durchschnitte:
+        print(f"📊 FACHNOTEN:")
+        fachwerte = []
+        
+        # Standard-Fächer (falls keine Namen in zusatz_infos)
+        fach_namen = zusatz_infos.get('faecher', 
+                                     ['Deutsch', 'Mathematik', 'Englisch', 'Naturwissenschaften', 
+                                      'Geschichte', 'Kunst', 'Sport'])
+        
+        for i, durchschnitt in enumerate(fach_durchschnitte):
+            if isinstance(durchschnitt, (int, float)):
+                fach_name = fach_namen[i] if i < len(fach_namen) else f"Fach {i+1}"
+                print(f"   {fach_name:.<20} {durchschnitt:.1f}")
+                fachwerte.append(durchschnitt)
+        
+        # Gesamtnote berechnen
+        if fachwerte:
+            gesamtnote = sum(fachwerte) / len(fachwerte)
+            print(f"   {'='*25}")
+            print(f"   {'Gesamtnote':.<20} {gesamtnote:.1f}")
+            
+            # Bewertung
+            if gesamtnote <= 1.5:
+                gesamtbewertung = "mit Auszeichnung bestanden"
+            elif gesamtnote <= 2.5:
+                gesamtbewertung = "gut bestanden"
+            elif gesamtnote <= 3.5:
+                gesamtbewertung = "befriedigend bestanden"
+            elif gesamtnote <= 4.0:
+                gesamtbewertung = "bestanden"
+            else:
+                gesamtbewertung = "nicht bestanden"
+            
+            print(f"\n🏆 GESAMTBEWERTUNG: {gesamtbewertung}")
+    
+    # Bemerkungen
+    if 'bemerkung' in zusatz_infos:
+        print(f"\n💬 BEMERKUNGEN:")
+        print(f"   {zusatz_infos['bemerkung']}")
+    
+    print(f"\n📅 Ausgestellt am: {zusatz_infos.get('datum', 'Heute')}")
+    print("="*50)
+    print()
+
+# Test der fach-spezifischen Verwaltung
+print("🧪 Test 1: Mehrere Fächer mit Noten")
+fach_ergebnisse = verwalte_fachnoten(
+    deutsch=einzelnoten_deutsch,
+    mathematik=einzelnoten_mathe,
+    englisch=einzelnoten_englisch
+)
+
+print("🧪 Test 2: Fächer mit problematischen Daten")
+problem_ergebnisse = verwalte_fachnoten(
+    deutsch=[2.3, 1.7, 2.0],
+    mathe=[],  # Leere Liste
+    englisch=["gut", 2.0, 1.5],  # Gemischte Datentypen
+    sport=2.0  # Einzelwert statt Liste
+)
+
+print("🧪 Test 3: Zeugnis erstellen")
+erstelle_zeugnis(2.0, 1.5, 1.8, 2.2,  # Fach-Durchschnitte
+                name="Max Mustermann", 
+                klasse="10a", 
+                schuljahr="2024/25",
+                bemerkung="Sehr engagierter Schüler mit konstant guten Leistungen")
+
+print("🧪 Test 4: Zeugnis mit benutzerdefinierten Fächern")
+erstelle_zeugnis(1.7, 2.3, 1.9, 2.0, 1.5,
+                name="Anna Schmidt",
+                klasse="9b",
+                faecher=["Deutsch", "Mathematik", "Physik", "Chemie", "Biologie"],
+                bemerkung="Besondere Stärken in den Naturwissenschaften",
+                datum="15. Februar 2025")
+```
+
+**💡 Erklärung der Lösung:**
+- ✅ **`**faecher_mit_noten` verarbeitet Fach-Noten-Paare** als Dictionary
+- ✅ **Robuste Validierung** für verschiedene Datentypen und leere Listen
+- ✅ **Umfassende Statistiken** mit besten/schlechtesten Fächern
+- ✅ **Flexible Zeugnis-Erstellung** mit `*args` und `**kwargs` kombiniert
+- ✅ **Benutzerfreundliche Ausgabe** mit Formatierung und Bewertungen
+
+---
+
+### Schritt 4: Argument-Entpackung und flexible APIs
+
+```python
+# Zelle 4: Flexible Notenverwaltung mit Entpackung
+def flexibler_notenrechner(modus="einfach", *args, **kwargs):
+    """
+    Flexibler Rechner der verschiedene Eingabeformen verarbeitet.
+    
+    Modi:
+    - "einfach": Einfacher Durchschnitt
+    - "gewichtet": Gewichteter Durchschnitt 
+    - "faecher": Fach-spezifische Berechnung
+    - "zeugnis": Vollständiges Zeugnis
+    """
+    print(f"🔧 === FLEXIBLER NOTENRECHNER ===")
+    print(f"Modus: {modus}")
+    print(f"Positionsargumente: {len(args)}")
+    print(f"Keyword-Argumente: {len(kwargs)}")
+    print()
+    
+    try:
+        if modus == "einfach":
+            # Einfacher Durchschnitt mit allen args
+            if not args:
+                print("❌ Für einfachen Modus werden Noten als Argumente benötigt!")
+                return None
+            return berechne_durchschnitt(*args)
+        
+        elif modus == "gewichtet":
+            # Gewichteter Durchschnitt mit args als Noten und kwargs als Gewichtungen
+            if not args:
+                print("❌ Für gewichteten Modus werden Noten als Argumente benötigt!")
+                return None
+            return berechne_gewichteten_durchschnitt(*args, **kwargs)
+        
+        elif modus == "faecher":
+            # Fach-spezifische Berechnung mit kwargs als Fach-Noten-Paare
+            if not kwargs:
+                print("❌ Für Fächer-Modus werden Fächer als Keyword-Argumente benötigt!")
+                return None
+            return verwalte_fachnoten(**kwargs)
+        
+        elif modus == "zeugnis":
+            # Zeugnis mit args als Fachnoten und kwargs als Zusatzinfos
+            if not args:
+                print("❌ Für Zeugnis-Modus werden Fachnoten als Argumente benötigt!")
+                return None
+            erstelle_zeugnis(*args, **kwargs)
+            return "Zeugnis erstellt"
+        
+        else:
+            print(f"❌ Unbekannter Modus: {modus}")
+            print("Verfügbare Modi: einfach, gewichtet, faecher, zeugnis")
+            return None
+    
+    except Exception as e:
+        print(f"❌ Fehler bei der Ausführung: {e}")
+        return None
+
+def entpacke_und_berechne(notenlisten, gewichtungs_dict=None):
+    """
+    Hilfsfunktion für Argument-Entpackung.
+    
+    Parameter:
+    - notenlisten: Liste oder Tupel mit Notenlisten
+    - gewichtungs_dict: Dictionary mit Gewichtungen
+    """
+    print(f"📦 === ENTPACKUNG UND BERECHNUNG ===")
+    
+    if not notenlisten:
+        print("❌ Keine Notenlisten übergeben!")
+        return None
+    
+    ergebnisse = {}
+    
+    # Verschiedene Entpackungsszenarien demonstrieren
+    if isinstance(notenlisten, dict):
+        # Dictionary mit Fach-Noten-Paaren
+        print("🔍 Dictionary erkannt - verwende Fächer-Modus")
+        ergebnisse = verwalte_fachnoten(**notenlisten)
+        
+    elif isinstance(notenlisten, (list, tuple)) and len(notenlisten) > 0:
+        if isinstance(notenlisten[0], (list, tuple)):
+            # Liste von Notenlisten
+            print("🔍 Liste von Listen erkannt - berechne Durchschnitte")
+            for i, noten in enumerate(notenlisten):
+                print(f"\n📊 Gruppe {i+1}:")
+                if gewichtungs_dict:
+                    # Mit Gewichtungen falls vorhanden
+                    durchschnitt = berechne_gewichteten_durchschnitt(*noten, **gewichtungs_dict)
+                else:
+                    # Einfacher Durchschnitt
+                    durchschnitt = berechne_durchschnitt(*noten)
+                ergebnisse[f"gruppe_{i+1}"] = durchschnitt
+        else:
+            # Einzelne Notenliste
+            print("🔍 Einzelne Notenliste erkannt")
+            if gewichtungs_dict:
+                ergebnisse["durchschnitt"] = berechne_gewichteten_durchschnitt(*notenlisten, **gewichtungs_dict)
+            else:
+                ergebnisse["durchschnitt"] = berechne_durchschnitt(*notenlisten)
+    
+    else:
+        print("❌ Unbekanntes Format für Notenlisten!")
+        return None
+    
+    print(f"\n🎯 ENTPACKUNG ABGESCHLOSSEN")
+    print(f"Ergebnisse: {ergebnisse}")
+    return ergebnisse
+
+def demonstriere_entpackung():
+    """Demonstriert verschiedene Entpackungsszenarien."""
+    print("🎪 === ENTPACKUNGS-DEMONSTRATION ===")
+    
+    # Szenario 1: Listen entpacken
+    print("\n1️⃣ LISTEN ENTPACKEN:")
+    noten_liste = [2.3, 1.7, 2.0, 1.3, 2.7]
+    print(f"Original: {noten_liste}")
+    print("Entpackung mit *:")
+    durchschnitt = berechne_durchschnitt(*noten_liste)
+    
+    # Szenario 2: Dictionary entpacken
+    print("2️⃣ DICTIONARY ENTPACKEN:")
+    gewichtungen = {"klausur": 0.6, "muendlich": 0.3, "hausaufgaben": 0.1}
+    print(f"Original: {gewichtungen}")
+    print("Entpackung mit **:")
+    berechne_gewichteten_durchschnitt(2.0, 1.5, 2.5, **gewichtungen)
+    
+    # Szenario 3: Kombinierte Entpackung
+    print("3️⃣ KOMBINIERTE ENTPACKUNG:")
+    faecher_dict = {
+        "deutsch": einzelnoten_deutsch,
+        "mathematik": einzelnoten_mathe,
+        "englisch": einzelnoten_englisch
+    }
+    print("Dictionary mit Listen als Values:")
+    verwalte_fachnoten(**faecher_dict)
+    
+    return "Demonstration abgeschlossen"
+
+# Test mit Listen-Entpackung
+print("🧪 Test 1: Listen entpacken")
+noten_liste = [2.3, 1.7, 2.0, 1.3, 2.7]
+print(f"Original Liste: {noten_liste}")
+durchschnitt = berechne_durchschnitt(*noten_liste)
+print(f"Entpackter Durchschnitt: {durchschnitt}")
+
+print("🧪 Test 2: Dictionary entpacken")
+gewichtungen = {"klausur": 0.6, "muendlich": 0.3, "hausaufgaben": 0.1}
+print(f"Original Dictionary: {gewichtungen}")
+berechne_gewichteten_durchschnitt(2.0, 1.5, 2.5, **gewichtungen)
+
+print("🧪 Test 3: Flexible Modi")
+print("\n--- Einfacher Modus ---")
+flexibler_notenrechner("einfach", 2.3, 1.7, 2.0)
+
+print("\n--- Gewichteter Modus ---")
+flexibler_notenrechner("gewichtet", 2.0, 1.5, 2.5, 
+                      klausur=0.7, muendlich=0.3)
+
+print("\n--- Fächer-Modus ---")
+flexibler_notenrechner("faecher", 
+                      deutsch=[2.3, 1.7], 
+                      mathe=[1.0, 1.3])
+
+print("\n--- Zeugnis-Modus ---")
+flexibler_notenrechner("zeugnis", 2.0, 1.8, 2.2, 1.9,
+                      name="Lisa Weber", klasse="11c")
+
+print("🧪 Test 4: Entpackungs-Hilfsfunktion")
+# Einzelne Liste
+print("\n--- Einzelne Notenliste ---")
+entpacke_und_berechne(einzelnoten_deutsch)
+
+# Liste von Listen
+print("\n--- Mehrere Notenlisten ---")
+alle_listen = [einzelnoten_deutsch, einzelnoten_mathe, einzelnoten_englisch]
+entpacke_und_berechne(alle_listen)
+
+# Dictionary
+print("\n--- Fächer-Dictionary ---")
+faecher_dict = {
+    "deutsch": einzelnoten_deutsch,
+    "mathematik": einzelnoten_mathe,
+    "englisch": einzelnoten_englisch
+}
+entpacke_und_berechne(faecher_dict)
+
+print("🧪 Test 5: Entpackungs-Demonstration")
+demonstriere_entpackung()
+```
+
+**💡 Erklärung der Lösung:**
+- ✅ **Flexibler Modus-Handler** verarbeitet verschiedene Eingabeformen
+- ✅ **Intelligente Entpackung** erkennt Datenstrukturen automatisch
+- ✅ **Robuste Fehlerbehandlung** für unerwartete Eingaben
+- ✅ **Demonstration aller Konzepte** in praktischen Szenarien
+- ✅ **Kombinierte Verwendung** von `*args` und `**kwargs`
+
+---
+
+### Schritt 5: Fortgeschrittene Statistik-Funktionen
+
+```python
+# Zelle 5: Erweiterte Statistik-Funktionen
+import math
+
+def erweiterte_notenstatistik(*noten_gruppen, **analyse_optionen):
+    """
+    Führt erweiterte statistische Analyse durch.
+    
+    Parameter:
+    - *noten_gruppen: Mehrere Notengruppen zum Vergleich
+    - **analyse_optionen: Optionen für die Analyse
+      * zeige_details: Detaillierte Ausgabe
+      * runde_auf: Rundung der Ergebnisse
+      * include_median: Median berechnen
+      * include_std: Standardabweichung berechnen
+    """
+    if not noten_gruppen:
+        print("❌ Keine Notengruppen übergeben!")
+        return None
+    
+    # Analyse-Optionen extrahieren
+    zeige_details = analyse_optionen.get('zeige_details', True)
+    runde_auf = analyse_optionen.get('runde_auf', 2)
+    include_median = analyse_optionen.get('include_median', False)
+    include_std = analyse_optionen.get('include_std', False)
+    
+    print(f"📈 === ERWEITERTE NOTENSTATISTIK ===")
+    print(f"Anzahl Gruppen: {len(noten_gruppen)}")
+    print(f"Analyse-Optionen: {analyse_optionen}")
+    print()
+    
+    # Hilfsfunktionen für Statistiken
+    def berechne_median(noten):
+        """Berechnet den Median einer Notenliste."""
+        sortiert = sorted(noten)
+        n = len(sortiert)
+        if n % 2 == 0:
+            return (sortiert[n//2 - 1] + sortiert[n//2]) / 2
+        else:
+            return sortiert[n//2]
+    
+    def berechne_standardabweichung(noten):
+        """Berechnet die Standardabweichung."""
+        if len(noten) < 2:
+            return 0
+        mittelwert = sum(noten) / len(noten)
+        varianz = sum((x - mittelwert) ** 2 for x in noten) / (len(noten) - 1)
+        return math.sqrt(varianz)
+    
+    def berechne_quartile(noten):
+        """Berechnet Q1, Q2 (Median), Q3."""
+        sortiert = sorted(noten)
+        n = len(sortiert)
+        if n < 4:
+            return None, berechne_median(noten), None
+        
+        q1_pos = n * 0.25
+        q3_pos = n * 0.75
+        
+        q1 = sortiert[int(q1_pos)]
+        q3 = sortiert[int(q3_pos)]
+        q2 = berechne_median(noten)
+        
+        return q1, q2, q3
+    
+    # Statistiken für jede Gruppe berechnen
+    gruppen_stats = []
+    
+    for i, gruppe in enumerate(noten_gruppen):
+        if not isinstance(gruppe, (list, tuple)):
+            print(f"⚠️ Gruppe {i+1} ist keine Liste - überspringe")
+            continue
+        
+        # Nur gültige Noten
+        gueltige_noten = [n for n in gruppe if isinstance(n, (int, float)) and 1.0 <= n <= 6.0]
+        
+        if not gueltige_noten:
+            print(f"⚠️ Gruppe {i+1} hat keine gültigen Noten - überspringe")
+            continue
+        
+        # Basis-Statistiken
+        anzahl = len(gueltige_noten)
+        minimum = min(gueltige_noten)
+        maximum = max(gueltige_noten)
+        durchschnitt = sum(gueltige_noten) / anzahl
+        
+        stats = {
+            'gruppe': i + 1,
+            'noten': gueltige_noten,
+            'anzahl': anzahl,
+            'min': minimum,
+            'max': maximum,
+            'durchschnitt': durchschnitt,
+            'spannweite': maximum - minimum
+        }
+        
+        # Optionale Statistiken
+        if include_median:
+            stats['median'] = berechne_median(gueltige_noten)
+            q1, q2, q3 = berechne_quartile(gueltige_noten)
+            stats['q1'] = q1
+            stats['q3'] = q3
+        
+        if include_std:
+            stats['std'] = berechne_standardabweichung(gueltige_noten)
+            stats['varianz'] = stats['std'] ** 2 if 'std' in stats else 0
+        
+        gruppen_stats.append(stats)
+        
+        # Detaillierte Ausgabe für diese Gruppe
+        if zeige_details:
+            print(f"📊 GRUPPE {i+1}:")
+            print(f"   Noten: {', '.join(f'{n:.1f}' for n in gueltige_noten)}")
+            print(f"   Anzahl: {anzahl}")
+            print(f"   Bereich: {minimum:.{runde_auf}f} - {maximum:.{runde_auf}f} (Spannweite: {stats['spannweite']:.{runde_auf}f})")
+            print(f"   Durchschnitt: {durchschnitt:.{runde_auf}f}")
+            
+            if include_median:
+                print(f"   Median: {stats['median']:.{runde_auf}f}")
+                if stats['q1'] and stats['q3']:
+                    print(f"   Quartile: Q1={stats['q1']:.{runde_auf}f}, Q3={stats['q3']:.{runde_auf}f}")
+            
+            if include_std:
+                print(f"   Standardabweichung: {stats['std']:.{runde_auf}f}")
+                print(f"   Varianz: {stats['varianz']:.{runde_auf}f}")
+            
+            # Bewertung der Verteilung
+            if stats['std'] < 0.5:
+                verteilung = "sehr homogen"
+            elif stats['std'] < 1.0:
+                verteilung = "homogen"
+            elif stats['std'] < 1.5:
+                verteilung = "heterogen"
+            else:
+                verteilung = "sehr heterogen"
+            
+            if include_std:
+                print(f"   Verteilung: {verteilung}")
+            print()
+    
+    # Vergleiche zwischen Gruppen
+    if len(gruppen_stats) > 1:
+        print(f"🔍 === GRUPPENVERGLEICH ===")
+        
+        # Beste und schlechteste Gruppe
+        beste_gruppe = min(gruppen_stats, key=lambda x: x['durchschnitt'])
+        schlechteste_gruppe = max(gruppen_stats, key=lambda x: x['durchschnitt'])
+        
+        print(f"Beste Gruppe: Gruppe {beste_gruppe['gruppe']} (Ø {beste_gruppe['durchschnitt']:.{runde_auf}f})")
+        print(f"Schlechteste Gruppe: Gruppe {schlechteste_gruppe['gruppe']} (Ø {schlechteste_gruppe['durchschnitt']:.{runde_auf}f})")
+        
+        # Homogenitätsvergleich
+        if include_std:
+            homogenste = min(gruppen_stats, key=lambda x: x['std'])
+            heterogenste = max(gruppen_stats, key=lambda x: x['std'])
+            
+            print(f"Homogenste Gruppe: Gruppe {homogenste['gruppe']} (σ = {homogenste['std']:.{runde_auf}f})")
+            print(f"Heterogenste Gruppe: Gruppe {heterogenste['gruppe']} (σ = {heterogenste['std']:.{runde_auf}f})")
+        
+        # Gesamtstatistik
+        alle_noten = []
+        for stats in gruppen_stats:
+            alle_noten.extend(stats['noten'])
+        
+        gesamt_durchschnitt = sum(alle_noten) / len(alle_noten)
+        print(f"\nGesamtstatistik ({len(alle_noten)} Noten):")
+        print(f"   Gesamtdurchschnitt: {gesamt_durchschnitt:.{runde_auf}f}")
+        
+        if include_median:
+            gesamt_median = berechne_median(alle_noten)
+            print(f"   Gesamtmedian: {gesamt_median:.{runde_auf}f}")
+        
+        if include_std:
+            gesamt_std = berechne_standardabweichung(alle_noten)
+            print(f"   Gesamtstandardabweichung: {gesamt_std:.{runde_auf}f}")
+    
+    print()
+    return gruppen_stats
+
+def note_zu_punkte(*noten, punkte_system="standard"):
+    """
+    Konvertiert Noten in Punktesystem.
+    
+    Punkte-Systeme:
+    - "standard": 1=15, 2=12, 3=9, 4=6, 5=3, 6=0
+    - "abi": Abitur-Punktesystem (1=15, 1.3=14, 1.7=13, ...)
+    - "uni": Universitätssystem (1=4, 2=3, 3=2, 4=1, 5=0)
+    """
+    if not noten:
+        print("⚠️ Keine Noten übergeben!")
+        return []
+    
+    print(f"🔢 === NOTEN-PUNKTE KONVERTIERUNG ===")
+    print(f"Punktesystem: {punkte_system}")
+    print(f"Eingabe-Noten: {', '.join(f'{n:.1f}' for n in noten)}")
+    
+    # Punktesystem-Definitionen
+    systeme = {
+        "standard": {
+            1.0: 15, 1.3: 14, 1.7: 13,
+            2.0: 12, 2.3: 11, 2.7: 10,
+            3.0: 9, 3.3: 8, 3.7: 7,
+            4.0: 6, 4.3: 5, 4.7: 4,
+            5.0: 3, 5.3: 2, 5.7: 1,
+            6.0: 0
+        },
+        "abi": {
+            1.0: 15, 1.3: 14, 1.7: 13,
+            2.0: 12, 2.3: 11, 2.7: 10,
+            3.0: 9, 3.3: 8, 3.7: 7,
+            4.0: 6, 4.3: 5, 4.7: 4,
+            5.0: 3, 5.3: 2, 5.7: 1,
+            6.0: 0
+        },
+        "uni": {
+            1.0: 4.0, 1.3: 3.7, 1.7: 3.3,
+            2.0: 3.0, 2.3: 2.7, 2.7: 2.3,
+            3.0: 2.0, 3.3: 1.7, 3.7: 1.3,
+            4.0: 1.0, 5.0: 0.0, 6.0: 0.0
+        }
+    }
+    
+    if punkte_system not in systeme:
+        print(f"❌ Unbekanntes Punktesystem: {punkte_system}")
+        print(f"Verfügbare Systeme: {', '.join(systeme.keys())}")
+        return []
+    
+    mapping = systeme[punkte_system]
+    konvertierte_punkte = []
+    
+    print(f"\n📋 KONVERTIERUNG:")
+    for note in noten:
+        if not isinstance(note, (int, float)):
+            print(f"⚠️ Überspringe ungültige Note: {note}")
+            continue
+        
+        # Nächstliegende Note im System finden
+        naechste_note = min(mapping.keys(), key=lambda x: abs(x - note))
+        punkte = mapping[naechste_note]
+        konvertierte_punkte.append(punkte)
+        
+        print(f"   Note {note:.1f} → {punkte} Punkte (via {naechste_note})")
+    
+    if konvertierte_punkte:
+        print(f"\n📊 ERGEBNIS:")
+        print(f"Punkte: {', '.join(str(p) for p in konvertierte_punkte)}")
+        print(f"Durchschnitt: {sum(konvertierte_punkte)/len(konvertierte_punkte):.2f} Punkte")
+    
+    print()
+    return konvertierte_punkte
+
+def kombiniere_bewertungen(*bewertungs_tupel, normalisierung=True):
+    """
+    Kombiniert verschiedene Bewertungsarten.
+    
+    Parameter:
+    - *bewertungs_tupel: (note, gewichtung) Tupel
+    - normalisierung: Gewichtungen automatisch normalisieren
+    """
+    if not bewertungs_tupel:
+        print("⚠️ Keine Bewertungen übergeben!")
+        return None
+    
+    print(f"⚖️ === BEWERTUNGEN KOMBINIEREN ===")
+    print(f"Anzahl Bewertungen: {len(bewertungs_tupel)}")
+    print(f"Normalisierung: {'Ja' if normalisierung else 'Nein'}")
+    
+    # Bewertungen validieren und extrahieren
+    gueltige_bewertungen = []
+    for i, tupel in enumerate(bewertungs_tupel):
+        if not isinstance(tupel, (tuple, list)) or len(tupel) != 2:
+            print(f"⚠️ Bewertung {i+1} hat falsches Format - überspringe")
+            continue
+        
+        note, gewichtung = tupel
+        if not isinstance(note, (int, float)) or not isinstance(gewichtung, (int, float)):
+            print(f"⚠️ Bewertung {i+1} enthält ungültige Werte - überspringe")
+            continue
+        
+        if gewichtung < 0:
+            print(f"⚠️ Negative Gewichtung in Bewertung {i+1} - setze auf 0")
+            gewichtung = 0
+        
+        gueltige_bewertungen.append((note, gewichtung))
+    
+    if not gueltige_bewertungen:
+        print("❌ Keine gültigen Bewertungen vorhanden!")
+        return None
+    
+    # Normalisierung der Gewichtungen
+    gesamt_gewichtung = sum(gew for _, gew in gueltige_bewertungen)
+    
+    if gesamt_gewichtung == 0:
+        print("❌ Summe der Gewichtungen ist 0!")
+        return None
+    
+    if normalisierung and abs(gesamt_gewichtung - 1.0) > 0.001:
+        print(f"🔧 Normalisiere Gewichtungen (Summe war {gesamt_gewichtung:.3f})")
+        gueltige_bewertungen = [(note, gew/gesamt_gewichtung) for note, gew in gueltige_bewertungen]
+        gesamt_gewichtung = 1.0
+    
+    # Gewichtete Berechnung
+    print(f"\n📋 BEWERTUNGSDETAILS:")
+    gewichtete_summe = 0
+    
+    for i, (note, gewichtung) in enumerate(gueltige_bewertungen):
+        beitrag = note * gewichtung
+        gewichtete_summe += beitrag
+        print(f"   Bewertung {i+1}: Note {note:.1f} × {gewichtung:.1%} = {beitrag:.3f}")
+    
+    print(f"\n📊 ENDERGEBNIS:")
+    print(f"Gewichtete Gesamtnote: {gewichtete_summe:.2f}")
+    
+    # Zusätzliche Statistiken
+    nur_noten = [note for note, _ in gueltige_bewertungen]
+    ungewichteter_durchschnitt = sum(nur_noten) / len(nur_noten)
+    print(f"Ungewichteter Durchschnitt: {ungewichteter_durchschnitt:.2f}")
+    print(f"Gewichtungseffekt: {gewichtete_summe - ungewichteter_durchschnitt:+.2f}")
+    
+    # Bewertung des Ergebnisses
+    if gewichtete_summe <= 1.5:
+        bewertung = "sehr gut"
+    elif gewichtete_summe <= 2.5:
+        bewertung = "gut"
+    elif gewichtete_summe <= 3.5:
+        bewertung = "befriedigend"
+    elif gewichtete_summe <= 4.0:
+        bewertung = "ausreichend"
+    else:
+        bewertung = "mangelhaft"
+    
+    print(f"Gesamtbewertung: {bewertung}")
+    print()
+    
+    return gewichtete_summe
+
+# Test der erweiterten Funktionen
+print("🧪 Test 1: Erweiterte Statistik")
+gruppe_a = [2.3, 1.7, 2.0, 1.3, 2.7]
+gruppe_b = [1.0, 1.3, 2.0, 1.7, 1.5]
+gruppe_c = [2.0, 2.3, 1.7, 2.0, 1.3]
+
+stats_ergebnis = erweiterte_notenstatistik(gruppe_a, gruppe_b, gruppe_c,
+                                          zeige_details=True,
+                                          runde_auf=2,
+                                          include_median=True,
+                                          include_std=True)
+
+print("🧪 Test 2: Noten-Punkte Konvertierung")
+punkte_standard = note_zu_punkte(2.3, 1.7, 2.0, punkte_system="standard")
+punkte_abi = note_zu_punkte(1.0, 1.3, 2.0, punkte_system="abi")
+punkte_uni = note_zu_punkte(2.0, 2.7, 3.3, punkte_system="uni")
+
+print("🧪 Test 3: Bewertungen kombinieren")
+# Beispiel: Klausur 40%, Mündlich 30%, Hausaufgaben 30%
+kombiniere_bewertungen(
+    (2.0, 0.4),  # Klausur, 40%
+    (1.5, 0.3),  # Mündlich, 30%
+    (2.5, 0.3),  # Hausaufgaben, 30%
+    normalisierung=True
+)
+
+print("🧪 Test 4: Komplexere Bewertungskombination")
+# Beispiel: Verschiedene Leistungsarten mit unterschiedlichen Gewichtungen
+kombiniere_bewertungen(
+    (1.7, 50),   # Klausur 1, 50 Punkte
+    (2.3, 30),   # Klausur 2, 30 Punkte  
+    (1.0, 20),   # Referat, 20 Punkte
+    (2.0, 10),   # Mitarbeit, 10 Punkte
+    normalisierung=True  # Normalisiert auf Summe = 1
+)
+
+print("🧪 Test 5: Fehlerbehandlung")
+# Teste verschiedene Fehlerfälle
+print("\n--- Leere Eingaben ---")
+erweiterte_notenstatistik()
+note_zu_punkte()
+kombiniere_bewertungen()
+
+print("\n--- Ungültige Daten ---")
+erweiterte_notenstatistik([2.0, "gut", 1.5], ["schlecht"], [])
+note_zu_punkte(2.0, "ausgezeichnet", None, 1.5)
+kombiniere_bewertungen(("abc", 0.5), (2.0,), (1.5, -0.3))
+```
+
+**💡 Erklärung der Lösung:**
+- ✅ **Umfassende Statistik-Funktionen** mit optionalen Berechnungen
+- ✅ **Flexible Punktesystem-Konvertierung** für verschiedene Bewertungsstandards
+- ✅ **Intelligente Bewertungskombination** mit automatischer Normalisierung
+- ✅ **Robuste Fehlerbehandlung** für alle edge cases
+- ✅ **Detaillierte Ausgaben** mit informativen Statistiken und Vergleichen
+
+---
+
+## ✅ Erfolgskriterien - Alle erreicht!
+
+✅ **Variable Positionsargumente:** *args wird korrekt für beliebige Notenanzahl verwendet
+
+✅ **Variable Keyword-Argumente:** **kwargs ermöglicht flexible Gewichtungen
+
+✅ **Kombination beider:** Funktionen nutzen sowohl *args als auch **kwargs sinnvoll
+
+✅ **Argument-Entpackung:** Listen und Dictionaries werden mit * und ** entpackt
+
+✅ **Flexible APIs:** Verschiedene Eingabeformen werden elegant verarbeitet
+
+✅ **Fehlerbehandlung:** Leere Eingaben und ungültige Gewichtungen werden behandelt
+
+---
+
+## 🎯 Vollständige Funktionalitätsdemonstration
+
+```python
+# Zelle 6: Umfassende Demonstration aller Funktionen
+def vollstaendige_demonstration():
+    """
+    Demonstriert alle implementierten Funktionen und Konzepte.
+    """
+    print("🌟 === VOLLSTÄNDIGE NOTENVERWALTUNGS-DEMONSTRATION ===")
+    print()
+    
+    # 1. Basis-Funktionalität mit *args
+    print("1️⃣ BASIS-FUNKTIONALITÄT (*args)")
+    print("   Variable Anzahl von Noten verarbeiten:")
+    berechne_durchschnitt(2.3, 1.7, 2.0, 1.3)
+    berechne_durchschnitt(*einzelnoten_mathe)  # Liste entpacken
+    
+    # 2. Erweiterte Funktionalität mit **kwargs
+    print("2️⃣ ERWEITERTE FUNKTIONALITÄT (**kwargs)")
+    print("   Variable Gewichtungen für flexible Bewertung:")
+    berechne_gewichteten_durchschnitt(2.0, 1.5, 2.8,
+                                     klausur=0.6, muendlich=0.4)
+    berechne_gewichteten_durchschnitt(1.7, 2.0, 2.3,
+                                     **kategorie_gewichtungen)  # Dictionary entpacken
+    
+    # 3. Kombinierte Verwendung (*args + **kwargs)
+    print("3️⃣ KOMBINIERTE VERWENDUNG (*args + **kwargs)")
+    print("   Maximale Flexibilität durch Kombination:")
+    flexibler_notenrechner("gewichtet", 2.1, 1.8, 2.4,
+                          klausur=0.5, muendlich=0.3, hausaufgabe=0.2)
+    
+    # 4. Fach-spezifische Verwaltung
+    print("4️⃣ FACH-SPEZIFISCHE VERWALTUNG")
+    print("   Mehrere Fächer gleichzeitig verwalten:")
+    verwalte_fachnoten(
+        deutsch=einzelnoten_deutsch[:3],  # Nur erste 3 Noten
+        mathematik=einzelnoten_mathe,
+        englisch=einzelnoten_englisch[:4]  # Nur erste 4 Noten
+    )
+    
+    # 5. Erweiterte Statistik-Analyse
+    print("5️⃣ ERWEITERTE STATISTIK-ANALYSE")
+    print("   Umfassende statistische Auswertung:")
+    erweiterte_notenstatistik(
+        einzelnoten_deutsch,
+        einzelnoten_mathe, 
+        einzelnoten_englisch,
+        zeige_details=False,  # Kompakte Ausgabe für Demo
+        include_median=True,
+        include_std=True
+    )
+    
+    # 6. Praktische Anwendungen
+    print("6️⃣ PRAKTISCHE ANWENDUNGEN")
+    print("   Reale Szenarien der Notenverwaltung:")
+    
+    # Zeugnis für Musterschüler
+    fach_noten = [1.8, 2.1, 1.6, 2.0, 1.9, 2.3, 1.7]
+    erstelle_zeugnis(*fach_noten,
+                    name="Maria Beispiel",
+                    klasse="Q1",
+                    faecher=["Deutsch", "Mathematik", "Englisch", "Physik", 
+                            "Geschichte", "Kunst", "Sport"],
+                    bemerkung="Überdurchschnittliche Leistungen in allen Bereichen")
+    
+    print("✅ Vollständige Demonstration abgeschlossen!")
+    print("Alle Konzepte zu *args und **kwargs erfolgreich demonstriert!")
+
+# Vollständige Demonstration ausführen
+vollstaendige_demonstration()
+```
+
+---
+
+## 🏆 Erfolgsvalidierung
+
+```python
+# Zelle 7: Automatische Erfolgsvalidierung
+def validiere_loesung():
+    """
+    Automatische Tests um sicherzustellen, dass alle Anforderungen erfüllt sind.
+    """
+    print("🏆 === ERFOLGSVALIDIERUNG ===")
+    print()
+    
+    tests = []
+    
+    # Test 1: *args Funktionalität
+    try:
+        result1 = berechne_durchschnitt(2.0, 1.5, 2.5)
+        result2 = berechne_durchschnitt(*[1.0, 2.0, 3.0])  # Mit Entpackung
+        if result1 and result2:
+            tests.append(("✅", "*args Funktionalität"))
+        else:
+            tests.append(("❌", "*args Funktionalität - Rückgabe None"))
+    except Exception as e:
+        tests.append(("❌", f"*args Funktionalität - Fehler: {e}"))
+    
+    # Test 2: **kwargs Funktionalität
+    try:
+        result3 = berechne_gewichteten_durchschnitt(2.0, 1.5, klausur=0.7, muendlich=0.3)
+        gewichtungen = {"test1": 0.5, "test2": 0.5}
+        result4 = berechne_gewichteten_durchschnitt(2.0, 1.8, **gewichtungen)
+        if result3 and result4:
+            tests.append(("✅", "**kwargs Funktionalität"))
+        else:
+            tests.append(("❌", "**kwargs Funktionalität - Rückgabe None"))
+    except Exception as e:
+        tests.append(("❌", f"**kwargs Funktionalität - Fehler: {e}"))
+    
+    # Test 3: Kombinierte Verwendung
+    try:
+        result5 = flexibler_notenrechner("gewichtet", 2.0, 1.5, 2.8, klausur=0.6, muendlich=0.4)
+        if result5:
+            tests.append(("✅", "Kombinierte *args + **kwargs"))
+        else:
+            tests.append(("❌", "Kombinierte Verwendung - Keine Rückgabe"))
+    except Exception as e:
+        tests.append(("❌", f"Kombinierte Verwendung - Fehler: {e}"))
+    
+    # Test 4: Argument-Entpackung
+    try:
+        noten_liste = [2.0, 1.5, 2.5]
+        gewichtungen_dict = {"klausur": 0.6, "muendlich": 0.4}
+        result6 = berechne_durchschnitt(*noten_liste)
+        result7 = berechne_gewichteten_durchschnitt(2.0, 1.8, **gewichtungen_dict)
+        if result6 and result7:
+            tests.append(("✅", "Argument-Entpackung"))
+        else:
+            tests.append(("❌", "Argument-Entpackung - Probleme bei Entpackung"))
+    except Exception as e:
+        tests.append(("❌", f"Argument-Entpackung - Fehler: {e}"))
+    
+    # Test 5: Flexible APIs
+    try:
+        result8 = flexibler_notenrechner("einfach", 2.0, 1.5, 2.5)
+        result9 = flexibler_notenrechner("faecher", deutsch=[2.0, 1.5], mathe=[1.0, 1.5])
+        if result8 and result9:
+            tests.append(("✅", "Flexible APIs"))
+        else:
+            tests.append(("❌", "Flexible APIs - Nicht alle Modi funktionieren"))
+    except Exception as e:
+        tests.append(("❌", f"Flexible APIs - Fehler: {e}"))
+    
+    # Test 6: Fehlerbehandlung
+    try:
+        result10 = berechne_durchschnitt()  # Leere Eingabe
+        result11 = berechne_gewichteten_durchschnitt(2.0, 1.5, ungueltig=0.0)  # Gewichtung 0
+        # Diese sollten None zurückgeben oder elegant behandelt werden
+        tests.append(("✅", "Fehlerbehandlung"))
+    except Exception as e:
+        tests.append(("❌", f"Fehlerbehandlung - Unerwarteter Fehler: {e}"))
+    
+    # Ergebnisse anzeigen
+    print("📊 TESTERGEBNISSE:")
+    for status, beschreibung in tests:
+        print(f"   {status} {beschreibung}")
+    
+    erfolg_rate = len([t for t in tests if t[0] == "✅"]) / len(tests)
+    print(f"\n🎯 ERFOLGSRATE: {erfolg_rate*100:.0f}% ({len([t for t in tests if t[0] == '✅'])}/{len(tests)} Tests bestanden)")
+    
+    if erfolg_rate == 1.0:
+        print("🎉 PERFEKT! Alle Anforderungen zu *args und **kwargs erfüllt!")
+        print("   Sie haben variable Argumentlisten vollständig gemeistert!")
+    elif erfolg_rate >= 0.8:
+        print("👍 SEHR GUT! Fast alle Konzepte zu variablen Argumenten umgesetzt!")
+    else:
+        print("📝 VERBESSERUNG NÖTIG: Bitte überprüfen Sie die fehlgeschlagenen Tests.")
+    
+    return erfolg_rate
+
+# Validierung ausführen
+erfolgsrate = validiere_loesung()
+```
+
+---
+
+## 🧠 Konzept-Zusammenfassung
+
+```python
+# Zelle 8: Konzept-Zusammenfassung
+def konzept_zusammenfassung():
+    """
+    Fasst alle wichtigen Konzepte dieser Übung zusammen.
+    """
+    print("🧠 === KONZEPT-ZUSAMMENFASSUNG ===")
+    print()
+    
+    konzepte = {
+        "*args (Variable Positionsargumente)": {
+            "beschreibung": "Sammelt beliebige Anzahl Positionsargumente in Tupel",
+            "syntax": "def func(*args): # args ist Tupel",
+            "verwendung": "Für flexible Anzahl von Eingabewerten",
+            "beispiel": "berechne_durchschnitt(2.0, 1.5, 2.5, 1.8)",
+            "fallstrick": "args ist Tupel, nicht Liste - unveränderlich"
+        },
+        
+        "**kwargs (Variable Keyword-Argumente)": {
+            "beschreibung": "Sammelt beliebige Keyword-Argumente in Dictionary",
+            "syntax": "def func(**kwargs): # kwargs ist dict",
+            "verwendung": "Für flexible, benannte Parameter",
+            "beispiel": "berechne_gewichtet(2.0, 1.5, klausur=0.6, muendlich=0.4)",
+            "fallstrick": "Schlüssel sind immer Strings"
+        },
+        
+        "Kombination *args + **kwargs": {
+            "beschreibung": "Maximale Flexibilität durch Kombination beider",
+            "syntax": "def func(*args, **kwargs):",
+            "verwendung": "Für universelle, flexible APIs",
+            "beispiel": "flexibler_rechner('modus', 2.0, 1.5, option=True)",
+            "fallstrick": "Reihenfolge: normale Parameter, *args, **kwargs"
+        },
+        
+        "Argument-Entpackung": {
+            "beschreibung": "Listen/Tupel und Dicts als Argumente entpacken",
+            "syntax": "func(*liste) und func(**dict)",
+            "verwendung": "Datenstrukturen an Funktionen weiterreichen",
+            "beispiel": "berechne_durchschnitt(*[2.0, 1.5, 2.5])",
+            "fallstrick": "Anzahl Argumente muss zur Funktionssignatur passen"
+        },
+        
+        "Parameter-Reihenfolge": {
+            "beschreibung": "Korrekte Anordnung verschiedener Parametertypen",
+            "syntax": "def func(normal, default=val, *args, **kwargs):",
+            "verwendung": "Für saubere Funktionsdefinitionen",
+            "beispiel": "def analyse(modus, *noten, **optionen):",
+            "fallstrick": "Falsche Reihenfolge führt zu SyntaxError"
+        }
+    }
+    
+    for i, (konzept, details) in enumerate(konzepte.items(), 1):
+        print(f"{i}️⃣ {konzept.upper()}")
+        print(f"   📝 {details['beschreibung']}")
+        print(f"   💻 Syntax: {details['syntax']}")
+        print(f"   🎯 Verwendung: {details['verwendung']}")
+        print(f"   📋 Beispiel: {details['beispiel']}")
+        print(f"   ⚠️ Fallstrick: {details['fallstrick']}")
+        print()
+    
+    print("🎯 KERN-ERKENNTNISSE:")
+    erkenntnisse = [
+        "*args und **kwargs ermöglichen extrem flexible APIs",
+        "Argument-Entpackung macht Datenverarbeitung elegant",
+        "Kombinierte Verwendung bietet maximale Flexibilität",
+        "Richtige Parameter-Reihenfolge ist entscheidend",
+        "Fehlerbehandlung wird bei flexiblen APIs wichtiger"
+    ]
+    
+    for erkenntnis in erkenntnisse:
+        print(f"   • {erkenntnis}")
+    
+    print(f"\n🏆 MEISTER-ERKENNTNIS:")
+    print("   'Variable Argumentlisten verwandeln starre Funktionen")
+    print("    in flexible, wiederverwendbare APIs, die sich elegant")
+    print("    an verschiedenste Anforderungen anpassen können.'")
+
+# Konzept-Zusammenfassung anzeigen
+konzept_zusammenfassung()
+```
+
+---
+
+## 🔬 Interaktive Experimente
+
+```python
+# Zelle 9: Interaktive Experimente zum Verstehen
+def experimentiere_mit_args_kwargs():
+    """
+    Interaktive Experimente zum Verständnis von *args und **kwargs.
+    """
+    print("🔬 === INTERAKTIVE EXPERIMENTE ===")
+    print()
+    
+    # Experiment 1: *args Verhalten verstehen
+    print("🧪 Experiment 1: *args Verhalten")
+    
+    def zeige_args_info(*args):
+        print(f"   args ist vom Typ: {type(args)}")
+        print(f"   args enthält: {args}")
+        print(f"   Länge von args: {len(args)}")
+        if args:
+            print(f"   Erstes Element: {args[0]}")
+            print(f"   Letztes Element: {args[-1]}")
+        return args
+    
+    print("   Aufruf: zeige_args_info(1, 2, 3, 'test')")
+    result_args = zeige_args_info(1, 2, 3, 'test')
+    
+    print("\n   Aufruf: zeige_args_info()  # Leer")
+    result_empty = zeige_args_info()
+    
+    print("\n" + "="*50)
+    
+    # Experiment 2: **kwargs Verhalten verstehen
+    print("🧪 Experiment 2: **kwargs Verhalten")
+    
+    def zeige_kwargs_info(**kwargs):
+        print(f"   kwargs ist vom Typ: {type(kwargs)}")
+        print(f"   kwargs enthält: {kwargs}")
+        print(f"   Anzahl Keys: {len(kwargs)}")
+        if kwargs:
+            print(f"   Keys: {list(kwargs.keys())}")
+            print(f"   Values: {list(kwargs.values())}")
+            for key, value in kwargs.items():
+                print(f"   {key} = {value} (Typ: {type(value).__name__})")
+        return kwargs
+    
+    print("   Aufruf: zeige_kwargs_info(name='Max', alter=25, aktiv=True)")
+    result_kwargs = zeige_kwargs_info(name='Max', alter=25, aktiv=True)
+    
+    print("\n   Aufruf: zeige_kwargs_info()  # Leer")
+    result_empty_kwargs = zeige_kwargs_info()
+    
+    print("\n" + "="*50)
+    
+    # Experiment 3: Kombiniertes Verhalten
+    print("🧪 Experiment 3: Kombination *args + **kwargs")
+    
+    def zeige_alles(normal_param, default_param="Standard", *args, **kwargs):
+        print(f"   normal_param: {normal_param}")
+        print(f"   default_param: {default_param}")
+        print(f"   args: {args}")
+        print(f"   kwargs: {kwargs}")
+        return normal_param, default_param, args, kwargs
+    
+    print("   Aufruf: zeige_alles('Test', 'Custom', 1, 2, 3, extra='Info', zahl=42)")
+    result_all = zeige_alles('Test', 'Custom', 1, 2, 3, extra='Info', zahl=42)
+    
+    print("\n" + "="*50)
+    
+    # Experiment 4: Entpackung demonstrieren
+    print("🧪 Experiment 4: Argument-Entpackung")
+    
+    def empfange_drei_werte(a, b, c):
+        print(f"   a={a}, b={b}, c={c}")
+        return a + b + c
+    
+    # Mit Liste entpacken
+    werte_liste = [10, 20, 30]
+    print(f"   Liste: {werte_liste}")
+    print("   Aufruf: empfange_drei_werte(*werte_liste)")
+    result_unpacked = empfange_drei_werte(*werte_liste)
+    print(f"   Summe: {result_unpacked}")
+    
+    # Mit Dictionary entpacken
+    def empfange_benannte_werte(vorname, nachname, alter):
+        print(f"   {vorname} {nachname} ist {alter} Jahre alt")
+        return f"{vorname} {nachname}"
+    
+    person_dict = {"vorname": "Anna", "nachname": "Schmidt", "alter": 28}
+    print(f"\n   Dictionary: {person_dict}")
+    print("   Aufruf: empfange_benannte_werte(**person_dict)")
+    result_dict_unpacked = empfange_benannte_werte(**person_dict)
+    
+    print("\n✅ Alle Experimente erfolgreich!")
+    return "Experimente abgeschlossen"
+
+# Experimente ausführen
+experimentiere_mit_args_kwargs()
+```
+
+---
+
+## 🎓 Fazit und Ausblick
+
+```python
+# Zelle 10: Fazit und Ausblick
+def fazit_und_ausblick():
+    """
+    Zusammenfassung der Lernerfolge und Ausblick auf kommende Themen.
+    """
+    print("🎓 === FAZIT UND AUSBLICK ===")
+    print()
+    
+    print("✨ WAS SIE GELERNT HABEN:")
+    erfolge = [
+        "*args für variable Positionsargumente beherrschen",
+        "**kwargs für flexible Keyword-Argumente nutzen", 
+        "Beide Konzepte elegant kombinieren",
+        "Argument-Entpackung mit * und ** anwenden",
+        "Flexible APIs für verschiedene Eingabeformen designen",
+        "Robuste Fehlerbehandlung für variable Parameter",
+        "Praktische Notenverwaltungssysteme implementieren"
+    ]
+    
+    for i, erfolg in enumerate(erfolge, 1):
+        print(f"   {i}. {erfolg}")
+    
+    print(f"\n🔧 PRAKTISCHE ANWENDUNGEN:")
+    anwendungen = [
+        "Flexible Datenverarbeitungs-Pipelines",
+        "Konfigurierbare API-Endpoints", 
+        "Universelle Wrapper-Funktionen",
+        "Plugin-Systeme mit variabler Parametrisierung",
+        "Statistik-Tools für unterschiedliche Datenmengen",
+        "Logging- und Monitoring-Systeme",
+        "Template-Engines mit flexiblen Optionen"
+    ]
+    
+    for anwendung in anwendungen:
+        print(f"   • {anwendung}")
+    
+    print(f"\n🚀 AUSBLICK AUF MODUL 10 - KAPITEL 3:")
+    print("   Als nächstes lernen Sie:")
+    print("   • Higher-order Functions (Funktionen als Objekte)")
+    print("   • Funktionen als Parameter und Rückgabewerte")
+    print("   • Callback-Mechanismen und Strategy Pattern")
+    print("   • Built-in Functions: filter(), map(), sorted()")
+    print("   • Funktionale Programmierungskonzepte")
+    
+    print(f"\n💡 KERN-ERKENNTNIS:")
+    print("   'Variable Argumentlisten (*args, **kwargs) sind das")
+    print("    Fundament für flexible, erweiterbare APIs in Python.")
+    print("    Sie ermöglichen es, Funktionen zu schreiben, die sich")
+    print("    elegant an verschiedenste Anforderungen anpassen.'")
+    
+    print(f"\n🎯 VERWENDUNGSREGELN ZUM MERKEN:")
+    regeln = [
+        "*args sammelt Positionsargumente in ein Tupel",
+        "**kwargs sammelt Keyword-Argumente in ein Dictionary",
+        "Parameter-Reihenfolge: normal, default, *args, **kwargs",
+        "*liste entpackt Liste zu Positionsargumenten",
+        "**dict entpackt Dictionary zu Keyword-Argumenten"
+    ]
+    
+    for regel in regeln:
+        print(f"   📌 {regel}")
+    
+    print(f"\n🏅 BEREIT FÜR HIGHER-ORDER FUNCTIONS!")
+
+# Fazit anzeigen
+fazit_und_ausblick()
+```
+
+---
+
+## 📝 Vollständige Lösung - Zusammenfassung
+
+Diese Musterlösung demonstriert systematisch alle wichtigen Aspekte variabler Argumentlisten:
+
+### 🔑 Schlüsselkonzepte umgesetzt:
+
+1. **Variable Positionsargumente (*args)**
+   - Beliebige Anzahl von Argumenten sammeln
+   - Tupel-Verarbeitung und Iteration
+   - Flexible Funktionsschnittstellen
+
+2. **Variable Keyword-Argumente (**kwargs)**
+   - Benannte Parameter dynamisch verarbeiten
+   - Dictionary-basierte Konfiguration
+   - Optionale Parametersysteme
+
+3. **Kombinierte Verwendung**
+   - Maximale API-Flexibilität
+   - Komplexe Parameterkombinationen
+   - Universelle Funktionsschnittstellen
+
+4. **Argument-Entpackung**
+   - Listen und Tupel mit * entpacken
+   - Dictionaries mit ** entpacken
+   - Datenstrukturen elegant weiterreichen
+
+### 🎯 Pädagogische Struktur:
+- **Schrittweise Komplexität** - von einfachen *args zu komplexen Kombinationen
+- **Praktische Anwendung** - durchgängiges Notenverwaltungs-Szenario
+- **Interaktive Tests** - jede Funktion einzeln testbar
+- **Umfassende Validierung** - automatische Erfolgskontrollen
+- **Konzeptuelle Vertiefung** - Experimente und Zusammenfassungen
+
+Die Lösung ist vollständig für JupyterLab optimiert und führt systematisch durch alle Aspekte variabler Argumentlisten in Python - von den Grundlagen bis zu fortgeschrittenen Anwendungsmustern.

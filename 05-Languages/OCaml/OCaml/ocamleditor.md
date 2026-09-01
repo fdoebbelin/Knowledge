@@ -1,0 +1,96 @@
+---
+title: "GitHub - ocamleditor/ocamleditor: OCamlEditor is a source code editor and build tool for OCaml.  It provides many features to facilitate editing code, accessing API reference directly from the editor and compiling projects. Runs on Linux and Windows."
+source: "https://github.com/ocamleditor/ocamleditor"
+author:
+  - "[[GitHub]]"
+published:
+created: 2025-03-13
+description: "OCamlEditor is a source code editor and build tool for OCaml.  It provides many features to facilitate editing code, accessing API reference directly from the editor and compiling projects. Runs on Linux and Windows. - ocamleditor/ocamleditor"
+tags:
+  - "clippings"
+---
+
+```
+                                  OCamlEditor
+
+OCamlEditor is a source code editor and build tool for the OCaml
+programming language.
+
+It provides many features to facilitate editing code, accessing API
+reference directly from the editor and compiling projects. It is entirely
+written in OCaml and uses LablGtk for the graphical user interface; it is
+light-weight, free and open source and runs under Linux and Windows.
+
+COPYRIGHT
+
+  This program is distributed under the GNU GENERAL PUBLIC LICENSE Version 3.
+  See the enclosed file COPYING for more details.
+
+  The OCamlEditor logo and the icons used are licensed under a
+  Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
+  (http://creativecommons.org/licenses/by-nc-nd/3.0/).
+
+DEPENDENCIES
+
+  * OCaml-4.14.0;
+  * Lablgtk (installed with Findlib);
+  * Xml-light (installed with Findlib);
+  * Findlib;
+  * ocp-indent;
+  * merlin;
+  * yojson;
+  * atdgen;
+  * ocamldiff;
+  * (optional) ocurl-0.6 to allow remote editing;
+  * (optional) Dot command to display the module dependencies graph;
+  * (optional) Lablgtk.rsvg to embed the graph viewer in the editor.
+
+HOW TO COMPILE
+
+  Change to the OCamlEditor toplevel directory and execute:
+
+    ocaml build.ml ocamleditor
+
+  Under Windows with MSVC execute:
+
+    ocaml build.ml ocamleditor-msvc
+
+  If the native code compiler is not available on your platform, compile with:
+
+    ocaml build.ml ocamleditor-bytecode
+
+  The name of the command is "ocamleditor.opt" (or "ocamleditor" if the
+  native compilation is not supported), you can find it in the "src"
+  directory.
+
+INSTALLATION
+
+  Beginning with OCamlEditor-1.9.0 installation paths have changed, so please
+  uninstall the previous version first. You can do this with the command
+
+    ocaml build.ml uninstall -ver-1.8.0 [-prefix <path>]
+
+  To install OCamlEditor become superuser and execute:
+
+    ocaml build.ml install [-prefix <path>]
+
+  By default, commands will be installed under "/usr/local/bin", icons
+  under "/usr/local/share/ocamleditor/icons" and plugins under
+  "/usr/local/share/ocamleditor/plugins". You can specify an installation
+  prefix other than "/usr/local" by giving an absolute file name as argument.
+
+  Windows users may build an installer by compiling the included NSIS
+  script, "ocamleditor.nsi". The free NSIS install system can be found at
+  http://nsis.sourceforge.net
+
+DEVELOPMENT
+
+  The main page for development is hosted on Github, see the
+  project's page:
+
+    https://github.com/ocamleditor/ocamleditor
+```
+
+## About
+
+OCamlEditor is a source code editor and build tool for OCaml. It provides many features to facilitate editing code, accessing API reference directly from the editor and compiling projects. Runs on Linux and Windows.

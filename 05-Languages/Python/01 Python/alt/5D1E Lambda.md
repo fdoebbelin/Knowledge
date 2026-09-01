@@ -1,0 +1,13 @@
+---
+aliases: 
+tags: 
+title: 5D1E Lambda
+---
+
+## [[3 Dauerhaft/Beispiele]]
+
+[[Sortierung]]
+[[Erklärung Bubble-Sort]]
+[[Mehrzeilige Lambdas]]
+[[Callbacks]]
+[[Wo sind lambdas nicht sinnvoll]]

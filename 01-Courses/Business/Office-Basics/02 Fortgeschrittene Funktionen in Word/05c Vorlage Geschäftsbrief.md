@@ -1,0 +1,1 @@
+![](Vorlage_Geschaeftsbrief_DIN-5008_Form-A.jpg)
