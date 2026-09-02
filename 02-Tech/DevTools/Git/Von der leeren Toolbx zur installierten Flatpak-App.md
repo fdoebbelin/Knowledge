@@ -256,7 +256,7 @@ Auch das gehört hinter den Riegel, sonst färbt sich der Host-Prompt mit. In `$
 
 ```nu
     $env.PROMPT_COMMAND = {||
-        let dir = ($env.PWD | str replace $nu.home-path "~")
+        let dir = ($env.PWD | str replace $env.HOME "~")
         $"(ansi { fg: '#ffffff', bg: '#8a4b12', attr: b }) ⬢ ($box) (ansi reset)(ansi yellow_bold) ($dir)(ansi reset)"
     }
     $env.PROMPT_INDICATOR = {|| $"(ansi yellow_bold) ❯ (ansi reset)" }
