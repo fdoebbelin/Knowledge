@@ -569,6 +569,64 @@ vimcmd_symbol = '[◀](bold fg:warnung)'
 
 Nach dem Speichern reicht ein neuer Prompt, ein Neustart der Shell ist nicht nötig — Starship liest die Konfiguration bei jedem Prompt-Aufbau neu ein.
 
+## meine Konfiguration
+
+```
+# ~/.config/starship.toml
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[╭─](bold green)\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status
+[╰─](bold green)$character"""
+
+[git_branch]
+symbol = ' '
+format = '[$symbol$branch]($style) '
+style = 'fg:green'
+
+[git_commit]
+commit_hash_length = 7
+tag_disabled = false
+format = '[($hash$tag)]($style) '
+style = 'fg:green'
+
+[git_state]
+format = '[\($state( $progress_current/$progress_total)\)]($style) '
+style = 'fg:red'
+
+[git_status]
+conflicted = '='
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+untracked = '?${count}'
+stashed = '\$${count}'
+modified = '!${count}'
+staged = '+${count}'
+renamed = '»${count}'
+deleted = '✘${count}'
+format = '([$all_status$ahead_behind]($style) )'
+style = 'fg:red'
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = '…/'
+home_symbol = '~'
+read_only = ' '
+format = '[$path]($style)[$read_only]($read_only_style) '
+style = 'bold'
+
+[character]
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+```
+
 ---
 
 ## 7 Aufbau der zweiten Zeile im Detail
