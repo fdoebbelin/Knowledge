@@ -556,7 +556,7 @@ Deshalb bauen wir den Release in der Flatpak-SDK, mit deren Rust-Erweiterung.
 Der Builder kommt selbst als Flatpak, nichts wird gelayert:
 
 ```nu
-flatpak install --user flathub org.flatpak.Builder
+flatpak install flathub org.flatpak.Builder
 ```
 
 > [!warning] Aufrufform
@@ -583,8 +583,8 @@ Stand dieser Fassung: **GNOME 50 baut auf Freedesktop 25.08**, GNOME 49 ebenfall
 let gnome = "50"
 let fdo = "25.08"
 
-flatpak install --user flathub $"org.gnome.Platform//($gnome)" $"org.gnome.Sdk//($gnome)"
-flatpak install --user flathub $"org.freedesktop.Sdk.Extension.rust-stable//($fdo)"
+flatpak install flathub $"org.gnome.Platform//($gnome)" $"org.gnome.Sdk//($gnome)"
+flatpak install flathub $"org.freedesktop.Sdk.Extension.rust-stable//($fdo)"
 ```
 
 Robuster ist, die Auflösung dem Builder zu überlassen — dann bleibt die Unterlage auch bei GNOME 51 gültig:
@@ -697,7 +697,7 @@ cargo clean --manifest-path src-tauri/Cargo.toml
 
 ## 20 Bauen, installieren, testen
 
-`--install` zusammen mit `--user` läuft aus der Builder-Sandbox heraus nicht zuverlässig. Bau und Installation werden deshalb getrennt — das ist ohnehin derselbe Weg wie die spätere Flottenverteilung:
+Bau und Installation werden getrennt:
 
 ```nu
 cd ~/Projekte/notizblock
@@ -706,17 +706,17 @@ cd ~/Projekte/notizblock
 flatpak run org.flatpak.Builder --force-clean --repo=repo build-dir de.metarow.Notizblock.yml
 
 # 2. Repo einmalig bekannt machen
-flatpak remote-add --user --no-gpg-verify --if-not-exists metarow-lokal $"($env.PWD)/repo"
+flatpak remote-add --no-gpg-verify --if-not-exists metarow-lokal $"($env.PWD)/repo"
 
 # 3. Installieren
-flatpak install --user metarow-lokal de.metarow.Notizblock
+flatpak install metarow-lokal de.metarow.Notizblock
 ```
 
 Jeder weitere Durchlauf:
 
 ```nu
 flatpak run org.flatpak.Builder --force-clean --repo=repo build-dir de.metarow.Notizblock.yml
-flatpak update --user de.metarow.Notizblock
+flatpak update de.metarow.Notizblock
 ```
 
 Starten und Rechte prüfen:
@@ -742,7 +742,7 @@ flatpak run org.flatpak.Builder --build-shell=notizblock build-dir de.metarow.No
 Bei Zugriffsfehlern auf das Projektverzeichnis:
 
 ```nu
-flatpak override --user --filesystem=home org.flatpak.Builder
+flatpak override --filesystem=home org.flatpak.Builder
 ```
 
 ## 21 In die Flotte verteilen
@@ -753,7 +753,7 @@ flatpak override --user --filesystem=home org.flatpak.Builder
 flatpak build-bundle repo notizblock.flatpak de.metarow.Notizblock --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
 
 # auf dem Zielgerät
-flatpak install --user notizblock.flatpak
+flatpak install notizblock.flatpak
 ```
 
 **Eigenes Repository** — für die ganze Flotte, mit Updates:
@@ -763,8 +763,8 @@ flatpak build-sign repo --gpg-sign=$KEY_ID
 flatpak build-update-repo repo --gpg-sign=$KEY_ID
 
 # auf den Zielgeräten einmalig
-flatpak remote-add --user metarow https://repo.metarow.de/flatpak/metarow.flatpakrepo
-flatpak install --user metarow de.metarow.Notizblock
+sudo flatpak remote-add metarow https://repo.metarow.de/flatpak/metarow.flatpakrepo
+flatpak install metarow de.metarow.Notizblock
 ```
 
 Danach genügt `flatpak update` — dieselbe Mechanik wie bei Flathub.
@@ -866,29 +866,28 @@ def main [] {
 
 ## 25 Troubleshooting
 
-| Symptom | Ursache | Abhilfe |
-|---|---|---|
-| `toolbox enter` startet bash statt nu | Shell-Pfad im Container ungültig | Phase 0: Binary nach `~/.local/bin` |
-| `which nu` findet nichts, obwohl Pfad in `$PATH` | Pfad zeigt außerhalb von `$HOME` | Abschnitt 3 |
-| `/home/...` leer, `/var/home/...` auch | `/home` im Container kein Symlink | `/run/host/...` nutzen, Abschnitt 6 |
-| `brew: Datei nicht gefunden` beim Start | Host-Aufruf in geteilter `.bashrc` | Riegel aus Abschnitt 5 |
-| `curl: (23) Failure writing output` | `grep -m1` schließt die Pipe | erst puffern, dann filtern |
-| `cargo` auch auf dem Host im `PATH` | `if`-Block in `env.nu` greift nicht | `/run/.toolboxenv`-Abfrage prüfen |
-| `webkit2gtk-4.1 not found` | Build läuft auf dem Host | `toolbox enter` bzw. `toolbox run` |
-| Linkerfehler nach Containerwechsel | `target/` enthält alte Artefakte | `cargo clean` |
-| Weißes App-Fenster | DMA-BUF-Renderer | `with-env { WEBKIT_DISABLE_DMABUF_RENDERER: "1" }` |
-| `failed to run linuxdeploy` | AppImage-Bundling ohne FUSE | AppImage aus `targets` entfernen |
-| `window.__TAURI__ is undefined` | `withGlobalTauri` fehlt | `app.withGlobalTauri: true` |
-| `install: cannot stat .../notizblock` | Cargo-Paket heißt `app` | `[[bin]]`-Block, Abschnitt 13 |
-| `cargo build` erzeugt kein Binary | `main.rs` fehlt oder `[lib]` ohne Binärziel | Abschnitt 13 |
-| `rpm-ostree uninstall` bricht ab | Paket war nicht gelayert | Liste auslesen, Abschnitt 16 |
-| `flatpak-builder: command not found` | als Flatpak installiert | `flatpak run org.flatpak.Builder` |
-| `--user` wird abgelehnt | gilt nur mit `--install` | zweistufig über `--repo`, Abschnitt 20 |
-| `GLIBC_2.xx not found` im Flatpak | Binary im Toolbx statt im SDK gebaut | Abschnitt 17 |
-| `xdo.h: No such file` im Flatpak-Build | libxdo fehlt im SDK | xdotool-Modul aktivieren |
-| Flatpak-Build lädt keine Crates | Netzwerk in der Sandbox gesperrt | `build-args: --share=network` |
-| Flatpak-Build riesig / langsam | `target/` wurde mitkopiert | `cargo clean` vor dem Build |
-| Rust-Erweiterung passt nicht | falsche Freedesktop-Version | Abschnitt 18, `remote-info -m` |
+| Symptom                                          | Ursache                                     | Abhilfe                                            |
+| ------------------------------------------------ | ------------------------------------------- | -------------------------------------------------- |
+| `toolbox enter` startet bash statt nu            | Shell-Pfad im Container ungültig            | Phase 0: Binary nach `~/.local/bin`                |
+| `which nu` findet nichts, obwohl Pfad in `$PATH` | Pfad zeigt außerhalb von `$HOME`            | Abschnitt 3                                        |
+| `/home/...` leer, `/var/home/...` auch           | `/home` im Container kein Symlink           | `/run/host/...` nutzen, Abschnitt 6                |
+| `brew: Datei nicht gefunden` beim Start          | Host-Aufruf in geteilter `.bashrc`          | Riegel aus Abschnitt 5                             |
+| `curl: (23) Failure writing output`              | `grep -m1` schließt die Pipe                | erst puffern, dann filtern                         |
+| `cargo` auch auf dem Host im `PATH`              | `if`-Block in `env.nu` greift nicht         | `/run/.toolboxenv`-Abfrage prüfen                  |
+| `webkit2gtk-4.1 not found`                       | Build läuft auf dem Host                    | `toolbox enter` bzw. `toolbox run`                 |
+| Linkerfehler nach Containerwechsel               | `target/` enthält alte Artefakte            | `cargo clean`                                      |
+| Weißes App-Fenster                               | DMA-BUF-Renderer                            | `with-env { WEBKIT_DISABLE_DMABUF_RENDERER: "1" }` |
+| `failed to run linuxdeploy`                      | AppImage-Bundling ohne FUSE                 | AppImage aus `targets` entfernen                   |
+| `window.__TAURI__ is undefined`                  | `withGlobalTauri` fehlt                     | `app.withGlobalTauri: true`                        |
+| `install: cannot stat .../notizblock`            | Cargo-Paket heißt `app`                     | `[[bin]]`-Block, Abschnitt 13                      |
+| `cargo build` erzeugt kein Binary                | `main.rs` fehlt oder `[lib]` ohne Binärziel | Abschnitt 13                                       |
+| `rpm-ostree uninstall` bricht ab                 | Paket war nicht gelayert                    | Liste auslesen, Abschnitt 16                       |
+| `flatpak-builder: command not found`             | als Flatpak installiert                     | `flatpak run org.flatpak.Builder`                  |
+| `GLIBC_2.xx not found` im Flatpak                | Binary im Toolbx statt im SDK gebaut        | Abschnitt 17                                       |
+| `xdo.h: No such file` im Flatpak-Build           | libxdo fehlt im SDK                         | xdotool-Modul aktivieren                           |
+| Flatpak-Build lädt keine Crates                  | Netzwerk in der Sandbox gesperrt            | `build-args: --share=network`                      |
+| Flatpak-Build riesig / langsam                   | `target/` wurde mitkopiert                  | `cargo clean` vor dem Build                        |
+| Rust-Erweiterung passt nicht                     | falsche Freedesktop-Version                 | Abschnitt 18, `remote-info -m`                     |
 
 ---
 
@@ -916,7 +915,7 @@ cargo clean --manifest-path src-tauri/Cargo.toml
 # Ausliefern (auf dem Host)
 flatpak run org.flatpak.Builder --force-clean --repo=repo build-dir MANIFEST.yml
 flatpak run org.flatpak.Builder --build-shell=MODUL build-dir MANIFEST.yml
-flatpak install --user metarow-lokal ID
+flatpak install metarow-lokal ID
 flatpak run ID
 flatpak info --show-permissions ID
 flatpak build-bundle repo app.flatpak ID --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
