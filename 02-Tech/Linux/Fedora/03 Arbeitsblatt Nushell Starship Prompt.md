@@ -552,14 +552,14 @@ style = 'fg:warnung'
 disabled = false
 symbol = '✖'
 success_symbol = ''
-not_executable_symbol = '󰅘'
-not_found_symbol = '󰍉'
-sigint_symbol = '󰂭'
-signal_symbol = '󱐋'
+not_executable_symbol = '🚫'
+not_found_symbol = '🔍'
+sigint_symbol = '🧱'
+signal_symbol = '⚡'
 map_symbol = true
 pipestatus = true
 format = '[$symbol$common_meaning$signal_name$maybe_int]($style) '
-style = 'bold fg:fehler'
+style = 'bold fg:red'
 
 [character]
 success_symbol = '[▶](bold fg:ok)'
@@ -575,6 +575,11 @@ Nach dem Speichern reicht ein neuer Prompt, ein Neustart der Shell ist nicht nö
 # ~/.config/starship.toml
 "$schema" = 'https://starship.rs/config-schema.json'
 
+# ── Globale Einstellungen ────────────────────────────────────────────
+add_newline = true       # Leerzeile vor jedem Prompt
+command_timeout = 1000   # ms, großzügig für langsame Git-Repos
+scan_timeout = 30        # ms für das Scannen des Arbeitsverzeichnisses
+
 format = """
 [╭─](bold green)\
 $directory\
@@ -585,7 +590,7 @@ $git_status
 [╰─](bold green)$character"""
 
 [git_branch]
-symbol = ' '
+symbol = ' '
 format = '[$symbol$branch]($style) '
 style = 'fg:green'
 
