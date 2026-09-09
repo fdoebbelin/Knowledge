@@ -582,12 +582,17 @@ scan_timeout = 30        # ms für das Scannen des Arbeitsverzeichnisses
 
 format = """
 [╭─](bold green)\
+$container\
 $directory\
 $git_branch\
 $git_commit\
 $git_state\
 $git_status
 [╰─](bold green)$character"""
+
+[container]
+format = '[ ⬢ $name ]($style) '
+style = 'fg:black bg:purple'
 
 [git_branch]
 symbol = ' '
@@ -628,8 +633,8 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 style = 'bold'
 
 [character]
-success_symbol = '[❯](bold fg:green)'
-error_symbol = '[❯](bold fg:red)'
+success_symbol = '[❯](bold green)'
+error_symbol = '[✗](bold red)'
 ```
 
 ---
