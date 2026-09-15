@@ -123,7 +123,7 @@ ChatGPT
 
 Ich schaue mir die Website ALSADO an und überlege, ob sie PDF- oder strukturierte Lernpfade bietet.
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/1c51d72226fa3f893343ef79dee971bf_MD5.jpg|Open: 9974dd5da26a1da6e128ed270a69f117_MD5.png]]
+[[1c51d72226fa3f893343ef79dee971bf_MD5.jpg|Open: 9974dd5da26a1da6e128ed270a69f117_MD5.png]]
 ![](_resources/1c51d72226fa3f893343ef79dee971bf_MD5.jpg)](https://www.youtube.com/)
 
 [youtube.com](https://www.youtube.com/) gelesen
@@ -152,7 +152,7 @@ ChatGPT
 
 Es scheint, als ob Stolz3D auf YouTube aktiv ist, möglicherweise in Deutsch, aber unklar. Es könnte mit einem offiziellen deutschen Fachgebiet oder der Onshape Akademie 2024 zusammenhängen, möglicherweise zweisprachig.
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/1c51d72226fa3f893343ef79dee971bf_MD5.jpg|Open: 9974dd5da26a1da6e128ed270a69f117_MD5.png]]
+[[1c51d72226fa3f893343ef79dee971bf_MD5.jpg|Open: 9974dd5da26a1da6e128ed270a69f117_MD5.png]]
 ![](_resources/1c51d72226fa3f893343ef79dee971bf_MD5.jpg)](https://www.youtube.com/)
 
 Mehr von [youtube.com](https://www.youtube.com/) gelesen
@@ -201,7 +201,7 @@ ChatGPT
 
 Ich schaue mir eine Liste potenzieller Tutorials zu FreeCAD an, darunter ein YouTube-Video, ein PDF und ein e-dossier von Heise. Ich erkundige mich nach den Free-Free-To 164
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/1b404bff0450534931c52c4902aa8f6e_MD5.jpg|Open: 78b82978f6bf9dd32cfb5737540d67b2_MD5.png]]
+[[1b404bff0450534931c52c4902aa8f6e_MD5.jpg|Open: 78b82978f6bf9dd32cfb5737540d67b2_MD5.png]]
 ![](_resources/1b404bff0450534931c52c4902aa8f6e_MD5.jpg)](https://www.heise.de/)
 
 [heise.de](https://www.heise.de/) gelesen
@@ -210,7 +210,7 @@ ChatGPT
 
 Ich schaue mir das Heise e-Dossier an, das kostenpflichtig ist, und ziehe es aufgrund der Budgetvorstellungen des Lehrers in Frage.
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/8af05534d0ec47452368c5a97ba80c9f_MD5.jpg|Open: 1ae2c84a580f6435769fbb181a0e6e4b_MD5.png]]
+[[8af05534d0ec47452368c5a97ba80c9f_MD5.jpg|Open: 1ae2c84a580f6435769fbb181a0e6e4b_MD5.png]]
 ![](_resources/8af05534d0ec47452368c5a97ba80c9f_MD5.jpg)](https://www.ulrich-rapp.de/)
 
 [ulrich-rapp.de](https://www.ulrich-rapp.de/) gelesen
@@ -287,7 +287,7 @@ ChatGPT
 
 Ich schaue mir FreeCAD-Tutorials an, die Grundkenntnisse vermitteln. Ressourcen wie QGwiki, Ulrich Rapp und ALSADO bieten detaillierte Anleitungen und Projektideen für Anfänger.
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/1c51d72226fa3f893343ef79dee971bf_MD5.jpg|Open: 9974dd5da26a1da6e128ed270a69f117_MD5.png]]
+[[1c51d72226fa3f893343ef79dee971bf_MD5.jpg|Open: 9974dd5da26a1da6e128ed270a69f117_MD5.png]]
 ![](_resources/1c51d72226fa3f893343ef79dee971bf_MD5.jpg)](https://www.youtube.com/)
 
 [youtube.com](https://www.youtube.com/) gelesen
@@ -304,12 +304,12 @@ ChatGPT
 
 Ein Forum mit deutschen FreeCAD-Tutorials, das möglicherweise bereits bekannte Inhalte wiederholt.
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/479ef7d25b04d6772d6baed2f5aeb2f2_MD5.jpg|Open: 434f5837dcdf8488a77d27114026681d_MD5.png]]
+[[479ef7d25b04d6772d6baed2f5aeb2f2_MD5.jpg|Open: 434f5837dcdf8488a77d27114026681d_MD5.png]]
 ![](_resources/479ef7d25b04d6772d6baed2f5aeb2f2_MD5.jpg)](https://forum.freecad.org/)
 
 [forum.freecad.org](https://forum.freecad.org/) gelesen
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/5eaeaad1a93faf43cb2eb44a02ab84ce_MD5.jpg|Open: 55d020e826d9f95e4c440fc4a2dabb38_MD5.png]]
+[[5eaeaad1a93faf43cb2eb44a02ab84ce_MD5.jpg|Open: 55d020e826d9f95e4c440fc4a2dabb38_MD5.png]]
 ![](_resources/5eaeaad1a93faf43cb2eb44a02ab84ce_MD5.jpg)](https://www.woodworker.de/)
 
 [woodworker.de](https://www.woodworker.de/) gelesen
@@ -324,7 +324,7 @@ ChatGPT
 
 Es werde klar, dass die Suchergebnisse nicht als Zitation verwendet werden können, da sie möglicherweise nicht korrekt angezeigt werden. Hinweise auf QG-Wiki oder Foren werden ohne Zitation verwendet, um Missverständnisse zu vermeiden.
 
-[[[01-Courses/STEM/STEM-Intro/04 CAD/_resources/479ef7d25b04d6772d6baed2f5aeb2f2_MD5.jpg|Open: 434f5837dcdf8488a77d27114026681d_MD5.png]]
+[[479ef7d25b04d6772d6baed2f5aeb2f2_MD5.jpg|Open: 434f5837dcdf8488a77d27114026681d_MD5.png]]
 ![](_resources/479ef7d25b04d6772d6baed2f5aeb2f2_MD5.jpg)](https://forum.freecad.org/)
 
 [forum.freecad.org](https://forum.freecad.org/) gelesen

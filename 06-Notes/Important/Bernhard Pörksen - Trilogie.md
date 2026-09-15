@@ -1,3 +1,0 @@
-Prof. Dr. Bernhard Pörksen Der 1969 geborene Medienwissenschaftler lehrt seit 2018 an der Universität Tübingen. Als Autor veröffentlicht er in Tages- und Wochenzeitungen, Magazinen sowie Netzmedien. 2018 erschien sein Buch "**Die große Gereiztheit. Wege aus der kollektiven Erregung.**" 2020 publizierte er gemeinsam mit dem Kommunikationspsychologen Friedemann Schulz von Thun das Buch "**Kunst des Miteinander-Redens. Über den Dialog in Gesellschaft und Politik.**"
-
-Zuhören als "Die Kunst, sich der Welt zu öffnen

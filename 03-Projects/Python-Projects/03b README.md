@@ -1,8 +1,8 @@
 # 👑 PersonalPrinz
 
-[[[03-Projects/Python-Projects/_resources/8262143846de13a055bc76fecd00266a_MD5.svg|Open: 52d7c8a8c47838a1a4fd65212f48bacb_MD5.svg]]
+[[8262143846de13a055bc76fecd00266a_MD5.svg|Open: 52d7c8a8c47838a1a4fd65212f48bacb_MD5.svg]]
 ![](_resources/8262143846de13a055bc76fecd00266a_MD5.svg)](https://www.python.org)
-[[[03-Projects/Python-Projects/_resources/2208f165df32d363d52e54eadde00457_MD5.svg|Open: 0d356e72fcfaae41be0d7adf6fad1c69_MD5.svg]]
+[[2208f165df32d363d52e54eadde00457_MD5.svg|Open: 0d356e72fcfaae41be0d7adf6fad1c69_MD5.svg]]
 ![](_resources/2208f165df32d363d52e54eadde00457_MD5.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/username/personalprinz/workflows/tests/badge.svg)](https://github.com/username/personalprinz/actions)
 
@@ -128,7 +128,7 @@ print(v.suche_mitarbeiter("1001"))
 
 ## 🤝 Mitwirken
 
-Beiträge sind willkommen! Bitte lies unsere [CONTRIBUTING.md](00%20Nushell/CONTRIBUTING.md).
+Beiträge sind willkommen! Bitte lies unsere [CONTRIBUTING.md](../../02-Tech/Terminal/Nushell/nu-scripts/CONTRIBUTING.md).
 
 ### Entwicklung
 
@@ -182,7 +182,7 @@ pytest tests/test_model.py::TestMitarbeiter::test_urlaub_buchen
 
 ## 📜 Lizenz
 
-Dieses Projekt steht unter der MIT-Lizenz – siehe [LICENSE](../../02-Tech/DevTools/Nushell/nu-scripts/LICENSE.md).
+Dieses Projekt steht unter der MIT-Lizenz – siehe [LICENSE](../../02-Tech/Terminal/Nushell/nu-scripts/LICENSE.md).
 
 ---
 

@@ -10,7 +10,7 @@ verifiziert_gegen: —
 
 # 15 — OneDrive auf dem Host
 
-Ergänzung zu [[docs/11-kvm-windows11-vm]] und [[docs/12-dateifreigabe-host-gast]].
+Ergänzung zu [[11-kvm-windows11-vm]] und [[12-dateifreigabe-host-gast]].
 Ziel: OneDrive-Daten auf dem Fedora-Atomic-Host nutzen, **ohne** dass eine
 laufende Windows-VM Voraussetzung dafür ist.
 
@@ -24,7 +24,7 @@ laufende Windows-VM Voraussetzung dafür ist.
 Der Reflex — „OneDrive läuft in Windows, also hole ich es per SMB aus der VM" —
 löst das falsche Problem. Er macht eine laufende VM zur Voraussetzung für den
 Dateizugriff und baut eine zweite Netzwerkabhängigkeit auf einer Maschine auf,
-die bei [[docs/12-dateifreigabe-host-gast]] gerade bewusst vermieden wurde.
+die bei [[12-dateifreigabe-host-gast]] gerade bewusst vermieden wurde.
 
 Richtig ist dieselbe Topologie wie bei Nextcloud: **Der Host synchronisiert,
 der Gast konsumiert.** Der Sync-Client läuft auf Fedora, der Baum liegt in
@@ -204,7 +204,7 @@ einer Kontrollperiode entfernen.
 Braucht Windows die Dateien weiterhin, ist das ab hier ein gelöstes Problem:
 ein zweites virtiofs-Device auf `/var/home/fritz/OneDrive`, Mount-Tag
 `onedrive`, Laufwerksbuchstabe `O:`. Ablauf identisch zu
-[[docs/12-dateifreigabe-host-gast]], inklusive `Owner`-Registry-Wert.
+[[12-dateifreigabe-host-gast]], inklusive `Owner`-Registry-Wert.
 
 ```nu
 let vm = "Windows 11 Pro"
@@ -305,7 +305,7 @@ entfernt werden.
 - [ ] Entscheiden, ob der Baum überhaupt in den Gast muss — wenn ja, Verhalten
       des virtiofs-Dienstes bei zwei Freigaben klären
 - [ ] Nach erfolgreichem Durchlauf Notiz auf `verifiziert` heben und
-      [[docs/12-dateifreigabe-host-gast]] querverweisen
+      [[12-dateifreigabe-host-gast]] querverweisen
 - [ ] README-Index ergänzen
 
 ## Quellen

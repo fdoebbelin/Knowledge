@@ -66,4 +66,4 @@ Key_Recognition/                    |
 ![Screenshot_GUI_2.png](blob/Screenshot_GUI_2.png)
 ## 📜 Lizenz
 
-Dieses Projekt steht unter der MIT-Lizenz. Siehe [LICENSE](../../02-Tech/DevTools/Nushell/nu-scripts/LICENSE.md) für Details.
+Dieses Projekt steht unter der MIT-Lizenz. Siehe [LICENSE](../../02-Tech/Terminal/Nushell/nu-scripts/LICENSE.md) für Details.

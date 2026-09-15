@@ -180,7 +180,7 @@ Während bestehende Tools wie PyCrust, Depyler und pyrs als separate CLI-Tools f
 
 ## 🤝 Beitragen
 
-Wir begrüßen Beiträge zur Py2Rust-Entwicklung! Siehe [CONTRIBUTING.md](00%20Nushell/CONTRIBUTING.md) für Details.
+Wir begrüßen Beiträge zur Py2Rust-Entwicklung! Siehe [CONTRIBUTING.md](../../02-Tech/Terminal/Nushell/nu-scripts/CONTRIBUTING.md) für Details.
 
 ### Entwicklungsumgebung
 ```bash
@@ -207,7 +207,7 @@ Erste Benchmarks zeigen vielversprechende Ergebnisse:
 
 ## 📜 Lizenz
 
-Dieses Projekt steht unter der MIT-Lizenz. Siehe [LICENSE](../../02-Tech/DevTools/Nushell/nu-scripts/LICENSE.md) für Details.
+Dieses Projekt steht unter der MIT-Lizenz. Siehe [LICENSE](../../02-Tech/Terminal/Nushell/nu-scripts/LICENSE.md) für Details.
 
 ## 🙏 Danksagungen
 

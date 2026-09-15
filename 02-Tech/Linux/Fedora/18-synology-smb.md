@@ -10,7 +10,7 @@ verifiziert_gegen: —
 
 # 18 — Synology-Freigaben per SMB
 
-Zweite Freigabe neben [[docs/12-dateifreigabe-host-gast]], mit **bewusst
+Zweite Freigabe neben [[12-dateifreigabe-host-gast]], mit **bewusst
 anderer Architektur**: Host und Gast greifen jeweils **direkt per SMB** auf
 die NAS zu. Kein virtiofs, keine Verkettung.
 
