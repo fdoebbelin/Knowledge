@@ -1,3 +1,0 @@
-[[06-Notes/Personal/Health/_resources/0f01fb1272a4693c819029eadf92ad60_MD5.jpg|Open: Pasted image 20260322213735.png]]
-![[06-Notes/Personal/Health/_resources/0f01fb1272a4693c819029eadf92ad60_MD5.jpg]]
-**Aurecon Ohrentropfen mit Peroxid** enthalten 5 % Harnstoff-Wasserstoff-Peroxid. Der Wirkstoff wirkt so, dass er verhärtetes Ohrenschmalz aufweicht und in winzige Schuppen zerlegt. Es enthält auch Natriumhydroxid und Glycerin. Aurecon Ohrentropfen mit Peroxid sind eine klare, dickflüssige Lösung. Es verfügt über eine einzigartige Formulierung mit doppelter Wirkung, die **verhärtetes Ohrenschmalz aufweicht** und sanft **Sauerstoff freisetzt, um die Entfernung von Ohrenschmalz** zu **erleichtern**.
