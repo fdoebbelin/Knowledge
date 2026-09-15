@@ -1,5 +1,5 @@
 ---
-titel: Einführung in die Entwicklung plattformunabhängiger Apps mit Tauri
+title: Einführung in die Entwicklung plattformunabhängiger Apps mit Tauri
 typ: kurskonzept
 zielgruppe: Fachinformatiker Anwendungsentwicklung
 schwerpunkt: Frontend-Entwicklung mit Webtechniken

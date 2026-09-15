@@ -7,7 +7,7 @@ tags:
   - flatpak
   - immutable
   - fachinformatiker
-erstellt: 2026-07-14
+created: 2026-07-14
 lernfeld: "Betriebssysteme & Virtualisierung"
 schwierigkeit: mittel
 ---

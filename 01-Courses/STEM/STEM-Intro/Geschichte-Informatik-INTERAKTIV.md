@@ -155,6 +155,69 @@ Erstellt als Team eine Timeline in Python/Plotly: Für jede wichtige Erfindung (
 
 ---
 
+## 10. Interaktive Aufgaben (Jupyter-Notebook)
+
+Jede Aufgabe besteht aus Frage, Python-Zelle und einklappbarer Lösung. (Zusammengeführt aus der früheren Notiz „Geschichte der Informatik - Interaktiv - Optimiert“.)
+
+### 10.1 Die ersten Rechenmaschinen
+
+### Frage:
+Was war die erste mechanische Rechenmaschine und wer hat sie erfunden?
+
+
+```python
+# Interaktive Aufgabe: Simuliere eine einfache Addition wie bei der Pascaline
+def addiere(a, b):
+    return a + b
+
+# Teste die Funktion
+print(addiere(5, 7))
+```
+
+    12
+    
+
+### Lösung:
+<details>
+<summary>Lösung anzeigen</summary>
+
+Die erste mechanische Rechenmaschine war die **Pascaline**, erfunden von **Blaise Pascal** im Jahr 1642.
+
+</details>
+
+### 10.2 Alan Turing und die Turing-Maschine
+
+### Frage:
+Was ist das Prinzip der Turing-Maschine?
+
+
+```python
+# Interaktive Aufgabe: Simuliere eine einfache Turing-Maschine
+# Hier könnte ein einfaches Beispiel für eine Turing-Maschine stehen
+def turing_machine_simulation(band):
+    # Einfache Simulation: Ersetze alle '0' durch '1'
+    return band.replace('0', '1')
+
+# Teste die Funktion
+print(turing_machine_simulation('001010'))
+```
+
+    111111
+    
+
+### Lösung:
+<details>
+<summary>Lösung anzeigen</summary>
+
+Die Turing-Maschine ist ein mathematisches Modell einer Rechenmaschine, das von Alan Turing entwickelt wurde.
+Sie besteht aus einem unendlichen Band, einem Lese-/Schreibkopf und einer Tabelle von Regeln.
+
+</details>
+
+---
+
+---
+
 ## Zusammenfassung & Ausblick
 
 Die Informatikgeschichte verdeutlicht: Fortschritt entsteht durch kreative Köpfe, Zusammenarbeit und die Lust am Weiterdenken. Nutzt die Aufgaben und Projekte für eigenes Erforschen – in JupyterLab und PyCharm!
@@ -162,3 +225,10 @@ Die Informatikgeschichte verdeutlicht: Fortschritt entsteht durch kreative Köpf
 ---
 
 *Material angepasst und erweitert für das Interactive MINT Learning Environment im Rahmen eines Obsidian/JupyterLab-Kurses (2025).*
+
+---
+
+## Siehe auch
+
+- [[Geschichte-Informatik]] – ausführlicher Abriss (CS-Basics)
+- [[M02a interaktiven geschichtlichen Abriss der IT-Entwicklung]] – Konzept für die interaktive Umsetzung

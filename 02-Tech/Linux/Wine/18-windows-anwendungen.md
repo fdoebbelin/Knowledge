@@ -1,9 +1,9 @@
 ---
-titel: Windows-Anwendungen unter Fedora Atomic — WinApps, WinBoat, Wine
+title: Windows-Anwendungen unter Fedora Atomic — WinApps, WinBoat, Wine
 teil_von: "[[README]]"
 tags: [windows, winapps, winboat, freerdp, remoteapp, wine, bottles, proton, libvirt, atomic, flatpak, nushell]
 zielgeraet: x86_64 Fedora Atomic (Yoga 920, Dozenten-PC)
-erstellt: 2026-08-13
+created: 2026-08-13
 status: entwurf
 verifiziert_gegen: —
 ---

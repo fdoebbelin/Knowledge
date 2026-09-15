@@ -1,8 +1,8 @@
 ---
 baustein: K5
-titel: Daten behalten
+title: Daten behalten
 ue: 4
-tag: 3-4
+kurstag: 3-4
 tags: [tauri/kompaktkurs/baustein, tauri, ipc]
 status: entwurf
 ---

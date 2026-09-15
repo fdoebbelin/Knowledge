@@ -1,9 +1,9 @@
 ---
 baustein: K3
 typ: trainerskript
-titel: JavaScript – die Bausteine – Trainerskript
+title: JavaScript – die Bausteine – Trainerskript
 ue: 6
-tag: 2-3
+kurstag: 2-3
 dauer: 270 min in zwei Blöcken
 zielgruppe: 3 Teilnehmende ohne Vorkenntnisse
 tags: [tauri/kompaktkurs/trainerskript, javascript]

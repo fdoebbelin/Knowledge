@@ -1,9 +1,9 @@
 ---
 baustein: K0
 typ: trainerskript
-titel: Ankommen und erste eigene Änderung – Trainerskript
+title: Ankommen und erste eigene Änderung – Trainerskript
 ue: 2
-tag: 1
+kurstag: 1
 dauer: 90 min
 zielgruppe: 3 Teilnehmende ohne Vorkenntnisse
 tags: [tauri/kompaktkurs/trainerskript]

@@ -1,7 +1,7 @@
 ---
-titel: Login-Manager (SDDM) und Ruhezustand einrichten
+title: Login-Manager (SDDM) und Ruhezustand einrichten
 tags: [fedora, hyprland, sddm, ruhezustand, hibernate, power-management, nushell]
-erstellt: 2026-06-29
+created: 2026-06-29
 system: Fedora · Hyprland · Lenovo Yoga
 status: in-bearbeitung
 ---

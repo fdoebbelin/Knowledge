@@ -1,9 +1,9 @@
 ---
 baustein: K3
 typ: uebungsblatt
-titel: JavaScript – die Bausteine – Übungen
+title: JavaScript – die Bausteine – Übungen
 ue: 6
-tag: 2-3
+kurstag: 2-3
 tags: [tauri/kompaktkurs/uebung, javascript]
 status: entwurf
 ---

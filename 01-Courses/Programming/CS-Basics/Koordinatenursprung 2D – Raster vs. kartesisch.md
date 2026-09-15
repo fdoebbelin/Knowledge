@@ -6,7 +6,7 @@ tags:
 aliases:
   - "Koordinatenursprung 2D"
   - "y-down vs y-up"
-erstellt: 2026-06-17
+created: 2026-06-17
 ---
 
 # Koordinatenursprung in 2D: Raster (oben links) vs. kartesisch

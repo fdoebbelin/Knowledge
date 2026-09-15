@@ -1,7 +1,7 @@
 ---
-titel: Nextcloud-Client einrichten
+title: Nextcloud-Client einrichten
 tags: [fedora, hyprland, noctalia, nextcloud, nushell, sync]
-erstellt: 2026-07-06
+created: 2026-07-06
 system: Fedora 44 + Hyprland + Noctalia
 status: entwurf
 ---

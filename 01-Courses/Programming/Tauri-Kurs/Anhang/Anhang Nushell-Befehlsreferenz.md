@@ -1,6 +1,6 @@
 ---
 typ: anhang
-titel: Nushell-Befehlsreferenz für den Kurs
+title: Nushell-Befehlsreferenz für den Kurs
 tags: [tauri/kurs/anhang, nushell]
 status: entwurf
 ---

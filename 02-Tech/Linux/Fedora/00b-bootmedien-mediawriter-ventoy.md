@@ -1,7 +1,7 @@
 ---
-titel: Bootmedien erstellen – Fedora Media Writer & Ventoy Multiboot
+title: Bootmedien erstellen – Fedora Media Writer & Ventoy Multiboot
 tags: [fedora, installation, usb, bootstick, ventoy, mediawriter]
-erstellt: 2026-06-29
+created: 2026-06-29
 system: Fedora 44
 status: aktiv
 ---

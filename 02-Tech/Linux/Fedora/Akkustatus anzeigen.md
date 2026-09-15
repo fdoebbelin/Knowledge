@@ -1,11 +1,11 @@
 ---
-titel: Akkustatus anzeigen
+title: Akkustatus anzeigen
 tags:
   - hyprland
   - nushell
   - hardware
   - akku
-erstellt: 2026-06-29
+created: 2026-06-29
 system: Fedora 44 / Hyprland / Lenovo Yoga
 status: fertig
 ---

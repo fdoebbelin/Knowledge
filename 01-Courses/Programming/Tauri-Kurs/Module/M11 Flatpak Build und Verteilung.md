@@ -1,6 +1,6 @@
 ---
 modul: M11
-titel: Flatpak Build und Verteilung
+title: Flatpak Build und Verteilung
 ue: 6
 phase: Auslieferung
 ort: Host

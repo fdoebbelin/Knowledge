@@ -1,5 +1,5 @@
 ---
-titel: "Leitfaden: Tauri-App in Toolbx entwickeln und als Flatpak ausliefern"
+title: "Leitfaden: Tauri-App in Toolbx entwickeln und als Flatpak ausliefern"
 shell: Nushell
 werkzeugkette: cargo (ohne Node/npm)
 zielgruppe: Fachinformatiker/-in (FISI/FIAE)

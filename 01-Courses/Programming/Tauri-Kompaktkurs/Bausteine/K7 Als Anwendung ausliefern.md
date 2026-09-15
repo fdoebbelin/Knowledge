@@ -1,8 +1,8 @@
 ---
 baustein: K7
-titel: Als Anwendung ausliefern
+title: Als Anwendung ausliefern
 ue: 3
-tag: 4
+kurstag: 4
 tags: [tauri/kompaktkurs/baustein, flatpak]
 status: entwurf
 ---

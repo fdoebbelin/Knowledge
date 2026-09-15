@@ -1,12 +1,12 @@
 ---
-titel: Fensterdekorationen ausblenden
+title: Fensterdekorationen ausblenden
 tags:
   - hyprland
   - fensterdekoration
   - vivaldi
   - obsidian
   - css
-erstellt: 2026-06-29
+created: 2026-06-29
 system: Fedora 44 / Hyprland
 status: aktiv
 ---

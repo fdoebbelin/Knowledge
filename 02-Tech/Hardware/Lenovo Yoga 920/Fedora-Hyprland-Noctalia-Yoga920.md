@@ -1,8 +1,8 @@
 ---
-titel: Fedora + Hyprland + Noctalia auf dem Lenovo Yoga 920-13IKB
+title: Fedora + Hyprland + Noctalia auf dem Lenovo Yoga 920-13IKB
 aliases: [Fedora Hyprland Noctalia, Yoga 920 Neuaufsetzen]
 tags: [linux, fedora, hyprland, noctalia, quickshell, nushell, convertible, yoga]
-erstellt: 2026-06-26
+created: 2026-06-26
 system: Lenovo Yoga 920-13IKB
 status: anleitung
 ---

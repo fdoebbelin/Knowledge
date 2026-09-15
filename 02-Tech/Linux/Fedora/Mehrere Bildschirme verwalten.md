@@ -1,7 +1,7 @@
 ---
-titel: Mehrere Bildschirme verwalten
+title: Mehrere Bildschirme verwalten
 tags: [hyprland, monitore, multimonitor, lua, fedora]
-erstellt: 2026-06-30
+created: 2026-06-30
 system: Fedora 44 · Hyprland 0.55+ · Lua-Config
 status: Entwurf
 ---

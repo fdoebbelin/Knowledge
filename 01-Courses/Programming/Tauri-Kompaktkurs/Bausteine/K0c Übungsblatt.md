@@ -1,9 +1,9 @@
 ---
 baustein: K0
 typ: uebungsblatt
-titel: Ankommen und erste eigene Änderung – Übungen
+title: Ankommen und erste eigene Änderung – Übungen
 ue: 2
-tag: 1
+kurstag: 1
 tags: [tauri/kompaktkurs/uebung]
 status: entwurf
 ---

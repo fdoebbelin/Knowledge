@@ -1,9 +1,9 @@
 ---
 baustein: K3
 typ: handout
-titel: JavaScript – die Bausteine – Handout
+title: JavaScript – die Bausteine – Handout
 ue: 6
-tag: 2-3
+kurstag: 2-3
 tags: [tauri/kompaktkurs/handout, javascript]
 status: entwurf
 ---

@@ -1,9 +1,9 @@
 ---
 baustein: K0
 typ: handout
-titel: Ankommen und erste eigene Änderung – Handout
+title: Ankommen und erste eigene Änderung – Handout
 ue: 2
-tag: 1
+kurstag: 1
 tags: [tauri/kompaktkurs/handout]
 status: entwurf
 ---

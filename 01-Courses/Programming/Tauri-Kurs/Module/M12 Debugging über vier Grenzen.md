@@ -1,6 +1,6 @@
 ---
 modul: M12
-titel: Debugging über vier Grenzen
+title: Debugging über vier Grenzen
 ue: 3
 phase: Qualität
 ort: beide

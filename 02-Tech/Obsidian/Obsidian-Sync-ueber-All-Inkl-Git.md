@@ -1,6 +1,6 @@
 ---
 title: Obsidian-Vault-Synchronisation über eigenes Git-Repo auf All-Inkl
-erstellt: 2026-08-13
+created: 2026-08-13
 tags:
   - obsidian
   - git

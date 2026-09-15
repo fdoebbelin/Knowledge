@@ -1,8 +1,8 @@
 ---
 baustein: K2
-titel: CSS – das Aussehen
+title: CSS – das Aussehen
 ue: 5
-tag: 1-2
+kurstag: 1-2
 tags: [tauri/kompaktkurs/baustein, css]
 status: entwurf
 ---

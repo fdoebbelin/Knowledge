@@ -1,29 +1,33 @@
 ---
-title: SDDM Login an Hyprland & Noctalia anpassen (Fedora)
+title: SDDM Login an Hyprland & Noctalia anpassen
 aliases:
+  - SDDM Noctalia Theme
   - SDDM Noctalia Theme Fedora
+  - Login-Screen Anpassung
   - Login-Screen Anpassung Fedora
 tags:
   - linux
   - fedora
+  - cachyos
   - hyprland
   - noctalia
   - sddm
   - theming
 created: 2026-07-07
+updated: 2026-09-15
 cssclasses:
   - guide
 ---
 
-# SDDM Login an Hyprland & Noctalia anpassen (Fedora)
+# SDDM Login an Hyprland & Noctalia anpassen
 
 > [!abstract] Ziel
-> Den SDDM-Login-Screen optisch an [[Noctalia]] und [[Hyprland]] angleichen und den fehlenden Mauszeiger unter Wayland aktivieren. Als Cursor kommt **Bibata-Modern-Ice** zum Einsatz. Fedora-Variante mit COPR.
+> Den SDDM-Login-Screen optisch an [[Noctalia]] und [[Hyprland]] angleichen und den fehlenden Mauszeiger unter Wayland aktivieren. Als Cursor kommt **Bibata-Modern-Ice** zum Einsatz. Der Leitfaden deckt **Fedora** und **CachyOS** ab; nur Abschnitt 1 (Cursor-Installation) und die SELinux-Notiz in Abschnitt 2 sind distro-spezifisch.
 
 > [!info] Voraussetzungen
-> - Fedora mit Hyprland + Noctalia
-> - SDDM als Display-Manager, mit **Qt6** (auf Fedora ≥ 40 gegeben)
-> - `sudo`-Rechte; COPR-Repos erlaubt
+> - Hyprland + Noctalia auf Fedora (≥ 40) oder CachyOS
+> - SDDM als Display-Manager, mit **Qt6** (auf beiden Distributionen gegeben)
+> - `sudo`-Rechte; auf Fedora COPR-Repos erlaubt, auf CachyOS ein AUR-Helper (`paru`, `yay` o. Ä.)
 
 ---
 
@@ -31,7 +35,7 @@ cssclasses:
 
 Bibata ist ein material-basiertes Cursor-Theme. `Modern-Ice` ist die weiße Variante, die zum dunklen Noctalia-Look passt.
 
-### Variante A — COPR (empfohlen)
+### Variante A — Fedora: COPR (empfohlen)
 
 Vom Bibata-Maintainer empfohlenes COPR von `peterwu`. Enthält modern- und classic-Flavours:
 
@@ -40,17 +44,30 @@ sudo dnf copr enable peterwu/rendezvous
 sudo dnf install bibata-cursor-themes
 ```
 
-Die Cursor landen system­weit unter `/usr/share/icons/Bibata-...`.
+### Variante B — CachyOS: AUR
 
-### Variante B — Tarball vom GitHub-Release
+> [!tip] Prebuilt vs. Source
+> `-bin` liefert vorkompilierte Cursor und ist deutlich schneller. Ohne `-bin` wird lokal aus SVGs gebaut (dauert, braucht `yarn`/`ctgen`).
 
-Distro-unabhängige Alternative, falls du kein COPR aktivieren willst — das aktuelle `Bibata.tar.xz` von der [Releases-Seite](https://github.com/ful1e5/Bibata_Cursor/releases) laden, dann:
+```bash
+# Empfohlen: vorgebaute Binaries
+paru -S bibata-cursor-theme-bin
+
+# Alternativ aus Quelle
+# paru -S bibata-cursor-theme
+```
+
+### Variante C — Distro-unabhängig: Tarball vom GitHub-Release
+
+Falls du weder COPR noch AUR nutzen willst — das aktuelle `Bibata.tar.xz` von der [Releases-Seite](https://github.com/ful1e5/Bibata_Cursor/releases) laden, dann:
 
 ```bash
 tar -xvf Bibata.tar.xz
 sudo mv Bibata-* /usr/share/icons/     # systemweit
 # oder: mv Bibata-* ~/.local/share/icons/   # nur für deinen User
 ```
+
+In allen Varianten landen die Cursor system­weit unter `/usr/share/icons/Bibata-...`.
 
 > [!tip] Prüfen
 > ```bash
@@ -78,14 +95,14 @@ cd sddm-noctalia-theme
 sudo ./install.sh
 ```
 
-> [!warning] SELinux-Kontext (Fedora-spezifisch)
+> [!warning] SELinux-Kontext (nur Fedora)
 > Manuell nach `/usr/share/sddm/themes/` kopierte Dateien können falsche SELinux-Labels haben. Falls das Theme nicht lädt, Kontext neu setzen:
 > ```bash
 > sudo restorecon -Rv /usr/share/sddm/themes/
 > ```
 
 > [!warning] Konkurrierende Configs
-> Es darf nur **ein** aktives `Current=` geben — andere Einträge unter `/etc/sddm.conf.d/` auskommentieren.
+> Es darf nur **ein** aktives `Current=` geben — andere Einträge unter `/etc/sddm.conf.d/` auskommentieren. CachyOS legt dort teils eigene Dateien an.
 
 Theme aktivieren in `/etc/sddm.conf.d/theme.conf`:
 
@@ -182,9 +199,9 @@ journalctl -u sddm -b 0 --no-pager | grep -iE "cursor|wayland|greeter"
 
 ## Checkliste
 
-- [ ] COPR `peterwu/rendezvous` aktiviert **oder** Tarball entpackt; `/usr/share/icons/Bibata-Modern-Ice/` vorhanden
+- [ ] Bibata installiert (Fedora: COPR `peterwu/rendezvous` · CachyOS: `bibata-cursor-theme-bin` · sonst Tarball); `/usr/share/icons/Bibata-Modern-Ice/` vorhanden
 - [ ] `sddm-noctalia-theme` installiert & in `theme.conf` aktiviert
-- [ ] `restorecon` gelaufen (falls Theme nicht lud)
+- [ ] Fedora: `restorecon` gelaufen (falls Theme nicht lud)
 - [ ] Keine konkurrierende `Current=`-Zeile
 - [ ] `Settings.conf`: Wallpaper, Font, Farbschema, Radius angepasst
 - [ ] `cursor.conf` mit `CursorTheme` + `CursorSize`
@@ -201,4 +218,4 @@ journalctl -u sddm -b 0 --no-pager | grep -iE "cursor|wayland|greeter"
 - [[Hyprland Konfiguration]]
 - [[Noctalia Shell]]
 - [[Fedora Setup]]
-- [[SDDM Noctalia Theme]] (CachyOS-Variante)
+- [[CachyOS Setup]]

@@ -1,9 +1,9 @@
 ---
 baustein: K2
 typ: uebungsblatt
-titel: CSS – das Aussehen – Übungen
+title: CSS – das Aussehen – Übungen
 ue: 5
-tag: 1-2
+kurstag: 1-2
 tags: [tauri/kompaktkurs/uebung, css]
 status: entwurf
 ---

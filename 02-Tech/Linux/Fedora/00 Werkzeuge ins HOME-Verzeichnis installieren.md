@@ -1,5 +1,5 @@
 ---
-titel: "Leitfaden: Werkzeuge ins $HOME installieren – am Beispiel Helix"
+title: "Leitfaden: Werkzeuge ins $HOME installieren – am Beispiel Helix"
 shell: Nushell
 zielgruppe: Fachinformatiker/-in (FISI/FIAE)
 system: Fedora Sway Atomic (bootc/ostree) mit Toolbx

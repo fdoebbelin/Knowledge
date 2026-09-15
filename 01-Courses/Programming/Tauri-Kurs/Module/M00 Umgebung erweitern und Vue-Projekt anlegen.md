@@ -1,6 +1,6 @@
 ---
 modul: M00
-titel: Umgebung erweitern und Vue-Projekt anlegen
+title: Umgebung erweitern und Vue-Projekt anlegen
 ue: 3
 phase: Orientierung
 ort: Toolbx

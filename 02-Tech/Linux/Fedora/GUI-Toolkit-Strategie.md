@@ -1,12 +1,12 @@
 ---
-titel: GUI-Toolkit-Strategie
+title: GUI-Toolkit-Strategie
 tags:
   - hyprland
   - wayland
   - qt
   - gtk
   - theming
-erstellt: 2026-06-29
+created: 2026-06-29
 system: Fedora 44 / Hyprland
 status: aktiv
 ---

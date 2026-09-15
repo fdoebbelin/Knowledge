@@ -1,6 +1,6 @@
 ---
 modul: M03
-titel: Umstieg auf Vue 3 und Vite
+title: Umstieg auf Vue 3 und Vite
 ue: 6
 phase: Fundament
 ort: Toolbx

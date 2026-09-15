@@ -1,5 +1,5 @@
 ---
-titel: Vom Web zur Desktop-App – Kompaktkurs mit Tauri
+title: Vom Web zur Desktop-App – Kompaktkurs mit Tauri
 typ: kurskonzept
 variante: kompakt
 zielgruppe: Vorbereitungskurs Fachinformatiker-Umschulung

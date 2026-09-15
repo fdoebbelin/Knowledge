@@ -1,8 +1,8 @@
 ---
 baustein: K1
-titel: HTML – die Struktur
+title: HTML – die Struktur
 ue: 4
-tag: 1
+kurstag: 1
 tags: [tauri/kompaktkurs/baustein, html]
 status: entwurf
 ---

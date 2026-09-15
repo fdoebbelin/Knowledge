@@ -1,9 +1,9 @@
 ---
-titel: XPS 13 — WSLg-Sway, Helix und Nushell-Konfiguration (Runde 1)
+title: XPS 13 — WSLg-Sway, Helix und Nushell-Konfiguration (Runde 1)
 aliases: [WSLg-Tastaturproblem, Nushell-0.114-Migration, XPS-Runde-1]
 teil_von: "[[README]]"
 tags: [wsl, sway, wslg, nushell, helix, sudo, homebrew, xps13]
-erstellt: 2026-07-29
+created: 2026-07-29
 system: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL, Nushell 0.114.1 (brew)
 verifiziert_gegen: Nushell 0.114.1 (Konfigurationsteile), Sway-Session XPS (Symptomatik)
 status: entwurf

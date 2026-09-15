@@ -1,8 +1,8 @@
 ---
 baustein: K4
-titel: JavaScript im Fenster
+title: JavaScript im Fenster
 ue: 4
-tag: 3
+kurstag: 3
 tags: [tauri/kompaktkurs/baustein, javascript, dom]
 status: entwurf
 ---

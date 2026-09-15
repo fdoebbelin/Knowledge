@@ -7,7 +7,7 @@ tags:
   - snapdragon
   - windows-arm
   - lokale-ki
-erstellt: 2026-06-22
+created: 2026-06-22
 status: Setup-Guide
 hardware: Dell XPS 13 9345 · Snapdragon X Elite · 32 GB
 ---

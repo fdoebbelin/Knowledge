@@ -1,9 +1,9 @@
 ---
 baustein: K1
 typ: handout
-titel: HTML – die Struktur – Handout
+title: HTML – die Struktur – Handout
 ue: 4
-tag: 1
+kurstag: 1
 tags: [tauri/kompaktkurs/handout, html]
 status: entwurf
 ---

@@ -1,6 +1,6 @@
 ---
 modul: M02
-titel: Notizblock ausbauen ohne Framework
+title: Notizblock ausbauen ohne Framework
 ue: 4
 phase: Fundament
 ort: Toolbx

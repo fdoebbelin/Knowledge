@@ -1,9 +1,9 @@
 ---
 baustein: K2
 typ: handout
-titel: CSS – das Aussehen – Handout
+title: CSS – das Aussehen – Handout
 ue: 5
-tag: 1-2
+kurstag: 1-2
 tags: [tauri/kompaktkurs/handout, css]
 status: entwurf
 ---

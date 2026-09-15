@@ -9,7 +9,7 @@ tags:
   - nexa-sdk
   - qualcomm
   - demo
-erstellt: 2026-06-22
+created: 2026-06-22
 status: Leitfaden + Demo-Runbook
 hardware: Dell XPS 13 9345 · Snapdragon X Elite · 32 GB
 script: "[[vault_rag.py]]"

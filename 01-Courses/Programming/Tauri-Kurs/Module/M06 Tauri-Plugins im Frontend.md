@@ -1,6 +1,6 @@
 ---
 modul: M06
-titel: Tauri-Plugins im Frontend
+title: Tauri-Plugins im Frontend
 ue: 5
 phase: Frontend-Kern
 ort: Toolbx

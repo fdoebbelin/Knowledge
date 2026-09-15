@@ -1,6 +1,6 @@
 ---
 modul: M05
-titel: Zustand und Navigation
+title: Zustand und Navigation
 ue: 4
 phase: Frontend-Kern
 ort: Toolbx

@@ -1,6 +1,6 @@
 ---
 modul: M09
-titel: Fenster und Wayland-Integration
+title: Fenster und Wayland-Integration
 ue: 4
 phase: Desktop
 ort: beide

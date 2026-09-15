@@ -1,6 +1,6 @@
 ---
-titel: "Yazi — Terminal-Dateimanager mit Plugin-System"
-erstellt: 2026-07-15
+title: "Yazi — Terminal-Dateimanager mit Plugin-System"
+created: 2026-07-15
 tags:
   - linux
   - terminal

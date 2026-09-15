@@ -12,7 +12,7 @@ tags:
   - dell-xps-9345
 device: "Dell XPS 13 9345 (X1E80100, 'tributo')"
 basis: "Fedora Workstation 44 (aarch64), Hardware-Enablement abgeschlossen"
-erstellt: 2026-06-29
+created: 2026-06-29
 status: arbeitsentwurf
 verwandt: "[[Fedora-44-Dualboot-Dell-XPS-13-9345]]"
 ---

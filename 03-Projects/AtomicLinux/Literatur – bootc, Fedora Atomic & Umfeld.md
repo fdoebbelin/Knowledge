@@ -1,7 +1,7 @@
 ---
 title: "Literatur – bootc, Fedora Atomic & Umfeld"
 tags: [literatur, linux, fedora, atomic, bootc, podman, ostree, nushell, helix, sway, noctalia, kursmaterial]
-erstellt: 2026-07-08
+created: 2026-07-08
 typ: literaturliste
 verwandt: "[[Fedora Sway Atomic – Noctalia, Nushell & Helix ins bootc-Image backen]]"
 ---

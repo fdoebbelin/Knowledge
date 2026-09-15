@@ -1,6 +1,6 @@
 ---
 modul: M08
-titel: Eigene Commands und Events
+title: Eigene Commands und Events
 ue: 5
 phase: Brücke zu Rust
 ort: Toolbx

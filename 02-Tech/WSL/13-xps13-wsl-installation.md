@@ -1,9 +1,9 @@
 ---
-titel: XPS 13 — Fedora-WSL als Sway/Noctalia-Arbeitsumgebung
+title: XPS 13 — Fedora-WSL als Sway/Noctalia-Arbeitsumgebung
 aliases: [WSL-Installationsleitfaden, XPS-Bastelumgebung]
 teil_von: "[[README]]"
 tags: [wsl, fedora, sway, homebrew, nushell, dnf, xps13]
-erstellt: 2026-07-29
+created: 2026-07-29
 system: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
 status: entwurf
 ---

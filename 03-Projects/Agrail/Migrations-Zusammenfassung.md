@@ -1,6 +1,6 @@
 ---
 title: "Migrations-Zusammenfassung — chaji & agrail"
-erstellt: 2026-05-06
+created: 2026-05-06
 projekt: "agrail · chaji · Aufgussplan-Vault"
 zweck: "Strukturierter Projekt-Snapshot für Wiederaufnahme oder Übergabe"
 ---

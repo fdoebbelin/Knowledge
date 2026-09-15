@@ -1,8 +1,8 @@
 ---
 baustein: K0
-titel: Ankommen und erste eigene Änderung
+title: Ankommen und erste eigene Änderung
 ue: 2
-tag: 1
+kurstag: 1
 tags: [tauri/kompaktkurs/baustein]
 status: entwurf
 ---

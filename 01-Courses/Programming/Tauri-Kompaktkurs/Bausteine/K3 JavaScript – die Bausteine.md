@@ -1,8 +1,8 @@
 ---
 baustein: K3
-titel: JavaScript – die Bausteine
+title: JavaScript – die Bausteine
 ue: 6
-tag: 2-3
+kurstag: 2-3
 tags: [tauri/kompaktkurs/baustein, javascript]
 status: entwurf
 ---

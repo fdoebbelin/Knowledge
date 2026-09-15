@@ -1,11 +1,11 @@
 ---
-titel: XPS 13 — Fedora-WSL mit Sway und Noctalia (Gesamtleitfaden)
+title: XPS 13 — Fedora-WSL mit Sway und Noctalia (Gesamtleitfaden)
 aliases: [WSL-Sway-Noctalia-Leitfaden, XPS-Werkbank-Gesamt]
 teil_von: "[[README]]"
 tags: [wsl, wslg, fedora, sway, noctalia, quickshell, terra, homebrew, nushell, helix, flatpak, obsidian, xps13]
 zielgeraet: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
 konsolidiert_aus: ["[[13-xps13-wsl-installation]]", "[[14-xps13-wslg-sway-nushell-runde1]]", "[[15-xps13-noctalia-wslg]]", "[[15-xps13-noctalia-wslg_2]]"]
-erstellt: 2026-08-17
+created: 2026-08-17
 verifiziert_gegen: Nushell 0.114.1, Noctalia v4.7.7 (Schema 59), Sway-Session auf dem XPS
 status: konsolidiert
 ---

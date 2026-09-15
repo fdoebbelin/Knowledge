@@ -1,5 +1,5 @@
 ---
-titel: Dolphin installieren
+title: Dolphin installieren
 tags:
   - fedora
   - installation
@@ -7,7 +7,7 @@ tags:
   - dateimanager
   - hyprland
   - nushell
-erstellt: 2026-06-28
+created: 2026-06-28
 system: Fedora + Hyprland + Nushell
 status: fertig
 ---

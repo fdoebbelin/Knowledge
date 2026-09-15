@@ -1,9 +1,9 @@
 ---
 baustein: K1
 typ: trainerskript
-titel: HTML – die Struktur – Trainerskript
+title: HTML – die Struktur – Trainerskript
 ue: 4
-tag: 1
+kurstag: 1
 dauer: 180 min
 zielgruppe: 3 Teilnehmende ohne Vorkenntnisse
 tags: [tauri/kompaktkurs/trainerskript, html]

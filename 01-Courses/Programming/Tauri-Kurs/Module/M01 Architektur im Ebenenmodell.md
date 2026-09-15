@@ -1,6 +1,6 @@
 ---
 modul: M01
-titel: Architektur im Ebenenmodell
+title: Architektur im Ebenenmodell
 ue: 3
 phase: Orientierung
 ort: beide

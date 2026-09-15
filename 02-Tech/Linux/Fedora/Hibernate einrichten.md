@@ -1,8 +1,8 @@
 ---
-titel: Hibernate einrichten (Ruhezustand) — Fedora + Btrfs
+title: Hibernate einrichten (Ruhezustand) — Fedora + Btrfs
 aliases: [Hibernate einrichten, Ruhezustand, suspend-then-hibernate]
 tags: [linux, fedora, hibernate, swap, btrfs, systemd, power, yoga]
-erstellt: 2026-07-06
+created: 2026-07-06
 system: Lenovo Yoga 920-13IKB
 status: anleitung
 ---

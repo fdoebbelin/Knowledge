@@ -1,8 +1,8 @@
 ---
 baustein: K6
-titel: Feinschliff
+title: Feinschliff
 ue: 2
-tag: 4
+kurstag: 4
 tags: [tauri/kompaktkurs/baustein, css, ux]
 status: entwurf
 ---

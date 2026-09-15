@@ -1,7 +1,7 @@
 ---
-titel: Bildschirmrotation mit iio-hyprland
+title: Bildschirmrotation mit iio-hyprland
 tags: [hyprland, rotation, iio, convertible, yoga, fedora]
-erstellt: 2026-06-30
+created: 2026-06-30
 system: Fedora 44 · Hyprland 0.55+ · Lenovo Yoga 920-13IKB
 status: Entwurf
 ---

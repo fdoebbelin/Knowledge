@@ -1,9 +1,9 @@
 ---
-titel: OneDrive auf dem Host statt in der Windows-VM
+title: OneDrive auf dem Host statt in der Windows-VM
 teil_von: "[[README]]"
 tags: [onedrive, microsoft365, entra, oauth2, abraunegg, rclone, cifs, samba, virtiofs, atomic, bootc, nushell]
 zielgeraet: x86_64 Fedora Atomic (Yoga 920, Dozenten-PC)
-erstellt: 2026-07-30
+created: 2026-07-30
 status: entwurf
 verifiziert_gegen: —
 ---

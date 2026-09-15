@@ -1,37 +1,72 @@
 ---
-title: "Leitfaden: Eigenes bootc-Image mit Homebrew-Toolchain fürs Coaching"
-date: 2026-07-20
+title: "Leitfaden: Eigenes bootc-Image mit Homebrew-Toolchain (atomic-brew)"
+date: 2026-07-22
 tags:
   - linux
   - fedora-atomic
   - bootc
   - homebrew
   - coaching
-  - nushell
+  - bash
 aliases:
+  - "atomic-brew Image bauen"
   - "Homebrew-Image bauen"
   - "Coaching bootc Leitfaden"
 status: aktiv
 ---
 
-# Eigenes bootc-Image mit Homebrew-Toolchain
+# Eigenes bootc-Image mit Homebrew-Toolchain — `atomic-brew`
 
 Kompletter Durchlauf vom leeren Verzeichnis bis zum aktivierten, getesteten und wieder zurückgerollten Image. Zielsystem ist [[Fedora Sway Atomic]], die Build-Toolchain wandert ins Image, [[Homebrew]] selbst zur Laufzeit nach `/var/home/linuxbrew`.
 
 > [!abstract] Grundprinzip
 > **Ins Image (`/usr`, read-only):** Compiler, `make`, Basis-Werkzeuge – alles, was Homebrew zum Bauen braucht.
-> **Zur Laufzeit (`/var/home/linuxbrew`):** Homebrew selbst inkl. Cellar & Sources. Grund: `brew` läuft nicht als root, und Inhalte unter `/var` werden im Image-Build ohnehin nicht zuverlässig ins OSTree-Commit übernommen.
+> **Zur Laufzeit (`/var/home/linuxbrew`):** Homebrew selbst inkl. Cellar & Sources, sowie die eigentlichen Nutzer-Werkzeuge **Nushell** und **Helix**, die per `brew` installiert werden. Grund: `brew` läuft nicht als root, und Inhalte unter `/var` werden im Image-Build ohnehin nicht zuverlässig ins OSTree-Commit übernommen.
+
+> [!important] Login-Shell ist bash
+> Dieser Leitfaden setzt **bash als Login-Shell** voraus. Alle Konsolenbefehle bis zur Aktivierung sind daher bash. Nushell und Helix installiert der First-Boot-Bootstrap über `brew` – **Nushell-Befehle tauchen erst wieder in [[#8. Testen]] auf, also erst, wenn das Image `atomic-brew` aktiv ist.**
 
 ---
 
 ## 0. Voraussetzungen
 
-Auf dem **Build-Rechner** (deine CachyOS-Workstation):
+Auf dem **Build-Rechner** – hier ebenfalls **Fedora Sway Atomic** – reicht die schlanke Basis:
 
 - `podman` (rootless genügt zum Bauen und Pushen)
 - `git`
-- Optional: `just` als Task-Runner, `cosign` zum Signieren
 - Ein GitHub-Account mit aktiviertem **GitHub Container Registry (GHCR)**
+
+`just` und `cosign` liegen auf einem Atomic-System nicht vor und werden **nicht** ins Basissystem gelayert. Je nach Werkzeug-Typ zwei leichtgewichtige Wege:
+
+**`just` → statische Binary nach `~/.local/bin`** (persistent, weil bei jedem lokalen Build gebraucht; ein Orchestrator muss auf dem Host laufen, nicht im Container):
+
+```bash
+mkdir -p ~/.local/bin
+curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh \
+  | bash -s -- --to ~/.local/bin
+just --version
+```
+
+Fedora nimmt `~/.local/bin` in der Standard-`.bash_profile` in den PATH auf – nach einem neuen Login ist `just` verfügbar. Der Installer zieht eine vorkompilierte, statisch gelinkte Binary; nichts wird gebaut oder gelayert.
+
+**`cosign` → per Container** (self-contained, lokal nur einmalig zum Schlüssel-Erzeugen gebraucht – das Signieren übernimmt die CI über `sigstore/cosign-installer`):
+
+```bash
+podman run --rm -it -v "$PWD":/work:Z -w /work \
+  gcr.io/projectsigstore/cosign generate-key-pair
+```
+
+`-it` ist wichtig, damit die Passwort-Abfrage funktioniert; `:Z` relabelt das Volume für SELinux. Optional als Wrapper-Funktion in die `.bashrc`, dann verhält sich cosign wie lokal installiert:
+
+```bash
+cosign() {
+  podman run --rm -it -v "$PWD":/work:Z -w /work \
+    gcr.io/projectsigstore/cosign "$@"
+}
+```
+
+> [!note] Warum nicht beides gleich behandeln
+> `cosign` ist eine in sich geschlossene CLI → containerbar. `just` orchestriert lokale `podman build`-Aufrufe → im Container müsste es Podman-in-Podman ansprechen und bräche genau seine Aufgabe. Wer es dennoch einheitlich will: `cosign` gibt es als `cosign-linux-amd64` ebenfalls auf den GitHub-Releases, dann nach `~/.local/bin` legen und `chmod +x`.
 
 Auf dem **Zielsystem** (Coaching-Rechner) ist bereits Fedora Sway Atomic (F41+) installiert, damit `bootc` verfügbar ist.
 
@@ -39,50 +74,46 @@ Auf dem **Zielsystem** (Coaching-Rechner) ist bereits Fedora Sway Atomic (F41+) 
 
 ## 1. Projektverzeichnis anlegen
 
-```nu
-mkdir coaching-brew
-cd coaching-brew
+```bash
+mkdir atomic-brew && cd atomic-brew
 ```
 
 Wir bauen folgende Struktur auf:
 
 ```
-coaching-brew/
+atomic-brew/
 ├── Containerfile
 ├── README.md
 ├── .gitignore
 ├── Justfile
 ├── overlay/
-│   ├── etc/
-│   │   └── skel/
-│   │       └── .config/
-│   │           └── nushell/
-│   │               └── env.nu
 │   └── usr/
-│       ├── share/
-│       │   └── coaching/
-│       │       └── homebrew.nu
-│       └── lib/
-│           └── systemd/
-│               └── user/
-│                   └── homebrew-bootstrap.service
+│       ├── lib/
+│       │   ├── tmpfiles.d/
+│       │   │   └── homebrew.conf
+│       │   └── systemd/
+│       │       └── user/
+│       │           └── homebrew-bootstrap.service
+│       └── libexec/
+│           └── atomic-brew/
+│               └── bootstrap.sh
 └── .github/
     └── workflows/
         └── build.yml
 ```
 
-```nu
-mkdir overlay/etc/skel/.config/nushell
-mkdir overlay/usr/share/coaching
-mkdir overlay/usr/lib/systemd/user
-mkdir .github/workflows
+```bash
+mkdir -p overlay/usr/lib/tmpfiles.d
+mkdir -p overlay/usr/lib/systemd/user
+mkdir -p overlay/usr/libexec/atomic-brew
+mkdir -p .github/workflows
 ```
 
 ---
 
 ## 2. Git initialisieren
 
-```nu
+```bash
 git init
 git branch -m main
 ```
@@ -108,7 +139,7 @@ cosign.key
 
 ### 3.1 `Containerfile`
 
-Das Herzstück. Es zieht das Basisimage, legt die Toolchain in `/usr` ab und bringt die Nushell-Integration sowie den First-Boot-Bootstrap mit.
+Das Herzstück. Es zieht das Basisimage, legt die **Toolchain** in `/usr` ab und bringt das Overlay (tmpfiles-Regel, Bootstrap-Skript, systemd-User-Unit) mit. Bewusst **nicht** im Image: `nushell` und `helix` – die kommen später über `brew`.
 
 ```dockerfile
 # Containerfile
@@ -122,76 +153,91 @@ RUN dnf -y install \
         @development-tools \
         gcc gcc-c++ make \
         procps-ng curl file git \
-        libxcrypt-compat \
-        nushell helix && \
+        libxcrypt-compat && \
     dnf clean all
 
-# --- Overlay: Nushell-Env, /etc/skel, systemd-User-Unit ---
+# --- Overlay: tmpfiles-Regel, Bootstrap-Skript, systemd-User-Unit ---
 COPY overlay/ /
+
+# --- Bootstrap ausführbar machen und für alle User aktivieren ---
+RUN chmod +x /usr/libexec/atomic-brew/bootstrap.sh && \
+    systemctl --global enable homebrew-bootstrap.service
 
 # --- bootc-Lint als Qualitätssicherung im Build ---
 RUN bootc container lint
 
-LABEL org.opencontainers.image.title="Coaching Brew" \
-      org.opencontainers.image.description="Fedora Sway Atomic + Homebrew-Toolchain" \
+LABEL org.opencontainers.image.title="Atomic Brew" \
+      org.opencontainers.image.description="Fedora Sway Atomic + Homebrew-Toolchain (nushell/helix via brew)" \
       containers.bootc="1"
 ```
 
-> [!note] Warum `nushell` und `helix` mit ins Image?
-> Du nutzt beide durchgängig. Als reine CLI-Werkzeuge gehören sie sauber nach `/usr` und müssen nicht über Homebrew laufen. Homebrew bleibt damit frei für projektspezifische Formeln.
+> [!note] Warum `nushell` und `helix` nicht ins Image?
+> Sie sind die Nutzer-Werkzeuge, nicht Teil der Basis. Über `brew` bleiben sie unabhängig vom Image-Lebenszyklus aktualisierbar und liegen im beschreibbaren `/var`. Im Image steht nur die **Toolchain**, die Homebrew zum Bauen braucht.
 
-### 3.2 `overlay/usr/share/coaching/homebrew.nu`
+### 3.2 `overlay/usr/lib/tmpfiles.d/homebrew.conf`
 
-Der zentrale Env-Baustein. `brew shellenv` unterstützt **kein** Nushell (offenes Upstream-Issue, weil Nu kein `eval` kennt), deshalb setzen wir die Variablen deterministisch selbst:
+**Der entscheidende Fix.** Homebrew will seinen Default-Prefix unter `/home/linuxbrew/.linuxbrew` (= `/var/home/linuxbrew/.linuxbrew`) anlegen. Existiert das übergeordnete Verzeichnis noch nicht, braucht der Installer `sudo` zum Anlegen – was ein `systemctl --user`-Dienst nicht hat. Deshalb erzeugen wir `/var/home/linuxbrew` **vorab und im Besitz des Users**; dann überspringt der Installer die sudo-Phase komplett.
 
-```nu
-# /usr/share/coaching/homebrew.nu
-# Homebrew-Umgebung für Nushell. Wird aus env.nu gesourct.
+Auf Atomic legt man `/var`-Verzeichnisse nicht im Containerfile an, sondern deklarativ über `systemd-tmpfiles`:
 
-const brew_prefix = "/var/home/linuxbrew/.linuxbrew"
-
-if ($brew_prefix | path exists) {
-    $env.HOMEBREW_PREFIX = $brew_prefix
-    $env.HOMEBREW_CELLAR = $"($brew_prefix)/Cellar"
-    $env.HOMEBREW_REPOSITORY = $"($brew_prefix)/Homebrew"
-
-    $env.PATH = ($env.PATH
-        | split row (char esep)
-        | prepend $"($brew_prefix)/sbin"
-        | prepend $"($brew_prefix)/bin")
-
-    $env.MANPATH = ([$"($brew_prefix)/share/man"] | append ($env.MANPATH? | default ""))
-    $env.INFOPATH = ([$"($brew_prefix)/share/info"] | append ($env.INFOPATH? | default ""))
-}
+```
+# /usr/lib/tmpfiles.d/homebrew.conf
+#Typ Pfad                Modus User Gruppe Alter
+d    /var/home/linuxbrew  0755  1000 1000   -
 ```
 
-### 3.3 `overlay/etc/skel/.config/nushell/env.nu`
+> [!tip] Warum UID/GID `1000` statt `fritz`
+> Der erste angelegte Nutzer ist auf jedem Gerät UID 1000 – so bleibt das Overlay geräteübergreifend identisch. Auf einer konkreten Maschine kannst du stattdessen `fritz fritz` schreiben. `systemd-tmpfiles-setup` läuft früh beim Boot (System-Ebene), der User-Dienst erst nach dem Login – das Verzeichnis ist also immer schon da.
 
-So bekommt jeder **neu** angelegte User die Integration automatisch:
+### 3.3 `overlay/usr/libexec/atomic-brew/bootstrap.sh`
 
-```nu
-# /etc/skel/.config/nushell/env.nu
-source /usr/share/coaching/homebrew.nu
+Installiert Homebrew, verankert es in der `.bashrc` und installiert darüber Nushell und Helix. Läuft als **User** (nicht root), was `brew` verlangt.
+
+```bash
+#!/usr/bin/env bash
+# /usr/libexec/atomic-brew/bootstrap.sh
+set -euo pipefail
+
+MARKER="$HOME/.config/atomic-brew/bootstrapped"
+BREW="/var/home/linuxbrew/.linuxbrew/bin/brew"
+
+# 1. Homebrew installieren (Zielverzeichnis existiert dank tmpfiles bereits,
+#    gehört dem User -> Installer läuft ohne sudo durch)
+if [ ! -x "$BREW" ]; then
+    NONINTERACTIVE=1 /usr/bin/bash -c \
+      "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"
+fi
+
+# 2. brew shellenv dauerhaft in die .bashrc eintragen -> passt den PATH an
+LINE="eval \"\$(${BREW} shellenv)\""
+if ! grep -qF "$LINE" "$HOME/.bashrc" 2>/dev/null; then
+    printf '\n# Homebrew\n%s\n' "$LINE" >> "$HOME/.bashrc"
+fi
+
+# 3. Nushell und Helix für den Nutzer über brew installieren
+eval "$("$BREW" shellenv)"
+brew install nushell helix
+
+# 4. Abschluss markieren, damit der Dienst nicht erneut komplett durchläuft
+mkdir -p "$(dirname "$MARKER")"
+touch "$MARKER"
 ```
 
-> [!tip] Bestehende User
-> Bei bereits vorhandenen Home-Verzeichnissen greift `/etc/skel` nicht. Dort trägst du die eine `source`-Zeile einmalig in die verwaltete `env.nu` ein – passt gut zu deinem modularen Config-Ansatz (`hypr.nu` & Co.).
+> [!info] So passt Brew den `$PATH` über die `.bashrc` an
+> Zeile 2 schreibt `eval "$(/var/home/linuxbrew/.linuxbrew/bin/brew shellenv)"` in die `.bashrc`. Das ist der offizielle Homebrew-Weg: `brew shellenv` setzt `HOMEBREW_PREFIX`, `PATH`, `MANPATH` usw. bei jedem Öffnen einer Shell. Fedoras `.bash_profile` sourct die `.bashrc` bereits, sodass sowohl Login- als auch interaktive Shells den Pfad bekommen.
 
 ### 3.4 `overlay/usr/lib/systemd/user/homebrew-bootstrap.service`
-
-Installiert Homebrew beim ersten Login in `/var/home/linuxbrew`, sofern noch nicht vorhanden. Läuft als **User**-Dienst (nicht root), was `brew` zwingend verlangt.
 
 ```ini
 # /usr/lib/systemd/user/homebrew-bootstrap.service
 [Unit]
-Description=Homebrew Erstinstallation nach /var/home/linuxbrew
-ConditionPathExists=!/var/home/linuxbrew/.linuxbrew/bin/brew
+Description=Homebrew + Nushell/Helix Erstinstallation nach /var/home/linuxbrew
+ConditionPathExists=!%h/.config/atomic-brew/bootstrapped
 After=default.target
 
 [Service]
 Type=oneshot
-Environment=NONINTERACTIVE=1
-ExecStart=/usr/bin/bash -c "curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash"
+ExecStart=/usr/libexec/atomic-brew/bootstrap.sh
 RemainAfterExit=yes
 
 [Install]
@@ -199,19 +245,13 @@ WantedBy=default.target
 ```
 
 > [!info] Der `/home` → `/var/home`-Trick
-> Homebrews Linux-Default `/home/linuxbrew/.linuxbrew` landet auf Atomic über den Symlink `/home` → `/var/home` automatisch in `/var/home/linuxbrew/.linuxbrew`. Du musst am Installer nichts umbiegen.
-
-Damit die Unit bei jedem User aktiv ist, aktivieren wir sie global per Preset. Ergänze im `Containerfile` nach dem `COPY`:
-
-```dockerfile
-RUN systemctl --global enable homebrew-bootstrap.service
-```
+> Homebrews Linux-Default `/home/linuxbrew/.linuxbrew` landet auf Atomic über den Symlink `/home` → `/var/home` automatisch in `/var/home/linuxbrew/.linuxbrew`. Der Marker unter `~/.config/atomic-brew/bootstrapped` sorgt dafür, dass der Bootstrap nur einmal komplett läuft; scheitert er (z. B. kein Netz), versucht er es beim nächsten Login erneut.
 
 ### 3.5 `Justfile` (optional, spart Tipparbeit)
 
 ```make
 # Justfile
-image := "ghcr.io/DEIN-GH-NAME/coaching-brew"
+image := "ghcr.io/DEIN-GH-NAME/atomic-brew"
 tag   := "latest"
 
 build:
@@ -230,16 +270,17 @@ login:
 ### 3.6 `README.md`
 
 ```markdown
-# Coaching Brew
+# Atomic Brew
 
 Fedora Sway Atomic + Homebrew-Toolchain als bootc-Image.
 
 - Build-Toolchain im Image (`/usr`)
 - Homebrew zur Laufzeit in `/var/home/linuxbrew`
-- Nushell-Integration über `/usr/share/coaching/homebrew.nu`
+- Login-Shell: bash; `brew shellenv` wird in die `.bashrc` eingetragen
+- Nushell und Helix werden per `brew` installiert (nicht im Image)
 
 ## Aktivieren
-    sudo bootc switch ghcr.io/DEIN-GH-NAME/coaching-brew:latest
+    sudo bootc switch ghcr.io/DEIN-GH-NAME/atomic-brew:latest
     sudo systemctl reboot
 
 ## Zurückrollen
@@ -263,7 +304,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE: ghcr.io/${{ github.repository_owner }}/coaching-brew
+  IMAGE: ghcr.io/${{ github.repository_owner }}/atomic-brew
 
 jobs:
   build:
@@ -298,7 +339,7 @@ jobs:
 
 Cosign-Schlüsselpaar einmalig erzeugen und den privaten Teil als Secret hinterlegen:
 
-```nu
+```bash
 cosign generate-key-pair
 # erzeugt cosign.key (privat -> Secret COSIGN_PRIVATE_KEY) und cosign.pub (öffentlich -> ins Repo)
 ```
@@ -321,26 +362,27 @@ Die unoffiziellen `fedora-ostree-desktops`-Images nutzen dieselben Pakete und Qu
 
 ## 5. Bilden des Images
 
-Lokal auf dem Build-Rechner:
+Lokal auf dem Build-Rechner (bash):
 
-```nu
+```bash
 # mit Just
 just build
 just lint
 
 # oder direkt
-podman build -t ghcr.io/DEIN-GH-NAME/coaching-brew:latest .
+podman build -t ghcr.io/DEIN-GH-NAME/atomic-brew:latest .
 ```
 
 Der `RUN bootc container lint` im `Containerfile` prüft schon beim Build auf typische Fehler (falsche Pfade, kaputte Symlinks). Ein grüner Build heißt: das Image ist bootfähig aufgebaut.
 
 Schnelltest des Dateisystems, ohne zu booten:
 
-```nu
-podman run --rm -it ghcr.io/DEIN-GH-NAME/coaching-brew:latest bash
+```bash
+podman run --rm -it ghcr.io/DEIN-GH-NAME/atomic-brew:latest bash
 # im Container:
-which gcc make git nu hx
-cat /usr/share/coaching/homebrew.nu
+which gcc make git
+cat /usr/libexec/atomic-brew/bootstrap.sh
+cat /usr/lib/tmpfiles.d/homebrew.conf
 ```
 
 ---
@@ -351,12 +393,12 @@ Hier laufen **zwei getrennte Ziele** zusammen: die Quellen/Doku ins Git-Repo auf
 
 ### 6.1 Doku (Quelltexte) → github.com
 
-```nu
+```bash
 git add .
-git commit -m "Initiales bootc-Image mit Homebrew-Toolchain"
+git commit -m "Initiales bootc-Image atomic-brew mit Homebrew-Toolchain"
 
 # Repo auf github.com anlegen, dann:
-git remote add origin git@github.com:DEIN-GH-NAME/coaching-brew.git
+git remote add origin git@github.com:DEIN-GH-NAME/atomic-brew.git
 git push -u origin main
 ```
 
@@ -364,13 +406,13 @@ Sobald der Workflow aus Abschnitt 3.7 durchläuft, baut GitHub das Image automat
 
 ### 6.2 Image → ghcr.io
 
-```nu
+```bash
 # Token mit Scope write:packages erzeugen (GitHub -> Settings -> Developer settings)
-echo $env.GH_TOKEN | podman login ghcr.io -u DEIN-GH-NAME --password-stdin
+echo "$GH_TOKEN" | podman login ghcr.io -u DEIN-GH-NAME --password-stdin
 
 just push
 # oder
-podman push ghcr.io/DEIN-GH-NAME/coaching-brew:latest
+podman push ghcr.io/DEIN-GH-NAME/atomic-brew:latest
 ```
 
 > [!warning] Paket-Sichtbarkeit auf „public" setzen
@@ -380,15 +422,15 @@ podman push ghcr.io/DEIN-GH-NAME/coaching-brew:latest
 
 ## 7. Aktivieren des Images
 
-Auf einem **Zielgerät**. Zuerst den aktuellen Stand sichern, dann umschalten.
+Auf einem **Zielgerät** (bash). Zuerst den aktuellen Stand sichern, dann umschalten.
 
-```nu
+```bash
 # aktuellen Zustand ansehen und die laufende Bereitstellung anheften (Schutz vor GC)
 sudo bootc status
 sudo ostree admin pin 0
 
 # auf das eigene Image umschalten
-sudo bootc switch ghcr.io/DEIN-GH-NAME/coaching-brew:latest
+sudo bootc switch ghcr.io/DEIN-GH-NAME/atomic-brew:latest
 sudo systemctl reboot
 ```
 
@@ -401,69 +443,93 @@ sudo systemctl reboot
 
 ## 8. Testen
 
-Nach dem Reboot:
+Nach dem Reboot ist `atomic-brew` aktiv. **Ab hier stehen dir nach dem Bootstrap auch Nushell und Helix zur Verfügung.** Die folgenden Prüfbefehle laufen zunächst in bash:
 
-```nu
+```bash
 # Läuft das eigene Image?
 bootc status
-# -> Booted image: ghcr.io/DEIN-GH-NAME/coaching-brew:latest
+# -> Booted image: ghcr.io/DEIN-GH-NAME/atomic-brew:latest
 
 # Toolchain aus dem Image vorhanden?
 which gcc; which make; which git; gcc --version
 
-# Homebrew-Bootstrap gelaufen? (User-Unit, ggf. Login abwarten)
+# Hat das tmpfiles-Overlay das Verzeichnis angelegt und dem User übergeben?
+ls -ld /var/home/linuxbrew
+
+# Bootstrap gelaufen? (User-Unit, ggf. ersten Login abwarten)
 systemctl --user status homebrew-bootstrap.service
 ls /var/home/linuxbrew/.linuxbrew/bin/brew
 
-# Nushell-Integration greift?
-brew --version
-$env.HOMEBREW_PREFIX
+# Ist brew in der .bashrc verankert?
+grep brew ~/.bashrc
 ```
 
-Ist der Bootstrap noch nicht durch (z. B. weil der erste Login zu kurz war), einmal manuell anstoßen:
+Danach in einer **neuen** Login-Shell prüfen, ob der PATH über die `.bashrc` greift:
 
-```nu
+```bash
+brew --version
+echo "$PATH" | tr ':' '\n' | grep linuxbrew
+
+# von brew installierte Nutzer-Werkzeuge
+which nu hx
+nu --version
+```
+
+Ist der Bootstrap noch nicht durch, einmal manuell anstoßen (bash):
+
+```bash
 systemctl --user start homebrew-bootstrap.service
 ```
 
-Kurzer Funktionstest von brew selbst:
+> [!success] Erfolgskriterien
+> `bootc status` zeigt dein Image · `gcc`/`make` liegen in `/usr` · `/var/home/linuxbrew` gehört dem User · `brew` liegt in `/var/home/linuxbrew` · `~/.bashrc` enthält die `brew shellenv`-Zeile · `nu` und `hx` sind über brew installiert.
+
+### 8.1 Ab jetzt: Nushell verfügbar
+
+Erst jetzt – mit aktivem `atomic-brew` und durchgelaufenem Bootstrap – existiert Nushell. Ein Aufruf von `nu` startet die Sitzung, in der dann native Nushell-Befehle funktionieren:
 
 ```nu
+# in der Nushell-Sitzung
+$env.PATH | where $it =~ linuxbrew
+brew list
+brew --version
+```
+
+Funktionstest von brew selbst (in bash oder nu identisch, da `brew` ein normales Binary ist):
+
+```bash
 brew install hello
 hello
 brew uninstall hello
 ```
 
-> [!success] Erfolgskriterien
-> `bootc status` zeigt dein Image · `gcc`/`make` liegen in `/usr` · `brew` liegt in `/var/home/linuxbrew` · `$env.HOMEBREW_PREFIX` ist gesetzt · eine Testformel baut/läuft.
-
 ---
 
 ## 9. Rückschalten auf das Ausgangsimage
 
-Falls im Test etwas nicht passt – der transaktionale Kern von OSTree/bootc macht das gefahrlos.
+Falls im Test etwas nicht passt – der transaktionale Kern von OSTree/bootc macht das gefahrlos (bash).
 
 ### 9.1 Schneller Rückweg (vorheriges Deployment)
 
-```nu
+```bash
 sudo bootc rollback
 sudo systemctl reboot
 ```
 
-Das tauscht die aktuelle und die Rollback-Bereitstellung: Nach dem Reboot läuft wieder das Ausgangssystem, dein Brew-Image bleibt als Rollback erhalten.
+Das tauscht die aktuelle und die Rollback-Bereitstellung: Nach dem Reboot läuft wieder das Ausgangssystem, dein `atomic-brew`-Image bleibt als Rollback erhalten.
 
 ### 9.2 Vollständig zurück zum Stock-Image
 
 Wenn du das eigene Image ganz verlassen willst:
 
-```nu
+```bash
 sudo bootc switch quay.io/fedora-ostree-desktops/sway-atomic:44
 sudo systemctl reboot
 ```
 
 > [!info] `/var` bleibt erhalten
-> `/var/home/linuxbrew` liegt in der beschreibbaren `/var`-Partition und übersteht sowohl Rollback als auch Image-Wechsel. Ein Rückschalten entfernt Homebrew also **nicht**. Zum sauberen Entfernen bei Bedarf:
-> ```nu
+> `/var/home/linuxbrew` liegt in der beschreibbaren `/var`-Partition und übersteht sowohl Rollback als auch Image-Wechsel. Ein Rückschalten entfernt Homebrew, Nushell und Helix also **nicht**. Zum sauberen Entfernen bei Bedarf (bash):
+> ```bash
 > rm -rf /var/home/linuxbrew
 > ```
 
@@ -471,18 +537,18 @@ sudo systemctl reboot
 
 ## 10. Mehrere Image-Varianten für Geräterollen
 
-Der Durchlauf oben baut **ein** Image. Sobald mehrere Geräterollen ins Spiel kommen, die sich zu großen Teilen überschneiden, dupliziert man aber keine Containerfiles – man zerlegt jedes Feature in ein **Modul** und komponiert die Rollen daraus. Das ersetzt die einfache `Containerfile`/`Justfile` aus [[#3.1 `Containerfile`]] und [[#3.5 `Justfile` (optional, spart Tipparbeit)]], sobald du skalierst.
+Der Durchlauf oben baut **ein** Image (`atomic-brew`). Sobald mehrere Geräterollen ins Spiel kommen, die sich zu großen Teilen überschneiden, dupliziert man aber keine Containerfiles – man zerlegt jedes Feature in ein **Modul** und komponiert die Rollen daraus. Das ersetzt die einfache `Containerfile`/`Justfile` aus [[#3.1 `Containerfile`]] und [[#3.5 `Justfile` (optional, spart Tipparbeit)]], sobald du skalierst.
 
 > [!abstract] Drei Feature-Klassen auf Atomic
 > **Kernelmodul** → muss ins Image *und* ist kernel-gekoppelt (baut bei jedem Kernel-Update neu, ggf. Secure-Boot-Signatur). Teuer und heikel.
 > **Paket** → Image-Layer, reihenfolge-unkritisch, billig.
-> **Laufzeit/State** → gehört nach `/var`, gar nicht ins Image (z. B. Homebrew selbst).
+> **Laufzeit/State** → gehört nach `/var`, gar nicht ins Image (Homebrew selbst, sowie Nushell und Helix per brew).
 
 ### 10.1 Rollen-Matrix
 
 | Modul | Dozenten-PC (sway) | KI-Workstation (silverblue) | Entw. sway | Entw. silverblue |
 |---|:---:|:---:|:---:|:---:|
-| `10-core` (Brew-Toolchain, nu, hx) | ✅ | ✅ | ✅ | ✅ |
+| `10-core` (Brew-Toolchain, Bootstrap) | ✅ | ✅ | ✅ | ✅ |
 | `15-noctalia` (Sway-Shell) | ✅ | – | ✅ | – |
 | `20-voice-io` (Sprach-IO) | – | ✅ | – | ✅ |
 | `30-displaylink` (**akmod**) | ✅ | – | – | – |
@@ -490,8 +556,8 @@ Der Durchlauf oben baut **ein** Image. Sobald mehrere Geräterollen ins Spiel ko
 | `50-nvidia` (**akmod**) | – | ✅ | – | – |
 | **Basis** | `sway-atomic:44` | `silverblue:44` | `sway-atomic:44` | `silverblue:44` |
 
-> [!note] Module bleiben basisunabhängig
-> Dass `voice-io` hier nur auf Silverblue und `noctalia` nur auf Sway landet, ist Zufall deiner Rollen, keine technische Kopplung. Die Module sind so geschrieben, dass eine künftige „Sway mit Sprach-IO"-Rolle nur eine Justfile-Zeile kostet.
+> [!note] Nushell/Helix in allen Rollen gleich
+> `nu` und `hx` kommen in jeder Rolle identisch über den Brew-Bootstrap aus `10-core` – nicht über die Basis. Damit ist es egal, ob die Rolle auf Sway oder Silverblue steht.
 
 ### 10.2 Repo-Struktur
 
@@ -499,19 +565,17 @@ Der Durchlauf oben baut **ein** Image. Sobald mehrere Geräterollen ins Spiel ko
 coaching-images/
 ├── Containerfile           # nimmt BASE_IMAGE + MODULES als ARG
 ├── modules/
-│   ├── 10-core.sh          # Brew-Toolchain, nushell, helix, Bootstrap-Unit aktivieren
+│   ├── 10-core.sh          # Brew-Toolchain + Bootstrap aktivieren
 │   ├── 15-noctalia.sh      # Sway-Shell Noctalia/Quickshell
 │   ├── 20-voice-io.sh      # Sprach-IO (TTS/STT-Basis)
 │   ├── 30-displaylink.sh   # evdi-akmod + DisplayLinkManager (proprietär)
 │   ├── 40-kvm-win11.sh     # qemu/libvirt/ovmf/swtpm
 │   └── 50-nvidia.sh        # akmod-nvidia
-├── overlay/                # gemeinsame Configs, systemd-Units, nu-env (wie Abschnitt 3.2–3.4)
+├── overlay/                # tmpfiles-Regel, bootstrap.sh, systemd-Unit (wie Abschnitt 3.2–3.4)
 └── Justfile
 ```
 
 ### 10.3 Parametrisiertes `Containerfile`
-
-Ein einziges Containerfile führt die *ausgewählte* Modulliste aus:
 
 ```dockerfile
 # Containerfile
@@ -523,6 +587,7 @@ RUN mkdir -p /var/roothome
 COPY modules/ /tmp/modules/
 COPY overlay/  /
 RUN set -euo pipefail; \
+    chmod +x /usr/libexec/atomic-brew/bootstrap.sh; \
     for m in ${MODULES}; do echo "== $m =="; bash /tmp/modules/$m; done; \
     rm -rf /tmp/modules; \
     bootc container lint
@@ -560,16 +625,19 @@ Jedes Feature steht damit genau einmal im Repo, jede Rolle ist eine deklarative 
 
 ### 10.5 Die Module
 
-Die unkritischen Paket-Module – sauber und vollständig:
+Die unkritischen Paket-Module – sauber und vollständig. `10-core` installiert nur die Toolchain und aktiviert den Bootstrap; Nushell und Helix kommen anschließend per brew:
 
 ```bash
 # modules/10-core.sh  — auf allen Rollen
 #!/usr/bin/env bash
 set -euo pipefail
 dnf -y install @development-tools gcc gcc-c++ make procps-ng curl file git \
-               libxcrypt-compat nushell helix
+               libxcrypt-compat
 dnf clean all
-systemctl --global enable homebrew-bootstrap.service   # Unit + nu-env kommen aus overlay/
+chmod +x /usr/libexec/atomic-brew/bootstrap.sh
+systemctl --global enable homebrew-bootstrap.service
+# tmpfiles-Regel, bootstrap.sh und die User-Unit kommen aus overlay/ (Abschnitt 3.2–3.4).
+# nushell + helix installiert der Bootstrap zur Laufzeit über brew.
 ```
 
 ```bash
@@ -637,7 +705,7 @@ set -euo pipefail
 
 Nur **zwei** der vier Images tragen Kernelmodule: der Dozenten-PC (`evdi`) und die KI-Workstation (`nvidia`). Nur diese beiden bauen bei jedem Kernel-Update neu und brauchen ggf. MOK-Signatur. Die beiden Entwickler-Images sind reine Paket-Layer – schnell, robust und öffentlich teilbar. Der Wartungsaufwand konzentriert sich damit auf zwei klar benannte Images.
 
-Und weil Homebrew selbst Laufzeit ist (`/var/home/linuxbrew`), tragen alle vier nur die **Toolchain** im Image – die eigentliche Installation passiert überall gleich per First-Boot-Service. `10-core` und das `overlay/` sind über alle vier Rollen identisch.
+Und weil Homebrew samt Nushell und Helix Laufzeit ist (`/var/home/linuxbrew`), tragen alle vier nur die **Toolchain** im Image – die eigentliche Installation passiert überall gleich per First-Boot-Bootstrap. `10-core` und das `overlay/` sind über alle vier Rollen identisch.
 
 > [!tip] Vor jedem neuen Modul: muss es überhaupt ins Image?
 > Kann ein Feature Laufzeit sein (Flatpak, pip-venv, brew-Formel, First-Boot-Setup), schrumpft die Matrix weiter. Nur Kernelmodule (NVIDIA, DisplayLink) haben diese Wahl nicht – die müssen zwingend ins Image.
@@ -663,6 +731,6 @@ Quellen (github.com)  ──push──►  GitHub Actions  ──build+sign─�
 ## Verwandte Notizen
 
 - [[Homebrew auf Fedora Atomic]]
-- [[Nushell Env-Konfiguration]]
+- [[Bash Login-Shell und .bashrc]]
 - [[bootc Grundlagen]]
 - [[Coaching Fedora Sway Atomic]]

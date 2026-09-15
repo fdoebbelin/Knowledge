@@ -1,9 +1,9 @@
 ---
-titel: XPS 13 — Noctalia unter WSLg installieren und einrichten
+title: XPS 13 — Noctalia unter WSLg installieren und einrichten
 aliases: [Noctalia-Schicht, Noctalia-WSL, Quickshell-unter-WSLg]
 teil_von: "[[README]]"
 tags: [wsl, wslg, sway, noctalia, quickshell, terra, qt6, nushell, xps13]
-erstellt: 2026-08-02
+created: 2026-08-02
 system: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
 verifiziert_gegen: Nushell 0.114.1 (Syntax); Laufzeit auf dem XPS noch offen
 status: entwurf

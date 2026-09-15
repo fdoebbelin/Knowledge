@@ -1,6 +1,6 @@
 ---
 modul: M13
-titel: Abschlussprojekt
+title: Abschlussprojekt
 ue: 8
 phase: Transfer
 ort: beide

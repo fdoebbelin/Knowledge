@@ -1,10 +1,10 @@
 ---
-titel: XPS 13 — Noctalia unter WSLg zum Laufen bringen
+title: XPS 13 — Noctalia unter WSLg zum Laufen bringen
 aliases: [Noctalia-WSL, Quickshell-unter-Sway, Runde-2]
 teil_von: "[[README]]"
 tags: [wsl, wslg, sway, noctalia, quickshell, flatpak, obsidian, nushell, xps13]
 zielgeraet: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
-erstellt: 2026-08-02
+created: 2026-08-02
 verifiziert_am: 2026-08-02
 status: verifiziert
 ---

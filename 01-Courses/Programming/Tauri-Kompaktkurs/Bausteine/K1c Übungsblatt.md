@@ -1,9 +1,9 @@
 ---
 baustein: K1
 typ: uebungsblatt
-titel: HTML – die Struktur – Übungen
+title: HTML – die Struktur – Übungen
 ue: 4
-tag: 1
+kurstag: 1
 tags: [tauri/kompaktkurs/uebung, html]
 status: entwurf
 ---

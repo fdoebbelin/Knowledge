@@ -1,6 +1,6 @@
 ---
 modul: M07
-titel: Sicherheit, Capabilities und Sandkasten
+title: Sicherheit, Capabilities und Sandkasten
 ue: 4
 phase: Frontend-Kern
 ort: beide

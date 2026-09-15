@@ -12,7 +12,7 @@ dauer: 90 min
 voraussetzungen:
   - Grundlagen Kommandozeile
   - Umgang mit TOML
-erstellt: 2026-09-08
+created: 2026-09-08
 ---
 ## Lernziele
 

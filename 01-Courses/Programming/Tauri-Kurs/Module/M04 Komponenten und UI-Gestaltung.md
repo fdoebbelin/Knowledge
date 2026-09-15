@@ -1,6 +1,6 @@
 ---
 modul: M04
-titel: Komponenten und UI-Gestaltung
+title: Komponenten und UI-Gestaltung
 ue: 6
 phase: Frontend-Kern
 ort: Toolbx

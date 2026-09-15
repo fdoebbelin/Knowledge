@@ -1,5 +1,5 @@
 ---
-titel: "Arbeitsblatt: GitHub CLI (gh) – Repository klonen und lokales Repo verbinden"
+title: "Arbeitsblatt: GitHub CLI (gh) – Repository klonen und lokales Repo verbinden"
 thema: Versionsverwaltung
 kurs: Fachinformatiker (FISI/FIAE)
 typ: Arbeitsblatt
@@ -11,7 +11,7 @@ tags:
   - gh-cli
   - versionsverwaltung
   - arbeitsblatt
-erstellt: 2026-08-18
+created: 2026-08-18
 version: "1.0"
 ---
 

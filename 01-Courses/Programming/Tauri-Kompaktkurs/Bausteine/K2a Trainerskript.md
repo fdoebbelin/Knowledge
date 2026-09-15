@@ -1,9 +1,9 @@
 ---
 baustein: K2
 typ: trainerskript
-titel: CSS – das Aussehen – Trainerskript
+title: CSS – das Aussehen – Trainerskript
 ue: 5
-tag: 1-2
+kurstag: 1-2
 dauer: 225 min in zwei Blöcken
 zielgruppe: 3 Teilnehmende ohne Vorkenntnisse
 tags: [tauri/kompaktkurs/trainerskript, css]

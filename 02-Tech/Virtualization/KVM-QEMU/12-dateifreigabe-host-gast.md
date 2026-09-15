@@ -1,9 +1,9 @@
 ---
-titel: Nextcloud im Windows-Gast — virtiofs statt Samba
+title: Nextcloud im Windows-Gast — virtiofs statt Samba
 teil_von: "[[README]]"
 tags: [kvm, qemu, libvirt, windows11, virtiofs, virtiofsd, winfsp, nextcloud, samba, atomic, nushell]
 zielgeraet: privater KI-Arbeitsplatz, x86_64 Fedora Atomic
-erstellt: 2026-07-28
+created: 2026-07-28
 status: entwurf
 verifiziert_gegen: —
 ---
