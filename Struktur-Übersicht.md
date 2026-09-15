@@ -105,11 +105,11 @@ Kursbausteine nutzen zusätzlich `modul`, `baustein`, `kurstag`, `ue`, `typ`, `o
   - 29 kaputte Links, vor allem eine nie angelegte `docs/`-Reihe in den XPS-13-Notizen und externe Bildpfade in JavaScript-STEM.
   - 16 verwaiste Bilder in der Root-`_resources`.
   - `04-Languages/Python/Buch` enthält vier Fassungen von „Kapitel 19“, bewusst als Entwürfe belassen.
-  - Zugangsdaten stecken noch in der Git-Historie vor Commit `245d60a`; Schlüssel wurden nicht rotiert.
+  - Git-Historie am 2026-09-15 mit git filter-repo bereinigt (Commit-IDs seitdem: Phase 1 `dfa3938`, Phase 2 `f39369b`, Phase 3 `63e61ab`); Schlüssel wurden noch nicht rotiert.
 
 ## Historie der Reorganisation
 
 - **2026-02-11** Migration aus Vault „Research“ per Skript (siehe `05-Notes/Archive/README-Migration (2026-02)`).
-- **2026-09-15 Phase 1** (`245d60a`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
-- **2026-09-15 Phase 2** (`dea4de0`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
+- **2026-09-15 Phase 1** (`dfa3938`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
+- **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
 - **2026-09-15 Phase 3**: Fast-Dubletten zusammengeführt (SDDM, bootc, Drupal Paragraphs, Sprachmaschinen, IOPaint, aider, Geschichte der Informatik, Python-Buch), Frontmatter vereinheitlicht, diese Übersicht.
