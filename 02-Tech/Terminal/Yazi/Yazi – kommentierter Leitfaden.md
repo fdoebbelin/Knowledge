@@ -550,7 +550,13 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 ## 11. Die wichtigsten Tasten im Überblick
 
 > [!tip] Druckversion
-> Zweiseitiger Spickzettel mit allen Tastenkürzeln, Tabs, Sortierung und Konfigurationsbeispielen: [[yazi-spickzettel.pdf]]
+> Zweiseitiger Spickzettel mit allen Tastenkürzeln, Tabs, Sortierung und Konfigurationsbeispielen: [[yazi-spickzettel.pdf]]. Eigene Belegungen (Plugins, Skripte) sind orange markiert.
+>
+> Quelle ist [[yazi-spickzettel.html]]. Nach Änderungen neu erzeugen, z. B. mit dem Chromium von mermaid-cli:
+> ```nu
+> let chrome = (glob ~/.cache/puppeteer/chrome-headless-shell/*/*/chrome-headless-shell | first)
+> ^$chrome --no-sandbox --no-pdf-header-footer --print-to-pdf=yazi-spickzettel.pdf $"file://(pwd)/yazi-spickzettel.html"
+> ```
 
 > [!example]- Tastenkürzel ausklappen
 >

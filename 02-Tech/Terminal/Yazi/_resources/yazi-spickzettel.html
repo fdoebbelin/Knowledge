@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Yazi – Die wichtigsten Tastenkürzel</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 7.6pt;
+    color: #2b2b2b;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    width: 210mm; height: 297mm; position: relative; overflow: hidden;
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  header {
+    background: #1e2a38; color: #fff;
+    padding: 4.2mm 8.5mm 3.2mm;
+    border-bottom: 1.2mm solid #e8a33d;
+  }
+  header h1 { margin: 0; font-size: 19pt; font-weight: bold; line-height: 1.1; }
+  header h1 span { font-size: 13pt; font-weight: normal; margin-left: 1.5mm; }
+  header h1.small { font-size: 13pt; }
+  header h1.small span { font-size: 11pt; }
+  header p { margin: 1.2mm 0 0; font-size: 7.4pt; color: #d6dde5; }
+  header p code { color: #fff; }
+  .cols { display: flex; gap: 5mm; padding: 4.2mm 8.5mm 0; }
+  .col { flex: 1 1 0; min-width: 0; }
+  section { margin-bottom: 2.8mm; }
+  h2 {
+    margin: 0; background: #2e6b78; color: #fff;
+    font-size: 9.2pt; font-weight: bold; padding: 1.1mm 2.2mm;
+  }
+  section.own h2 { background: #c9821f; }
+  table { width: 100%; border-collapse: collapse; border-bottom: 0.35mm solid #2e6b78; }
+  section.own table { border-bottom-color: #c9821f; }
+  td { padding: 0.72mm 2mm; vertical-align: top; border-bottom: 0.2mm solid #dde2e6; line-height: 1.25; }
+  tr:last-child td { border-bottom: none; }
+  td.k {
+    font-family: "Noto Sans Mono", "Liberation Mono", monospace; font-weight: bold;
+    white-space: nowrap; background: #f3f5f6; border-right: 0.2mm solid #dde2e6;
+  }
+  section.own td.k { background: #fbf3e6; }
+  td.k .sep { color: #8a96a0; font-weight: normal; }
+  .note { color: #6b7780; font-size: 6.9pt; margin-top: 0.9mm; line-height: 1.3; }
+  .note b { color: #2b2b2b; }
+  h3 { margin: 2.6mm 0 1mm; font-size: 7.8pt; color: #2e6b78; }
+  pre {
+    margin: 0; background: #f2efe6; border-left: 0.7mm solid #e8a33d;
+    padding: 1.4mm 2.4mm; font-family: "Noto Sans Mono", "Liberation Mono", monospace;
+    font-size: 6.7pt; line-height: 1.3; white-space: pre;
+  }
+  code { font-family: "Noto Sans Mono", "Liberation Mono", monospace; }
+  footer {
+    position: absolute; left: 8.5mm; right: 8.5mm; bottom: 6mm;
+    display: flex; justify-content: space-between; color: #6b7780; font-size: 6.6pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ Seite 1 ============================ -->
+<div class="page">
+<header>
+  <h1>Yazi<span>Die wichtigsten Tastenkürzel</span></h1>
+  <p>Terminal-Dateimanager · Standard-Belegung ab Yazi 26.x · <b style="color:#e8a33d">orange</b> = eigene Belegung (Plugins &amp; Skripte) · alle Tasten jederzeit mit <code>~</code> oder <code>F1</code></p>
+</header>
+
+<div class="cols">
+<div class="col">
+
+<section>
+  <h2>Starten &amp; Beenden</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">yazi</td><td>Yazi im aktuellen Verzeichnis starten</td></tr>
+    <tr><td class="k">y</td><td>Start über Shell-Wrapper: beim Beenden in das zuletzt geöffnete Verzeichnis wechseln</td></tr>
+    <tr><td class="k">q</td><td>Beenden (Verzeichnis an den Wrapper übergeben)</td></tr>
+    <tr><td class="k">Q</td><td>Beenden, ohne das Verzeichnis zu wechseln</td></tr>
+    <tr><td class="k">Ctrl+c</td><td>Aktuellen Tab schließen, beim letzten Tab beenden</td></tr>
+    <tr><td class="k">Ctrl+z</td><td>Yazi pausieren und zur Shell zurück (wieder hinein mit <b>fg</b>, Nushell: <b>job unfreeze</b>)</td></tr>
+    <tr><td class="k">Esc</td><td>Visuellen Modus verlassen, Auswahl aufheben, Suche abbrechen</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Navigation</h2>
+  <table>
+    <tr><td class="k" style="width:30mm">j <span class="sep">/</span> k</td><td>Nächste / vorherige Datei (auch ↓ / ↑)</td></tr>
+    <tr><td class="k">l <span class="sep">/</span> h</td><td>In Verzeichnis hinein / eine Ebene höher (auch → / ←)</td></tr>
+    <tr><td class="k">H <span class="sep">/</span> L</td><td>Im Verlauf zurück / vor</td></tr>
+    <tr><td class="k">gg <span class="sep">/</span> G</td><td>Zum Anfang / Ende der Liste</td></tr>
+    <tr><td class="k">Ctrl+u <span class="sep">/</span> Ctrl+d</td><td>Halbe Seite hoch / runter</td></tr>
+    <tr><td class="k">Ctrl+b <span class="sep">/</span> Ctrl+f</td><td>Ganze Seite hoch / runter</td></tr>
+    <tr><td class="k">K <span class="sep">/</span> J</td><td>Vorschau hoch / runter scrollen</td></tr>
+    <tr><td class="k">Tab</td><td>Detailinfos zur Datei einblenden (Spot), mit h / l zur Nachbardatei</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Springen</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">g h</td><td>Home-Verzeichnis ~</td></tr>
+    <tr><td class="k">g c</td><td>~/.config</td></tr>
+    <tr><td class="k">g d</td><td>~/Downloads</td></tr>
+    <tr><td class="k">g t</td><td>Papierkorb</td></tr>
+    <tr><td class="k">g f</td><td>Dem markierten Symlink folgen</td></tr>
+    <tr><td class="k">g Space</td><td>Pfad eintippen und dorthin wechseln</td></tr>
+    <tr><td class="k">z</td><td>Datei oder Verzeichnis per fzf anspringen</td></tr>
+    <tr><td class="k">Z</td><td>Verzeichnis per zoxide anspringen</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Shell &amp; Anzeige</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">;</td><td>Shell-Befehl ausführen</td></tr>
+    <tr><td class="k">:</td><td>Shell-Befehl ausführen und auf das Ende warten</td></tr>
+    <tr><td class="k">.</td><td>Versteckte Dateien ein- / ausblenden</td></tr>
+    <tr><td class="k">w</td><td>Aufgaben (z. B. laufende Kopiervorgänge), dort <b>x</b> bricht ab</td></tr>
+    <tr><td class="k">~ <span class="sep">/</span> F1</td><td>Hilfe mit allen Tastenbelegungen</td></tr>
+  </table>
+</section>
+
+<section class="own">
+  <h2>Vorschau (eigene Belegung)</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">T</td><td>Vorschau maximieren / wiederherstellen (toggle-pane)</td></tr>
+    <tr><td class="k">M</td><td>Mermaid-Diagramme der Markdown-Datei rendern, neuer Tab; zurück mit <b>Ctrl+c</b> oder <b>1</b></td></tr>
+    <tr><td class="k">e t</td><td>Ordnervorschau: Baum / Liste (eza-preview)</td></tr>
+    <tr><td class="k">e + <span class="sep">/</span> e -</td><td>Ordnervorschau eine Ebene tiefer / flacher</td></tr>
+  </table>
+  <div class="note">Markdown mit glow (Solarized), CSV / Notebooks mit rich, Archive mit ouch, Git-Status in der Dateiliste.</div>
+</section>
+
+</div>
+<div class="col">
+
+<section>
+  <h2>Auswählen</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">Space</td><td>Datei markieren / Markierung aufheben und weiter</td></tr>
+    <tr><td class="k">v</td><td>Visueller Modus: Bereich mit j / k markieren</td></tr>
+    <tr><td class="k">V</td><td>Visueller Modus zum Abwählen</td></tr>
+    <tr><td class="k">Ctrl+a</td><td>Alle Dateien auswählen</td></tr>
+    <tr><td class="k">Ctrl+r</td><td>Auswahl umkehren</td></tr>
+  </table>
+  <div class="note">Die meisten Operationen wirken auf die Auswahl, ohne Auswahl auf die Datei unter dem Cursor.</div>
+</section>
+
+<section>
+  <h2>Öffnen</h2>
+  <table>
+    <tr><td class="k" style="width:31mm">Enter <span class="sep">/</span> o</td><td>Mit dem Standardprogramm öffnen (Textdateien: <b>$EDITOR</b>)</td></tr>
+    <tr><td class="k">Shift+Enter <span class="sep">/</span> O</td><td>Öffnen mit … (Programm aus einem Menü wählen)</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Anlegen &amp; Umbenennen</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">a</td><td>Datei anlegen, <b>name/</b> mit Schrägstrich legt ein Verzeichnis an, <b>a/b/c.txt</b> erzeugt fehlende Verzeichnisse mit</td></tr>
+    <tr><td class="k">A</td><td>Mehrere Dateien auf einmal anlegen</td></tr>
+    <tr><td class="k">r</td><td>Umbenennen, bei mehreren ausgewählten Dateien Massenumbenennung im Editor</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Kopieren, Verschieben, Löschen</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">y</td><td>Kopieren (Yank)</td></tr>
+    <tr><td class="k">x</td><td>Ausschneiden, also zum Verschieben vormerken</td></tr>
+    <tr><td class="k">p</td><td>Einfügen, bei Namenskonflikt mit Suffix</td></tr>
+    <tr><td class="k">P</td><td>Einfügen und vorhandene Dateien überschreiben</td></tr>
+    <tr><td class="k">Y <span class="sep">/</span> X</td><td>Kopieren / Ausschneiden abbrechen</td></tr>
+    <tr><td class="k">d</td><td>In den Papierkorb verschieben</td></tr>
+    <tr><td class="k">D</td><td>Endgültig löschen</td></tr>
+    <tr><td class="k">-</td><td>Symlink mit absolutem Pfad anlegen</td></tr>
+    <tr><td class="k">_</td><td>Symlink mit relativem Pfad anlegen</td></tr>
+    <tr><td class="k">Ctrl+-</td><td>Hardlink anlegen</td></tr>
+  </table>
+  <div class="note">Verschieben: markieren → <b>x</b> → Zielverzeichnis öffnen → <b>p</b>. Über Tabs geht das auch zwischen weit entfernten Verzeichnissen.</div>
+</section>
+
+<section class="own">
+  <h2>Dateien (eigene Belegung)</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">l</td><td>Verzeichnis betreten <b>oder Datei öffnen</b> (smart-enter)</td></tr>
+    <tr><td class="k">c m</td><td>Rechte der Auswahl ändern, z. B. <b>600</b> (chmod)</td></tr>
+    <tr><td class="k">C</td><td>Auswahl komprimieren, Format aus der Endung (ouch)</td></tr>
+    <tr><td class="k">!</td><td>Nushell im aktuellen Verzeichnis, zurück mit <b>exit</b></td></tr>
+  </table>
+  <div class="note">Entpacken: <b>O</b> → „Extract here“. Audio / Video: <b>O</b> → „Show media info“.</div>
+</section>
+
+<section>
+  <h2>Eingabefelder (z. B. beim Umbenennen)</h2>
+  <table>
+    <tr><td class="k" style="width:31mm">Enter <span class="sep">/</span> Esc</td><td>Bestätigen / in den Normalmodus, zweites Esc bricht ab</td></tr>
+    <tr><td class="k">i <span class="sep">/</span> a</td><td>Im Normalmodus: vor / nach dem Cursor einfügen</td></tr>
+    <tr><td class="k">Ctrl+a <span class="sep">/</span> Ctrl+e</td><td>Zum Zeilenanfang / Zeilenende</td></tr>
+    <tr><td class="k">Ctrl+w</td><td>Wort vor dem Cursor löschen</td></tr>
+    <tr><td class="k">Ctrl+u <span class="sep">/</span> Ctrl+k</td><td>Bis Zeilenanfang / Zeilenende löschen</td></tr>
+  </table>
+  <div class="note">Im Normalmodus funktionieren Vim-Bewegungen wie w, b, e, 0 und $.</div>
+</section>
+
+</div>
+</div>
+<footer><span>Groß-/Kleinschreibung beachten · Tastenfolgen wie <code>g h</code> nacheinander drücken · Ctrl = Strg</span><span>Seite 1 / 2</span></footer>
+</div>
+
+<!-- ============================ Seite 2 ============================ -->
+<div class="page">
+<header>
+  <h1 class="small">Yazi<span>Suchen, Tabs, Sortieren &amp; Konfiguration</span></h1>
+</header>
+
+<div class="cols">
+<div class="col">
+
+<section>
+  <h2>Suchen &amp; Filtern</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">f</td><td>Aktuelle Liste filtern (nur passende Einträge zeigen)</td></tr>
+    <tr><td class="k">/ <span class="sep">/</span> ?</td><td>Nächste / vorherige Übereinstimmung finden</td></tr>
+    <tr><td class="k">n <span class="sep">/</span> N</td><td>Zum nächsten / vorherigen Treffer</td></tr>
+    <tr><td class="k">s</td><td>Dateinamen rekursiv suchen (fd)</td></tr>
+    <tr><td class="k">S</td><td>Dateiinhalte rekursiv suchen (ripgrep)</td></tr>
+    <tr><td class="k">Ctrl+s</td><td>Laufende Suche abbrechen</td></tr>
+  </table>
+  <div class="note">Für s, S, z und Z müssen fd, ripgrep, fzf bzw. zoxide installiert sein.</div>
+</section>
+
+<section>
+  <h2>Tabs</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">t t</td><td>Neuer Tab im aktuellen Verzeichnis (bis Yazi 25.x nur <b>t</b>)</td></tr>
+    <tr><td class="k">t r</td><td>Tab umbenennen</td></tr>
+    <tr><td class="k">1 … 9</td><td>Zu Tab 1 bis 9 wechseln</td></tr>
+    <tr><td class="k">[ <span class="sep">/</span> ]</td><td>Vorheriger / nächster Tab</td></tr>
+    <tr><td class="k">{ <span class="sep">/</span> }</td><td>Tab nach links / rechts verschieben</td></tr>
+    <tr><td class="k">Ctrl+c</td><td>Tab schließen</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Sortieren</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">, a</td><td>Alphabetisch</td></tr>
+    <tr><td class="k">, n</td><td>Natürlich (datei2 vor datei10)</td></tr>
+    <tr><td class="k">, m</td><td>Nach Änderungsdatum</td></tr>
+    <tr><td class="k">, b</td><td>Nach Erstellungsdatum</td></tr>
+    <tr><td class="k">, s</td><td>Nach Größe</td></tr>
+    <tr><td class="k">, e</td><td>Nach Dateiendung</td></tr>
+    <tr><td class="k">, r</td><td>Zufällig</td></tr>
+  </table>
+  <div class="note">Großbuchstabe kehrt die Reihenfolge jeweils um, z. B. <b>, M</b> oder <b>, S</b>.</div>
+</section>
+
+<section>
+  <h2>Zeilenmodus (Infospalte rechts)</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">m s</td><td>Größe</td></tr>
+    <tr><td class="k">m p</td><td>Berechtigungen</td></tr>
+    <tr><td class="k">m m <span class="sep">/</span> m b</td><td>Änderungs- / Erstellungszeit</td></tr>
+    <tr><td class="k">m o</td><td>Besitzer</td></tr>
+    <tr><td class="k">m n</td><td>Keine Zusatzinfo</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>In die Zwischenablage kopieren</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">c c</td><td>Vollständiger Dateipfad</td></tr>
+    <tr><td class="k">c d</td><td>Pfad des Verzeichnisses</td></tr>
+    <tr><td class="k">c f</td><td>Dateiname</td></tr>
+    <tr><td class="k">c n</td><td>Dateiname ohne Endung</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Aufgaben-Fenster</h2>
+  <table>
+    <tr><td class="k" style="width:21mm">w</td><td>Aufgaben öffnen, z. B. laufende Kopier- und Löschvorgänge</td></tr>
+    <tr><td class="k">j <span class="sep">/</span> k</td><td>Nächste / vorherige Aufgabe</td></tr>
+    <tr><td class="k">Enter</td><td>Ausgabe der Aufgabe ansehen</td></tr>
+    <tr><td class="k">x</td><td>Aufgabe abbrechen</td></tr>
+    <tr><td class="k">Esc <span class="sep">/</span> w</td><td>Fenster schließen</td></tr>
+  </table>
+</section>
+
+</div>
+<div class="col">
+
+<section>
+  <h2>Konfigurationsdateien in ~/.config/yazi/</h2>
+  <table>
+    <tr><td class="k" style="width:25mm">yazi.toml</td><td>Verhalten, Opener, Vorschau</td></tr>
+    <tr><td class="k">keymap.toml</td><td>Eigene Tastenbelegungen</td></tr>
+    <tr><td class="k">theme.toml</td><td>Farben, Symbole, Trennzeichen</td></tr>
+    <tr><td class="k">init.lua</td><td>Plugins initialisieren und anpassen</td></tr>
+    <tr><td class="k">package.toml</td><td>Plugins und Flavors, verwaltet mit <b>ya pkg add autor/repo</b></td></tr>
+  </table>
+  <div class="note">Nur geänderte Werte eintragen, alles andere kommt aus der Standardkonfiguration. Änderungen wirken nach einem Neustart von Yazi.</div>
+</section>
+
+<h3>yazi.toml – versteckte Dateien zeigen, Helix als Editor</h3>
+<pre>[mgr]
+show_hidden = true
+
+[opener]
+edit = [
+  { run = "hx %s", block = true, for = "unix" },
+]</pre>
+
+<h3>keymap.toml – mit ! eine Shell im aktuellen Verzeichnis</h3>
+<pre>[[mgr.prepend_keymap]]
+on   = "!"
+run  = 'shell "$SHELL" --block'
+desc = "Shell hier öffnen"</pre>
+
+<h3>theme.toml – Rundungen am Cursor-Indikator entfernen</h3>
+<pre>[indicator]
+padding = { open = "", close = "" }</pre>
+
+<h3>Shell-Wrapper y für Bash / Zsh (~/.bashrc, ~/.zshrc)</h3>
+<pre>function y() {
+  local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd &lt; "$tmp"
+  [ "$cwd" != "$PWD" ] &amp;&amp; [ -d "$cwd" ] \
+    &amp;&amp; builtin cd -- "$cwd" || builtin true
+  command rm -f -- "$tmp"
+}</pre>
+
+<h3>Shell-Wrapper y für Nushell (config.nu)</h3>
+<pre>def --env y [...args] {
+  let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+  ^yazi ...$args --cwd-file $tmp
+  let cwd = (open $tmp)
+  if $cwd != $env.PWD and ($cwd | path exists) {
+    cd $cwd
+  }
+  rm -fp $tmp
+}</pre>
+
+<h3>Editor systemweit setzen</h3>
+<pre>export EDITOR=hx          # Bash / Zsh
+$env.EDITOR = "hx"        # Nushell</pre>
+
+<h3>Plugins auf neuem Rechner wiederherstellen</h3>
+<pre>ya pkg install      # liest package.toml
+ya pkg list         # piper, toggle-pane, git, eza-preview,
+                    # smart-enter, chmod, ouch</pre>
+<div class="note">Einrichtung aller eigenen Tasten: Vault-Notizen <b>Yazi – Installation und Plugins</b>, <b>Markdown-Vorschau</b>, <b>Mermaid-Diagramme</b>.</div>
+
+</div>
+</div>
+<footer><span>Groß-/Kleinschreibung beachten · Tastenfolgen wie <code>g h</code> nacheinander drücken · Ctrl = Strg</span><span>Seite 2 / 2</span></footer>
+</div>
+
+</body>
+</html>
