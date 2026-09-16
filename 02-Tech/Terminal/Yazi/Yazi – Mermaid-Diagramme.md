@@ -269,7 +269,7 @@ Cursor und Verzeichnis im Notiz-Tab bleiben dabei unverändert (getestet).
 > Chromium fehlt oder passt nach einem Update nicht mehr zur mermaid-cli-Version. Befehl aus [[#3.1 mermaid-cli und Chromium installieren]] ausführen.
 
 > [!failure] `UnknownDiagramError: No diagram type detected`
-> Der Diagrammtyp existiert in Mermaid nicht. Beispiel aus dem Vault: `usecaseDiagram` (PlantUML-Syntax) in `99 Beispiele` unter UML-Basics. Mermaid kennt keine Use-Case-Diagramme.
+> Der Diagrammtyp existiert in Mermaid nicht. Typischer Fall: `usecaseDiagram` ist PlantUML-Syntax, Mermaid kennt keine Anwendungsfalldiagramme. Nachbau als Flowchart mit Systemgrenze als `subgraph`: siehe [[99 Beispiele]] unter UML-Basics.
 
 > [!failure] `Parse error on line …`
 > Syntaxfehler im Diagramm. Die Zeilenangabe bezieht sich auf den Mermaid-Block, nicht auf die Markdown-Datei.

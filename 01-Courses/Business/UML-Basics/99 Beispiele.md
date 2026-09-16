@@ -25,13 +25,23 @@ classDiagram
 
 ### 2. **Anwendungsfalldiagramm**
 
-```mermaid
-usecaseDiagram
-    actor User
-    actor Admin
+> [!note] Kein eigener Diagrammtyp in Mermaid
+> Mermaid kennt keine Anwendungsfalldiagramme (`usecaseDiagram` ist PlantUML-Syntax). Das Beispiel ist deshalb als Flowchart nachgebaut: Akteure außerhalb, Anwendungsfälle als abgerundete Knoten innerhalb der Systemgrenze, Assoziationen als Linien ohne Pfeilspitze.
 
-    User --> (Login)
-    User --> (Browse Content)
-    Admin --> (Manage Users)
-    Admin --> (Generate Reports)
+```mermaid
+flowchart LR
+    User["👤 User"]
+    Admin["👤 Admin"]
+
+    subgraph System
+        Login(["Login"])
+        Browse(["Browse Content"])
+        Manage(["Manage Users"])
+        Reports(["Generate Reports"])
+    end
+
+    User --- Login
+    User --- Browse
+    Admin --- Manage
+    Admin --- Reports
 ```
