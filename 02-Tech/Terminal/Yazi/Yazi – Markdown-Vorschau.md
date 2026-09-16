@@ -219,6 +219,8 @@ def main [file: string, width: int = 80] {
 	# Callouts: > [!typ]- Titel → > **TYP · Titel**
 	| str replace --all --regex '(?m)^((?:> ?)+)\[!(\w+)\][-+]?[ \t]+(\S.*)$' '${1}**${2} · ${3}**'
 	| str replace --all --regex '(?m)^((?:> ?)+)\[!(\w+)\][-+]?[ \t]*$' '${1}**${2}**'
+	# Mermaid-Blöcke: Hinweis auf die Taste M (mermaid-view) voranstellen
+	| str replace --all --regex '(?m)^```mermaid' "> **mermaid · Taste M zeigt das Diagramm als Bild**\n\n```mermaid"
 	| ^glow -w $width -s ~/.config/glow/solarized-light.json -
 }
 ```
@@ -241,6 +243,7 @@ Was das Skript umschreibt:
 | `> [!info]- Titel`        | ▎ **info · Titel**        |
 | `==markiert==`            | **markiert**              |
 | `%%Kommentar%%`           | *(entfällt)*              |
+| ` ```mermaid `            | Hinweis **mermaid · Taste M zeigt das Diagramm als Bild** vor dem Block |
 
 Kommentar zu den Details:
 
@@ -336,7 +339,7 @@ Cursor auf eine `.md`-Datei setzen, mit `J`/`K` durch die Vorschau blättern. Di
 > - Callout-Typen erscheinen kleingeschrieben und ohne Symbol, Einklappen (`-`/`+`) wird ignoriert.
 > - Wikilinks sind nur Text, nicht anklickbar.
 > - Eingebettete Bilder und Notizen werden nicht angezeigt, nur ihr Name.
-> - Mermaid-Diagramme bleiben Code. Dafür wäre `mermaid.yazi` nötig (Kandidat).
+> - Mermaid-Diagramme bleiben in der Vorschau Code. Taste `M` zeigt sie als Bild, siehe [[Yazi – Mermaid-Diagramme]].
 > - Mathe (`$…$`), Dataview und Tags werden nicht aufbereitet.
 >
 > Für „was steht drin" reicht das. Für „sieht das im Vault richtig aus" bleibt Obsidian.
@@ -353,4 +356,5 @@ Cursor auf eine `.md`-Datei setzen, mit `J`/`K` durch die Vorschau blättern. Di
 ## Verwandt
 
 - [[Yazi – Installation und Plugins]] – Installation mit brew, Plugin-System, Übertragung auf andere Rechner
+- [[Yazi – Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
 - [[Yazi – kommentierter Leitfaden]] – Bedienung, Konfiguration, Flavor Solarized Light

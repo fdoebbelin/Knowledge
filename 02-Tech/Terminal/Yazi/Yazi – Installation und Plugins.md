@@ -71,6 +71,7 @@ Yazi selbst braucht nur `file(1)`, das im Basisimage liegt. Alles Weitere schalt
 | Programm        | brew-Formel   | Wofür                                | Auf dem Referenzsystem |
 | --------------- | ------------- | ------------------------------------ | ---------------------- |
 | `glow`          | `glow`        | Markdown-Vorschau                    | brew                   |
+| `mmdc`          | `mermaid-cli` | Mermaid-Diagramme (+ Chromium, siehe [[Yazi – Mermaid-Diagramme]]) | brew |
 | `fd`            | `fd`          | Dateisuche nach Namen (Taste `s`)    | fehlt                  |
 | `rg`            | `ripgrep`     | Inhaltssuche (Taste `S`)             | fehlt                  |
 | `fzf`           | `fzf`         | Springen per fzf (Taste `z`)         | fehlt                  |
@@ -172,11 +173,12 @@ ya pkg install         # Alles aus package.toml installieren
 | ----------------------- | ----------------------------------------- | ------------------------------ |
 | `yazi-rs/plugins:piper` | Beliebiges Shell-Kommando als Vorschau    | [[Yazi – Markdown-Vorschau]]   |
 
+Ohne Plugin, als eigenes Skript mit Taste `M`: Mermaid-Diagramme, siehe [[Yazi – Mermaid-Diagramme]]. Das Plugin `passion0102/mermaid.yazi` wurde geprüft und verworfen, Begründung dort.
+
 ### Kandidaten (noch nicht eingerichtet)
 
 | Plugin                            | Zweck                                                   |
 | --------------------------------- | ------------------------------------------------------- |
-| `passion0102/mermaid`             | Mermaid-Diagramme in der Markdown-Vorschau als Bild     |
 | `AnirudhG07/rich-preview`         | Vorschau für CSV, JSON, Jupyter-Notebooks               |
 | `ahkohd/eza-preview`              | Verzeichnisse als Baum                                  |
 | `boydaihungst/mediainfo`          | Metadaten von Audio und Video                           |
@@ -204,8 +206,10 @@ Die Konfiguration besteht aus Dateien, die kopiert werden, und Teilen, die sich 
 ├── theme.toml
 ├── init.lua          (falls vorhanden)
 └── package.toml      ← Lockfile für Plugins
-~/.config/glow/solarized-light.json   ← Markdown-Vorschau
-~/.local/bin/ofm-preview              ← Markdown-Vorschau
+~/.config/glow/solarized-light.json     ← Markdown-Vorschau
+~/.local/bin/ofm-preview                ← Markdown-Vorschau
+~/.config/mermaid/solarized-light.json  ← Mermaid-Diagramme
+~/.local/bin/mermaid-view               ← Mermaid-Diagramme
 ```
 
 **Nicht kopieren:** `plugins/` – stellt `ya pkg install` aus `package.toml` wieder her.
@@ -217,15 +221,18 @@ Ablauf auf dem neuen Rechner:
 
 ```nu
 # 1. Yazi und Hilfsprogramme
-brew install yazi glow
+brew install yazi glow mermaid-cli
+
+# 1b. Chromium für mmdc (passende Version wird automatisch ermittelt)
+^node (brew --prefix mermaid-cli | str trim | path join "libexec/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/puppeteer/lib/puppeteer/node/cli.js") browsers install chrome-headless-shell
 
 # 2. Konfigurationsdateien an ihren Ort kopieren (siehe oben)
 
 # 3. Plugins aus package.toml wiederherstellen
 ya pkg install
 
-# 4. Vorschau-Skript ausführbar machen
-chmod +x ~/.local/bin/ofm-preview
+# 4. Skripte ausführbar machen
+chmod +x ~/.local/bin/ofm-preview ~/.local/bin/mermaid-view
 
 # 5. Prüfen
 ya pkg list
@@ -258,4 +265,5 @@ Anschließend Yazi neu starten.
 
 - [[Yazi – kommentierter Leitfaden]] – Bedienung, Helix als Editor, Theme, Solarized Light, Shell-Wrapper
 - [[Yazi – Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
+- [[Yazi – Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
 - [[00 Werkzeuge ins HOME-Verzeichnis installieren]] – warum brew-Programme in Toolbx fehlen

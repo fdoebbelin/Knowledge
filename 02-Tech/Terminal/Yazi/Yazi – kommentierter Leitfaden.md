@@ -410,7 +410,16 @@ on   = "!"
 for  = "unix"
 run  = 'shell "nu" --block'
 desc = "Nushell im aktuellen Verzeichnis öffnen"
+
+[[mgr.prepend_keymap]]
+on   = "M"
+for  = "unix"
+run  = 'shell "mermaid-view %h" --block'
+desc = "Mermaid-Diagramme der Datei rendern und anzeigen"
 ```
+
+> [!note] Taste `M`
+> Setzt das Skript `mermaid-view` und `mmdc` voraus, siehe [[Yazi – Mermaid-Diagramme]].
 
 ### `~/.config/yazi/theme.toml`
 
@@ -533,5 +542,6 @@ Weitere typische Fehlerquellen:
 
 - [[Yazi – Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System, Übertragung auf andere Rechner
 - [[Yazi – Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
+- [[Yazi – Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
 - [[00 config.nu]]
 - [[Nushell Editor setzen]]
