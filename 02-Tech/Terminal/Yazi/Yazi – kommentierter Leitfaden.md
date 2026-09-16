@@ -9,8 +9,10 @@ tags:
   - dateimanager
   - nushell
   - helix
+system: Fedora Sway Atomic
 yazi_version: "26.9.1"
 created: 2026-09-16
+updated: 2026-09-16
 ---
 
 # Yazi – kommentierter Leitfaden
@@ -18,8 +20,10 @@ created: 2026-09-16
 Yazi ist ein schneller Dateimanager für das Terminal, geschrieben in Rust, mit Vim-artiger Bedienung, Bildvorschau und einem Plugin-System in Lua. Dieser Leitfaden fasst Bedienung und Konfiguration zusammen: versteckte Dateien, Shell, Helix als Editor, Dateioperationen, Theme-Anpassungen und ein Solarized-Light-Farbschema.
 
 > [!info] Geltungsbereich
-> Alle Tastenbelegungen und Konfigurationsschlüssel sind mit der Standardkonfiguration von **Yazi 26.9.1** abgeglichen. Ältere Versionen weichen an einigen Stellen ab, siehe [[#Versionsunterschiede und Stolpersteine]].
-> Alle Konsolenbefehle sind in **Nushell**-Syntax geschrieben.
+> - **System:** Fedora Sway Atomic, Yazi über Homebrew installiert, siehe [[Yazi – Installation und Plugins]]
+> - **Version:** Alle Tastenbelegungen und Konfigurationsschlüssel sind mit der Standardkonfiguration von **Yazi 26.9.1** abgeglichen. Ältere Versionen weichen an einigen Stellen ab, siehe [[#Versionsunterschiede und Stolpersteine]].
+> - **Befehle:** Nushell-Syntax
+> - **Markdown-Vorschau:** eigene Notiz [[Yazi – Markdown-Vorschau]]
 
 > [!tip] Hilfe in Yazi selbst
 > Mit `~` oder `F1` zeigt Yazi jederzeit alle Tastenbelegungen der installierten Version an. Das ist die verlässlichste Referenz, wenn etwas nicht wie beschrieben funktioniert.
@@ -36,7 +40,9 @@ Yazi liest seine Konfiguration aus `~/.config/yazi/`. Keine dieser Dateien ist P
 | `keymap.toml`  | Eigene Tastenbelegungen                                    |
 | `theme.toml`   | Farben, Symbole, Trennzeichen, Auswahl des Flavors         |
 | `init.lua`     | Initialisierung und Anpassung von Lua-Plugins              |
-| `package.toml` | Von `ya pkg` verwaltete Plugins und Flavors                |
+| `package.toml` | Von `ya pkg` verwaltete Plugins und Flavors, nicht von Hand bearbeiten |
+
+Plugins und `ya pkg` sind in [[Yazi – Installation und Plugins#4. Das Plugin-System]] beschrieben.
 
 Verzeichnis anlegen und installierte Version prüfen:
 
@@ -142,14 +148,14 @@ $env.VISUAL = "hx"
 $env.config.buffer_editor = "hx"
 ```
 
-Vorher prüfen, wie die Helix-Binärdatei heißt:
+Vorher prüfen, ob Helix gefunden wird:
 
 ```nu
 which hx
 ```
 
-> [!warning] Name der Binärdatei
-> Fedora liefert Helix als `hx` aus, Arch Linux als `helix`. Findet `which hx` nichts, versuche `which helix` und passe die Werte oben entsprechend an.
+> [!warning] Helix fehlt
+> Helix heißt als Programm `hx`. Findet `which hx` nichts, ist Helix nicht installiert oder `~/.local/bin` bzw. der brew-Pfad fehlt im `$PATH`. Installation z. B. mit `brew install helix` oder ins Home-Verzeichnis, siehe [[00 Werkzeuge ins HOME-Verzeichnis installieren]].
 
 ### 4.2 Nur für Yazi über einen eigenen Opener
 
@@ -384,7 +390,17 @@ show_hidden = true
 edit = [
   { run = "hx %s", block = true, for = "unix" },
 ]
+
+[plugin]
+prepend_previewers = [
+  # Markdown: Obsidian-Syntax aufbereiten, dann glow mit Solarized-Stil
+  # (~/.local/bin/ofm-preview, ~/.config/glow/solarized-light.json); $w = Breite der Vorschau
+  { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 ofm-preview "$1" $w </dev/null' },
+]
 ```
+
+> [!note] Abschnitt `[plugin]`
+> Setzt das Plugin `piper`, das Skript `ofm-preview` und den glow-Stil voraus. Einrichtung: [[Yazi – Markdown-Vorschau]]. Ohne diese Teile den Abschnitt weglassen.
 
 ### `~/.config/yazi/keymap.toml`
 
@@ -495,9 +511,10 @@ Weitere typische Fehlerquellen:
 
 - **Einstellung in der falschen Datei:** Farben und Trennzeichen gehören in `theme.toml`, Verhalten in `yazi.toml`.
 - **Symbole als Kästchen:** Die Standard-Trennzeichen und Dateisymbole brauchen eine Nerd Font im Terminal.
-- **Helix startet nicht:** Name der Binärdatei prüfen (`which hx` bzw. `which helix`).
+- **Helix startet nicht:** `which hx` prüfen, siehe Abschnitt 4.1.
 - **`$SHELL` startet nicht Nushell:** Die Variable enthält die Login-Shell, im Keymap-Eintrag daher `nu` direkt angeben.
-- **Suche oder Sprung ohne Wirkung:** `s`, `S`, `z` und `Z` benötigen die installierten Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide`.
+- **Suche oder Sprung ohne Wirkung:** `s`, `S`, `z` und `Z` benötigen die Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide`. Installation mit `brew install fd ripgrep fzf zoxide`, vollständige Liste in [[Yazi – Installation und Plugins#3. Hilfsprogramme]].
+- **Konfiguration ohne Wirkung:** Yazi liest die Dateien nur beim Start. Oft laufen mehrere Instanzen in verschiedenen Terminals, alle beenden.
 
 ```nu
 # Prüfen, welche Hilfsprogramme vorhanden sind
@@ -514,6 +531,7 @@ Weitere typische Fehlerquellen:
 
 ## Verwandt
 
-- [[Yazi – Installation, Plugins und Markdown-Vorschau]] – Installation unter Fedora/bootc, Plugin-System, Markdown-Vorschau
-- [[Nushell — Konfiguration]]
-- [[Helix — Konfiguration]]
+- [[Yazi – Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System, Übertragung auf andere Rechner
+- [[Yazi – Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
+- [[00 config.nu]]
+- [[Nushell Editor setzen]]
