@@ -443,6 +443,9 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 
 ## 11. Die wichtigsten Tasten im Überblick
 
+> [!tip] Druckversion
+> Zweiseitiger Spickzettel mit allen Tastenkürzeln, Tabs, Sortierung und Konfigurationsbeispielen: [[yazi-spickzettel.pdf]]
+
 > [!example]- Tastenkürzel ausklappen
 >
 > | Bereich       | Taste             | Wirkung                                  |
