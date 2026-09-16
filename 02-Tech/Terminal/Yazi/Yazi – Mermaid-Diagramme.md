@@ -259,7 +259,7 @@ Cursor und Verzeichnis im Notiz-Tab bleiben dabei unverändert (getestet).
 
 > [!tip] Größer ansehen
 > - `Enter` öffnet das PNG mit dem Standardprogramm für `image/png`. Auf dem Referenzsystem ist das Google Chrome. Umstellen auf `imv` (liegt im Basisimage): `^xdg-mime default imv.desktop image/png`
-> - Das Plugin `toggle-pane` (Kandidat) würde den Vorschaubereich maximieren.
+> - `T` maximiert den Vorschaubereich (Plugin toggle-pane, siehe [[Yazi – Installation und Plugins#5.1 toggle-pane – Vorschau maximieren]]).
 
 ---
 

@@ -386,6 +386,12 @@ Alle Ergebnisse dieses Leitfadens zusammengeführt.
 [mgr]
 show_hidden = true
 
+
+[preview]
+# Bildvorschau bis Monitorauflösung (1920×1080), damit maximierte Vorschau (Taste T) scharf bleibt
+max_width  = 1920
+max_height = 1080
+
 [opener]
 edit = [
   { run = "hx %s", block = true, for = "unix" },
@@ -396,11 +402,26 @@ prepend_previewers = [
   # Markdown: Obsidian-Syntax aufbereiten, dann glow mit Solarized-Stil
   # (~/.local/bin/ofm-preview, ~/.config/glow/solarized-light.json); $w = Breite der Vorschau
   { url = "*.md", run = 'piper -- CLICOLOR_FORCE=1 ofm-preview "$1" $w </dev/null' },
+  # CSV als Tabelle, Jupyter-Notebooks und reStructuredText mit rich (brew rich-cli)
+  { url = "*.{csv,ipynb,rst}", run = 'piper -- rich --force-terminal --left --theme solarized-light -w $w "$1" </dev/null' },
+  # Verzeichnisse als Baum mit eza (Plugin ahkohd/eza-preview, Setup in init.lua)
+  { url = "*/", run = "eza-preview" },
 ]
+
+# Git-Status für Dateien (*) und Verzeichnisse (*/), Setup in init.lua
+[[plugin.prepend_fetchers]]
+url   = "*"
+run   = "git"
+group = "git"
+
+[[plugin.prepend_fetchers]]
+url   = "*/"
+run   = "git"
+group = "git"
 ```
 
-> [!note] Abschnitt `[plugin]`
-> Setzt das Plugin `piper`, das Skript `ofm-preview` und den glow-Stil voraus. Einrichtung: [[Yazi – Markdown-Vorschau]]. Ohne diese Teile den Abschnitt weglassen.
+> [!note] Plugins und Skripte
+> `[preview]`, `[plugin]` und die Fetcher setzen die Plugins `piper`, `toggle-pane`, `git`, `eza-preview`, die Skripte `ofm-preview`/`mermaid-view` und die Programme `glow`, `rich`, `eza` voraus. Einrichtung: [[Yazi – Installation und Plugins#5. Eingerichtete Plugins]], [[Yazi – Markdown-Vorschau]], [[Yazi – Mermaid-Diagramme]]. Ohne diese Teile die entsprechenden Einträge weglassen.
 
 ### `~/.config/yazi/keymap.toml`
 
@@ -416,10 +437,50 @@ on   = "M"
 for  = "unix"
 run  = 'shell "mermaid-view %h" --block'
 desc = "Mermaid-Diagramme der Datei rendern und anzeigen"
+
+[[mgr.prepend_keymap]]
+on   = "T"
+run  = "plugin toggle-pane max-preview"
+desc = "Vorschau maximieren / wiederherstellen"
+
+# eza-preview: Verzeichnisvorschau umschalten (Präfix e)
+[[mgr.prepend_keymap]]
+on   = ["e", "t"]
+run  = "plugin eza-preview"
+desc = "Verzeichnisvorschau: Baum / Liste"
+
+[[mgr.prepend_keymap]]
+on   = ["e", "+"]
+run  = "plugin eza-preview inc-level"
+desc = "Verzeichnisvorschau: eine Ebene tiefer"
+
+[[mgr.prepend_keymap]]
+on   = ["e", "-"]
+run  = "plugin eza-preview dec-level"
+desc = "Verzeichnisvorschau: eine Ebene weniger"
 ```
 
-> [!note] Taste `M`
-> Setzt das Skript `mermaid-view` und `mmdc` voraus, siehe [[Yazi – Mermaid-Diagramme]].
+### `~/.config/yazi/init.lua`
+
+```lua
+-- Git-Status pro Datei in der Dateiliste (Plugin yazi-rs/plugins:git)
+require("git"):setup {
+	-- Position des Statuszeichens in der Linemode-Spalte
+	order = 1500,
+}
+
+-- Verzeichnisvorschau mit eza (Plugin ahkohd/eza-preview)
+require("eza-preview"):setup {
+	-- Baumansicht statt Liste, 2 Ebenen tief
+	default_tree = true,
+	level = 2,
+	icons = true,
+	-- Versteckte Dateien zeigen, .gitignore beachten, .git-Verzeichnis ausblenden
+	all = true,
+	git_ignore = true,
+	ignore_glob = { ".git" },
+}
+```
 
 ### `~/.config/yazi/theme.toml`
 
@@ -480,6 +541,7 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 > |               | `H` / `L`         | Verlauf zurück / vor                     |
 > |               | `gg` / `G`        | Anfang / Ende der Liste                  |
 > |               | `K` / `J`         | Vorschau scrollen                        |
+> |               | `T`               | Vorschau maximieren (toggle-pane)        |
 > | Springen      | `g h` / `g c`     | Home / `~/.config`                       |
 > |               | `g Space`         | Pfad eintippen                           |
 > |               | `z` / `Z`         | Per fzf / zoxide springen                |
@@ -493,10 +555,13 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 > | Sortieren     | `, a` `, m` `, s` | Alphabetisch, Datum, Größe               |
 > | Anzeige       | `.`               | Versteckte Dateien ein/aus               |
 > |               | `m s` / `m p`     | Infospalte: Größe / Rechte               |
+> |               | `e t` / `e +` / `e -` | Ordnervorschau: Baum/Liste, Tiefe (eza) |
+> |               | `M`               | Mermaid-Diagramme im neuen Tab           |
 > | Zwischenablage| `c c` / `c f`     | Pfad / Dateiname kopieren                |
 > | Shell         | `;` / `:`         | Befehl ausführen / und warten            |
 > |               | `Ctrl+z`          | Pausieren, zurück mit `job unfreeze`     |
 > | Tabs          | `t t`, `1`–`9`    | Neuer Tab, Tab wechseln                  |
+> |               | `Ctrl+c`          | Tab schließen                            |
 > | Sonstiges     | `w`               | Aufgabenübersicht                        |
 > |               | `~` / `F1`        | Hilfe                                    |
 > |               | `q` / `Q`         | Beenden mit / ohne Verzeichniswechsel    |

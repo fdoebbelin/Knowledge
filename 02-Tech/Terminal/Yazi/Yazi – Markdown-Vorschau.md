@@ -305,7 +305,7 @@ Cursor auf eine `.md`-Datei setzen, mit `J`/`K` durch die Vorschau blättern. Di
 - Callouts als `▎ info · Titel` dargestellt werden.
 
 > [!tip] Vorschau maximieren
-> Bei schmalem Vorschaubereich lohnt das Plugin `toggle-pane` (Kandidat in [[Yazi – Installation und Plugins#5. Eingerichtete Plugins]]).
+> `T` maximiert den Vorschaubereich, glow rendert dann auf die volle Breite neu. Einrichtung: [[Yazi – Installation und Plugins#5.1 toggle-pane – Vorschau maximieren]].
 
 ---
 
