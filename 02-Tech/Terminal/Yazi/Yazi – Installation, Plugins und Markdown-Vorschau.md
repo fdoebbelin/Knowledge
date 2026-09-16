@@ -458,6 +458,7 @@ ya pkg install
 
 ## Verwandt
 
+- [[Yazi – kommentierter Leitfaden]] – Bedienung, Helix als Editor, Theme, Solarized Light (Yazi 26.9)
 - [[Markdown-Viewer unter Fedora]]
 - [[Fedora Sway Atomic — Schulungsflotte]]
 - [[Nushell — Konfiguration]]
