@@ -14,7 +14,7 @@ created: 2026-09-16
 # Yazi – Mermaid-Diagramme
 
 > [!abstract] Worum es geht
-> Mermaid-Blöcke in Markdown-Dateien erscheinen in der Vorschau nur als Code. Mit der Taste `M` rendert das Skript `mermaid-view` alle Diagramme der Datei unter dem Cursor **lokal** mit `mmdc` als PNG, und Yazi springt zum ersten Bild. Die Bilder werden dann mit Yazis normaler Bildvorschau angezeigt.
+> Mermaid-Blöcke in Markdown-Dateien erscheinen in der Vorschau nur als Code. Mit der Taste `M` rendert das Skript `mermaid-view` alle Diagramme der Datei unter dem Cursor **lokal** mit `mmdc` als PNG und öffnet sie in einem **neuen Tab**. Die Notiz bleibt im bisherigen Tab offen. Die Bilder werden dann mit Yazis normaler Bildvorschau angezeigt.
 
 > [!info] Geltungsbereich
 > Fedora Sway Atomic, Yazi 26.9.1, mermaid-cli 11.17.0 über Homebrew, Terminal `foot` (Sixel), Befehle in Nushell-Syntax. Setzt die [[Yazi – Markdown-Vorschau]] voraus.
@@ -46,7 +46,8 @@ Vorschau (ofm-preview) ──► zeigt Hinweis „mermaid · Taste M …" über 
 Taste M ──► mermaid-view <datei>
               ├─ ```mermaid-Blöcke extrahieren
               ├─ je Block: mmdc ──► ~/.cache/mermaid-view/<notiz>/01-<hash>.png
-              └─ ya emit reveal ──► Yazi springt zum ersten Bild
+              ├─ ya emit tab_create ──► neuer Tab im Bild-Ordner
+              └─ ya emit reveal     ──► Cursor auf das erste Bild
 ```
 
 | Baustein                                  | Aufgabe                                             |
@@ -135,7 +136,7 @@ Datei `~/.local/bin/mermaid-view`:
 #!/usr/bin/env nu
 # Mermaid-Diagramme einer Markdown-Datei lokal mit mmdc rendern und in Yazi anzeigen.
 # Aufruf aus Yazi (keymap.toml): mermaid-view <datei>
-# Die Bilder landen in ~/.cache/mermaid-view/<notiz>/, Yazi springt zum ersten Bild.
+# Die Bilder landen in ~/.cache/mermaid-view/<notiz>/, Yazi öffnet sie in einem neuen Tab.
 
 const THEME = "~/.config/mermaid/solarized-light.json"
 
@@ -185,6 +186,8 @@ def main [file: string] {
 
 	let first = ($targets | where {|t| $t.png | path exists } | get png.0?)
 	if $first != null {
+		# Neuer Tab im Diagramm-Ordner, die Notiz bleibt im bisherigen Tab offen
+		^ya emit tab_create $out_dir
 		^ya emit reveal $first
 	}
 }
@@ -200,7 +203,8 @@ Kommentar zu den Details:
 - **Ein Verzeichnis pro Notiz:** `~/.cache/mermaid-view/<Dateiname ohne .md>/`. Zwei gleichnamige Notizen in verschiedenen Ordnern teilen sich das Verzeichnis. Das ist unschön, schadet aber nicht, weil die Bilder beim Wechsel neu gerendert werden.
 - **`| complete`** fängt Exit-Code und Fehlerausgabe von `mmdc` ab, statt das Skript abzubrechen. Fehlerhafte Diagramme werden gemeldet, die übrigen trotzdem gerendert.
 - **Fehlermeldung gekürzt:** `mmdc` hängt an jeden Syntaxfehler einen JavaScript-Stacktrace. Angezeigt werden nur die Zeilen davor.
-- **`^ya emit reveal`** schickt Yazi den Befehl, zur Datei zu springen. `ya emit` erreicht die Yazi-Instanz, aus der das Skript gestartet wurde.
+- **`^ya emit tab_create` + `reveal`** schicken Yazi zwei Befehle: neuen Tab im Bild-Ordner öffnen, dann den Cursor auf das erste Bild setzen. `ya emit` erreicht die Yazi-Instanz, aus der das Skript gestartet wurde.
+- **Nicht `tab_create <datei.png>`:** Mit einer Datei als Ziel behandelt Yazi 26.9.1 den Pfad als Verzeichnis, der Tab bleibt leer (getestet). Deshalb Ordner und Datei getrennt.
 - **`-b "#fdf6e3"`** setzt den Bildhintergrund auf Solarized base3, **`-s 2`** rendert in doppelter Auflösung.
 
 ### 3.4 Taste `M` in Yazi
@@ -238,9 +242,20 @@ Anschließend Yazi neu starten.
 
 1. Cursor auf eine Markdown-Datei. Enthält sie Diagramme, zeigt die Vorschau `▎ mermaid · Taste M zeigt das Diagramm als Bild`.
 2. `M` drücken. Beim ersten Mal erscheint `Rendere Diagramm 1 von 2 …`.
-3. Yazi springt nach `~/.cache/mermaid-view/<notiz>/` auf `01-….png`, die Vorschau zeigt das Bild.
+3. Ein neuer Tab öffnet sich in `~/.cache/mermaid-view/<notiz>/`, der Cursor steht auf `01-….png`, die Vorschau zeigt das Bild.
 4. `j`/`k` wechselt zwischen den Diagrammen.
-5. `H` (Verlauf zurück) kehrt ins Verzeichnis der Notiz zurück.
+5. Zurück zur Notiz:
+
+| Taste    | Wirkung                                                   |
+| -------- | --------------------------------------------------------- |
+| `Ctrl+c` | Diagramm-Tab schließen, zurück zur Notiz                  |
+| `1` / `2` | Zwischen Notiz-Tab und Diagramm-Tab wechseln, beide bleiben offen |
+| `[` / `]` | Vorheriger / nächster Tab                                |
+
+Cursor und Verzeichnis im Notiz-Tab bleiben dabei unverändert (getestet).
+
+> [!note] Jedes `M` öffnet einen weiteren Tab
+> Wer `M` im Notiz-Tab erneut drückt, bekommt einen zusätzlichen Tab. Nicht mehr benötigte Diagramm-Tabs mit `Ctrl+c` schließen.
 
 > [!tip] Größer ansehen
 > - `Enter` öffnet das PNG mit dem Standardprogramm für `image/png`. Auf dem Referenzsystem ist das Google Chrome. Umstellen auf `imv` (liegt im Basisimage): `^xdg-mime default imv.desktop image/png`
@@ -262,8 +277,8 @@ Anschließend Yazi neu starten.
 > [!failure] Taste `M` ohne Wirkung
 > Yazi nach Änderung an `keymap.toml` nicht neu gestartet, oder `mermaid-view` nicht ausführbar bzw. nicht im `$PATH`.
 
-> [!failure] Yazi springt nicht zum Bild
-> Alle Diagramme sind fehlgeschlagen, dann gibt es kein Ziel. Die Fehlermeldungen stehen vor der Aufforderung „Taste drücken“.
+> [!failure] Kein neuer Tab
+> Alle Diagramme sind fehlgeschlagen, dann gibt es nichts anzuzeigen. Die Fehlermeldungen stehen vor der Aufforderung „Taste drücken“.
 
 > [!failure] Bild wird nicht angezeigt, nur Dateiinfo
 > Das Terminal meldet kein Bildprotokoll. foot kann Sixel; in anderen Terminals prüfen, ob Sixel oder Kitty-Grafik unterstützt wird.
