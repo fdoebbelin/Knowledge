@@ -80,6 +80,7 @@ Yazi selbst braucht nur `file(1)`, das im Basisimage liegt. Alles Weitere schalt
 | `fzf`      | `fzf`         | Springen per fzf (Taste `z`)                       | brew                   |
 | `zoxide`   | `zoxide`      | Verzeichnishistorie (Taste `Z`), braucht Shell-Hook | brew                  |
 | `resvg`    | `resvg`       | SVG-Vorschau                                       | brew                   |
+| `ouch`     | `ouch`        | Archiv-Vorschau als Baum, Komprimieren (Taste `C`) | brew                   |
 | `jq`       | `jq`          | JSON-Vorschau                                      | Basisimage             |
 | `7z`       | `sevenzip`    | Archiv-Vorschau und -Extraktion                    | Basisimage             |
 | `pdftoppm` | `poppler`     | PDF-Vorschau                                       | Basisimage             |
@@ -90,14 +91,14 @@ Yazi selbst braucht nur `file(1)`, das im Basisimage liegt. Alles Weitere schalt
 Vorhandene Programme prüfen:
 
 ```nu
-[glow mmdc rich eza mediainfo fd rg fzf zoxide resvg jq 7z pdftoppm ffmpeg magick wl-copy]
+[glow mmdc rich eza mediainfo fd rg fzf zoxide resvg ouch jq 7z pdftoppm ffmpeg magick wl-copy]
 | each {|p| {programm: $p, pfad: (which $p | get path.0? | default "–")} }
 ```
 
 Alles aus brew in einem Schritt:
 
 ```nu
-brew install glow mermaid-cli rich-cli eza media-info fd ripgrep fzf zoxide resvg
+brew install glow mermaid-cli rich-cli eza media-info fd ripgrep fzf zoxide resvg ouch
 ```
 
 ### zoxide: Hook für Nushell
@@ -175,6 +176,21 @@ use = "ahkohd/eza-preview"
 rev = "e8fb6c8"
 hash = "c238595c801caa4f28553b9af8cf8804"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "58c4f4e"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "58c4f4e"
+hash = "87472b05a8c420100f6a2b9cde1e7746"
+
+[[plugin.deps]]
+use = "ndtoan96/ouch"
+rev = "596b666"
+hash = "c2f4f4aca257dcceafa9e3b828dbf1c9"
+
 [flavor]
 deps = []
 ```
@@ -208,6 +224,9 @@ ya pkg install         # Alles aus package.toml installieren
 | `yazi-rs/plugins:toggle-pane` | Vorschau maximieren / wiederherstellen          | `T`        | [[#5.1 toggle-pane – Vorschau maximieren]] |
 | `yazi-rs/plugins:git`         | Git-Status pro Datei in der Liste               | –          | [[#5.2 git – Status pro Datei]] |
 | `ahkohd/eza-preview`           | Verzeichnisvorschau als Baum                    | `e t`, `e +`, `e -` | [[#5.4 eza-preview – Verzeichnisse als Baum]] |
+| `yazi-rs/plugins:smart-enter` | `l` betritt Verzeichnisse oder öffnet Dateien   | `l`        | [[#5.6 smart-enter – eine Taste für Öffnen und Betreten]] |
+| `yazi-rs/plugins:chmod`       | Rechte der Auswahl ändern                       | `c m`      | [[#5.7 chmod – Rechte ändern]] |
+| `ndtoan96/ouch`               | Archiv-Vorschau, Komprimieren                   | `C`        | [[#5.8 ouch – Archive]] |
 
 Ohne Plugin, als eigenes Skript mit Taste `M`: Mermaid-Diagramme, siehe [[Yazi – Mermaid-Diagramme]].
 
@@ -349,16 +368,73 @@ Das Plugin `boydaihungst/mediainfo` ist **nicht** eingerichtet:
 
 Stattdessen genügt `brew install media-info`: Yazis Standardkonfiguration enthält für Audio und Video bereits einen Opener „Show media info“. Aufruf: Cursor auf die Datei, `O`, Eintrag auswählen.
 
-### Kandidaten (noch nicht eingerichtet)
+### 5.6 smart-enter – eine Taste für Öffnen und Betreten
 
-| Plugin                            | Zweck                                                   |
-| --------------------------------- | ------------------------------------------------------- |
-| `yazi-rs/plugins:smart-enter`     | `Enter` öffnet Dateien oder betritt Verzeichnisse       |
-| `yazi-rs/plugins:chmod`           | Rechte der Auswahl ändern                               |
-| `ndtoan96/ouch`                   | Archive                                                 |
+```nu
+ya pkg add yazi-rs/plugins:smart-enter
+```
 
-> [!note] Aktivierung laut README
-> Die Konfigurationsschlüssel ändern sich zwischen Yazi-Versionen. Die Aktivierung wird deshalb erst beim Einrichten aus der README des Plugins übernommen, getestet und dann hier dokumentiert.
+`keymap.toml`:
+
+```toml
+[[mgr.prepend_keymap]]
+on   = "l"
+run  = "plugin smart-enter"
+desc = "Verzeichnis betreten oder Datei öffnen"
+```
+
+- **Standard:** `l` betritt nur Verzeichnisse, auf Dateien passiert nichts; geöffnet wird mit `Enter`.
+- **Mit Plugin:** `l` auf einem Verzeichnis betritt es, auf einer Datei öffnet es sie mit dem Standard-Opener, bei Text also Helix (beides getestet). Navigation mit `h`/`l` wird damit durchgängig.
+- **Nur die Datei unter dem Cursor** wird geöffnet, auch wenn mehrere ausgewählt sind. Mehrere öffnen: `require("smart-enter"):setup { open_multi = true }` in `init.lua` (nicht eingerichtet).
+
+### 5.7 chmod – Rechte ändern
+
+```nu
+ya pkg add yazi-rs/plugins:chmod
+```
+
+`keymap.toml`:
+
+```toml
+[[mgr.prepend_keymap]]
+on   = ["c", "m"]
+run  = "plugin chmod"
+desc = "Rechte der Auswahl ändern (chmod)"
+```
+
+- **Bedienung:** Dateien auswählen (oder nur Cursor), `c m`, Modus oktal eingeben, z. B. `600` oder `755`, `Enter`.
+- **Getestet:** `644` → `600`.
+- **Präfix `c`** teilt sich die Belegung mit den Kopierbefehlen (`c c`, `c f` …); `c m` ist dort frei.
+
+### 5.8 ouch – Archive
+
+```nu
+brew install ouch
+ya pkg add ndtoan96/ouch
+```
+
+`yazi.toml`, im Array `prepend_previewers`:
+
+```toml
+  { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch" },
+```
+
+`keymap.toml`:
+
+```toml
+[[mgr.prepend_keymap]]
+on   = "C"
+run  = "plugin ouch"
+desc = "Auswahl komprimieren (ouch)"
+```
+
+- **Vorschau:** Archivinhalt als Baum mit Verzeichnisstruktur (getestet mit ZIP). Blättern mit `J`/`K`.
+- **Komprimieren:** Auswahl treffen, `C`, Dateinamen bestätigen oder ändern. Das Format ergibt sich aus der Endung (`.zip`, `.tar.gz`, `.7z` …), Vorschlag ist `<name>.zip` (getestet).
+- **Entpacken bleibt bei Yazi:** Der eingebaute Opener „Extract here“ (`O`) nutzt `7z` aus dem Basisimage. Den Opener-Vorschlag aus der README (`ouch d -y "$@"`) nicht übernehmen, er nutzt die alte Platzhalter-Syntax.
+- **`C` ist im Dateimanager frei**, in Eingabefeldern bedeutet es etwas anderes (bis Zeilenende ausschneiden) – dort greift die Belegung nicht.
+
+> [!note] Alle Kandidaten eingerichtet
+> Neue Plugins wie oben einrichten: README lesen, Aktivierung testen, dann hier als eigenen Unterabschnitt dokumentieren. Die Konfigurationsschlüssel ändern sich zwischen Yazi-Versionen.
 
 ---
 
@@ -392,7 +468,7 @@ Ablauf auf dem neuen Rechner:
 
 ```nu
 # 1. Yazi und Hilfsprogramme
-brew install yazi glow mermaid-cli rich-cli eza media-info fd ripgrep fzf zoxide resvg
+brew install yazi glow mermaid-cli rich-cli eza media-info fd ripgrep fzf zoxide resvg ouch
 
 # 1b. Chromium für mmdc (passende Version wird automatisch ermittelt)
 ^node (brew --prefix mermaid-cli | str trim | path join "libexec/lib/node_modules/@mermaid-js/mermaid-cli/node_modules/puppeteer/lib/puppeteer/node/cli.js") browsers install chrome-headless-shell
@@ -412,7 +488,7 @@ chmod +x ~/.local/bin/ofm-preview ~/.local/bin/mermaid-view
 ya pkg list
 ```
 
-`ya pkg list` muss vier Plugins zeigen: `piper`, `toggle-pane`, `git`, `eza-preview`.
+`ya pkg list` muss sieben Plugins zeigen: `piper`, `toggle-pane`, `git`, `eza-preview`, `smart-enter`, `chmod`, `ouch`.
 
 Anschließend Yazi neu starten.
 

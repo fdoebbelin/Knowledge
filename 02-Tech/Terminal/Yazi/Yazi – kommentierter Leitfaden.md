@@ -406,6 +406,8 @@ prepend_previewers = [
   { url = "*.{csv,ipynb,rst}", run = 'piper -- rich --force-terminal --left --theme solarized-light -w $w "$1" </dev/null' },
   # Verzeichnisse als Baum mit eza (Plugin ahkohd/eza-preview, Setup in init.lua)
   { url = "*/", run = "eza-preview" },
+  # Archive: Inhalt als Baum mit ouch (Plugin ndtoan96/ouch, brew ouch)
+  { mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}", run = "ouch" },
 ]
 
 # Git-Status für Dateien (*) und Verzeichnisse (*/), Setup in init.lua
@@ -421,7 +423,7 @@ group = "git"
 ```
 
 > [!note] Plugins und Skripte
-> `[preview]`, `[plugin]` und die Fetcher setzen die Plugins `piper`, `toggle-pane`, `git`, `eza-preview`, die Skripte `ofm-preview`/`mermaid-view` und die Programme `glow`, `rich`, `eza` voraus. Einrichtung: [[Yazi – Installation und Plugins#5. Eingerichtete Plugins]], [[Yazi – Markdown-Vorschau]], [[Yazi – Mermaid-Diagramme]]. Ohne diese Teile die entsprechenden Einträge weglassen.
+> `[preview]`, `[plugin]` und die Fetcher setzen die Plugins `piper`, `toggle-pane`, `git`, `eza-preview`, `smart-enter`, `chmod`, `ouch`, die Skripte `ofm-preview`/`mermaid-view` und die Programme `glow`, `rich`, `eza`, `ouch` voraus. Einrichtung: [[Yazi – Installation und Plugins#5. Eingerichtete Plugins]], [[Yazi – Markdown-Vorschau]], [[Yazi – Mermaid-Diagramme]]. Ohne diese Teile die entsprechenden Einträge weglassen.
 
 ### `~/.config/yazi/keymap.toml`
 
@@ -458,6 +460,24 @@ desc = "Verzeichnisvorschau: eine Ebene tiefer"
 on   = ["e", "-"]
 run  = "plugin eza-preview dec-level"
 desc = "Verzeichnisvorschau: eine Ebene weniger"
+
+# smart-enter: l betritt Verzeichnisse oder öffnet Dateien
+[[mgr.prepend_keymap]]
+on   = "l"
+run  = "plugin smart-enter"
+desc = "Verzeichnis betreten oder Datei öffnen"
+
+# chmod: Rechte der Auswahl ändern (c m)
+[[mgr.prepend_keymap]]
+on   = ["c", "m"]
+run  = "plugin chmod"
+desc = "Rechte der Auswahl ändern (chmod)"
+
+# ouch: Auswahl komprimieren, Format aus dem Dateinamen (Standard zip)
+[[mgr.prepend_keymap]]
+on   = "C"
+run  = "plugin ouch"
+desc = "Auswahl komprimieren (ouch)"
 ```
 
 ### `~/.config/yazi/init.lua`
@@ -537,7 +557,7 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 > | Bereich       | Taste             | Wirkung                                  |
 > | ------------- | ----------------- | ---------------------------------------- |
 > | Navigation    | `j` / `k`         | Nächste / vorherige Datei                |
-> |               | `h` / `l`         | Ebene höher / hinein                     |
+> |               | `h` / `l`         | Ebene höher / hinein bzw. Datei öffnen (smart-enter) |
 > |               | `H` / `L`         | Verlauf zurück / vor                     |
 > |               | `gg` / `G`        | Anfang / Ende der Liste                  |
 > |               | `K` / `J`         | Vorschau scrollen                        |
@@ -550,6 +570,8 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 > | Dateien       | `a`, `A`, `r`     | Anlegen, mehrere anlegen, umbenennen     |
 > |               | `y`, `x`, `p`     | Kopieren, ausschneiden, einfügen         |
 > |               | `d` / `D`         | Papierkorb / endgültig löschen           |
+> |               | `c m`             | Rechte ändern (chmod)                    |
+> |               | `C`               | Auswahl komprimieren (ouch)              |
 > | Suchen        | `f`               | Liste filtern                            |
 > |               | `s` / `S`         | Namen (fd) / Inhalte (ripgrep) suchen    |
 > | Sortieren     | `, a` `, m` `, s` | Alphabetisch, Datum, Größe               |
