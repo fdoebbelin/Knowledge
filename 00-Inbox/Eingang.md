@@ -41,13 +41,16 @@ Erzeugt mit dem Skill `chat-protokoll`. Erkennbar am Frontmatter `type: chat-pro
 
 ```yaml
 title:    # Thema des Chats
-date:     # YYYY-MM-DD
+created:  # YYYY-MM-DD, Datum des Chats
 type:     chat-protokoll
-quelle:   # z. B. claude.ai
-modell:   # z. B. Claude Opus 5
+source:   # z. B. claude.ai
+model:    # z. B. Claude Opus 5
 tags:     # chat-protokoll + Themen-Tags
-status:   # offen | erledigt
+status:   # draft | active | done
 ```
+
+> [!note] Umstellung auf englische Schlüssel
+> Die ersten beiden Protokolle tragen noch `date`, `quelle`, `modell` und `status: offen`. Zuordnung und Begründung: [[Struktur-Übersicht#Chat-Protokolle (Skill chat-protokoll)]].
 
 Aufbau: Zusammenfassung, Hinweise zur Vollständigkeit, Ausgangslage, Problemlösungen, Artefakte & Prompts, Entscheidungen, Nützliche Befehle & Snippets, Offene Punkte.
 

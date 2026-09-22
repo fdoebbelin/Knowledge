@@ -88,21 +88,56 @@ Knowledge/
 
 ## Frontmatter-Konvention
 
-Nur für Notizen, die es brauchen (Leitfäden, Kursbausteine, Clippings). Schlüssel auf Englisch:
+Nur für Notizen, die es brauchen (Leitfäden, Kursbausteine, Clippings, Protokolle). Schlüssel auf Englisch. Zahlen in Klammern: Verwendungen im Vault am 22.09.2026 (220 von 1.349 Notizen haben überhaupt Frontmatter).
+
+### Allgemein
+
+| Schlüssel | Verw. | Inhalt |
+| --- | --- | --- |
+| `title` | 212 | Anzeigename |
+| `tags` | 207 | Liste, kleingeschrieben |
+| `created` | 136 | YYYY-MM-DD |
+| `status` | 88 | `draft` \| `active` \| `done` \| `archived` |
+| `source` | 73 | URL oder Herkunft (Clippings, Chats) |
+| `author` | 69 | Verfasser, bei Clippings der Originalautor |
+| `published` | 68 | Veröffentlichungsdatum der Quelle |
+| `description` | 68 | ein Satz, worum es geht |
+| `aliases` | 56 | alternative Namen für Wikilinks |
+| `system` | 28 | Zielsystem, z. B. `Fedora Sway Atomic` |
+| `updated` | 22 | YYYY-MM-DD, nur bei gepflegten Notizen |
+| `type` | 2 | Notiztyp, bisher nur `chat-protokoll` |
+
+### Fachspezifisch
+
+- **Kursbausteine:** `modul`, `baustein`, `kurstag`, `ue`, `typ`, `phase`, `ort`, `dauer`, `zielgruppe` – deutsche Schlüssel, gewachsen mit dem Kursmaterial.
+- **Geräte- und Systemleitfäden:** `system`, `teil_von`, `zielgeraet`, `shell`, `verifiziert_gegen`.
+- **Werkzeugleitfäden:** Versionsschlüssel wie `yazi_version`.
+- Der Schlüssel `tag` (Singular) ist für Obsidian-Tags reserviert und wird nicht als Kurstag verwendet.
+
+### Chat-Protokolle (Skill chat-protokoll)
+
+Zielbild mit englischen Schlüsseln, damit Protokolle in denselben Abfragen auftauchen wie der Rest:
 
 ```yaml
-title:        # Anzeigename
-aliases:      # alternative Namen für Wikilinks
-tags:         # Liste, kleingeschrieben
-created:      # YYYY-MM-DD
-updated:      # YYYY-MM-DD
-source:       # URL oder Herkunft bei Clippings
-status:       # draft | active | done | archived
+title:        # Thema des Chats
+created:      # YYYY-MM-DD, Datum des Chats
+type:         chat-protokoll
+source:       # z. B. claude.ai
+model:        # z. B. Claude Opus 5
+tags:         # chat-protokoll + Themen-Tags
+status:       # draft | active | done
 ```
 
-Chat-Protokolle nutzen ein eigenes, deutsches Frontmatter (`type: chat-protokoll`, `quelle`, `modell`, `status: offen | erledigt`), siehe [[Eingang#Konventionen für Chat-Protokolle]].
+| bisher (deutsch) | künftig (englisch) | Begründung |
+| --- | --- | --- |
+| `date` | `created` | `created` ist der etablierte Datums-Schlüssel (136×), `date` kommt nur vereinzelt vor |
+| `quelle` | `source` | bereits 73× im Vault für Herkunft |
+| `modell` | `model` | englische Entsprechung, bisher kein Schlüssel dafür vorhanden |
+| `status: offen` | `status: active` | offene Punkte sind noch in Arbeit |
+| `status: erledigt` | `status: done` | abgeschlossen |
 
-Kursbausteine nutzen zusätzlich `modul`, `baustein`, `kurstag`, `ue`, `typ`, `ort`, `phase`. Leitfäden zu Geräten nutzen `system` und `teil_von`. Der Schlüssel `tag` (Singular) ist reserviert für Obsidian-Tags und wird nicht als Kurstag verwendet.
+> [!warning] Bestand weicht ab
+> Bei `status` stehen im Vault überwiegend deutsche Werte: `entwurf` (53), `draft` (8), `aktiv` (6), dazu vereinzelt `fertig`, `anleitung`, `offen`, `konsolidiert`. Die englische Wertemenge oben ist das Ziel, nicht der Ist-Zustand.
 
 ## Wartung
 
