@@ -1,5 +1,5 @@
 ---
-title: Vault-RAG lokal & NPU-beschleunigt – Foundry Local (Demo: jetzt vs. Nexa SDK)
+title: "Vault-RAG lokal & NPU-beschleunigt – Foundry Local (Demo: jetzt vs. Nexa SDK)"
 tags:
   - rag
   - foundry-local

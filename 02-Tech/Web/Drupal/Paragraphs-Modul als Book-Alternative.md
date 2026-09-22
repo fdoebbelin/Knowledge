@@ -14,7 +14,7 @@ sources:
   - Claude-Chat (2025-04-14)
   - Recherchebericht "Erstellung strukturierter Inhalte mit dem Paragraphs-Modul" (2025-04-14)
   - Schritt-für-Schritt-Anleitung "Paragraphs-Modul" (2025-04-15)
-  - "[[Strukturierte Artikel mit dem Paragraphs Modul für Drupal 8]]" (Novatrend-Blog, 2016)
+  - "[[Strukturierte Artikel mit dem Paragraphs Modul für Drupal 8]] (Novatrend-Blog, 2016)"
 ---
 
 # Paragraphs-Modul als Book-Alternative
