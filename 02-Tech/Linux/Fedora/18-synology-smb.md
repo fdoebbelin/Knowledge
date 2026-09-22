@@ -4,7 +4,7 @@ teil_von: "[[README]]"
 tags: [synology, smb, cifs, automount, systemd, windows11, kvm, libvirt, atomic, nushell]
 zielgeraet: privater KI-Arbeitsplatz, x86_64 Fedora Atomic (bluefin)
 created: 2026-08-12
-status: entwurf
+status: draft
 verifiziert_gegen: —
 ---
 

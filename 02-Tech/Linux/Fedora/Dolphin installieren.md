@@ -9,7 +9,7 @@ tags:
   - nushell
 created: 2026-06-28
 system: Fedora + Hyprland + Nushell
-status: fertig
+status: done
 ---
 
 # Dolphin installieren

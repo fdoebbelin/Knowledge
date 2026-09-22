@@ -4,7 +4,8 @@ aliases: [Hibernate einrichten, Ruhezustand, suspend-then-hibernate]
 tags: [linux, fedora, hibernate, swap, btrfs, systemd, power, yoga]
 created: 2026-07-06
 system: Lenovo Yoga 920-13IKB
-status: anleitung
+status: active
+type: anleitung
 ---
 
 # Hibernate einrichten (Ruhezustand)

@@ -5,7 +5,7 @@ ue: 6
 phase: Auslieferung
 ort: Host
 tags: [tauri/kurs/modul, flatpak, ci, build]
-status: entwurf
+status: draft
 ---
 
 # M11 – Flatpak Build und Verteilung

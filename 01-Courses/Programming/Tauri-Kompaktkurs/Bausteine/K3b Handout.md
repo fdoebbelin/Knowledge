@@ -5,7 +5,7 @@ title: JavaScript – die Bausteine – Handout
 ue: 6
 kurstag: 2-3
 tags: [tauri/kompaktkurs/handout, javascript]
-status: entwurf
+status: draft
 ---
 
 # K3 – JavaScript – die Bausteine

@@ -4,7 +4,7 @@ title: CSS – das Aussehen
 ue: 5
 kurstag: 1-2
 tags: [tauri/kompaktkurs/baustein, css]
-status: entwurf
+status: draft
 ---
 
 # K2 – CSS – das Aussehen

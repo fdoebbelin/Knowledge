@@ -4,7 +4,7 @@ title: Ankommen und erste eigene Änderung
 ue: 2
 kurstag: 1
 tags: [tauri/kompaktkurs/baustein]
-status: entwurf
+status: draft
 ---
 
 # K0 – Ankommen und erste eigene Änderung

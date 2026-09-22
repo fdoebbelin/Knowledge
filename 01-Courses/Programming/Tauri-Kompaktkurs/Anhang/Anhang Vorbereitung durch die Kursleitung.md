@@ -2,7 +2,7 @@
 typ: anhang
 title: Vorbereitung durch die Kursleitung
 tags: [tauri/kompaktkurs/anhang, vorbereitung]
-status: entwurf
+status: draft
 ---
 
 # Anhang – Vorbereitung durch die Kursleitung

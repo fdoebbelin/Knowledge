@@ -4,7 +4,7 @@ title: Feinschliff
 ue: 2
 kurstag: 4
 tags: [tauri/kompaktkurs/baustein, css, ux]
-status: entwurf
+status: draft
 ---
 
 # K6 – Feinschliff

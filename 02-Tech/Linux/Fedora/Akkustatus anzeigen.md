@@ -7,7 +7,7 @@ tags:
   - akku
 created: 2026-06-29
 system: Fedora 44 / Hyprland / Lenovo Yoga
-status: fertig
+status: done
 ---
 
 # Akkustatus anzeigen

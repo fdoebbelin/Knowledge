@@ -7,7 +7,7 @@ kurstag: 2-3
 dauer: 270 min in zwei Blöcken
 zielgruppe: 3 Teilnehmende ohne Vorkenntnisse
 tags: [tauri/kompaktkurs/trainerskript, javascript]
-status: entwurf
+status: draft
 ---
 
 # K3 – Trainerskript

@@ -5,7 +5,7 @@ ue: 3
 phase: Desktop
 ort: beide
 tags: [tauri/kurs/modul, storage, flatpak, sqlite]
-status: entwurf
+status: draft
 ---
 
 # M10 – Persistenz im Sandkasten

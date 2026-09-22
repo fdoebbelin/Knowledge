@@ -5,7 +5,7 @@ ue: 3
 phase: Orientierung
 ort: beide
 tags: [tauri/kurs/modul, architektur, atomic]
-status: entwurf
+status: draft
 ---
 
 # M01 – Architektur im Ebenenmodell

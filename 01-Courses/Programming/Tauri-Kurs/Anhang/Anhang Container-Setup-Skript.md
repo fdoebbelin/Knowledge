@@ -2,7 +2,7 @@
 typ: anhang
 title: Container-Setup-Skript für den Kurs
 tags: [tauri/kurs/anhang, nushell, toolbx]
-status: entwurf
+status: draft
 ---
 
 # Anhang – Container-Setup-Skript für den Kurs

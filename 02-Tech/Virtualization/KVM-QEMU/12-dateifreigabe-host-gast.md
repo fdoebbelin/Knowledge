@@ -4,7 +4,7 @@ teil_von: "[[README]]"
 tags: [kvm, qemu, libvirt, windows11, virtiofs, virtiofsd, winfsp, nextcloud, samba, atomic, nushell]
 zielgeraet: privater KI-Arbeitsplatz, x86_64 Fedora Atomic
 created: 2026-07-28
-status: entwurf
+status: draft
 verifiziert_gegen: —
 ---
 

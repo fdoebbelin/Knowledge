@@ -3,7 +3,8 @@ title: Ventoy Multiboot-Stick einrichten
 tags: [ventoy, multiboot, usb, nushell, secureboot]
 created: 2026-07-01
 system: Fedora 44 / CachyOS · Ventoy
-status: Referenz
+status: active
+type: referenz
 ---
 
 > [!info] Konzept & Abgrenzung zu GLIM

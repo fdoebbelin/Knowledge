@@ -3,7 +3,7 @@ title: Office-Paket für Hyprland – Vergleich & LibreOffice-Installation
 tags: [fedora, office, libreoffice, calligra, onlyoffice, hyprland, wayland, vergleich]
 created: 2026-07-06
 system: Fedora 44
-status: entwurf
+status: draft
 ---
 
 # Office-Paket für Hyprland – Vergleich & LibreOffice-Installation

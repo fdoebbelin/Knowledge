@@ -5,7 +5,7 @@ title: Ankommen und erste eigene Änderung – Handout
 ue: 2
 kurstag: 1
 tags: [tauri/kompaktkurs/handout]
-status: entwurf
+status: draft
 ---
 
 # K0 – Ankommen und erste eigene Änderung

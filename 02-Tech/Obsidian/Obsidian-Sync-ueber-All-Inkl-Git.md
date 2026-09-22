@@ -8,7 +8,8 @@ tags:
   - all-inkl
   - 1password
   - sync
-status: Arbeitsanleitung
+status: active
+type: anleitung
 plattformen:
   - Linux
   - Windows

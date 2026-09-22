@@ -2,7 +2,7 @@
 typ: anhang
 title: Befehlskarte für Teilnehmende
 tags: [tauri/kompaktkurs/anhang, nushell]
-status: entwurf
+status: draft
 ---
 
 # Anhang – Befehlskarte für Teilnehmende

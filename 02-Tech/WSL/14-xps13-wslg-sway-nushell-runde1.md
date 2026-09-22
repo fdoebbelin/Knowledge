@@ -6,7 +6,7 @@ tags: [wsl, sway, wslg, nushell, helix, sudo, homebrew, xps13]
 created: 2026-07-29
 system: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL, Nushell 0.114.1 (brew)
 verifiziert_gegen: Nushell 0.114.1 (Konfigurationsteile), Sway-Session XPS (Symptomatik)
-status: entwurf
+status: draft
 ---
 
 # 14 — XPS 13: Erste Sway/Nushell-Runde unter WSLg

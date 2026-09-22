@@ -7,7 +7,7 @@ kurstag: 1
 dauer: 180 min
 zielgruppe: 3 Teilnehmende ohne Vorkenntnisse
 tags: [tauri/kompaktkurs/trainerskript, html]
-status: entwurf
+status: draft
 ---
 
 # K1 – Trainerskript

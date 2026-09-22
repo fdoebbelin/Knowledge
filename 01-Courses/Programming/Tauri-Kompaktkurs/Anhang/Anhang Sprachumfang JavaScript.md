@@ -2,7 +2,7 @@
 typ: anhang
 title: Sprachumfang für den Kompaktkurs
 tags: [tauri/kompaktkurs/anhang, javascript]
-status: entwurf
+status: draft
 ---
 
 # Anhang – Sprachumfang für den Kompaktkurs

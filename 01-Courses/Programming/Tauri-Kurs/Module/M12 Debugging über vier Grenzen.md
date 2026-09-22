@@ -5,7 +5,7 @@ ue: 3
 phase: Qualität
 ort: beide
 tags: [tauri/kurs/modul, debugging, testing]
-status: entwurf
+status: draft
 ---
 
 # M12 – Debugging über vier Grenzen

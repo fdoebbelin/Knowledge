@@ -5,7 +5,7 @@ title: HTML – die Struktur – Handout
 ue: 4
 kurstag: 1
 tags: [tauri/kompaktkurs/handout, html]
-status: entwurf
+status: draft
 ---
 
 # K1 – HTML – die Struktur

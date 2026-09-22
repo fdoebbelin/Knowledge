@@ -4,7 +4,7 @@ title: JavaScript im Fenster
 ue: 4
 kurstag: 3
 tags: [tauri/kompaktkurs/baustein, javascript, dom]
-status: entwurf
+status: draft
 ---
 
 # K4 – JavaScript im Fenster

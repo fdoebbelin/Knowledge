@@ -3,7 +3,7 @@ title: Hyprland Konfiguration
 tags: [hyprland, lua, wayland, fedora, konfiguration]
 created: 2026-06-29
 system: Fedora 44 / Hyprland
-status: entwurf
+status: draft
 ---
 
 # Hyprland Konfiguration

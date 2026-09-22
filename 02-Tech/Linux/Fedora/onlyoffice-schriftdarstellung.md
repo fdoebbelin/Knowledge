@@ -3,7 +3,7 @@ title: OnlyOffice – Schriftdarstellung verbessern
 tags: [fedora, onlyoffice, hyprland, xwayland, fonts, hidpi, skalierung]
 created: 2026-07-06
 system: Fedora 44
-status: entwurf
+status: draft
 ---
 
 # OnlyOffice – Schriftdarstellung verbessern

@@ -4,7 +4,7 @@ title: HTML – die Struktur
 ue: 4
 kurstag: 1
 tags: [tauri/kompaktkurs/baustein, html]
-status: entwurf
+status: draft
 ---
 
 # K1 – HTML – die Struktur

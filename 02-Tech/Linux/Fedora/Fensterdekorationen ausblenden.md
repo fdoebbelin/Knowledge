@@ -8,7 +8,7 @@ tags:
   - css
 created: 2026-06-29
 system: Fedora 44 / Hyprland
-status: aktiv
+status: active
 ---
 
 # Fensterdekorationen ausblenden

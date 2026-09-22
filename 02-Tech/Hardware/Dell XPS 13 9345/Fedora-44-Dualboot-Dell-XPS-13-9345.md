@@ -12,7 +12,7 @@ device: "Dell XPS 13 9345 (X1E80100, codename 'tributo')"
 zielsystem: "Fedora Workstation 44 (aarch64), Kernel 6.19"
 erstsystem: "Windows 11 (ARM)"
 created: 2026-06-29
-status: arbeitsentwurf
+status: draft
 ---
 
 # Fedora 44 als Zweitsystem auf dem Dell XPS 13 9345

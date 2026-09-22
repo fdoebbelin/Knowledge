@@ -6,7 +6,7 @@ tags: [wsl, wslg, sway, noctalia, quickshell, flatpak, obsidian, nushell, xps13]
 zielgeraet: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
 created: 2026-08-02
 verifiziert_am: 2026-08-02
-status: verifiziert
+status: done
 ---
 
 # 15 — Noctalia unter WSLg: von „startet nicht" bis „Bar steht"

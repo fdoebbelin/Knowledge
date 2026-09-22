@@ -4,7 +4,7 @@ title: Als Anwendung ausliefern
 ue: 3
 kurstag: 4
 tags: [tauri/kompaktkurs/baustein, flatpak]
-status: entwurf
+status: draft
 ---
 
 # K7 – Als Anwendung ausliefern

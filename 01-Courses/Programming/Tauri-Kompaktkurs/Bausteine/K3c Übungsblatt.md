@@ -5,7 +5,7 @@ title: JavaScript – die Bausteine – Übungen
 ue: 6
 kurstag: 2-3
 tags: [tauri/kompaktkurs/uebung, javascript]
-status: entwurf
+status: draft
 ---
 
 # K3 – Übungsblatt

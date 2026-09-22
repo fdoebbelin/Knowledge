@@ -5,7 +5,7 @@ ue: 4
 phase: Fundament
 ort: Toolbx
 tags: [tauri/kurs/modul, vanilla, ipc]
-status: entwurf
+status: draft
 ---
 
 # M02 – Notizblock ausbauen ohne Framework

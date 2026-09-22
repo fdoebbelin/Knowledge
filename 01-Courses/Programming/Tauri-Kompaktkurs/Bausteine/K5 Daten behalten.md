@@ -4,7 +4,7 @@ title: Daten behalten
 ue: 4
 kurstag: 3-4
 tags: [tauri/kompaktkurs/baustein, tauri, ipc]
-status: entwurf
+status: draft
 ---
 
 # K5 – Daten behalten

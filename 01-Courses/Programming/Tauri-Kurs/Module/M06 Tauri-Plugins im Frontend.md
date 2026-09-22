@@ -5,7 +5,7 @@ ue: 5
 phase: Frontend-Kern
 ort: Toolbx
 tags: [tauri/kurs/modul, plugins, portals]
-status: entwurf
+status: draft
 ---
 
 # M06 – Tauri-Plugins im Frontend

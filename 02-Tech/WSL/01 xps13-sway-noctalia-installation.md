@@ -19,7 +19,8 @@ zielgeraet: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
 hintergrund: "[[00 xps13-fedora-wsl-sway-noctalia]]"
 created: 2026-08-17
 verifiziert_gegen: Nushell 0.114.1, Noctalia v4.7.7 (Schema 59)
-status: anleitung
+status: active
+type: anleitung
 ---
 
 # XPS 13 — Fedora-WSL mit Sway und Noctalia: Installation

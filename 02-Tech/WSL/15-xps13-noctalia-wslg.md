@@ -6,7 +6,7 @@ tags: [wsl, wslg, sway, noctalia, quickshell, terra, qt6, nushell, xps13]
 created: 2026-08-02
 system: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
 verifiziert_gegen: Nushell 0.114.1 (Syntax); Laufzeit auf dem XPS noch offen
-status: entwurf
+status: draft
 ---
 
 # 15 — XPS 13: Noctalia unter WSLg

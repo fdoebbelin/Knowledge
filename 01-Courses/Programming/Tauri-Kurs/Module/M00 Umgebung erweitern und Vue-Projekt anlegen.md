@@ -5,7 +5,7 @@ ue: 3
 phase: Orientierung
 ort: Toolbx
 tags: [tauri/kurs/modul, setup, toolbx, nushell]
-status: entwurf
+status: draft
 ---
 
 # M00 – Umgebung erweitern und Vue-Projekt anlegen

@@ -5,7 +5,7 @@ title: Ankommen und erste eigene Änderung – Übungen
 ue: 2
 kurstag: 1
 tags: [tauri/kompaktkurs/uebung]
-status: entwurf
+status: draft
 ---
 
 # K0 – Übungsblatt

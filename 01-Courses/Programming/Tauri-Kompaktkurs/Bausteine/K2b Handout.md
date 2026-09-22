@@ -5,7 +5,7 @@ title: CSS – das Aussehen – Handout
 ue: 5
 kurstag: 1-2
 tags: [tauri/kompaktkurs/handout, css]
-status: entwurf
+status: draft
 ---
 
 # K2 – CSS – das Aussehen

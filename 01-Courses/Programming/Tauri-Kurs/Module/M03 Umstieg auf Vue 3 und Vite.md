@@ -5,7 +5,7 @@ ue: 6
 phase: Fundament
 ort: Toolbx
 tags: [tauri/kurs/modul, vue, typescript]
-status: entwurf
+status: draft
 ---
 
 # M03 – Umstieg auf Vue 3 und Vite

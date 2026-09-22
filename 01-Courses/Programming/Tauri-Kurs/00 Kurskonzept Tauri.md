@@ -8,7 +8,7 @@ umgebung: Toolbx-Container "tauri-dev"
 shell: Nushell
 stack: [tauri-2, vue-3, typescript, vite, flatpak]
 umfang_ue: 64
-status: entwurf
+status: draft
 version: 0.2
 tags:
   - tauri/kurs

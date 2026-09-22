@@ -5,7 +5,7 @@ ue: 4
 phase: Desktop
 ort: beide
 tags: [tauri/kurs/modul, wayland, sway, window]
-status: entwurf
+status: draft
 ---
 
 # M09 – Fenster und Wayland-Integration

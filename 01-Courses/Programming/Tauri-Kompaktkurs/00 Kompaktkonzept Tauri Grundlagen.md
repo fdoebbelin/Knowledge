@@ -12,7 +12,7 @@ shell: Nushell
 stack: [tauri-2, html, css, javascript, flatpak]
 werkzeugkette: cargo (ohne Node, ohne npm)
 umfang_ue: 30
-status: entwurf
+status: draft
 version: 0.1
 tags:
   - tauri/kompaktkurs

@@ -5,7 +5,7 @@ title: HTML – die Struktur – Übungen
 ue: 4
 kurstag: 1
 tags: [tauri/kompaktkurs/uebung, html]
-status: entwurf
+status: draft
 ---
 
 # K1 – Übungsblatt

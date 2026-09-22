@@ -3,7 +3,7 @@ title: Deckelkontakt – Suspend konfigurieren
 tags: [hyprland, systemd, logind, power, lenovo-yoga, fedora]
 created: 2026-06-29
 system: Fedora 44 / Hyprland
-status: erledigt
+status: done
 ---
 
 # Deckelkontakt – Suspend konfigurieren

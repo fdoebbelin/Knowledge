@@ -5,7 +5,7 @@ title: CSS – das Aussehen – Übungen
 ue: 5
 kurstag: 1-2
 tags: [tauri/kompaktkurs/uebung, css]
-status: entwurf
+status: draft
 ---
 
 # K2 – Übungsblatt

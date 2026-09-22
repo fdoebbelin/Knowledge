@@ -2,7 +2,7 @@
 typ: anhang
 title: Flatpak-Manifest für NoteFlow
 tags: [tauri/kurs/anhang, flatpak, manifest]
-status: entwurf
+status: draft
 ---
 
 # Anhang – Flatpak-Manifest für NoteFlow

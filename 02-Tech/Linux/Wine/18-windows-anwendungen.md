@@ -4,7 +4,7 @@ teil_von: "[[README]]"
 tags: [windows, winapps, winboat, freerdp, remoteapp, wine, bottles, proton, libvirt, atomic, flatpak, nushell]
 zielgeraet: x86_64 Fedora Atomic (Yoga 920, Dozenten-PC)
 created: 2026-08-13
-status: entwurf
+status: draft
 verifiziert_gegen: —
 ---
 

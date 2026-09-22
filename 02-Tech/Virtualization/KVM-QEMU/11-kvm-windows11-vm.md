@@ -4,7 +4,7 @@ teil_von: "[[README]]"
 tags: [kvm, qemu, libvirt, windows11, atomic, virt-install, vm-import, vm-restore, ovmf, swtpm, nushell]
 zielgeraet: x86_64 Fedora Atomic (Yoga 920, Dozenten-PC)
 created: 2026-07-26
-status: teilweise verifiziert
+status: active
 verifiziert_am: 2026-07-27
 verifiziert_gegen: Fedora Atomic x86_64, edk2-ovmf-20260508-6.fc44, QEMU pc-q35-10.2
 ---

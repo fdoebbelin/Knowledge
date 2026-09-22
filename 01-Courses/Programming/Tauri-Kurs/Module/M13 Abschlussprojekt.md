@@ -5,7 +5,7 @@ ue: 8
 phase: Transfer
 ort: beide
 tags: [tauri/kurs/modul, projekt, bewertung]
-status: entwurf
+status: draft
 ---
 
 # M13 – Abschlussprojekt

@@ -5,7 +5,7 @@ ue: 4
 phase: Frontend-Kern
 ort: beide
 tags: [tauri/kurs/modul, security, flatpak, portals]
-status: entwurf
+status: draft
 ---
 
 # M07 – Sicherheit, Capabilities und Sandkasten

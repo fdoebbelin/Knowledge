@@ -12,7 +12,7 @@ aliases:
   - "atomic-brew Image bauen"
   - "Homebrew-Image bauen"
   - "Coaching bootc Leitfaden"
-status: aktiv
+status: active
 ---
 
 # Eigenes bootc-Image mit Homebrew-Toolchain — `atomic-brew`

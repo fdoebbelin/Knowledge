@@ -8,7 +8,8 @@ tags:
   - windows-arm
   - lokale-ki
 created: 2026-06-22
-status: Setup-Guide
+status: active
+type: anleitung
 hardware: Dell XPS 13 9345 · Snapdragon X Elite · 32 GB
 ---
 

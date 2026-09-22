@@ -5,7 +5,7 @@ ue: 6
 phase: Frontend-Kern
 ort: Toolbx
 tags: [tauri/kurs/modul, vue, css, ux]
-status: entwurf
+status: draft
 ---
 
 # M04 – Komponenten und UI-Gestaltung

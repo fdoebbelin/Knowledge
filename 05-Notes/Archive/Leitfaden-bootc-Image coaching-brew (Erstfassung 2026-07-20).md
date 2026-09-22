@@ -11,7 +11,7 @@ tags:
 aliases:
   - "Homebrew-Image bauen"
   - "Coaching bootc Leitfaden"
-status: aktiv
+status: active
 ---
 
 # Eigenes bootc-Image mit Homebrew-Toolchain

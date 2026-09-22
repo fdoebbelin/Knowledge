@@ -10,7 +10,8 @@ tags:
   - python
   - vibe-coding
 created: 2026-06-22
-status: Leitfaden
+status: active
+type: leitfaden
 hardware: Dell XPS 13 9345 · Snapdragon X Elite · 32 GB
 voraussetzung: "[[Foundry Local auf dem Dell XPS 13 9345 (Snapdragon X Elite)]]"
 ---

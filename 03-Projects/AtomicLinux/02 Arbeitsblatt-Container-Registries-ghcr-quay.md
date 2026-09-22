@@ -14,7 +14,7 @@ niveau: "Grundlagen / Vertiefung"
 dauer: "45–90 min"
 aliases:
   - "Registry-Vergleich GHCR Quay"
-status: aktiv
+status: active
 ---
 
 # Arbeitsblatt: Container-Registries – `ghcr.io` vs. `quay.io`

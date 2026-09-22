@@ -7,7 +7,7 @@ kurstag: 1-2
 dauer: 225 min in zwei Blöcken
 zielgruppe: 3 Teilnehmende ohne Vorkenntnisse
 tags: [tauri/kompaktkurs/trainerskript, css]
-status: entwurf
+status: draft
 ---
 
 # K2 – Trainerskript

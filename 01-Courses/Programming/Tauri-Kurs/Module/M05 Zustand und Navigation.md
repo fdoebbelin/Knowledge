@@ -5,7 +5,7 @@ ue: 4
 phase: Frontend-Kern
 ort: Toolbx
 tags: [tauri/kurs/modul, vue, pinia, router]
-status: entwurf
+status: draft
 ---
 
 # M05 – Zustand und Navigation

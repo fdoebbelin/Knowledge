@@ -97,7 +97,7 @@ Nur für Notizen, die es brauchen (Leitfäden, Kursbausteine, Clippings, Protoko
 | `title` | 212 | Anzeigename |
 | `tags` | 207 | Liste, kleingeschrieben |
 | `created` | 136 | YYYY-MM-DD |
-| `status` | 88 | `draft` \| `active` \| `done` \| `archived` |
+| `status` | 89 | `draft` (65) \| `active` (19) \| `done` (5) \| `archived` (0) |
 | `source` | 73 | URL oder Herkunft (Clippings, Chats) |
 | `author` | 69 | Verfasser, bei Clippings der Originalautor |
 | `published` | 68 | Veröffentlichungsdatum der Quelle |
@@ -105,7 +105,7 @@ Nur für Notizen, die es brauchen (Leitfäden, Kursbausteine, Clippings, Protoko
 | `aliases` | 56 | alternative Namen für Wikilinks |
 | `system` | 28 | Zielsystem, z. B. `Fedora Sway Atomic` |
 | `updated` | 22 | YYYY-MM-DD, nur bei gepflegten Notizen |
-| `type` | 2 | Notiztyp, bisher nur `chat-protokoll` |
+| `type` | 10 | Notiztyp: `anleitung`, `leitfaden`, `runbook`, `referenz`, `chat-protokoll` |
 
 ### Fachspezifisch
 
@@ -138,8 +138,17 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 | `status: offen` | `status: active` | offene Punkte sind noch in Arbeit |
 | `status: erledigt` | `status: done` | abgeschlossen |
 
-> [!warning] Bestand weicht ab
-> Bei `status` stehen im Vault überwiegend deutsche Werte: `entwurf` (53), `draft` (8), `aktiv` (6), dazu vereinzelt `fertig`, `anleitung`, `offen`, `konsolidiert`. Die englische Wertemenge oben ist das Ziel, nicht der Ist-Zustand.
+### Bedeutung der `status`-Werte
+
+| Wert | Bedeutung |
+| --- | --- |
+| `draft` | Entwurf, noch nicht belastbar |
+| `active` | in Gebrauch und gepflegt |
+| `done` | abgeschlossen, keine Pflege vorgesehen |
+| `archived` | überholt, liegt in `05-Notes/Archive` |
+
+> [!info] Vereinheitlicht am 22.09.2026
+> Zuvor standen dort deutsche Werte (`entwurf` 53×, `aktiv` 6×, `fertig`, `erledigt`, `konsolidiert`, `verifiziert` …). 78 Notizen wurden umgestellt. Wo im `status` der Notiztyp stand (`anleitung`, `Leitfaden`, `Setup-Guide`, `Referenz`, `Leitfaden + Demo-Runbook`), steht er jetzt in `type`, der Status ist `active`. Prüfangaben blieben in `verifiziert_am` und `verifiziert_gegen` erhalten.
 
 ## Wartung
 
@@ -157,5 +166,5 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-02-11** Migration aus Vault „Research“ per Skript (siehe `05-Notes/Archive/README-Migration (2026-02)`).
 - **2026-09-15 Phase 1** (`dfa3938`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
-- **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`).
+- **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-15 Phase 3**: Fast-Dubletten zusammengeführt (SDDM, bootc, Drupal Paragraphs, Sprachmaschinen, IOPaint, aider, Geschichte der Informatik, Python-Buch), Frontmatter vereinheitlicht, diese Übersicht.

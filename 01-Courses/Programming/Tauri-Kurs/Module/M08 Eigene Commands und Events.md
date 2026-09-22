@@ -5,7 +5,7 @@ ue: 5
 phase: Brücke zu Rust
 ort: Toolbx
 tags: [tauri/kurs/modul, rust, ipc]
-status: entwurf
+status: draft
 ---
 
 # M08 – Eigene Commands und Events

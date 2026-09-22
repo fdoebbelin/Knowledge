@@ -4,7 +4,7 @@ teil_von: "[[README]]"
 tags: [onedrive, microsoft365, entra, oauth2, abraunegg, rclone, cifs, samba, virtiofs, atomic, bootc, nushell]
 zielgeraet: x86_64 Fedora Atomic (Yoga 920, Dozenten-PC)
 created: 2026-07-30
-status: entwurf
+status: draft
 verifiziert_gegen: —
 ---
 
