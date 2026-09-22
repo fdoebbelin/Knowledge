@@ -49,8 +49,8 @@ tags:     # chat-protokoll + Themen-Tags
 status:   # draft | active | done
 ```
 
-> [!note] Umstellung auf englische Schlüssel
-> Die ersten beiden Protokolle tragen noch `date`, `quelle`, `modell` und `status: offen`. Zuordnung und Begründung: [[Struktur-Übersicht#Chat-Protokolle (Skill chat-protokoll)]].
+> [!note] Englische Schlüssel seit 22.09.2026
+> Frühere Protokolle trugen `date`, `quelle`, `modell` und `status: offen`; die beiden vorhandenen sind umgestellt. Zuordnung: [[Struktur-Übersicht#Chat-Protokolle (Skill chat-protokoll)]]. Vorgabe für den Skill: [[chat-protokoll – frontmatter]], Einbau: [[chat-protokoll – Skill einbinden]].
 
 Aufbau: Zusammenfassung, Hinweise zur Vollständigkeit, Ausgangslage, Problemlösungen, Artefakte & Prompts, Entscheidungen, Nützliche Befehle & Snippets, Offene Punkte.
 

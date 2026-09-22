@@ -1,16 +1,16 @@
 ---
 title: Netzwerkdrucker unter Fedora Sway Atomic einbinden
-date: 2026-09-22
+created: 2026-09-22
 type: chat-protokoll
-quelle: claude.ai
-modell: Claude Opus 5
+source: claude.ai
+model: Claude Opus 5
 tags:
   - chat-protokoll
   - cups
   - drucker
   - fedora-atomic
   - nushell
-status: offen
+status: active
 ---
 
 # Netzwerkdrucker unter Fedora Sway Atomic einbinden

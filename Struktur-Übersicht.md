@@ -41,7 +41,7 @@ Knowledge/
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
 ├── 02-Tech/               Technische Referenz, nach Themen (301)
-│   ├── AI/                Aider, Claude-Code, Foundry Local, LM-Studio, Ollama,
+│   ├── AI/                Aider, Claude-Code, Claude-Skills, Foundry Local, LM-Studio, Ollama,
 │   │                      OpenClaw, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
 │   ├── Git/
 │   ├── Hardware/          AI-Workstation, Lenovo Yoga 920, Dell XPS 13 9345, Arduino
@@ -128,7 +128,9 @@ tags:         # chat-protokoll + Themen-Tags
 status:       # draft | active | done
 ```
 
-| bisher (deutsch) | künftig (englisch) | Begründung |
+Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe für den Skill: [[chat-protokoll – frontmatter]], Einbau in den Skill: [[chat-protokoll – Skill einbinden]].
+
+| vorher (deutsch) | jetzt (englisch) | Begründung |
 | --- | --- | --- |
 | `date` | `created` | `created` ist der etablierte Datums-Schlüssel (136×), `date` kommt nur vereinzelt vor |
 | `quelle` | `source` | bereits 73× im Vault für Herkunft |

@@ -1,9 +1,9 @@
 ---
 title: Bertelsmann Lexikothek – CD-Archivierung und Datenanalyse
-date: 2026-09-21
+created: 2026-09-21
 type: chat-protokoll
-quelle: claude.ai
-modell: Claude Opus 5
+source: claude.ai
+model: Claude Opus 5
 tags:
   - chat-protokoll
   - datenrettung
@@ -11,7 +11,7 @@ tags:
   - nushell
   - retrocomputing
   - urheberrecht
-status: offen
+status: active
 ---
 
 # Bertelsmann Lexikothek – CD-Archivierung und Datenanalyse
