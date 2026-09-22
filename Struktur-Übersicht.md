@@ -6,12 +6,12 @@ aliases:
 tags:
   - meta
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-09-22
 ---
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 15. September 2026, nach der Reorganisation (Phasen 1–3). Rund 1.340 Notizen in fünf Bereichen. Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 22. September 2026. Rund 1.340 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox`. Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -20,12 +20,15 @@ Stand: 15. September 2026, nach der Reorganisation (Phasen 1–3). Rund 1.340 No
 - **Projekte** haben eigene Ordner unter `03-Projects`; projektbezogene Recherchen und Clippings liegen dort, nicht in den Notizen.
 - **Anhänge** liegen im `_resources`-Ordner neben der Notiz (Obsidian-Einstellung). Ein Unterordner bleibt nur bestehen, wenn er mehr als eine Handvoll Notizen hat.
 - **Keine Zugangsdaten, Schlüssel oder Kontodaten** in diesem Vault; der Vault ist ein Git-Repository.
+- **Eingang.** Neues, das noch einzuordnen ist, liegt in `00-Inbox` und wird von dort mit Claude Code einsortiert, siehe [[Eingang]]. Der Ordner bleibt leer, wenn nichts offen ist.
 - **Dateinamen** sind eindeutig im gesamten Vault (Wikilinks lösen über den Namen auf). Keine „Unbenannt“, keine „(1)“-Kopien, keine „alt“-Versionen neben der aktuellen; Altes wandert nach `05-Notes/Archive`.
 
 ## Ordnerstruktur
 
 ```
 Knowledge/
+├── 00-Inbox/              Eingang: noch nicht eingeordnete Dokumente (0)
+│
 ├── 01-Courses/            Lehrmaterial mit Modulstruktur (704)
 │   ├── AI/                KI-Agenten-Workshop
 │   ├── Business/          Office-Basics, Office-Short, Project-Management, UML-Basics
@@ -55,7 +58,7 @@ Knowledge/
 │
 ├── 03-Projects/           Eigene Projekte (101)
 │   ├── Agrail, AtomicLinux, BlockPy, BookScanner, Godot, JuliDESK,
-│   ├── MetaRow-Player, o++o-Interpreter, Py2Rust
+│   ├── Lexikothek (CD-Archivierung), MetaRow-Player, o++o-Interpreter, Py2Rust
 │   └── Python-Projects/   Kursprojekte, Mastermind, Ladder, Sokoban
 │
 ├── 04-Languages/          Sprachreferenz (109)
@@ -73,6 +76,8 @@ Knowledge/
 
 | Was | Wohin |
 |---|---|
+| Noch nicht eingeordnet, soll mit Claude Code sortiert werden | `00-Inbox/` – siehe [[Eingang]] |
+| Chat-Protokoll (Skill `chat-protokoll`) | nach Thema, wie jede andere Notiz; Tag `chat-protokoll` macht sie auffindbar |
 | Neuer Kurs oder neues Kursmodul | `01-Courses/<Bereich>/<Kursname>/` |
 | Anleitung zu einem Werkzeug oder System | `02-Tech/<Thema>/` (vorhandenen Ordner nutzen) |
 | Neues Projekt | `03-Projects/<Name>/` |
@@ -95,10 +100,13 @@ source:       # URL oder Herkunft bei Clippings
 status:       # draft | active | done | archived
 ```
 
+Chat-Protokolle nutzen ein eigenes, deutsches Frontmatter (`type: chat-protokoll`, `quelle`, `modell`, `status: offen | erledigt`), siehe [[Eingang#Konventionen für Chat-Protokolle]].
+
 Kursbausteine nutzen zusätzlich `modul`, `baustein`, `kurstag`, `ue`, `typ`, `ort`, `phase`. Leitfäden zu Geräten nutzen `system` und `teil_von`. Der Schlüssel `tag` (Singular) ist reserviert für Obsidian-Tags und wird nicht als Kurstag verwendet.
 
 ## Wartung
 
+- Laufend: `00-Inbox` leeren; der Ordner ist keine Ablage.
 - Monatlich: `05-Notes/Clippings` durchsehen und einordnen oder löschen.
 - Quartalsweise: Ordner mit nur einer Notiz prüfen (aktuell `02-Tech/macOS`, `03-Projects/BookScanner`) und ggf. auflösen.
 - Bekannte offene Punkte (Stand 2026-09-15):
@@ -112,4 +120,5 @@ Kursbausteine nutzen zusätzlich `modul`, `baustein`, `kurstag`, `ue`, `typ`, `o
 - **2026-02-11** Migration aus Vault „Research“ per Skript (siehe `05-Notes/Archive/README-Migration (2026-02)`).
 - **2026-09-15 Phase 1** (`dfa3938`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
+- **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`).
 - **2026-09-15 Phase 3**: Fast-Dubletten zusammengeführt (SDDM, bootc, Drupal Paragraphs, Sprachmaschinen, IOPaint, aider, Geschichte der Informatik, Python-Buch), Frontmatter vereinheitlicht, diese Übersicht.
