@@ -85,4 +85,4 @@ hyprctl monitors all -j | from json | each {|m| {
 
 ---
 
-Verwandt: [[Bildschirmrotation mit iio-hyprland]] · [[Hyprland Konfiguration]] · [[Deckel und Suspend konfigurieren]] · [[02-nushell-konfigurieren]]
+Verwandt: [[Bildschirmrotation mit iio-hyprland]] · [[Hyprland Konfiguration]] · [[Deckel und Suspend konfigurieren]] · [[02-nushell-konfigurieren]] · [[2026-09-23 Monitoranordnung unter Sway konfigurieren]] (dasselbe Thema unter Sway statt Hyprland, inkl. `kanshi` für wechselnde Profile)

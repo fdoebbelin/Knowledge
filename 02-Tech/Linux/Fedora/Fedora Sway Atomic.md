@@ -36,6 +36,7 @@ Ausführlich mit Begründung: [[00 Werkzeuge ins HOME-Verzeichnis installieren]]
 ## Typische Folgen im Alltag
 
 - **Herstellertreiber mit eigenen Filtern** (Drucker, Scanner) bräuchten einen `rpm-ostree`-Layer. Treiberlose Wege sind vorzuziehen, siehe [[CUPS]] und [[2026-09-22 Netzwerkdrucker Fedora Sway Atomic]].
+- **Eigene Sway-Overrides gehören nach `~/.config/sway/config.d/`**, nicht in `/usr/share/sway/config.d/` – das wird bei `rpm-ostree upgrade` durch die mitgelieferte Config ersetzt. Gilt z. B. für Monitor-Anordnung und `kanshi`-Autostart, siehe [[2026-09-23 Monitoranordnung unter Sway konfigurieren]].
 - **`/home` ist ein Symlink auf `/var/home`.** Pfade unterscheiden sich je nach Blickwinkel, in Containern lösen Host-Pfade unter `/home/...` ins Leere auf.
 - **Nichts am System vorbei installieren.** Was nicht ins Home, in einen Container oder ein Flatpak passt, gehört ins Image.
 
