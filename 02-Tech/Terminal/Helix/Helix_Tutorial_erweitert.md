@@ -324,3 +324,20 @@ hidden = false             # versteckte Dateien im Picker zeigen
 
 > [!quote] Kerngedanke
 > Helix' Stärke ist nicht eine einzelne Funktion, sondern dass Mehrfach-Cursor, Tree-sitter, LSP und Surround **alle dieselbe Auswahl-Sprache sprechen** – und ohne Plugin-Bauerei sofort zusammenspielen.
+
+---
+
+## Spickzettel (PDF)
+
+| Blatt | Umfang |
+| --- | --- |
+| [[Helix_Spickzettel_A4.pdf]] | eine A4-Seite, Grundbefehle, gleiches Raster wie das Vim-Blatt |
+| [[Helix_Spickzettel_A4_erweitert.pdf]] | zwei A4-Seiten, zusätzlich Mehrfach-Cursor, Match & Surround, LSP, Fenster, Picker, Register, Rezepte |
+| [[Vim_Spickzettel_A4.pdf]] | eine A4-Seite, Vim zum Vergleich |
+
+## Verwandt
+
+- [[2026-09-22 Vim Helix Spickzettel Tutorial]] – Protokoll zur Entstehung der Blätter und dieses Tutorials
+- [[helix-tutor-de]] – deutsche Fassung des eingebauten `:tutor`
+- [[Migrating from Vim]]
+- [[Nushell Editor setzen]] – Helix als `$EDITOR`

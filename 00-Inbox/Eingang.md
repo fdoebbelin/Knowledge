@@ -63,3 +63,5 @@ Nichts. Eingeordnet wurden bisher:
 
 - [[2026-09-21 Lexikothek CD-Archivierung]] → `03-Projects/Lexikothek/`
 - [[2026-09-22 Netzwerkdrucker Fedora Sway Atomic]] → `02-Tech/Linux/Fedora/`
+- [[2026-09-22 Obsidian Ordner als PDF exportieren]] → `02-Tech/Obsidian/`
+- [[2026-09-22 Vim Helix Spickzettel Tutorial]] → `02-Tech/Terminal/Helix/`, PDFs nach `_resources/`
