@@ -66,3 +66,4 @@ Nichts. Eingeordnet wurden bisher:
 - [[2026-09-22 Obsidian Ordner als PDF exportieren]] → `02-Tech/Obsidian/`
 - [[2026-09-22 Vim Helix Spickzettel Tutorial]] → `02-Tech/Terminal/Helix/`, PDFs nach `_resources/`
 - [[Helix-Leitfaden]] → `02-Tech/Terminal/Helix/`, acht SVG-Grafiken nach `_resources/`
+- [[Helix-Spickzettel SVG in Inkscape bearbeiten]] → `02-Tech/Terminal/Helix/`, editierbare SVG/PDF und `schriften/` nach `_resources/`
