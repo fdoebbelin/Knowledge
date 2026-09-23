@@ -6,12 +6,12 @@ aliases:
 tags:
   - meta
 created: 2026-09-15
-updated: 2026-09-22
+updated: 2026-09-23
 ---
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 22. September 2026. Rund 1.340 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox`. Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 23. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox`. Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -29,7 +29,7 @@ Stand: 22. September 2026. Rund 1.340 Notizen in fünf Bereichen, dazu der Einga
 Knowledge/
 ├── 00-Inbox/              Eingang: noch nicht eingeordnete Dokumente (0)
 │
-├── 01-Courses/            Lehrmaterial mit Modulstruktur (704)
+├── 01-Courses/            Lehrmaterial mit Modulstruktur (702)
 │   ├── AI/                KI-Agenten-Workshop
 │   ├── Business/          Office-Basics, Office-Short, Project-Management, UML-Basics
 │   ├── CAD/               FreeCAD-Intensivkurs, Civil 3D
@@ -40,7 +40,7 @@ Knowledge/
 │   ├── STEM/              MINT-Einführungskurs (Informatik, Physik/p5.js, CAD)
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
-├── 02-Tech/               Technische Referenz, nach Themen (301)
+├── 02-Tech/               Technische Referenz, nach Themen (320)
 │   ├── AI/                Aider, Claude-Code, Claude-Skills, Foundry Local, LM-Studio, Ollama,
 │   │                      OpenClaw, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
 │   ├── Git/
@@ -56,7 +56,7 @@ Knowledge/
 │   ├── Windows/           PowerShell, Scoop, RDP, Systemeinstellungen
 │   └── WSL/               WSL-Distributionen, XPS-13-Reihe (Sway/Noctalia unter WSLg)
 │
-├── 03-Projects/           Eigene Projekte (101)
+├── 03-Projects/           Eigene Projekte (103)
 │   ├── Agrail, AtomicLinux, BlockPy, BookScanner, Godot, JuliDESK,
 │   ├── Lexikothek (CD-Archivierung), MetaRow-Player, o++o-Interpreter, Py2Rust
 │   └── Python-Projects/   Kursprojekte, Mastermind, Ladder, Sokoban
@@ -167,4 +167,5 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-09-15 Phase 1** (`dfa3938`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
+- **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt.
 - **2026-09-15 Phase 3**: Fast-Dubletten zusammengeführt (SDDM, bootc, Drupal Paragraphs, Sprachmaschinen, IOPaint, aider, Geschichte der Informatik, Python-Buch), Frontmatter vereinheitlicht, diese Übersicht.
