@@ -65,3 +65,4 @@ Nichts. Eingeordnet wurden bisher:
 - [[2026-09-22 Netzwerkdrucker Fedora Sway Atomic]] → `02-Tech/Linux/Fedora/`
 - [[2026-09-22 Obsidian Ordner als PDF exportieren]] → `02-Tech/Obsidian/`
 - [[2026-09-22 Vim Helix Spickzettel Tutorial]] → `02-Tech/Terminal/Helix/`, PDFs nach `_resources/`
+- [[Helix-Leitfaden]] → `02-Tech/Terminal/Helix/`, acht SVG-Grafiken nach `_resources/`

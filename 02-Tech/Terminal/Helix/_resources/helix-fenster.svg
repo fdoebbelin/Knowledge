@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 206.0 120.0" width="412" height="240"><style>
+text{font-family:"IBM Plex Sans","Segoe UI",Arial,sans-serif}
+.m{font-family:"JetBrains Mono","Cascadia Mono",Consolas,monospace;font-weight:700}
+</style><rect x="-8" y="-8" width="206.0" height="120.0" rx="8" fill="#FAF8F2" stroke="#DFE5E4"/>
+<rect x="70" y="30" width="50" height="34" rx="3" fill="#fff" stroke="#0D6D73" stroke-width="1.2"/>
+<line x1="95" y1="30" x2="95" y2="64" stroke="#C9D2D1"/><line x1="70" y1="47" x2="120" y2="47" stroke="#C9D2D1"/>
+<rect x="70.6" y="30.6" width="24" height="16" fill="#0D6D73" opacity=".25"/>
+<text class="m" x="95" y="11" text-anchor="middle" font-size="10.5" fill="#0D6D73">w k</text><text x="95" y="21" text-anchor="middle" font-size="8.4" fill="#56514A">oben</text><text class="m" x="95" y="77" text-anchor="middle" font-size="10.5" fill="#0D6D73">w j</text><text x="95" y="87" text-anchor="middle" font-size="8.4" fill="#56514A">unten</text>
+<text class="m" x="42" y="45" text-anchor="middle" font-size="10.5" fill="#0D6D73">w h</text><text x="42" y="55" text-anchor="middle" font-size="8.4" fill="#56514A">links</text><text class="m" x="148" y="45" text-anchor="middle" font-size="10.5" fill="#0D6D73">w l</text><text x="148" y="55" text-anchor="middle" font-size="8.4" fill="#56514A">rechts</text>
+<text x="95" y="101" text-anchor="middle" font-size="8.4" fill="#56514A"><tspan class="m" fill="#0D6D73">Strg-w</tspan> = <tspan class="m" fill="#0D6D73">Space w</tspan> · <tspan class="m" fill="#0D6D73">H J K L</tspan> verschiebt</text>
+</svg>

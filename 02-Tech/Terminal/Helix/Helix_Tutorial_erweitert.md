@@ -14,7 +14,7 @@ Dieses Tutorial baut auf dem eingebauten `:tutor` auf und zeigt gezielt, *warum*
 ## Inhalt
 
 - [[#0 Vorbereitung (Windows / Scoop)]]
-- [[#1 Die Kernschleife Auswahl → Aktion]]
+- [[#1 Die Kernschleife: Auswahl → Aktion]]
 - [[#2 Mehrfach-Cursor – die Superkraft]]
 - [[#3 Syntaxbewusst bearbeiten (Tree-sitter)]]
 - [[#4 Surround – ohne Plugin]]
@@ -22,7 +22,7 @@ Dieses Tutorial baut auf dem eingebauten `:tutor` auf und zeigt gezielt, *warum*
 - [[#6 Pickers & das Space-Menü]]
 - [[#7 Auswahlen verbiegen – die Profi-Rezepte]]
 - [[#8 Shell-Integration]]
-- [[#9 Vim → Helix Reflexe umtrainieren]]
+- [[#9 Vim → Helix: Reflexe umtrainieren]]
 - [[#10 Start-Konfiguration]]
 - [[#Wohin als Nächstes]]
 
@@ -337,6 +337,7 @@ hidden = false             # versteckte Dateien im Picker zeigen
 
 ## Verwandt
 
+- [[Helix-Leitfaden]] – erklärt den zweiseitigen Spickzettel Block für Block, mit Grafiken und Übungen
 - [[2026-09-22 Vim Helix Spickzettel Tutorial]] – Protokoll zur Entstehung der Blätter und dieses Tutorials
 - [[helix-tutor-de]] – deutsche Fassung des eingebauten `:tutor`
 - [[Migrating from Vim]]
