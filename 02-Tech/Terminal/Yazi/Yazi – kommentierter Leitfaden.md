@@ -12,7 +12,7 @@ tags:
 system: Fedora Sway Atomic
 yazi_version: "26.9.1"
 created: 2026-09-16
-updated: 2026-09-16
+updated: 2026-09-23
 ---
 
 # Yazi – kommentierter Leitfaden
@@ -552,11 +552,9 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 > [!tip] Druckversion
 > Zweiseitiger Spickzettel mit allen Tastenkürzeln, Tabs, Sortierung und Konfigurationsbeispielen: [[yazi-spickzettel.pdf]]. Eigene Belegungen (Plugins, Skripte) sind orange markiert.
 >
-> Quelle ist [[yazi-spickzettel.html]]. Nach Änderungen neu erzeugen, z. B. mit dem Chromium von mermaid-cli:
-> ```nu
-> let chrome = (glob ~/.cache/puppeteer/chrome-headless-shell/*/*/chrome-headless-shell | first)
-> ^$chrome --no-sandbox --no-pdf-header-footer --print-to-pdf=yazi-spickzettel.pdf $"file://(pwd)/yazi-spickzettel.html"
-> ```
+> Seit 2026-09-23 als SVG erzeugt ([[yazi-spickzettel-seite1.svg]], [[yazi-spickzettel-seite2.svg]]), analog zum Helix-Spickzettel. Die ältere `yazi-spickzettel.html` ist die Quelle der vorherigen PDF-Fassung und liegt nur noch zur Referenz im Ordner.
+>
+> Ausführliche Erklärung jeder Grafik und jedes Befehlsblocks: [[Yazi-Leitfaden]].
 
 > [!example]- Tastenkürzel ausklappen
 >
@@ -633,6 +631,7 @@ Weitere typische Fehlerquellen:
 
 ## Verwandt
 
+- [[Yazi-Leitfaden]] – Grafiken und Befehlsblöcke des Spickzettels einzeln erklärt, mit Übungen
 - [[Yazi – Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System, Übertragung auf andere Rechner
 - [[Yazi – Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
 - [[Yazi – Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
