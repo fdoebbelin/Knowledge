@@ -36,5 +36,5 @@ Struktur-orientierte Shell in Rust: Befehle geben Tabellen statt Text zurück, d
 
 ## Verwandt
 
-- [[Yazi – kommentierter Leitfaden]] – Shell-Wrapper `y`, Nushell als Shell in Yazi
+- [[Yazi – Installation und Konfiguration]] – Shell-Wrapper `y`, Nushell als Shell in Yazi
 - [[00 Werkzeuge ins HOME-Verzeichnis installieren]] – warum `nu` unter `~/.local/bin` liegt
