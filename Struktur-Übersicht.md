@@ -6,12 +6,12 @@ aliases:
 tags:
   - meta
 created: 2026-09-15
-updated: 2026-09-23
+updated: 2026-09-30
 ---
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 23. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 30. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -40,7 +40,7 @@ Knowledge/
 │   ├── STEM/              MINT-Einführungskurs (Informatik, Physik/p5.js, CAD)
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
-├── 02-Tech/               Technische Referenz, nach Themen (321)
+├── 02-Tech/               Technische Referenz, nach Themen (320)
 │   ├── AI/                Aider, Claude-Code, Claude-Skills, Foundry Local, LM-Studio, Ollama,
 │   │                      OpenClaw, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
 │   ├── Git/
@@ -168,4 +168,5 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt. Chat-Protokoll zur Monitoranordnung unter Sway eingeordnet (`02-Tech/Linux/Fedora/`), mit `Fedora Sway Atomic` und dem Hyprland-Gegenstück `Mehrere Bildschirme verwalten` verlinkt.
+- **2026-09-30**: Fünf Yazi-Notizen zu dreien zusammengefasst: „Installation und Plugins“, „kommentierter Leitfaden“, „Markdown-Vorschau“ und „Mermaid-Diagramme“ verschmolzen zu `Yazi – Installation und Konfiguration` (mit vorangestelltem Schnellstart), dazu neu `Yazi – Einführung` als Kurzfassung des Konzepts; `Yazi-Leitfaden` bleibt als Spickzettel-Referenz bestehen.
 - **2026-09-15 Phase 3**: Fast-Dubletten zusammengeführt (SDDM, bootc, Drupal Paragraphs, Sprachmaschinen, IOPaint, aider, Geschichte der Informatik, Python-Buch), Frontmatter vereinheitlicht, diese Übersicht.
