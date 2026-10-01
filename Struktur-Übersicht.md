@@ -159,7 +159,7 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
   - 29 kaputte Links, vor allem eine nie angelegte `docs/`-Reihe in den XPS-13-Notizen und externe Bildpfade in JavaScript-STEM.
   - 16 verwaiste Bilder in der Root-`_resources`.
   - `04-Languages/Python/Buch` enthält vier Fassungen von „Kapitel 19“, bewusst als Entwürfe belassen.
-  - Git-Historie am 2026-09-15 mit git filter-repo bereinigt (Commit-IDs seitdem: Phase 1 `dfa3938`, Phase 2 `f39369b`, Phase 3 `63e61ab`); Schlüssel wurden noch nicht rotiert.
+  - Git-Historie am 2026-09-15 mit git filter-repo bereinigt (Commit-IDs seitdem: Phase 1 `dfa3938`, Phase 2 `f39369b`, Phase 3 `63e61ab`); Schlüssel am 2026-10-01 rotiert.
 
 ## Historie der Reorganisation
 
