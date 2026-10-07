@@ -97,7 +97,7 @@ open --raw (glob ($nu.home-dir | path join ".local/state/sway-*.log") | sort | l
 > gewöhnlicher Wayland-**Client** auf Qt6/QtQuick und ignoriert jedes `WLR_*`
 > vollständig. QtQuick rendert über OpenGL — und auf diesem Gerät gibt es
 > keinen Render-Node (`/dev/dri` fehlt, aus `/dev/dxg` entsteht ohne
-> `d3d12`-Gallium-Treiber keiner, siehe [[01-erkenntnisse#Umgebungsbefunde WSL]]).
+> `d3d12`-Gallium-Treiber keiner, siehe `01-erkenntnisse` (Umgebungsbefunde WSL)).
 
 Zwei Wege, **nicht** gleichwertig:
 
@@ -121,7 +121,7 @@ Weg B wurde nie gebraucht und bleibt in der Schublade.
 
 ## 2 — Werkzeugkette härten
 
-Die drei Funktionen aus [[14-xps13-wslg-sway-nushell-runde1#5.6]] brauchten
+Die drei Funktionen aus [[14-xps13-wslg-sway-nushell-runde1#5 — Nushell: zwei Fehlerklassen, drei Fehler]] brauchten
 Nachbesserung. Ohne sie ist der Rest nicht reproduzierbar.
 
 ### 2.1 Was schiefging ✅
@@ -251,7 +251,7 @@ view source sway-start | lines | find "sway-"     # muss den Zeitstempel-Pfad ze
 > [!warning] REPL-Definitionen überleben nichts
 > Wird die Funktion nur in die laufende Shell getippt, ist sie beim nächsten
 > Terminal weg — und der alte Stand aus `config.nu` greift wieder. Derselbe Fall
-> wie in [[14-xps13-wslg-sway-nushell-runde1#6]]; hat hier mehrere Durchläufe
+> wie in [[14-xps13-wslg-sway-nushell-runde1#6 — Prüfwerkzeuge (alle gegen 0.114.1 verifiziert) ✅]]; hat hier mehrere Durchläufe
 > gekostet.
 
 ---
@@ -311,7 +311,7 @@ Ausgelöst wird die Meldung von
 
 ## 4 — `/etc` überschattet `/usr/share` ✅ — 09s offene Frage beantwortet
 
-[[09-yoga-buildumgebung]] hielt fest, dass **nicht verifiziert** sei, ob
+`09-yoga-buildumgebung` hielt fest, dass **nicht verifiziert** sei, ob
 `/etc/sway/config.d/` eine gleichnamige Datei aus `/usr/share/sway/config.d/`
 verdrängt — und wich deshalb im Image auf direktes Überschreiben in `/usr/share`
 aus. Die Werkbank hat es in zwei Minuten geklärt.
@@ -351,7 +351,7 @@ include '/usr/share/sway/config.d/95-xdg-user-dirs.conf'
 Gegenprobe am Verhalten: ab der Instanz, die nach dem Anlegen der Leerdateien
 startete, taucht **kein `waybar` und kein `swayidle`** mehr als Kindprozess auf.
 
-> [!important] Rückmeldung an [[09-yoga-buildumgebung]]
+> [!important] Rückmeldung an `09-yoga-buildumgebung`
 > Der `/usr/share`-Umweg im Image ist eine **Vorsichtsmaßnahme, keine
 > Notwendigkeit**. Er bleibt trotzdem die richtige Wahl: `/etc` unterliegt auf
 > bootc dem 3-Wege-Merge, `/usr/share` nicht. Die Begründung ändert sich von
@@ -360,7 +360,7 @@ startete, taucht **kein `waybar` und kein `swayidle`** mehr als Kindprozess auf.
 
 **Zwei Nebenbefunde aus derselben Liste:**
 
-- Kein `50-keyboard.conf` — bestätigt den Kernbefund aus [[01-erkenntnisse]]
+- Kein `50-keyboard.conf` — bestätigt den Kernbefund aus `01-erkenntnisse`
   auch hier: Fedora liefert nirgendwo einen `input`-Block.
 - Fedoras Drop-ins nutzen ausschließlich `50-`, `60-`, `65-`, `95-`. Die
   Nummern `30-`, `70-`, `90-` sind frei.
@@ -468,7 +468,7 @@ Rahmen. Es greift eine Ebene über den Schriftfamilien und trifft daher beide.
 > [!check] Unter Pixman der günstigere Weg
 > Der Client rendert direkt in der größeren Auflösung — **kein Resampling durch
 > den Compositor**. Genau der Schritt, den
-> [[14-xps13-wslg-sway-nushell-runde1#2.3]] bei fraktionalem `output scale` als
+> [[14-xps13-wslg-sway-nushell-runde1#2 — Fenstergröße und Skalierung]] bei fraktionalem `output scale` als
 > teuer benennt, entfällt.
 
 Noctalias eigene Werte vorher zurücksetzen, sonst multipliziert sich beides:
@@ -595,7 +595,7 @@ glob ($nu.home-dir | path join ".local/share/flatpak/exports/share/applications/
 Die `.desktop`-Datei existiert, aber `XDG_DATA_DIRS` enthält den Exports-Pfad
 nicht. Flatpak setzt ihn über `/etc/profile.d/flatpak.sh` — und **Nushell liest
 kein `/etc/profile.d`**. Sway erbt die Nushell-Umgebung, Noctalia erbt Sways
-Umgebung; die Kette endet hier. Bekannter Fall aus [[02-umgebung-wsl]].
+Umgebung; die Kette endet hier. Bekannter Fall aus `02-umgebung-wsl`.
 
 In `env.nu`:
 
@@ -686,7 +686,7 @@ general.avatarImage: /home/fritz/.face
 
 ## 10 — Was diese Umgebung nicht testen kann 🟡
 
-Ergänzt [[01-erkenntnisse#Was der nested Container nicht testen kann]]:
+Ergänzt `01-erkenntnisse` (Was der nested Container nicht testen kann):
 
 | Bereich | Logbeleg | Grund |
 |---|---|---|
@@ -706,7 +706,7 @@ Kollisionen, IPC, Flatpak-Sandbox, Portale.
 > [!tip] Blur: ein Fund für das Image
 > `ext-background-effect-v1` wird von Sway nicht implementiert — weder hier noch
 > auf dem Yoga. Der teuerste Renderpfad ist damit ohnehin aus. Gehört nach
-> [[09-yoga-buildumgebung]].
+> `09-yoga-buildumgebung`.
 
 ---
 
@@ -781,10 +781,10 @@ $env.XDG_DATA_DIRS
 - [ ] `~/.face` anlegen oder `avatarImage` leeren
 - [ ] Launcher-Tastenkürzel: `qs -c noctalia-shell ipc show` auswerten und
       `96-noctalia-keys.conf` anlegen
-- [ ] Blur-Befund (`ext-background-effect-v1`) nach [[09-yoga-buildumgebung]]
+- [ ] Blur-Befund (`ext-background-effect-v1`) nach `09-yoga-buildumgebung`
 - [ ] `/etc`-Überschattung als **verifiziert** in 09 nachtragen (Abschnitt 4)
 - [ ] Projektverzeichnis: `~/projekte/noctarow` → `~/Projects/NoctaRow`;
-      `NU_LIB_DIRS` in [[02-umgebung-wsl]] und die `use`-Pfade in `config.nu`
+      `NU_LIB_DIRS` in `02-umgebung-wsl` und die `use`-Pfade in `config.nu`
       zeigen noch auf den alten Ort
 - [ ] Entscheidung v4 (`-legacy`) vs. v5-Track aus 09 — betrifft beide Umgebungen
 - [ ] First-Boot-Unit für Flatpaks, falls die Flotte welche bekommen soll (8.2)

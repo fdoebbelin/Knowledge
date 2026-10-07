@@ -2,7 +2,7 @@
 title: "Introducing Nushell: A Modern Command Line Experience"
 source: "https://dev.to/hamedi/introducing-nushell-a-modern-command-line-experience-3e9l"
 author:
-  - "[[Abdul Saboor]]"
+  - "Abdul Saboor"
 published: 2024-11-23
 created: 2025-11-27
 description: "Installation  In this post, I want to introduce you to #nushell, a tool that connects simple commands... Tagged with terminal, nushell, cli."

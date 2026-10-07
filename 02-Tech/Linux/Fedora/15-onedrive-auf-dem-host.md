@@ -114,7 +114,7 @@ Build und einem `bootc switch`. Dann greift [[#Anhang A — SMB aus dem Gast]].
 ## 2 — Paket ins Image
 
 Kein `rpm-ostree install`. Ins Basismodul, mit Guard — ein Exit 0 von `dnf`
-beweist keine Installation (siehe [[docs/01-erkenntnisse]]).
+beweist keine Installation (siehe `docs/01-erkenntnisse`).
 
 ```dockerfile
 RUN dnf install -y onedrive \

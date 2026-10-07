@@ -161,7 +161,7 @@ Danach OnlyOffice starten und ein skaliertes Dokument öffnen – Text sollte sc
 
 ## Verwandte Notizen
 
-- [[OnlyOffice installieren]]
-- [[Obsidian unter Hyprland – Wayland erzwingen]]  <!-- ggf. Dateinamen anpassen -->
-- [[Hyprland Lua-Konfiguration]]  <!-- ggf. Dateinamen anpassen -->
-- [[Qt-Kvantum-Theming einrichten]]  <!-- ggf. Dateinamen anpassen -->
+- OnlyOffice installieren
+- Obsidian unter Hyprland – Wayland erzwingen  <!-- ggf. Dateinamen anpassen -->
+- [[Hyprland Konfiguration]]  <!-- ggf. Dateinamen anpassen -->
+- Qt-Kvantum-Theming einrichten  <!-- ggf. Dateinamen anpassen -->

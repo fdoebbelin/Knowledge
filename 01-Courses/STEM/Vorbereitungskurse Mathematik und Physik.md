@@ -2,7 +2,7 @@
 title: "Vorbereitungskurse Mathematik und Physik"
 source: "https://www.hs-anhalt.de/hochschule-anhalt/einrichtungen/institute/imt-ev/vorbereitungskurse-mathematik-und-physik.html"
 author:
-  - "[[@HSAnhalt]]"
+  - "@HSAnhalt"
 published:
 created: 2025-11-26
 description:

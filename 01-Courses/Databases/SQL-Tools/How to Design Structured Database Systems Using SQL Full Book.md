@@ -2,7 +2,7 @@
 title: "How to Design Structured Database Systems Using SQL [Full Book]"
 source: "https://www.freecodecamp.org/news/how-to-design-structured-database-systems-using-sql-full-book/"
 author:
-  - "[[Daniel García Solla]]"
+  - "Daniel García Solla"
 published: 2025-08-13
 created: 2025-08-28
 description: "This book will guide you, step-by-step, through designing a relational database using SQL. SQL is one of the most recognized relational languages for managing and querying data in databases. You’ll learn the fundamental concepts related to both data ..."

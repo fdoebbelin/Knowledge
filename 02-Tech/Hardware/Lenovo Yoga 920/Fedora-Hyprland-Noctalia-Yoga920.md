@@ -8,7 +8,7 @@ status: active
 type: anleitung
 ---
 
-# [[Fedora]] + [[Hyprland]] + [[Noctalia]] auf dem Lenovo Yoga 920-13IKB
+# Fedora + Hyprland + Noctalia auf dem Lenovo Yoga 920-13IKB
 
 > [!abstract] Ziel & Stack
 > Das Yoga 920 wird **komplett neu** und als **Alleinsystem** mit Fedora aufgesetzt — **kein Dual-Boot** mehr:
@@ -20,7 +20,7 @@ type: anleitung
 > Hardware-Plus: Das 920 hat **Intel UHD 620** (keine NVIDIA) → idealer Wayland-Untergrund. Schwachpunkt: der Convertible-/Touch-/Pen-Teil ist bei Hyprland Handarbeit → eigener Abschnitt unten.
 
 > [!note] CachyOS zieht um
-> [[CachyOS]] (Limine) läuft ab jetzt **nur** noch auf dem Desktop mit der NVIDIA-Karte. Auf dem Yoga gibt es dadurch **keine gemeinsame ESP**, keine Limine-Chainload-Akrobatik und keine „CachyOS nicht anfassen"-Warnungen mehr. Die Desktop-Einrichtung ist separat dokumentiert (siehe [[CachyOS]] — Dateiname ggf. anpassen).
+> CachyOS (Limine) läuft ab jetzt **nur** noch auf dem Desktop mit der NVIDIA-Karte. Auf dem Yoga gibt es dadurch **keine gemeinsame ESP**, keine Limine-Chainload-Akrobatik und keine „CachyOS nicht anfassen"-Warnungen mehr. Die Desktop-Einrichtung ist separat dokumentiert (siehe CachyOS — Dateiname ggf. anpassen).
 
 ---
 
@@ -138,11 +138,11 @@ sudo usermod --shell $nupath (whoami | str trim)
 ```
 
 > [!note] Grafische Session unberührt
-> Die Login-Shell betrifft TTY/Terminal. Die Wayland-Session wird über die `.desktop`-Datei gestartet, nicht über die Login-Shell — die Umstellung ist also unkritisch. Feinschliff der Nu-Konfiguration in [[02-nushell-konfigurieren]].
+> Die Login-Shell betrifft TTY/Terminal. Die Wayland-Session wird über die `.desktop`-Datei gestartet, nicht über die Login-Shell — die Umstellung ist also unkritisch. Feinschliff der Nu-Konfiguration in `02-nushell-konfigurieren`.
 
 ---
 
-## 5. [[Hyprland]] + [[Noctalia]] installieren
+## 5. Hyprland + Noctalia installieren
 
 Fedora liefert Hyprland **nicht** offiziell (F43/F44 haben es entfernt). Die [Hyprland-Wiki](https://wiki.hypr.land/Getting-Started/Installation/) verweist für Fedora inzwischen auf die COPR **`lionheartp/Hyprland`** — ein Fork von `solopasha/hyprland`, der **zusätzlich `noctalia-shell`** mitbaut (F43/F44, x86_64 **und** aarch64). Damit kommen Compositor **und** Shell aus **einer** Quelle — genau das „nur eine Quelle"-Prinzip.
 
@@ -415,7 +415,7 @@ vivaldi --version
 > flatpak override --user --socket=wayland --unshare=ipc --nosocket=x11 md.obsidian.Obsidian
 > ```
 
-Config-Notizen: [[02-nushell-konfigurieren]] · Kitty/Solarized · Starship · Helix.
+Config-Notizen: `02-nushell-konfigurieren` · Kitty/Solarized · Starship · Helix.
 
 ---
 
@@ -483,4 +483,4 @@ Als **Alleinsystem** auf dem Intel-iGPU-Yoga ist die Kombination stimmig und war
 - iio-hyprland (Auto-Rotation): <https://github.com/JeanSchoeller/iio-hyprland/>
 - rot8 (Alternative): <https://github.com/efernau/rot8>
 
-Siehe auch: [[Hyprland]] · [[Noctalia]] · [[Quickshell]] · [[Nushell]] · [[02-nushell-konfigurieren]] · [[Hibernate einrichten]] · [[iio-sensor-proxy einrichten]] · [[CachyOS]]
+Siehe auch: Hyprland · Noctalia · Quickshell · [[Nushell]] · `02-nushell-konfigurieren` · [[Hibernate einrichten]] · iio-sensor-proxy einrichten · CachyOS

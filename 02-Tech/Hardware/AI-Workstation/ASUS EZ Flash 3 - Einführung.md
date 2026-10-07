@@ -2,7 +2,7 @@
 title: "ASUS EZ Flash 3 - Einführung | Offizieller Support | ROG Deutschland"
 source: "https://rog.asus.com/de/support/faq/1012815/"
 author:
-  - "[[Offizieller Support | ASUS Deutschland]]"
+  - " ASUS Deutschland"
 published:
 created: 2026-01-16
 description: "ASUS EZ Flash 3 - Einführung"

@@ -467,7 +467,7 @@ gh repo view --web
 
 ---
 
-## Teil 3 – Mehrere Accounts in `gh`
+## Teil 3 – Mehrere Accounts in gh
 
 Die GitHub CLI kann mehrere Konten parallel verwalten. Genau eines ist **aktiv** und bestimmt, welches Token der Git-Credential-Helper liefert.
 
@@ -599,9 +599,9 @@ git remote -v
 
 ## Verwandte Notizen
 
-- [[Git Grundlagen]]
-- [[Git Branching und Merging]]
-- [[HTTPS vs SSH bei Git]]
-- [[Passkeys und WebAuthn]]
-- [[Zwei-Faktor-Authentifizierung]]
-- [[Nushell Grundlagen]]
+- Git Grundlagen
+- Git Branching und Merging
+- HTTPS vs SSH bei Git
+- Passkeys und WebAuthn
+- Zwei-Faktor-Authentifizierung
+- Nushell Grundlagen

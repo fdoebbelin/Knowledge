@@ -54,14 +54,14 @@ hl.monitor({ output = "eDP-1", disabled = true })
 ```
 
 > [!warning] Key prüfen
-> `disabled = true` ist die erwartete Lua-Form, aber 0.55 ist jung – gegen die [Monitors-Wiki-Seite](https://wiki.hypr.land/Configuring/Basics/Monitors/) gegenchecken. Geht es nur ums Zuklappen am Dock, ist das Deckel-Verhalten ohnehin in [[Deckel und Suspend konfigurieren]] sauberer gelöst.
+> `disabled = true` ist die erwartete Lua-Form, aber 0.55 ist jung – gegen die [Monitors-Wiki-Seite](https://wiki.hypr.land/Configuring/Basics/Monitors/) gegenchecken. Geht es nur ums Zuklappen am Dock, ist das Deckel-Verhalten ohnehin in [[Deckelkontakt-Suspend-konfigurieren]] sauberer gelöst.
 
 > [!warning] Skalierung
 > `scale` muss ganzzahlige Pixelmaße ergeben, sonst lehnt Hyprland die Regel ab. Sichere Werte: `1`, `1.5`, `2` oder `"auto"`. UHD-Panel des Yoga: `2` oder `1.5`; FHD-Variante: `1`.
 
 ## nwg-displays als Helfer
 
-GUI zum Anordnen/Ablesen von Position, `scale` und `transform`. **Schreibt klassische `monitor=`-Syntax** → Werte ablesen und von Hand in die `hyprland.lua` übertragen, nicht sourcen. Installation siehe [[Grafische Systemeinstellungen unter Hyprland (KDE-Plasma-Äquivalente)]].
+GUI zum Anordnen/Ablesen von Position, `scale` und `transform`. **Schreibt klassische `monitor=`-Syntax** → Werte ablesen und von Hand in die `hyprland.lua` übertragen, nicht sourcen. Installation siehe Grafische Systemeinstellungen unter Hyprland (KDE-Plasma-Äquivalente).
 
 ## Verifikation
 
@@ -85,4 +85,4 @@ hyprctl monitors all -j | from json | each {|m| {
 
 ---
 
-Verwandt: [[Bildschirmrotation mit iio-hyprland]] · [[Hyprland Konfiguration]] · [[Deckel und Suspend konfigurieren]] · [[02-nushell-konfigurieren]] · [[2026-09-23 Monitoranordnung unter Sway konfigurieren]] (dasselbe Thema unter Sway statt Hyprland, inkl. `kanshi` für wechselnde Profile)
+Verwandt: [[Bildschirmrotation mit iio-hyprland]] · [[Hyprland Konfiguration]] · [[Deckelkontakt-Suspend-konfigurieren]] · `02-nushell-konfigurieren` · [[2026-09-23 Monitoranordnung unter Sway konfigurieren]] (dasselbe Thema unter Sway statt Hyprland, inkl. `kanshi` für wechselnde Profile)

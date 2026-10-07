@@ -77,7 +77,7 @@ open --raw /proc/bus/input/devices | lines | where ($it | str contains --ignore-
 ```
 
 > [!tip] Maskierung
-> Aktuelle Kernel maskieren `SW_LID` automatisch, sobald `SW_TABLET_MODE` aktiv ist (über `intel-vbtn`). Erscheint oben ein „Tablet Mode Switch", ist die Maskierung in der Regel aktiv. `iio-sensor-proxy` ist hierfür **nicht** zuständig — der macht nur die Bildschirmrotation (siehe [[iio-sensor-proxy einrichten]]).
+> Aktuelle Kernel maskieren `SW_LID` automatisch, sobald `SW_TABLET_MODE` aktiv ist (über `intel-vbtn`). Erscheint oben ein „Tablet Mode Switch", ist die Maskierung in der Regel aktiv. `iio-sensor-proxy` ist hierfür **nicht** zuständig — der macht nur die Bildschirmrotation (siehe iio-sensor-proxy einrichten).
 
 ## 5 – Schlafzustand prüfen (relevant für Akku-Drain)
 
@@ -91,7 +91,7 @@ open --raw /sys/power/mem_sleep | str trim
 
 ## Verwandte Notizen
 
-- [[Flip to Boot konfigurieren]] – Einschalten beim Aufklappen (auf dem 920 vermutlich nicht vorhanden)
+- Flip to Boot konfigurieren – Einschalten beim Aufklappen (auf dem 920 vermutlich nicht vorhanden)
 - [[Hibernate einrichten]] – gezielter Ruhezustand, erfordert Disk-Swap (auf Fedora **nicht** ab Werk aktiv)
 - [[Hyprland Konfiguration]]
 

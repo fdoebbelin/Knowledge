@@ -2,7 +2,7 @@
 title: "GitHub - OCamlPro/ocaml-top: A simple cross-platform OCaml code editor built for top-level evaluation."
 source: "https://github.com/OCamlPro/ocaml-top"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "A simple cross-platform OCaml code editor built for top-level evaluation. - OCamlPro/ocaml-top"

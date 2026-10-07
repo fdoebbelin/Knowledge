@@ -2,7 +2,7 @@
 title: "GitHub - ocamleditor/ocamleditor: OCamlEditor is a source code editor and build tool for OCaml.  It provides many features to facilitate editing code, accessing API reference directly from the editor and compiling projects. Runs on Linux and Windows."
 source: "https://github.com/ocamleditor/ocamleditor"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "OCamlEditor is a source code editor and build tool for OCaml.  It provides many features to facilitate editing code, accessing API reference directly from the editor and compiling projects. Runs on Linux and Windows. - ocamleditor/ocamleditor"

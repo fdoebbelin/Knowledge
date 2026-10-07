@@ -331,7 +331,7 @@ Das `<memoryBacking>` bleibt dabei stehen; es stört nicht, kann aber per
 ## Anhang — Samba auf Atomic, falls doch nötig
 
 Relevant, sobald **weitere** Geräte auf denselben Ordner sollen. Was sich
-gegenüber dem CachyOS-Weg ([[00-Samba-Einrichtung]]) ändert:
+gegenüber dem CachyOS-Weg (`00-Samba-Einrichtung`) ändert:
 
 | CachyOS | Fedora Atomic |
 |---|---|

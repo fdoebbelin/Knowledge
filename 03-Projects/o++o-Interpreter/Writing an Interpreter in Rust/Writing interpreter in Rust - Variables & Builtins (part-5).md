@@ -2,7 +2,7 @@
 title: "Writing interpreter in Rust — Variables & Builtins (part-5)"
 source: "https://medium.com/gitconnected/writing-interpreter-in-rust-variables-builtins-part-5-9d864966db07"
 author:
-  - "[[Pavel Durov]]"
+  - "Pavel Durov"
 published: 2024-01-31
 created: 2025-04-24
 description: "We’re going to build on top of the previous functionality of our interpreter. We will extend our Lexer and Parser and implement variable declaration and evaluation as well as a simple built-in…"

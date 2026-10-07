@@ -2,7 +2,7 @@
 title: "GitHub - apatil/ocaml-webview: Pop open a webview from OCaml"
 source: "https://github.com/apatil/ocaml-webview"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "Pop open a webview from OCaml. Contribute to apatil/ocaml-webview development by creating an account on GitHub."

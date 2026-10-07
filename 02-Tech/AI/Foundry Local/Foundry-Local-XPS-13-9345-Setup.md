@@ -293,7 +293,7 @@ foundry cache remove <id>
 
 ## Verwandte Notizen
 
-- [[Nexa SDK – NPU-Inferenz auf dem XPS]]
-- [[Lokale LLM-Tooling – Übersicht]]
-- [[XPS 13 9345 – Mobiler Python-Dev-Workstation Setup]]
-- [[Aider – lokale Modelle anbinden]]
+- Nexa SDK – NPU-Inferenz auf dem XPS
+- Lokale LLM-Tooling – Übersicht
+- XPS 13 9345 – Mobiler Python-Dev-Workstation Setup
+- Aider – lokale Modelle anbinden

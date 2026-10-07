@@ -148,7 +148,7 @@ Ordne jedes Merkmal der passenden Registry zu (GHCR, Quay.io – manche können 
 
 ## Verwandte Notizen
 
-- [[Leitfaden bootc-Image mit Homebrew]]
-- [[OCI und Container-Grundlagen]]
-- [[cosign Signierung]]
-- [[Trivy Schwachstellen-Scanning]]
+- [[01 Leitfaden-bootc-Image-mit-Homebrew]]
+- OCI und Container-Grundlagen
+- cosign Signierung
+- Trivy Schwachstellen-Scanning

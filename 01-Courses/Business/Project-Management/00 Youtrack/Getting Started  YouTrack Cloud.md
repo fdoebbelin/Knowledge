@@ -2,7 +2,7 @@
 title: "Getting Started | YouTrack Cloud"
 source: "https://www.jetbrains.com/help/youtrack/cloud/getting-started-with-youtrack.html#sidebar"
 author:
-  - "[[YouTrack Cloud Help]]"
+  - "YouTrack Cloud Help"
 published:
 created: 2025-11-18
 description:

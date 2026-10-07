@@ -86,7 +86,7 @@ Beim Portieren zwischen **OpenGL und Direct3D** kommt hinzu, dass D3D historisch
 
 ## Verwandte Notizen
 
-- [[Framebuffer und Speicherlayout]]
-- [[OpenGL Texturkoordinaten]]
-- [[SVG Koordinatensystem]]
-- [[Rechtshändige vs. linkshändige Koordinatensysteme]]
+- Framebuffer und Speicherlayout
+- OpenGL Texturkoordinaten
+- SVG Koordinatensystem
+- Rechtshändige vs. linkshändige Koordinatensysteme

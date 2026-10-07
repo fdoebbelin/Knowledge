@@ -2,7 +2,7 @@
 title: "DevOps & Automatisierung in der Cloud."
 source: "https://akademie.tuv.com/weiterbildungen/devops-und-automatisierung-in-der-cloud-31373505"
 author:
-  - "[[TÜV Rheinland Akademie]]"
+  - "TÜV Rheinland Akademie"
 published:
 created: 2025-11-26
 description: "Das Weiterbildungsseminar \"DevOps & Automatisierung in der Cloud\" vermittelt praxisnah, wie Sie durch moderne DevOps-Praktiken und Automatisierung Ihre Softwareentwicklungs- und Bereitstellungsprozesse effizienter gestalten. Sie lernen, wie Sie Continuous"

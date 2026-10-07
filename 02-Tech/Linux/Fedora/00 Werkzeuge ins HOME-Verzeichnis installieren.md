@@ -3,7 +3,7 @@ title: "Leitfaden: Werkzeuge ins $HOME installieren – am Beispiel Helix"
 shell: Nushell
 zielgruppe: Fachinformatiker/-in (FISI/FIAE)
 system: Fedora Sway Atomic (bootc/ostree) mit Toolbx
-verwandt: "[[leitfaden-toolbx-tauri-flatpak]]"
+verwandt: "leitfaden-toolbx-tauri-flatpak"
 tags: [linux, atomic, toolbx, nushell, helix, editor, scripting]
 ---
 ## Am Beispiel des Editors Helix
@@ -458,4 +458,4 @@ Das Skript lässt sich mit drei Änderungen übertragen: Repository-URL, Asset-M
 > 2. **Abhängigkeiten gehören in den Container** — Sprachserver, Compiler, Header. Sie brauchen Systembibliotheken, die es nur dort gibt.
 > 3. **Nichts davon gehört ins Basisimage** — kein Layering, kein Reboot, keine Drift vom Flotten-Image.
 
-Verwandte Unterlagen: [[leitfaden-toolbx-tauri-flatpak]] für die vollständige Werkzeugkette, [[spickzettel-toolbx]] für die Abgrenzung zu Distrobox.
+Verwandte Unterlagen: leitfaden-toolbx-tauri-flatpak für die vollständige Werkzeugkette, spickzettel-toolbx für die Abgrenzung zu Distrobox.

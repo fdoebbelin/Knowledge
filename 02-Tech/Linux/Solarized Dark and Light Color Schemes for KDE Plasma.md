@@ -2,7 +2,7 @@
 title: "ret2src/kde-plasma-solarized: Solarized Dark and Light Color Schemes for KDE Plasma"
 source: "https://github.com/ret2src/kde-plasma-solarized"
 author:
-  - "[[ret2src]]"
+  - "ret2src"
 published:
 created: 2026-01-22
 description: "Solarized Dark and Light Color Schemes for KDE Plasma - ret2src/kde-plasma-solarized"

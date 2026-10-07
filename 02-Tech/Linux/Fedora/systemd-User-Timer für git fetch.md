@@ -212,7 +212,7 @@ git log --oneline HEAD..@{u}      # welche Commits kämen rein
 
 ## Siehe auch
 
-- [[Git]]
-- [[Starship]]
+- Git
+- Starship
 - `man systemd.timer`, `man systemd.unit`, `man systemd.exec`
 - `man systemd-escape`

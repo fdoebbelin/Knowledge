@@ -17,10 +17,10 @@ status: done
 > [!abstract] TL;DR
 > Dolphin ist der Dateimanager von KDE und liegt in den offiziellen Fedora-Repos (`dnf install dolphin`). Er läuft als **Qt6-App nativ unter Wayland** – die eigentliche Einrichtung unter Hyprland betrifft das Drumherum: **Vorschaubilder**, **Laufwerke einhängen** (Polkit-Agent), als **Standard-Dateimanager** setzen und optional als **Datei-Dialog** für andere Apps.
 
-Siehe auch: [[00 Installations-Übersicht]] · [[Nushell installieren]] · [[Hyprland Konfiguration]]
+Siehe auch: 00 Installations-Übersicht · Nushell installieren · [[Hyprland Konfiguration]]
 
 > [!note] Kontext
-> Alle Befehle hier laufen bereits in **Nushell** (`nu` ist installiert, siehe [[Nushell installieren]]). `dnf`, `flatpak`, `xdg-mime` usw. sind externe Programme und verhalten sich in jeder Shell gleich – die nu-typische Syntax zeigt sich beim Prüfen (`which`), beim Auslesen strukturierter Ausgaben und beim Schreiben von Konfig-Dateien mit `save`.
+> Alle Befehle hier laufen bereits in **Nushell** (`nu` ist installiert, siehe Nushell installieren). `dnf`, `flatpak`, `xdg-mime` usw. sind externe Programme und verhalten sich in jeder Shell gleich – die nu-typische Syntax zeigt sich beim Prüfen (`which`), beim Auslesen strukturierter Ausgaben und beim Schreiben von Konfig-Dateien mit `save`.
 
 ---
 

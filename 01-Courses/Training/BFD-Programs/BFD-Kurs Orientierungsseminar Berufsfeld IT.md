@@ -2,7 +2,7 @@
 title: "BFD-Kurs: Orientierungsseminar Berufsfeld IT"
 source: "https://bwsa-group.de/angebote/bfd-kurs-orientierungsseminar-berufsfeld-it/"
 author:
-  - "[[BWSA GROUP]]"
+  - "BWSA GROUP"
 published: 2025-11-18
 created: 2026-02-27
 description: "Praxis-Seminar für Soldat*innen: Chancen und Perspektiven in der IT-Branche Sie stehen vor dem Übergang von der Bundeswehr in das zivile Berufsleben? Die BWSA GROUP unterstützt Sie dabei, diesen Schritt erfolgreich zu gestalten. Die IT-Branche bietet eine Vielzahl von beruflichen Perspektiven und Möglichkeiten – von der Softwareentwicklung über Netzwerktechnik bis hin zur IT-Sicherheit. Unser Ziel ist es, Ihnen […]"

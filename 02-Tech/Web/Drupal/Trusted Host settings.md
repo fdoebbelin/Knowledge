@@ -2,7 +2,7 @@
 title: "Trusted Host settings"
 source: "https://www.drupal.org/docs/getting-started/installing-drupal/trusted-host-settings"
 author:
-  - "[[Drupal.org]]"
+  - "Drupal.org"
 published: 2013-05-10
 created: 2025-04-11
 description: "Protecting against HTTP HOST Header attacks"

@@ -12,6 +12,7 @@ tags:
   - helix
 system: Fedora Sway Atomic
 yazi_version: "26.9.1"
+status: active
 created: 2026-09-16
 updated: 2026-09-23
 ---

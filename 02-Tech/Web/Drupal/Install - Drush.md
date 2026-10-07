@@ -2,7 +2,7 @@
 title: "Install - Drush"
 source: "https://www.drush.org/13.x/install/"
 author:
-  - "[[Moshe Weitzman]]"
+  - "Moshe Weitzman"
 published:
 created: 2025-04-12
 description: "A command line shell and Unix scripting interface for Drupal"

@@ -2,7 +2,7 @@
 title: "GitHub - ocaml-community/omd: extensible Markdown library and tool in \"pure OCaml\""
 source: "https://github.com/ocaml-community/omd?tab=readme-ov-file"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "extensible Markdown library and tool in \"pure OCaml\" - ocaml-community/omd"

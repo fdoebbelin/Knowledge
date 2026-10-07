@@ -4,7 +4,7 @@ aliases: [WSL-Sway-Noctalia-Leitfaden, XPS-Werkbank-Gesamt]
 teil_von: "[[README]]"
 tags: [wsl, wslg, fedora, sway, noctalia, quickshell, terra, homebrew, nushell, helix, flatpak, obsidian, xps13]
 zielgeraet: Dell XPS 13 9345 (Snapdragon X Elite, aarch64), FedoraLinux-44 WSL
-konsolidiert_aus: ["[[13-xps13-wsl-installation]]", "[[14-xps13-wslg-sway-nushell-runde1]]", "[[15-xps13-noctalia-wslg]]", "[[15-xps13-noctalia-wslg_2]]"]
+konsolidiert_aus: ["[[13-xps13-wsl-installation]]", "[[14-xps13-wslg-sway-nushell-runde1]]", "[[15-xps13-noctalia-wslg]]", "`15-xps13-noctalia-wslg_2`"]
 created: 2026-08-17
 verifiziert_gegen: Nushell 0.114.1, Noctalia v4.7.7 (Schema 59), Sway-Session auf dem XPS
 status: done
@@ -36,7 +36,7 @@ Irrweg dokumentiert in [[#11 — Widerlegte Annahmen ❌|Abschnitt 11]].
 > [!warning] Abgrenzung — das hier ist die Werkbank
 > Dieses Dokument beschreibt die **mutable Bastelumgebung** auf dem XPS.
 > Nichts hieraus wandert 1:1 ins bootc-Image — dort gilt
-> [[docs/03-bauen-und-testen]] bzw. [[09-yoga-buildumgebung]]: Pakete
+> `docs/03-bauen-und-testen` bzw. `09-yoga-buildumgebung`: Pakete
 > deklarativ im Containerfile, Drop-ins nach `/usr/share/sway/config.d/`,
 > `rpm -q`-Guard. Die WSL-Distro ist **Werkbank und Scout**, nicht Vorbild.
 > Hier wird *erkundet*, was dort *festgeschrieben* wird.
@@ -123,7 +123,7 @@ Bootstrap-Basis.
 | podman, buildah | **dnf, zwingend** | rootless braucht setuid `newuidmap`/`newgidmap`, `/etc/subuid`, System-`crun`/`conmon`/`netavark` |
 | skopeo | dnf, empfohlen | liest `containers-common`-Konfiguration; als kohärenter Stack bei podman |
 | containers-common | **dnf, zwingend** | `policy.json`, `registries.conf`, `storage.conf` — harte Abhängigkeit des Stacks |
-| qemu-user-static | **dnf, zwingend** | registriert `binfmt_misc`-Handler — kategorisch außerhalb von brews Reichweite. Nur nötig für lokale Cross-Builds; die CI ([[docs/10-github-repository]]) macht das inzwischen nativ |
+| qemu-user-static | **dnf, zwingend** | registriert `binfmt_misc`-Handler — kategorisch außerhalb von brews Reichweite. Nur nötig für lokale Cross-Builds; die CI (`docs/10-github-repository`) macht das inzwischen nativ |
 | flatpak | **dnf, zwingend** | setuid-`bwrap`, User-Namespaces, systemd-User-Units, Polkit (→ Abschnitt 8) |
 | @development-tools, git-core, curl, file, procps-ng | **dnf** | brews eigene Bootstrap-Abhängigkeiten |
 | wl-clipboard | dnf | Wayland-Systemschicht, von Helix genutzt |
@@ -169,7 +169,7 @@ Der frühere Rat „Nushell für die Login-Shell aus dnf" ist damit
 > Alles, was Nushell selbst braucht — brew-PATH, `NU_LIB_DIRS`,
 > `XDG_DATA_DIRS` — gehört deshalb zwingend in `env.nu`/`config.nu`, nie in
 > Login-Dateien. **Nushell liest kein `/etc/profile.d/*.sh`** (siehe
-> [[02-umgebung-wsl]]). Genau daran scheiterte später die
+> `02-umgebung-wsl`). Genau daran scheiterte später die
 > Flatpak-Sichtbarkeit im Launcher (→ 8.2): `flatpak.sh` setzt
 > `XDG_DATA_DIRS` in `/etc/profile.d`, und die Kette
 > Nushell → Sway → Noctalia sieht davon nichts.
@@ -224,7 +224,7 @@ Expansion `"${system[@]}"` gibt dnf dieselben Argumente wie eine lange
 Einzelzeile, hält die Liste aber lesbar und kommentierbar. Die Quotes um
 `${system[@]}` sind Pflicht — ohne sie zerlegt Bash Einträge mit
 Leerzeichen erneut. Der Guard danach folgt einer Grunddisziplin aus
-[[01-erkenntnisse]]: Ein erfolgreicher Exit-Code von `dnf` ist **kein**
+`01-erkenntnisse`: Ein erfolgreicher Exit-Code von `dnf` ist **kein**
 Beweis, dass ein bestimmtes Paket wirklich installiert wurde — `rpm -q`
 pro Paket ist der Beweis.
 
@@ -1008,11 +1008,11 @@ Drop-in-Fragen (→ 7.3).
 
 ### 6.1 Architekturentscheidung: Terra-RPM, nicht Git-Klon 🟡
 
-Zwei Wege stehen zur Wahl, [[07-referenz-quellen]] nennt beide:
+Zwei Wege stehen zur Wahl, `07-referenz-quellen` nennt beide:
 
 | | Terra-RPM (`noctalia-shell`) | `dnf install quickshell` + Git-Klon |
 |---|---|---|
-| Deckungsgleich mit dem Image | **ja** — identischer Pfad wie [[09-yoga-buildumgebung]] | nein |
+| Deckungsgleich mit dem Image | **ja** — identischer Pfad wie `09-yoga-buildumgebung` | nein |
 | Quickshell-Variante | `noctalia-qs` (Fork, von Terra) | Fedora-`quickshell` (Upstream) |
 | Version | Terra, ungepinnt, aktuell | Git-HEAD, beliebig aktuell |
 | Fremdquelle im System | **ja — und zwar tief** (s. u.) | nein |
@@ -1026,8 +1026,8 @@ genau für die Übertragbarkeit existiert die Werkbank.
 
 > [!important] `quickshell` **nicht** zusätzlich installieren
 > `noctalia-qs` und `quickshell` liefern dieselben Provides und kollidieren.
-> Das ist in [[09-yoga-buildumgebung]] bereits entschieden und korrigiert
-> die ältere Annahme in [[07-referenz-quellen]]. Vorher prüfen:
+> Das ist in `09-yoga-buildumgebung` bereits entschieden und korrigiert
+> die ältere Annahme in `07-referenz-quellen`. Vorher prüfen:
 > ```nu
 > ["quickshell" "noctalia-qs" "noctalia-shell"]
 > | each {|p| {paket: $p, installiert: ((rpm -q $p | complete).exit_code == 0)} }
@@ -1156,7 +1156,7 @@ Noctalia-Anleitung unterscheidet — und der teuerste Denkfehler der Serie
 > gewöhnlicher Wayland-**Client** auf Qt6/QtQuick und ignoriert jedes
 > `WLR_*` vollständig. QtQuick rendert über OpenGL — und auf diesem Gerät
 > gibt es keinen Render-Node: `/dev/dri` fehlt, aus `/dev/dxg` entsteht
-> ohne `d3d12`-Gallium-Treiber keiner ([[01-erkenntnisse#Umgebungsbefunde WSL]]).
+> ohne `d3d12`-Gallium-Treiber keiner (`01-erkenntnisse` (Umgebungsbefunde WSL)).
 
 Es bleiben zwei Wege, und sie sind **nicht** gleichwertig:
 
@@ -1273,7 +1273,7 @@ der wertvollsten Nebenerträge der ganzen Werkbank.
 **Erst nach erfolgreichem Handstart** (6.5). Die Umgebungsvariablen gehören
 in die `exec`-Zeile, nicht global — global gesetzt sucht man Monate später,
 warum nichts beschleunigt läuft (dieselbe Begründung wie die
-`WLR_RENDERER`-Warnung in [[02-umgebung-wsl]]).
+`WLR_RENDERER`-Warnung in `02-umgebung-wsl`).
 
 ```nu
 [
@@ -1317,7 +1317,7 @@ Verifiziertes Ergebnis: `sway 1284`, `qs 1293 (ppid 1284)`, kein `waybar`.
 
 ### 7.3 Nachweis: `/etc` überschattet `/usr/share` ✅
 
-[[09-yoga-buildumgebung]] hielt fest, dass **nicht verifiziert** sei, ob
+`09-yoga-buildumgebung` hielt fest, dass **nicht verifiziert** sei, ob
 `/etc/sway/config.d/` eine gleichnamige Datei aus
 `/usr/share/sway/config.d/` verdrängt — und wich deshalb im Image auf
 direktes Überschreiben in `/usr/share` aus. Die Werkbank hat die Frage in
@@ -1351,7 +1351,7 @@ Gegenprobe am Verhalten: Ab der Instanz, die nach dem Anlegen der
 Leerdateien startete, taucht **kein `waybar` und kein `swayidle`** mehr als
 Kindprozess auf.
 
-> [!important] Rückmeldung an [[09-yoga-buildumgebung]]
+> [!important] Rückmeldung an `09-yoga-buildumgebung`
 > Der `/usr/share`-Umweg im Image ist eine **Vorsichtsmaßnahme, keine
 > Notwendigkeit**. Er bleibt trotzdem die richtige Wahl: `/etc` unterliegt
 > auf bootc dem 3-Wege-Merge, `/usr/share` nicht. Die Begründung ändert
@@ -1362,7 +1362,7 @@ Kindprozess auf.
 **Zwei Nebenbefunde aus derselben Liste:**
 
 - Kein `50-keyboard.conf` — bestätigt auch hier den Kernbefund aus
-  [[01-erkenntnisse]]: Fedora liefert nirgendwo einen `input`-Block.
+  `01-erkenntnisse`: Fedora liefert nirgendwo einen `input`-Block.
 - Fedoras Drop-ins nutzen ausschließlich `50-`, `60-`, `65-`, `95-`. Die
   Nummern `30-`, `70-`, `90-` sind frei.
 
@@ -1459,7 +1459,7 @@ sway-start
 > [!tip] Blur: ein Fund für das Image
 > `ext-background-effect-v1` wird von Sway generell nicht implementiert —
 > weder hier noch auf dem Yoga. Der teuerste Renderpfad ist damit ohnehin
-> aus. Der Befund gehört nach [[09-yoga-buildumgebung]].
+> aus. Der Befund gehört nach `09-yoga-buildumgebung`.
 
 ---
 
@@ -2213,7 +2213,7 @@ Avatar-Bild, kein Theme-Problem. Lösung: `~/.face` anlegen oder
 ## 12 — Was diese Umgebung nicht testen kann 🟡
 
 Die Werkbank ist bewusst begrenzt. Ergänzt
-[[01-erkenntnisse#Was der nested Container nicht testen kann]]:
+`01-erkenntnisse` (Was der nested Container nicht testen kann):
 
 | Bereich | Logbeleg | Grund |
 |---|---|---|
@@ -2439,7 +2439,7 @@ Konsolidiert aus allen vier Notizen; erledigte Punkte (Handstart,
       `const`+`use`-Zeile zurück, `ensure-block` (Marke
       `noctarow:werkzeuge`, → 2.4) und die Session-Funktionen als
       `export def` nach `scripts/noctarow.nu` umziehen, `NU_LIB_DIRS` in
-      [[02-umgebung-wsl]] anpassen
+      `02-umgebung-wsl` anpassen
 - [ ] `noctarow doc-check`: alle `nu`-Codeblöcke im Vault durch `nu-check`
       + `$nu`-Feldabgleich schicken (→ 3.4)
 - [ ] `verifiziert_gegen:` in allen Vault-Notizen mit `nu`-Blöcken
@@ -2450,11 +2450,11 @@ Konsolidiert aus allen vier Notizen; erledigte Punkte (Handstart,
 **Rückmeldungen an andere Notizen**
 
 - [ ] `/etc`-Überschattung als **verifiziert** in
-      [[09-yoga-buildumgebung]] nachtragen (→ 7.3)
+      `09-yoga-buildumgebung` nachtragen (→ 7.3)
 - [ ] Blur-Befund (`ext-background-effect-v1` fehlt Sway generell) nach
-      [[09-yoga-buildumgebung]] (→ 7.5)
+      `09-yoga-buildumgebung` (→ 7.5)
 - [ ] Entscheidung v4 (`-legacy`) vs. v5-Track — steht in
-      [[09-yoga-buildumgebung]] offen und betrifft beide Umgebungen
+      `09-yoga-buildumgebung` offen und betrifft beide Umgebungen
 - [ ] `terra-obsolete`-Verhalten als Upstream-Bug an Fyra Labs melden
 - [ ] First-Boot-Unit für Flatpaks, falls die Flotte welche bekommen soll
       (→ 8.6)

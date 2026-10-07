@@ -3,7 +3,7 @@ title: "Literatur – bootc, Fedora Atomic & Umfeld"
 tags: [literatur, linux, fedora, atomic, bootc, podman, ostree, nushell, helix, sway, noctalia, kursmaterial]
 created: 2026-07-08
 typ: literaturliste
-verwandt: "[[Fedora Sway Atomic – Noctalia, Nushell & Helix ins bootc-Image backen]]"
+verwandt: "Fedora Sway Atomic – Noctalia, Nushell & Helix ins bootc-Image backen"
 ---
 > [!abstract] Einordnung
 > Zu **bootc** und **Noctalia** gibt es noch keine gedruckten Fachbücher – die Themen sind zu jung. Das beste „buchartige" Material sind offizielle Dokus (teils als PDF exportierbar) plus wenige Verlagstitel zu den Grundlagen darunter. Sortiert nach Nähe zum Thema.
@@ -88,7 +88,7 @@ Erklären das hybride Image/Paket-Modell und warum Layering auf Atomic teuer ist
 
 ## Verwandte Notizen
 
-- [[Fedora Sway Atomic – Noctalia, Nushell & Helix ins bootc-Image backen]]
-- [[Fedora Atomic – rpm-ostree vs. bootc]]
-- [[bootc – Fleet-Verteilung & Signierung]]
-- [[Nushell – Daily Driver Setup]]
+- Fedora Sway Atomic – Noctalia, Nushell & Helix ins bootc-Image backen
+- Fedora Atomic – rpm-ostree vs. bootc
+- bootc – Fleet-Verteilung & Signierung
+- Nushell – Daily Driver Setup

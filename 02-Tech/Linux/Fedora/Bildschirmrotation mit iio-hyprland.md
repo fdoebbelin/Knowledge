@@ -72,7 +72,7 @@ Hyprland-`transform`-Werte:
 | 4–7 | gespiegelt (+ 0/90/180/270°) |
 
 > [!warning] Tablet-Fold ≠ Deckel zu
-> Beim Umklappen in den Tablet-Modus kann der Hall-Sensor ein „Deckel zu" auslösen → ungewollter Suspend. Maskierung in [[Deckel und Suspend konfigurieren]].
+> Beim Umklappen in den Tablet-Modus kann der Hall-Sensor ein „Deckel zu" auslösen → ungewollter Suspend. Maskierung in [[Deckelkontakt-Suspend-konfigurieren]].
 
 > [!tip] Manueller Fallback ohne Sensor
 > Falls du Rotation lieber gezielt auslöst:
@@ -96,8 +96,8 @@ hyprctl monitors all -j | from json | where name == "eDP-1" | get transform
 - [ ] Autostart-Zeile in `hyprland.lua` (analog Noctalia)
 - [ ] Drehen testen: Display **und** Touch rotieren
 - [ ] ggf. `--transform` angepasst
-- [ ] Tablet-Fold löst keinen Suspend aus ([[Deckel und Suspend konfigurieren]])
+- [ ] Tablet-Fold löst keinen Suspend aus ([[Deckelkontakt-Suspend-konfigurieren]])
 
 ---
 
-Verwandt: [[Mehrere Bildschirme verwalten]] · [[Hyprland Konfiguration]] · [[Deckel und Suspend konfigurieren]]
+Verwandt: [[Mehrere Bildschirme verwalten]] · [[Hyprland Konfiguration]] · [[Deckelkontakt-Suspend-konfigurieren]]

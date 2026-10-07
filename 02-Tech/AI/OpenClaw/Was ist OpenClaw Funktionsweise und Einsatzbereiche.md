@@ -2,7 +2,7 @@
 title: "Was ist OpenClaw? Funktionsweise und Einsatzbereiche"
 source: "https://www.hostinger.com/de/tutorials/was-ist-openclaw"
 author:
-  - "[[Faradilla Ayunindya]]"
+  - "Faradilla Ayunindya"
 published: 2026-01-30
 created: 2026-02-02
 description: "OpenClaw ist ein selbst gehosteter KI-Agent für Automatisierung. Erfahren Sie, wie er funktioniert, wofür er geeignet ist und welche Risiken es gibt."

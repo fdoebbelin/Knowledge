@@ -2,7 +2,7 @@
 title: "Writing Interpreter in Rust — Repl, Files, and Comments (Part 4)"
 source: "https://medium.com/better-programming/writing-interpreter-in-rust-repl-files-and-comments-part-4-5a11d41613ba"
 author:
-  - "[[Pavel Durov]]"
+  - "Pavel Durov"
 published: 2023-10-17
 created: 2025-04-24
 description: "In this article, we will implement the REPL (Read-Eval-Print Loop), reorganise the project, and add file and comments support. It will be a collection of small changes that will extend the usability…"

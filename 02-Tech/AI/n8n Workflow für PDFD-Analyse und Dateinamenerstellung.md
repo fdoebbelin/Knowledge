@@ -2,7 +2,7 @@
 title: "Le Chat"
 source: "https://chat.mistral.ai/chat/15c77717-26de-434c-a3c2-9af1adddfdb8"
 author:
-  - "[[Mistral AI]]"
+  - "Mistral AI"
 published:
 created: 2026-02-12
 description: "Chat with Mistral AI’s cutting edge language models."

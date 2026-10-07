@@ -18,7 +18,7 @@ nur noch ID 1–3 mit Aktionen — Image-Bau plus ein `dnf upgrade`.
 > [!info] Abgrenzung
 > Dieses Dokument beschreibt die **mutable Bastelumgebung** auf dem XPS.
 > Nichts hieraus wandert ins bootc-Image — dort gilt weiterhin
-> [[docs/03-bauen-und-testen]]: Pakete deklarativ im Containerfile, mit
+> `docs/03-bauen-und-testen`: Pakete deklarativ im Containerfile, mit
 > `rpm -q`-Guard. Die WSL-Distro ist Werkbank und Scout, nicht Vorbild.
 
 ## Architekturentscheidungen
@@ -53,7 +53,7 @@ Bootstrap-Basis.
 | podman, buildah | **dnf, zwingend** | rootless braucht setuid `newuidmap`/`newgidmap`, `/etc/subuid`, System-`crun`/`conmon`/`netavark` |
 | skopeo | dnf, empfohlen | liest `containers-common`-Konfiguration; als kohärenter Stack bei podman |
 | containers-common | **dnf, zwingend** | `policy.json`, `registries.conf`, `storage.conf` — harte Abhängigkeit des Stacks (im Rücknahme-Protokoll fiel es erst mit dem letzten der drei) |
-| qemu-user-static | **dnf, zwingend** | registriert `binfmt_misc`-Handler — kategorisch außerhalb von brews Reichweite. Nur nötig für lokale Cross-Builds; die CI ([[docs/10-github-repository]]) macht das inzwischen nativ |
+| qemu-user-static | **dnf, zwingend** | registriert `binfmt_misc`-Handler — kategorisch außerhalb von brews Reichweite. Nur nötig für lokale Cross-Builds; die CI (`docs/10-github-repository`) macht das inzwischen nativ |
 | @development-tools, git-core, curl, file, procps-ng | **dnf** | Brews eigene Bootstrap-Abhängigkeiten |
 | wl-clipboard | dnf | Wayland-Systemschicht, von Helix genutzt |
 | nushell, helix, jq, gawk | **brew** | reine CLI-Tools, aktueller als Fedora 44 |
@@ -83,7 +83,7 @@ Nushell-Login-Shell mehr gibt.
 > Bash beim WSL-Einstieg bereits abgearbeitet; Nushell erbt die Umgebung.
 > Alles, was Nushell selbst braucht — brew-PATH, `NU_LIB_DIRS` — gehört
 > deshalb zwingend in `env.nu`/`config.nu`, nie in Login-Dateien.
-> Nushell liest kein `/etc/profile.d/*.sh` (siehe [[docs/02-umgebung-wsl]]).
+> Nushell liest kein `/etc/profile.d/*.sh` (siehe `docs/02-umgebung-wsl`).
 
 ## Korrekturen aus der Syntaxprüfung
 
@@ -360,7 +360,7 @@ bar mode invisible
 ```
 
 Starter — Variablen im Aufruf, nicht global (vgl. die
-`WLR_RENDERER`-Warnung in [[docs/02-umgebung-wsl]]):
+`WLR_RENDERER`-Warnung in `docs/02-umgebung-wsl`):
 
 ```nu
 def sway-start [] {
@@ -376,7 +376,7 @@ def sway-start [] {
 
 *Diskussion.* `WLR_RENDERER=pixman` ist auf dem XPS Pflicht: Fedoras Mesa
 bringt keinen `d3d12`-Gallium-Treiber, aus `/dev/dxg` entsteht kein
-Render-Node ([[docs/01-erkenntnisse]]). `resolution` bestimmt die
+Render-Node (`docs/01-erkenntnisse`). `resolution` bestimmt die
 Fenstergröße, nicht die Panel-Auflösung — 1920×1080 ist Startwert;
 `scale` bleibt 1, weil Windows bereits skaliert (zu klein → 1.25/1.5,
 Augenmaß). Für Noctalia obendrauf gilt: Blur/Transparenz aus, Animationen

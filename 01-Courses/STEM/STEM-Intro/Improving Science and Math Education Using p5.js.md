@@ -2,7 +2,7 @@
 title: "Improving Science and Math Education Using p5.js"
 source: "https://medium.com/processing-foundation/improving-science-and-math-education-using-p5-js-d434beea465c"
 author:
-  - "[[Processing Foundation]]"
+  - "Processing Foundation"
 published: 2018-10-22
 created: 2025-10-28
 description: "Improving Science and Math Education Using p5.js by Jithin K.S. Google Summer of Code 2018 mentored by Saber Khan This summer was the Processing Foundation’s seventh year participating in Google …"

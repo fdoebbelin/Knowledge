@@ -237,10 +237,10 @@ Untere Linie auswählen → `C`, `D` → `80` eingeben → `Enter`. Linke Linie 
 
 - [[Cheat Sheet – Sketcher Constraints]] – Vollständige Constraint-Referenz mit allen Kürzeln
 - [[Cheat Sheet – Tastenkürzel]] – Alle Sketcher-Shortcuts
-- [[Sketcher – Symbolleistenreferenz]] – Symbolreferenz mit Icons
+- [[Sketcher-Symbolreferenz]] – Symbolreferenz mit Icons
 - [[Glossar FreeCAD#Constraint (Randbedingung)]]
-- [[Glossar FreeCAD#Freiheitsgrad (DOF)]]
-- [[Glossar FreeCAD#Konstruktionsgeometrie]]
-- [[Glossar FreeCAD#Vollständig bestimmt]]
+- [[Glossar FreeCAD#DOF (Degrees of Freedom)]]
+- [[Glossar FreeCAD#Konstruktionsgeometrie (Construction Geometry)]]
+- [[Glossar FreeCAD#Vollständig bestimmt (Fully Constrained)]]
 - [[M02 – Sketcher Grundlagen]] ← Vorheriges Modul
 - [[M04 – Part Design Grundlagen]] → Nächstes Modul

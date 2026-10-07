@@ -2,7 +2,7 @@
 title: "OpenClaw: KI-Agenten übernehmen das Ruder"
 source: "https://www.it-administrator.de/openclaw-ki-agenten-moltbook"
 author:
-  - "[[Daniel Richey]]"
+  - "Daniel Richey"
 published: 2026-03-18
 created: 2026-02-02
 description: "OpenClaw gibt KI-Agenten Kontrolle über den Rechner: lokal betrieben, modular erweiterbar und untereinander vernetzt."

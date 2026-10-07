@@ -2,7 +2,7 @@
 title: "drupal/cms-launcher: A packaged application to launch Drupal CMS"
 source: "https://github.com/drupal/cms-launcher"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-04-15
 description: "A packaged application to launch Drupal CMS. Contribute to drupal/cms-launcher development by creating an account on GitHub."

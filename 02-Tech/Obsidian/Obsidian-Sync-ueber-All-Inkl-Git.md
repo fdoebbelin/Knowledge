@@ -892,6 +892,6 @@ ssh -vvv allinkl 2>&1 | grep -iE "offering|identity|authenticated|agent"
 
 ## Verwandte Notizen
 
-- [[Git-Server Mac mini Ubuntu]]
-- [[t3md.de Deployment-Pipeline]]
-- [[1Password SSH-Agent Grundlagen]]
+- Git-Server Mac mini Ubuntu
+- t3md.de Deployment-Pipeline
+- 1Password SSH-Agent Grundlagen

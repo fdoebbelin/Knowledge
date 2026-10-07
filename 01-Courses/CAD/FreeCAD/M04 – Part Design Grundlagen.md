@@ -191,7 +191,7 @@ Die Stärke von *Part Design*: Jedes Feature bleibt editierbar.
 
 - [[M03 – Sketcher Constraints]] – Vollständig bestimmte Skizzen als Voraussetzung
 - [[M05 – Part Design Vertiefung]] – Drehteil, Bezugselemente, Muster
-- [[PartDesign – Symbolleistenreferenz]] – Alle Symbole der *Part Design*-Workbench
+- [[Part Design – Symbolleistenreferenz]] – Alle Symbole der *Part Design*-Workbench
 - [[Glossar FreeCAD#Body]]
 - [[Glossar FreeCAD#Aufmaß (Pad)]]
 - [[Glossar FreeCAD#Tasche (Pocket)]]

@@ -2,7 +2,7 @@
 title: "cptpiepmatz/nu-jupyter-kernel: 📓 A wip jupyter raw kernel for nu"
 source: "https://github.com/cptpiepmatz/nu-jupyter-kernel"
 author:
-  - "[[cptpiepmatz]]"
+  - "cptpiepmatz"
 published:
 created: 2025-10-15
 description: "📓 A wip jupyter raw kernel for nu. Contribute to cptpiepmatz/nu-jupyter-kernel development by creating an account on GitHub."

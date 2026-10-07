@@ -202,5 +202,5 @@ systemctl hibernate
 ## Verwandte Notizen
 
 - [[Hyprland Konfiguration]]
-- [[02-nushell-konfigurieren]]
-- [[Flatpak einrichten]]
+- `02-nushell-konfigurieren`
+- [[00 Flathub einrichten]]
