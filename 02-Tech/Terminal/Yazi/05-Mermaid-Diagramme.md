@@ -1,5 +1,7 @@
 ---
 title: Yazi – Mermaid-Diagramme
+aliases:
+  - Yazi – Mermaid-Diagramme
 tags:
   - yazi
   - terminal
@@ -17,7 +19,7 @@ created: 2026-09-16
 > Mermaid-Blöcke in Markdown-Dateien erscheinen in der Vorschau nur als Code. Mit der Taste `M` rendert das Skript `mermaid-view` alle Diagramme der Datei unter dem Cursor **lokal** mit `mmdc` als PNG und öffnet sie in einem **neuen Tab**. Die Notiz bleibt im bisherigen Tab offen. Die Bilder werden dann mit Yazis normaler Bildvorschau angezeigt.
 
 > [!info] Geltungsbereich
-> Fedora Sway Atomic, Yazi 26.9.1, mermaid-cli 11.17.0 über Homebrew, Terminal `foot` (Sixel), Befehle in Nushell-Syntax. Setzt die [[Yazi – Markdown-Vorschau]] voraus.
+> Fedora Sway Atomic, Yazi 26.9.1, mermaid-cli 11.17.0 über Homebrew, Terminal `foot` (Sixel), Befehle in Nushell-Syntax. Setzt die [[04-Markdown-Vorschau]] voraus.
 
 ---
 
@@ -25,7 +27,7 @@ created: 2026-09-16
 
 > [!question]- Warum nicht das Plugin `mermaid.yazi`?
 > `passion0102/mermaid.yazi` ist das einzige ernsthafte Mermaid-Plugin (Stand September 2026). Gegen den Einsatz sprachen:
-> - **Übernimmt alle `.md`-Dateien:** Das Plugin ersetzt den Markdown-Previewer vollständig und ruft glow fest mit `--style dark` auf. Solarized-Stil und Obsidian-Aufbereitung aus [[Yazi – Markdown-Vorschau]] gingen verloren. Anpassen hieße, `main.lua` zu ändern, dann bricht `ya pkg upgrade` mit Hash-Fehler ab.
+> - **Übernimmt alle `.md`-Dateien:** Das Plugin ersetzt den Markdown-Previewer vollständig und ruft glow fest mit `--style dark` auf. Solarized-Stil und Obsidian-Aufbereitung aus [[04-Markdown-Vorschau]] gingen verloren. Anpassen hieße, `main.lua` zu ändern, dann bricht `ya pkg upgrade` mit Hash-Fehler ab.
 > - **Online-Dienst als Standard:** Ohne `mmdc` schickt es den Diagramm-Code jeder angesehenen Notiz an `mermaid.ink`.
 > - **Terminal:** Die README nennt nur Kitty-Protokoll und iTerm2, foot (Sixel) ist nicht aufgeführt.
 > - **Reife:** kleines Projekt mit wenigen Nutzern.
@@ -225,7 +227,7 @@ desc = "Mermaid-Diagramme der Datei rendern und anzeigen"
 
 ### 3.5 Hinweis in der Markdown-Vorschau
 
-In `~/.local/bin/ofm-preview` vor der glow-Zeile (bereits in [[Yazi – Markdown-Vorschau#3.3 Vorverarbeitungs-Skript anlegen]] enthalten):
+In `~/.local/bin/ofm-preview` vor der glow-Zeile (bereits in [[04-Markdown-Vorschau#3.3 Vorverarbeitungs-Skript anlegen]] enthalten):
 
 ```nu
 	# Mermaid-Blöcke: Hinweis auf die Taste M (mermaid-view) voranstellen
@@ -259,7 +261,7 @@ Cursor und Verzeichnis im Notiz-Tab bleiben dabei unverändert (getestet).
 
 > [!tip] Größer ansehen
 > - `Enter` öffnet das PNG mit dem Standardprogramm für `image/png`. Auf dem Referenzsystem ist das Google Chrome. Umstellen auf `imv` (liegt im Basisimage): `^xdg-mime default imv.desktop image/png`
-> - `T` maximiert den Vorschaubereich (Plugin toggle-pane, siehe [[Yazi – Installation und Plugins#5.1 toggle-pane – Vorschau maximieren]]).
+> - `T` maximiert den Vorschaubereich (Plugin toggle-pane, siehe [[01-Installation und Plugins#5.1 toggle-pane – Vorschau maximieren]]).
 
 ---
 
@@ -304,6 +306,6 @@ Cursor und Verzeichnis im Notiz-Tab bleiben dabei unverändert (getestet).
 
 ## Verwandt
 
-- [[Yazi – Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
-- [[Yazi – Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Übertragung auf andere Rechner
-- [[Yazi – kommentierter Leitfaden]] – Bedienung und Konfiguration
+- [[04-Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
+- [[01-Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Übertragung auf andere Rechner
+- [[03-kommentierter Leitfaden]] – Bedienung und Konfiguration

@@ -21,6 +21,7 @@ Stand: 23. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Einga
 - **Anhänge** liegen im `_resources`-Ordner neben der Notiz (Obsidian-Einstellung). Ein Unterordner bleibt nur bestehen, wenn er mehr als eine Handvoll Notizen hat.
 - **Keine Zugangsdaten, Schlüssel oder Kontodaten** in diesem Vault; der Vault ist ein Git-Repository.
 - **Eingang.** Neues, das noch einzuordnen ist, liegt in `00-Inbox` und wird von dort mit Claude Code einsortiert, siehe [[Eingang]]. Der Ordner bleibt leer, wenn nichts offen ist.
+- **Nummernpräfix bei Lesereihenfolge.** Hat ein Ordner eine sinnvolle Reihenfolge, tragen die Notizen ein Präfix `nn-` (Beispiel `02-Tech/Terminal/Yazi`: `01-Installation und Plugins` … `06-Türöffner (Coaching)`). Der frühere Name bleibt als `aliases`-Eintrag erhalten, damit ältere Verweise weiter aufgehen.
 - **Dateinamen** sind eindeutig im gesamten Vault (Wikilinks lösen über den Namen auf). Keine „Unbenannt“, keine „(1)“-Kopien, keine „alt“-Versionen neben der aktuellen; Altes wandert nach `05-Notes/Archive`.
 
 ## Ordnerstruktur

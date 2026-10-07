@@ -44,4 +44,4 @@ Ausführlich mit Begründung: [[00 Werkzeuge ins HOME-Verzeichnis installieren]]
 
 - [[Bluefin]] – fertiges Atomic-Image auf derselben Grundlage
 - [[00 container-bootc-flatpak]] – Container, bootc und Flatpak im Zusammenspiel
-- [[Yazi – Installation und Plugins]] – Beispiel für den brew-Weg
+- [[01-Installation und Plugins|Yazi – Installation und Plugins]] – Beispiel für den brew-Weg

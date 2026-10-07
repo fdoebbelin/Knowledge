@@ -3,6 +3,7 @@ title: "Yazi – Leitfaden zum Spickzettel"
 aliases:
   - Yazi Leitfaden
   - Yazi Befehle erklärt
+  - Yazi-Leitfaden
 tags:
   - yazi
   - terminal
@@ -25,22 +26,22 @@ Dieser Leitfaden erklärt die Grafiken und Befehlsblöcke des zweiseitigen Yazi-
 > - Spickzettel: [[yazi-spickzettel.pdf]] (Seite 1: Grundlagen, Navigation & Dateien; Seite 2: Suchen, Tabs, Sortieren & Konfiguration)
 > - Die beiden Seiten liegen zusätzlich einzeln als SVG in `_resources/` und werden unten eingebettet.
 > - Schreibweise: `Strg` = Ctrl, **orange** Tasten/Kästen = eigene Belegung (Plugins/Skripte), nicht Yazi-Standard.
-> - Ausführliche Erklärung von Konfiguration, Plugins und Setup: [[Yazi – kommentierter Leitfaden]], [[Yazi – Installation und Plugins]].
+> - Ausführliche Erklärung von Konfiguration, Plugins und Setup: [[03-kommentierter Leitfaden]], [[01-Installation und Plugins]].
 
 > [!tip] Vor dem Start
 > `~` oder `F1` zeigt in Yazi selbst alle Tastenbelegungen der installierten Version – die verlässlichste Referenz, wenn etwas abweicht.
 
 ## Inhalt
 
-1. [[#1 Das Grundprinzip Auswahl → Aktion]]
-2. [[#2 Die Oberfläche Drei Spalten]]
+1. [[#1 Das Grundprinzip: Auswahl → Aktion]]
+2. [[#2 Die Oberfläche: Drei Spalten]]
 3. [[#3 Navigation]]
 4. [[#4 Auswählen und markieren]]
-5. [[#5 Kopieren Verschieben Löschen]]
+5. [[#5 Kopieren, Verschieben, Löschen]]
 6. [[#6 Dateien anlegen und umbenennen]]
 7. [[#7 Yazi starten und verlassen]]
 8. [[#8 Suchen und Springen nach Reichweite]]
-9. [[#9 Präfixtasten g m c t e]]
+9. [[#9 Präfixtasten: g · , · m · c · t · e]]
 10. [[#10 Tabs]]
 11. [[#11 Pfade in die Zwischenablage]]
 12. [[#12 Zeilenmodus und Sortieren]]
@@ -219,7 +220,7 @@ Dieses Drei-Spalten-Layout (Miller Columns) ist die Grundlage für alles Weitere
 | `z` / `Z` | zu Datei/Ordner (`fzf`) / häufigem Ordner (`zoxide`) springen |
 
 > [!warning] Voraussetzung
-> `s`, `S`, `z`, `Z` brauchen die externen Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide` – Installation in [[Yazi – Installation und Plugins#3. Hilfsprogramme]].
+> `s`, `S`, `z`, `Z` brauchen die externen Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide` – Installation in [[01-Installation und Plugins#3. Hilfsprogramme]].
 
 > [!question]- Übung 8.1 – Welcher Befehl?
 > Du suchst in allen Unterordnern eine Datei, die den Text `TODO` enthält, weißt aber nicht, wie sie heißt.
@@ -229,7 +230,7 @@ Dieses Drei-Spalten-Layout (Miller Columns) ist die Grundlage für alles Weitere
 
 ---
 
-## 9 Präfixtasten: `g` `,` `m` `c` `t` `e`
+## 9 Präfixtasten: g · , · m · c · t · e
 
 Sechs Tasten öffnen jeweils ein Menü mit Folgetasten – Yazi blendet die Möglichkeiten nach dem Druck der ersten Taste selbst ein.
 
@@ -353,7 +354,7 @@ Details zu jedem Präfix stehen in den folgenden Abschnitten.
 > padding = { open = "", close = "" }
 > ```
 
-Ausführliche Fassung mit allen Optionen: [[Yazi – kommentierter Leitfaden#1. Konfigurationsdateien]].
+Ausführliche Fassung mit allen Optionen: [[03-kommentierter Leitfaden#1. Konfigurationsdateien]].
 
 ### Shell-Wrapper `y`
 
@@ -409,7 +410,7 @@ ya pkg upgrade           # aktualisieren
 ya pkg list               # anzeigen
 ```
 
-Einrichtung im Detail: [[Yazi – Installation und Plugins#4. Das Plugin-System]].
+Einrichtung im Detail: [[01-Installation und Plugins#4. Das Plugin-System]].
 
 ### Aufgaben-Fenster (`w`)
 
@@ -466,7 +467,7 @@ Diese vier Kombinationen stehen unten auf Seite 2 des Spickzettels. Sie zeigen, 
 ## Verwandt
 
 - [[yazi-spickzettel.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
-- [[Yazi – kommentierter Leitfaden]] – ausführliche Konfiguration, Solarized-Light-Theme, vollständige Beispielkonfiguration
-- [[Yazi – Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System
-- [[Yazi – Markdown-Vorschau]] · [[Yazi – Mermaid-Diagramme]] – Vorschau-Setup im Detail
+- [[03-kommentierter Leitfaden]] – ausführliche Konfiguration, Solarized-Light-Theme, vollständige Beispielkonfiguration
+- [[01-Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System
+- [[04-Markdown-Vorschau]] · [[05-Mermaid-Diagramme]] – Vorschau-Setup im Detail
 - [[Helix-Leitfaden]] – dasselbe Auswahl-→-Aktion-Prinzip, für den Editor erklärt

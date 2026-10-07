@@ -1,5 +1,7 @@
 ---
 title: Yazi – Installation und Plugins
+aliases:
+  - Yazi – Installation und Plugins
 tags:
   - yazi
   - terminal
@@ -22,7 +24,7 @@ updated: 2026-09-16
 > - **Version:** abgeglichen mit Yazi 26.9.1
 > - **Befehle:** Nushell-Syntax
 >
-> Bedienung und Konfiguration stehen in [[Yazi – kommentierter Leitfaden]], die Markdown-Vorschau in [[Yazi – Markdown-Vorschau]].
+> Bedienung und Konfiguration stehen in [[03-kommentierter Leitfaden]], die Markdown-Vorschau in [[04-Markdown-Vorschau]].
 
 ---
 
@@ -36,7 +38,7 @@ Nachfolger im Geiste von `ranger` und `lf`, aber:
 - **Vim-artige Tastenbelegung**
 
 > [!warning] Beta-Status
-> Yazi ist offiziell Public Beta. Breaking Changes in der Konfiguration kommen vor, siehe [[Yazi – kommentierter Leitfaden#Versionsunterschiede und Stolpersteine]]. Ältere Blogposts zeigen oft noch veraltete Syntax. Bei Fehlern zuerst `yazi --version` prüfen.
+> Yazi ist offiziell Public Beta. Breaking Changes in der Konfiguration kommen vor, siehe [[03-kommentierter Leitfaden#Versionsunterschiede und Stolpersteine]]. Ältere Blogposts zeigen oft noch veraltete Syntax. Bei Fehlern zuerst `yazi --version` prüfen.
 
 ---
 
@@ -71,7 +73,7 @@ Yazi selbst braucht nur `file(1)`, das im Basisimage liegt. Alles Weitere schalt
 | Programm   | brew-Formel   | Wofür                                              | Auf dem Referenzsystem |
 | ---------- | ------------- | -------------------------------------------------- | ---------------------- |
 | `glow`     | `glow`        | Markdown-Vorschau                                  | brew                   |
-| `mmdc`     | `mermaid-cli` | Mermaid-Diagramme (+ Chromium, siehe [[Yazi – Mermaid-Diagramme]]) | brew   |
+| `mmdc`     | `mermaid-cli` | Mermaid-Diagramme (+ Chromium, siehe [[05-Mermaid-Diagramme]]) | brew   |
 | `rich`     | `rich-cli`    | Vorschau für CSV, Jupyter-Notebooks, reStructuredText | brew                |
 | `eza`      | `eza`         | Verzeichnisvorschau als Baum                       | brew                   |
 | `mediainfo`| `media-info`  | Menüeintrag „Show media info“ für Audio/Video (`O`) | brew                  |
@@ -220,7 +222,7 @@ ya pkg install         # Alles aus package.toml installieren
 
 | Plugin                        | Zweck                                           | Taste      | Dokumentation |
 | ----------------------------- | ----------------------------------------------- | ---------- | ------------- |
-| `yazi-rs/plugins:piper`       | Shell-Kommando als Vorschau (Markdown, CSV, Notebooks) | –   | [[Yazi – Markdown-Vorschau]], [[#5.3 Vorschau für CSV, Notebooks und reStructuredText]] |
+| `yazi-rs/plugins:piper`       | Shell-Kommando als Vorschau (Markdown, CSV, Notebooks) | –   | [[04-Markdown-Vorschau]], [[#5.3 Vorschau für CSV, Notebooks und reStructuredText]] |
 | `yazi-rs/plugins:toggle-pane` | Vorschau maximieren / wiederherstellen          | `T`        | [[#5.1 toggle-pane – Vorschau maximieren]] |
 | `yazi-rs/plugins:git`         | Git-Status pro Datei in der Liste               | –          | [[#5.2 git – Status pro Datei]] |
 | `ahkohd/eza-preview`           | Verzeichnisvorschau als Baum                    | `e t`, `e +`, `e -` | [[#5.4 eza-preview – Verzeichnisse als Baum]] |
@@ -228,7 +230,7 @@ ya pkg install         # Alles aus package.toml installieren
 | `yazi-rs/plugins:chmod`       | Rechte der Auswahl ändern                       | `c m`      | [[#5.7 chmod – Rechte ändern]] |
 | `ndtoan96/ouch`               | Archiv-Vorschau, Komprimieren                   | `C`        | [[#5.8 ouch – Archive]] |
 
-Ohne Plugin, als eigenes Skript mit Taste `M`: Mermaid-Diagramme, siehe [[Yazi – Mermaid-Diagramme]].
+Ohne Plugin, als eigenes Skript mit Taste `M`: Mermaid-Diagramme, siehe [[05-Mermaid-Diagramme]].
 
 ### 5.1 toggle-pane – Vorschau maximieren
 
@@ -457,12 +459,12 @@ Die Konfiguration besteht aus Dateien, die kopiert werden, und Teilen, die sich 
 ~/.local/bin/mermaid-view               ← Mermaid-Diagramme
 ```
 
-Die vollständigen, aktuellen Inhalte von `yazi.toml`, `keymap.toml` und `init.lua` stehen in [[Yazi – kommentierter Leitfaden#10. Vollständige Beispielkonfiguration]].
+Die vollständigen, aktuellen Inhalte von `yazi.toml`, `keymap.toml` und `init.lua` stehen in [[03-kommentierter Leitfaden#10. Vollständige Beispielkonfiguration]].
 
 **Nicht kopieren:** `plugins/` – stellt `ya pkg install` aus `package.toml` wieder her.
 
 > [!warning] Flavor `solarized-light` ist kein Paket
-> Der helle Flavor wurde selbst abgeleitet und steht nicht in `package.toml`. `flavors/solarized-light.yazi` muss aus dem ZIP im Vault entpackt werden, siehe [[Yazi – kommentierter Leitfaden#8.3 Installation]].
+> Der helle Flavor wurde selbst abgeleitet und steht nicht in `package.toml`. `flavors/solarized-light.yazi` muss aus dem ZIP im Vault entpackt werden, siehe [[03-kommentierter Leitfaden#8.3 Installation]].
 
 Ablauf auf dem neuen Rechner:
 
@@ -517,7 +519,7 @@ Anschließend Yazi neu starten.
 
 ## Verwandt
 
-- [[Yazi – kommentierter Leitfaden]] – Bedienung, Helix als Editor, Theme, Solarized Light, Shell-Wrapper
-- [[Yazi – Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
-- [[Yazi – Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
+- [[03-kommentierter Leitfaden]] – Bedienung, Helix als Editor, Theme, Solarized Light, Shell-Wrapper
+- [[04-Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
+- [[05-Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
 - [[00 Werkzeuge ins HOME-Verzeichnis installieren]] – warum brew-Programme in Toolbx fehlen

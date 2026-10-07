@@ -3,6 +3,7 @@ title: Yazi – kommentierter Leitfaden
 aliases:
   - Yazi
   - Yazi Dateimanager
+  - Yazi – kommentierter Leitfaden
 tags:
   - yazi
   - terminal
@@ -20,10 +21,10 @@ updated: 2026-09-23
 Yazi ist ein schneller Dateimanager für das Terminal, geschrieben in Rust, mit Vim-artiger Bedienung, Bildvorschau und einem Plugin-System in Lua. Dieser Leitfaden fasst Bedienung und Konfiguration zusammen: versteckte Dateien, Shell, Helix als Editor, Dateioperationen, Theme-Anpassungen und ein Solarized-Light-Farbschema.
 
 > [!info] Geltungsbereich
-> - **System:** Fedora Sway Atomic, Yazi über Homebrew installiert, siehe [[Yazi – Installation und Plugins]]
+> - **System:** Fedora Sway Atomic, Yazi über Homebrew installiert, siehe [[01-Installation und Plugins]]
 > - **Version:** Alle Tastenbelegungen und Konfigurationsschlüssel sind mit der Standardkonfiguration von **Yazi 26.9.1** abgeglichen. Ältere Versionen weichen an einigen Stellen ab, siehe [[#Versionsunterschiede und Stolpersteine]].
 > - **Befehle:** Nushell-Syntax
-> - **Markdown-Vorschau:** eigene Notiz [[Yazi – Markdown-Vorschau]]
+> - **Markdown-Vorschau:** eigene Notiz [[04-Markdown-Vorschau]]
 
 > [!tip] Hilfe in Yazi selbst
 > Mit `~` oder `F1` zeigt Yazi jederzeit alle Tastenbelegungen der installierten Version an. Das ist die verlässlichste Referenz, wenn etwas nicht wie beschrieben funktioniert.
@@ -42,7 +43,7 @@ Yazi liest seine Konfiguration aus `~/.config/yazi/`. Keine dieser Dateien ist P
 | `init.lua`     | Initialisierung und Anpassung von Lua-Plugins              |
 | `package.toml` | Von `ya pkg` verwaltete Plugins und Flavors, nicht von Hand bearbeiten |
 
-Plugins und `ya pkg` sind in [[Yazi – Installation und Plugins#4. Das Plugin-System]] beschrieben.
+Plugins und `ya pkg` sind in [[01-Installation und Plugins#4. Das Plugin-System]] beschrieben.
 
 Verzeichnis anlegen und installierte Version prüfen:
 
@@ -423,7 +424,7 @@ group = "git"
 ```
 
 > [!note] Plugins und Skripte
-> `[preview]`, `[plugin]` und die Fetcher setzen die Plugins `piper`, `toggle-pane`, `git`, `eza-preview`, `smart-enter`, `chmod`, `ouch`, die Skripte `ofm-preview`/`mermaid-view` und die Programme `glow`, `rich`, `eza`, `ouch` voraus. Einrichtung: [[Yazi – Installation und Plugins#5. Eingerichtete Plugins]], [[Yazi – Markdown-Vorschau]], [[Yazi – Mermaid-Diagramme]]. Ohne diese Teile die entsprechenden Einträge weglassen.
+> `[preview]`, `[plugin]` und die Fetcher setzen die Plugins `piper`, `toggle-pane`, `git`, `eza-preview`, `smart-enter`, `chmod`, `ouch`, die Skripte `ofm-preview`/`mermaid-view` und die Programme `glow`, `rich`, `eza`, `ouch` voraus. Einrichtung: [[01-Installation und Plugins#5. Eingerichtete Plugins]], [[04-Markdown-Vorschau]], [[05-Mermaid-Diagramme]]. Ohne diese Teile die entsprechenden Einträge weglassen.
 
 ### `~/.config/yazi/keymap.toml`
 
@@ -554,7 +555,7 @@ ls ~/.config/yazi/*.toml | each {|f| {datei: ($f.name | path basename), ok: (try
 >
 > Seit 2026-09-23 als SVG erzeugt ([[yazi-spickzettel-seite1.svg]], [[yazi-spickzettel-seite2.svg]]), analog zum Helix-Spickzettel. Die ältere `yazi-spickzettel.html` ist die Quelle der vorherigen PDF-Fassung und liegt nur noch zur Referenz im Ordner.
 >
-> Ausführliche Erklärung jeder Grafik und jedes Befehlsblocks: [[Yazi-Leitfaden]].
+> Ausführliche Erklärung jeder Grafik und jedes Befehlsblocks: [[02-Leitfaden zum Spickzettel]].
 
 > [!example]- Tastenkürzel ausklappen
 >
@@ -613,7 +614,7 @@ Weitere typische Fehlerquellen:
 - **Symbole als Kästchen:** Die Standard-Trennzeichen und Dateisymbole brauchen eine Nerd Font im Terminal.
 - **Helix startet nicht:** `which hx` prüfen, siehe Abschnitt 4.1.
 - **`$SHELL` startet nicht Nushell:** Die Variable enthält die Login-Shell, im Keymap-Eintrag daher `nu` direkt angeben.
-- **Suche oder Sprung ohne Wirkung:** `s`, `S`, `z` und `Z` benötigen die Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide`. Installation mit `brew install fd ripgrep fzf zoxide`, vollständige Liste in [[Yazi – Installation und Plugins#3. Hilfsprogramme]].
+- **Suche oder Sprung ohne Wirkung:** `s`, `S`, `z` und `Z` benötigen die Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide`. Installation mit `brew install fd ripgrep fzf zoxide`, vollständige Liste in [[01-Installation und Plugins#3. Hilfsprogramme]].
 - **Konfiguration ohne Wirkung:** Yazi liest die Dateien nur beim Start. Oft laufen mehrere Instanzen in verschiedenen Terminals, alle beenden.
 
 ```nu
@@ -631,9 +632,9 @@ Weitere typische Fehlerquellen:
 
 ## Verwandt
 
-- [[Yazi-Leitfaden]] – Grafiken und Befehlsblöcke des Spickzettels einzeln erklärt, mit Übungen
-- [[Yazi – Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System, Übertragung auf andere Rechner
-- [[Yazi – Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
-- [[Yazi – Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
+- [[02-Leitfaden zum Spickzettel]] – Grafiken und Befehlsblöcke des Spickzettels einzeln erklärt, mit Übungen
+- [[01-Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System, Übertragung auf andere Rechner
+- [[04-Markdown-Vorschau]] – glow mit Solarized-Stil und Obsidian-Aufbereitung
+- [[05-Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
 - [[00 config.nu]]
 - [[Nushell Editor setzen]]

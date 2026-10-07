@@ -1,5 +1,7 @@
 ---
 title: Yazi – Markdown-Vorschau
+aliases:
+  - Yazi – Markdown-Vorschau
 tags:
   - yazi
   - terminal
@@ -18,7 +20,7 @@ created: 2026-09-16
 > Markdown-Dateien sollen im Vorschaubereich von Yazi gerendert erscheinen: farbige Überschriften im Solarized-Light-Stil, Tabellen als Spalten, Obsidian-Syntax lesbar aufbereitet. Diese Notiz ist die Schritt-für-Schritt-Anleitung, um das Setup auf einem weiteren Rechner nachzuziehen.
 
 > [!info] Geltungsbereich
-> Fedora Sway Atomic, Yazi 26.9.1 und glow 3.0.0 über Homebrew, Terminal `foot`, Befehle in Nushell-Syntax. Installation von Yazi: [[Yazi – Installation und Plugins]].
+> Fedora Sway Atomic, Yazi 26.9.1 und glow 3.0.0 über Homebrew, Terminal `foot`, Befehle in Nushell-Syntax. Installation von Yazi: [[01-Installation und Plugins]].
 
 ---
 
@@ -305,7 +307,7 @@ Cursor auf eine `.md`-Datei setzen, mit `J`/`K` durch die Vorschau blättern. Di
 - Callouts als `▎ info · Titel` dargestellt werden.
 
 > [!tip] Vorschau maximieren
-> `T` maximiert den Vorschaubereich, glow rendert dann auf die volle Breite neu. Einrichtung: [[Yazi – Installation und Plugins#5.1 toggle-pane – Vorschau maximieren]].
+> `T` maximiert den Vorschaubereich, glow rendert dann auf die volle Breite neu. Einrichtung: [[01-Installation und Plugins#5.1 toggle-pane – Vorschau maximieren]].
 
 ---
 
@@ -339,7 +341,7 @@ Cursor auf eine `.md`-Datei setzen, mit `J`/`K` durch die Vorschau blättern. Di
 > - Callout-Typen erscheinen kleingeschrieben und ohne Symbol, Einklappen (`-`/`+`) wird ignoriert.
 > - Wikilinks sind nur Text, nicht anklickbar.
 > - Eingebettete Bilder und Notizen werden nicht angezeigt, nur ihr Name.
-> - Mermaid-Diagramme bleiben in der Vorschau Code. Taste `M` zeigt sie als Bild, siehe [[Yazi – Mermaid-Diagramme]].
+> - Mermaid-Diagramme bleiben in der Vorschau Code. Taste `M` zeigt sie als Bild, siehe [[05-Mermaid-Diagramme]].
 > - Mathe (`$…$`), Dataview und Tags werden nicht aufbereitet.
 >
 > Für „was steht drin" reicht das. Für „sieht das im Vault richtig aus" bleibt Obsidian.
@@ -355,6 +357,6 @@ Cursor auf eine `.md`-Datei setzen, mit `J`/`K` durch die Vorschau blättern. Di
 
 ## Verwandt
 
-- [[Yazi – Installation und Plugins]] – Installation mit brew, Plugin-System, Übertragung auf andere Rechner
-- [[Yazi – Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
-- [[Yazi – kommentierter Leitfaden]] – Bedienung, Konfiguration, Flavor Solarized Light
+- [[01-Installation und Plugins]] – Installation mit brew, Plugin-System, Übertragung auf andere Rechner
+- [[05-Mermaid-Diagramme]] – Diagramme auf Tastendruck lokal rendern
+- [[03-kommentierter Leitfaden]] – Bedienung, Konfiguration, Flavor Solarized Light
