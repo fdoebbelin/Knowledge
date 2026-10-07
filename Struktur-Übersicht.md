@@ -6,12 +6,12 @@ aliases:
 tags:
   - meta
 created: 2026-09-15
-updated: 2026-09-23
+updated: 2026-09-30
 ---
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 23. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 30. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -21,7 +21,7 @@ Stand: 23. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Einga
 - **Anhänge** liegen im `_resources`-Ordner neben der Notiz (Obsidian-Einstellung). Ein Unterordner bleibt nur bestehen, wenn er mehr als eine Handvoll Notizen hat.
 - **Keine Zugangsdaten, Schlüssel oder Kontodaten** in diesem Vault; der Vault ist ein Git-Repository.
 - **Eingang.** Neues, das noch einzuordnen ist, liegt in `00-Inbox` und wird von dort mit Claude Code einsortiert, siehe [[Eingang]]. Der Ordner bleibt leer, wenn nichts offen ist.
-- **Nummernpräfix bei Lesereihenfolge.** Hat ein Ordner eine sinnvolle Reihenfolge, tragen die Notizen ein Präfix `nn-` (Beispiel `02-Tech/Terminal/Yazi`: `01-Installation und Plugins` … `06-Türöffner (Coaching)`). Der frühere Name bleibt als `aliases`-Eintrag erhalten, damit ältere Verweise weiter aufgehen.
+- **Nummernpräfix bei Lesereihenfolge.** Hat ein Ordner eine sinnvolle Reihenfolge, tragen die Notizen ein Präfix `nn-` (Beispiel `02-Tech/Terminal/Yazi`: `01-Einführung` … `04-Türöffner (Coaching)`). Der frühere Name bleibt als `aliases`-Eintrag erhalten, damit ältere Verweise weiter aufgehen.
 - **Dateinamen** sind eindeutig im gesamten Vault (Wikilinks lösen über den Namen auf). Keine „Unbenannt“, keine „(1)“-Kopien, keine „alt“-Versionen neben der aktuellen; Altes wandert nach `05-Notes/Archive`.
 
 ## Ordnerstruktur
@@ -41,7 +41,7 @@ Knowledge/
 │   ├── STEM/              MINT-Einführungskurs (Informatik, Physik/p5.js, CAD)
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
-├── 02-Tech/               Technische Referenz, nach Themen (321)
+├── 02-Tech/               Technische Referenz, nach Themen (320)
 │   ├── AI/                Aider, Claude-Code, Claude-Skills, Foundry Local, LM-Studio, Ollama,
 │   │                      OpenClaw, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
 │   ├── Git/
@@ -160,14 +160,15 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
   - **Links: bereinigt.** Keine Wikilinks ohne Ziel mehr. Verweise auf die nie angelegte `docs/`-Reihe der XPS-13-Notizen stehen jetzt als Code (`docs/01-erkenntnisse`), Quellen- und Personennamen aus Clippings als reiner Text.
   - **Verwaiste Anhänge: ausgelagert.** 40 Dateien (4,9 MB) liegen in `05-Notes/Archive/verwaiste-anhänge/` mit ihrem Herkunftspfad, siehe [[Verwaiste Anhänge]]. Nach einer Sichtung kann der Ordner gelöscht werden.
   - `04-Languages/Python/Buch` enthält vier Fassungen von „Kapitel 19“, bewusst als Entwürfe belassen.
-  - Git-Historie am 2026-09-15 mit git filter-repo bereinigt (Commit-IDs seitdem: Phase 1 `dfa3938`, Phase 2 `f39369b`, Phase 3 `63e61ab`); Schlüssel wurden noch nicht rotiert.
+  - Git-Historie am 2026-09-15 mit git filter-repo bereinigt (Commit-IDs seitdem: Phase 1 `dfa3938`, Phase 2 `f39369b`, Phase 3 `63e61ab`); Schlüssel am 2026-10-01 rotiert.
 
 ## Historie der Reorganisation
 
 - **2026-02-11** Migration aus Vault „Research“ per Skript (siehe `05-Notes/Archive/README-Migration (2026-02)`).
 - **2026-09-15 Phase 1** (`dfa3938`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
-- **2026-10-07**: Yazi-Notizen auf `nn-Name` nummeriert; 40 verwaiste Anhänge nach `05-Notes/Archive/verwaiste-anhänge` ausgelagert; Links vault-weit bereinigt (Geister-Doku und Clipping-Quellen entklammert, 21 Verweise auf vorhandene Notizen umgelenkt, 28 Anker repariert, 30 fehlerhafte Clipping-Links `[[text](url)]` korrigiert).
+- **2026-10-07**: Yazi-Notizen auf `nn-Name` nummeriert (`01-Einführung`, `02-Leitfaden zum Spickzettel`, `03-Installation und Konfiguration`, `04-Türöffner (Coaching)`); Coaching-Leitfaden eingeordnet; 40 verwaiste Anhänge nach `05-Notes/Archive/verwaiste-anhänge` ausgelagert; Links vault-weit bereinigt (Geister-Doku und Clipping-Quellen entklammert, 21 Verweise auf vorhandene Notizen umgelenkt, 28 Anker repariert, 30 fehlerhafte Clipping-Links `[[text](url)]` korrigiert).
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt. Chat-Protokoll zur Monitoranordnung unter Sway eingeordnet (`02-Tech/Linux/Fedora/`), mit `Fedora Sway Atomic` und dem Hyprland-Gegenstück `Mehrere Bildschirme verwalten` verlinkt.
+- **2026-09-30**: Fünf Yazi-Notizen zu dreien zusammengefasst: „Installation und Plugins“, „kommentierter Leitfaden“, „Markdown-Vorschau“ und „Mermaid-Diagramme“ verschmolzen zu `Yazi – Installation und Konfiguration` (mit vorangestelltem Schnellstart), dazu neu `Yazi – Einführung` als Kurzfassung des Konzepts; `Yazi-Leitfaden` bleibt als Spickzettel-Referenz bestehen. Die drei Notizen tragen seit dem 07.10. Nummernpräfixe.
 - **2026-09-15 Phase 3**: Fast-Dubletten zusammengeführt (SDDM, bootc, Drupal Paragraphs, Sprachmaschinen, IOPaint, aider, Geschichte der Informatik, Python-Buch), Frontmatter vereinheitlicht, diese Übersicht.

@@ -3,7 +3,6 @@ title: "Yazi – Leitfaden zum Spickzettel"
 aliases:
   - Yazi Leitfaden
   - Yazi Befehle erklärt
-  - Yazi-Leitfaden
 tags:
   - yazi
   - terminal
@@ -13,7 +12,7 @@ system: Fedora Sway Atomic
 yazi_version: "26.9.1"
 begleitmaterial: "[[yazi-spickzettel.pdf]]"
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-30
 status: active
 type: leitfaden
 ---
@@ -26,7 +25,7 @@ Dieser Leitfaden erklärt die Grafiken und Befehlsblöcke des zweiseitigen Yazi-
 > - Spickzettel: [[yazi-spickzettel.pdf]] (Seite 1: Grundlagen, Navigation & Dateien; Seite 2: Suchen, Tabs, Sortieren & Konfiguration)
 > - Die beiden Seiten liegen zusätzlich einzeln als SVG in `_resources/` und werden unten eingebettet.
 > - Schreibweise: `Strg` = Ctrl, **orange** Tasten/Kästen = eigene Belegung (Plugins/Skripte), nicht Yazi-Standard.
-> - Ausführliche Erklärung von Konfiguration, Plugins und Setup: [[03-kommentierter Leitfaden]], [[01-Installation und Plugins]].
+> - Was Yazi ist und wie das Bedienkonzept funktioniert: [[01-Einführung]]. Installation, Plugins und Konfiguration: [[03-Installation und Konfiguration]].
 
 > [!tip] Vor dem Start
 > `~` oder `F1` zeigt in Yazi selbst alle Tastenbelegungen der installierten Version – die verlässlichste Referenz, wenn etwas abweicht.
@@ -202,6 +201,15 @@ Dieses Drei-Spalten-Layout (Miller Columns) ist die Grundlage für alles Weitere
 | `Ctrl+c` | Tab schließen, beim letzten Tab: beenden |
 | `Ctrl+z` | pausieren, zurück mit `fg` bzw. `job unfreeze` (Nushell) |
 
+### Shell-Befehle und Anzeige *(teils eigene Belegung)*
+
+| Befehl | Wirkung |
+|---|---|
+| `;` | Shell-Befehl ausführen |
+| `:` | Shell-Befehl ausführen, auf Ende warten |
+| `.` | versteckte Dateien ein / aus (dauerhaft: `show_hidden` unter `[mgr]` in `yazi.toml`) |
+| `!` | Nushell hier öffnen, zurück mit `exit` *(eigene Belegung)* |
+
 ---
 
 ## 8 Suchen und Springen nach Reichweite
@@ -220,7 +228,7 @@ Dieses Drei-Spalten-Layout (Miller Columns) ist die Grundlage für alles Weitere
 | `z` / `Z` | zu Datei/Ordner (`fzf`) / häufigem Ordner (`zoxide`) springen |
 
 > [!warning] Voraussetzung
-> `s`, `S`, `z`, `Z` brauchen die externen Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide` – Installation in [[01-Installation und Plugins#3. Hilfsprogramme]].
+> `s`, `S`, `z`, `Z` brauchen die externen Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide` – Installation in [[03-Installation und Konfiguration#3 Hilfsprogramme]].
 
 > [!question]- Übung 8.1 – Welcher Befehl?
 > Du suchst in allen Unterordnern eine Datei, die den Text `TODO` enthält, weißt aber nicht, wie sie heißt.
@@ -354,7 +362,7 @@ Details zu jedem Präfix stehen in den folgenden Abschnitten.
 > padding = { open = "", close = "" }
 > ```
 
-Ausführliche Fassung mit allen Optionen: [[03-kommentierter Leitfaden#1. Konfigurationsdateien]].
+Ausführliche Fassung mit allen Optionen: [[03-Installation und Konfiguration#4 Konfigurationsdateien – Übersicht]].
 
 ### Shell-Wrapper `y`
 
@@ -410,7 +418,7 @@ ya pkg upgrade           # aktualisieren
 ya pkg list               # anzeigen
 ```
 
-Einrichtung im Detail: [[01-Installation und Plugins#4. Das Plugin-System]].
+Einrichtung im Detail: [[03-Installation und Konfiguration#5 Das Plugin-System]].
 
 ### Aufgaben-Fenster (`w`)
 
@@ -467,7 +475,6 @@ Diese vier Kombinationen stehen unten auf Seite 2 des Spickzettels. Sie zeigen, 
 ## Verwandt
 
 - [[yazi-spickzettel.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
-- [[03-kommentierter Leitfaden]] – ausführliche Konfiguration, Solarized-Light-Theme, vollständige Beispielkonfiguration
-- [[01-Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System
-- [[04-Markdown-Vorschau]] · [[05-Mermaid-Diagramme]] – Vorschau-Setup im Detail
+- [[01-Einführung]] – was Yazi ist und wie das Bedienkonzept funktioniert
+- [[03-Installation und Konfiguration]] – Installation, Hilfsprogramme, Plugin-System, Markdown-/Mermaid-Vorschau, vollständige Beispielkonfiguration
 - [[Helix-Leitfaden]] – dasselbe Auswahl-→-Aktion-Prinzip, für den Editor erklärt

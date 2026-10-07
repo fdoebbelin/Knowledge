@@ -416,7 +416,7 @@ Die Person formuliert für jede bearbeitete Station einen Satz in eigenen Worten
 
 ## Verwandt
 
-- [[01-Installation und Plugins]] – Installation mit brew, Hilfsprogramme, Plugin-System
-- [[02-Leitfaden zum Spickzettel]] – Bedienung Block für Block, mit Grafiken
-- [[03-kommentierter Leitfaden]] – Bedienung und Konfiguration im Detail
+- [[01-Einführung]] – was Yazi ist und wie das Bedienkonzept funktioniert
+- [[02-Leitfaden zum Spickzettel]] – alle Befehle mit Grafiken und Übungen
+- [[03-Installation und Konfiguration]] – Installation, Hilfsprogramme, Plugins, Vorschau-Setup
 - [[yazi-spickzettel.pdf]] – zweiseitiger Spickzettel zum Austeilen

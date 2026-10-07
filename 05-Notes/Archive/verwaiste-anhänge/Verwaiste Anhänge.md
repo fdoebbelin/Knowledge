@@ -74,5 +74,5 @@ Dateien aus `_resources`-Ordnern, auf die am 07.10.2026 keine Notiz mehr verwies
 ## Nicht verschoben, weil doch in Gebrauch
 
 - `02-Tech/Terminal/Helix/_resources/schriften/` – Schriftdateien, im Fließtext von [[Helix-Spickzettel SVG in Inkscape bearbeiten]] erwähnt
-- `02-Tech/Terminal/Yazi/_resources/yazi-spickzettel.html` – Quelle der früheren PDF-Fassung, erwähnt in [[03-kommentierter Leitfaden]]
+- `02-Tech/Terminal/Yazi/_resources/yazi-spickzettel.html` – Quelle der früheren PDF-Fassung, erwähnt in [[03-Installation und Konfiguration]]
 
