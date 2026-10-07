@@ -158,7 +158,7 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - Quartalsweise: Ordner mit nur einer Notiz prüfen (aktuell `02-Tech/macOS`, `03-Projects/BookScanner`) und ggf. auflösen.
 - Bekannte offene Punkte (Stand 2026-10-07):
   - **Links: bereinigt.** Keine Wikilinks ohne Ziel mehr. Verweise auf die nie angelegte `docs/`-Reihe der XPS-13-Notizen stehen jetzt als Code (`docs/01-erkenntnisse`), Quellen- und Personennamen aus Clippings als reiner Text.
-  - 95 verwaiste Anhänge (rund 30 MB), die größten Gruppen: Root-`_resources` (32), `05-Notes/Clippings/_resources` (15), `01-Courses/Business/Project-Management/Aufgaben/_resources` (14). Noch nicht gelöscht.
+  - **Verwaiste Anhänge: ausgelagert.** 40 Dateien (4,9 MB) liegen in `05-Notes/Archive/verwaiste-anhänge/` mit ihrem Herkunftspfad, siehe [[Verwaiste Anhänge]]. Nach einer Sichtung kann der Ordner gelöscht werden.
   - `04-Languages/Python/Buch` enthält vier Fassungen von „Kapitel 19“, bewusst als Entwürfe belassen.
   - Git-Historie am 2026-09-15 mit git filter-repo bereinigt (Commit-IDs seitdem: Phase 1 `dfa3938`, Phase 2 `f39369b`, Phase 3 `63e61ab`); Schlüssel wurden noch nicht rotiert.
 
@@ -167,7 +167,7 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-02-11** Migration aus Vault „Research“ per Skript (siehe `05-Notes/Archive/README-Migration (2026-02)`).
 - **2026-09-15 Phase 1** (`dfa3938`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
-- **2026-10-07**: Yazi-Notizen auf `nn-Name` nummeriert; Links vault-weit bereinigt (Geister-Doku und Clipping-Quellen entklammert, 21 Verweise auf vorhandene Notizen umgelenkt, 28 Anker repariert, 30 fehlerhafte Clipping-Links `[[text](url)]` korrigiert).
+- **2026-10-07**: Yazi-Notizen auf `nn-Name` nummeriert; 40 verwaiste Anhänge nach `05-Notes/Archive/verwaiste-anhänge` ausgelagert; Links vault-weit bereinigt (Geister-Doku und Clipping-Quellen entklammert, 21 Verweise auf vorhandene Notizen umgelenkt, 28 Anker repariert, 30 fehlerhafte Clipping-Links `[[text](url)]` korrigiert).
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt. Chat-Protokoll zur Monitoranordnung unter Sway eingeordnet (`02-Tech/Linux/Fedora/`), mit `Fedora Sway Atomic` und dem Hyprland-Gegenstück `Mehrere Bildschirme verwalten` verlinkt.
 - **2026-09-15 Phase 3**: Fast-Dubletten zusammengeführt (SDDM, bootc, Drupal Paragraphs, Sprachmaschinen, IOPaint, aider, Geschichte der Informatik, Python-Buch), Frontmatter vereinheitlicht, diese Übersicht.
