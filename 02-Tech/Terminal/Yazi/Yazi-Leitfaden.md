@@ -443,7 +443,7 @@ Diese vier Kombinationen stehen unten auf Seite 2 des Spickzettels. Sie zeigen, 
 > Zwei Dateien markieren, ausschneiden (`x`), zu Tab 2 wechseln, einfügen (`p`). `y` statt `x` kopiert, statt zu verschieben. Siehe [[#10 Tabs]].
 
 > [!example] Massenumbenennung: `Ctrl+a r → Helix`
-> Alle Dateien auswählen, `r` öffnet die Namen im Editor. In Helix z. B. mit Mehrfach-Cursor: `%s jpeg` `Enter` `c jpg` `Esc` `:wq` benennt alle `.jpeg` auf `.jpg` um – siehe [[Helix-Leitfaden#9 Mehrfach-Cursor]].
+> Alle Dateien auswählen, `r` öffnet die Namen im Editor. In Helix z. B. mit Mehrfach-Cursor: `%s jpeg` `Enter` `c jpg` `Esc` `:wq` benennt alle `.jpeg` auf `.jpg` um – siehe [[05 Mehrfachauswahl]] im Helix-Cookbook.
 
 > [!example] Text finden & öffnen: `S TODO Enter Enter`
 > `S` durchsucht Inhalte rekursiv mit ripgrep, `TODO` eintippen, `Enter` springt zum Treffer, zweites `Enter` öffnet die Datei in Helix. `Esc` beendet die Suche.

@@ -12,14 +12,14 @@ zielgruppe: Fachinformatiker FISI / FIAE
 helix-version: "25.x"
 begleitmaterial: "[[Helix_Spickzettel_A4_erweitert.pdf]]"
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-10-13
 status: active
 type: leitfaden
 ---
 
 # Helix – Leitfaden zum Spickzettel
 
-Dieser Leitfaden erklärt die Befehle des zweiseitigen Spickzettels in der Reihenfolge, in der man sie lernen sollte. Zu jeder Grafik des Spickzettels gibt es einen Abschnitt **„So liest du die Grafik“** und kurze Übungen mit aufklappbaren Lösungen.
+Dieser Leitfaden erklärt die acht Grafiken des zweiseitigen Spickzettels im Zusammenhang, mit **„So liest du die Grafik“** und kurzen Übungen mit aufklappbaren Lösungen. Die allgemeine Befehlsreferenz – auch zu Themen ohne eigene Grafik – steht im [[Helix-Cookbook]].
 
 > [!info] Begleitmaterial
 > - Spickzettel: [[Helix_Spickzettel_A4_erweitert.pdf]] (Seite 1: Grundlagen, Seite 2: Fortgeschritten)
@@ -39,15 +39,8 @@ Dieser Leitfaden erklärt die Befehle des zweiseitigen Spickzettels in der Reihe
 4. [[#4 word vs. WORD]]
 5. [[#5 Zeichen finden mit f und t]]
 6. [[#6 Einfügen – wo landet der Cursor?]]
-7. [[#7 Bearbeiten, Kopieren, Rückgängig]]
-8. [[#8 Suchen und Makros]]
-9. [[#9 Mehrfach-Cursor]]
-10. [[#10 Match & Surround]]
-11. [[#11 Goto, LSP und die Klammer-Navigation]]
-12. [[#12 Fenster und Ansicht]]
-13. [[#13 Picker, Jumplist, Shell und Konfiguration]]
-14. [[#14 Rezepte]]
-15. [[#15 Lernpfad und Übungsdatei]]
+7. [[#7 Match & Surround]]
+8. [[#8 Fenster und Ansicht]]
 
 ---
 
@@ -213,151 +206,7 @@ Die Wort-Bewegungen `w` `b` `e` (und groß `W` `B` `E`) **wählen den überstric
 
 ---
 
-## 7 Bearbeiten, Kopieren, Rückgängig
-
-Alle Aktionen wirken auf die **aktuelle Auswahl**. Das Muster ist deshalb immer: *auswählen, dann Taste*.
-
-### Bearbeiten
-
-| Befehl | Wirkung | Beispiel |
-|---|---|---|
-| `d` | Auswahl löschen (und kopieren) | `x` `d` löscht die Zeile |
-| `Alt-d` | löschen **ohne** kopieren | Zwischenablage bleibt erhalten |
-| `c` / `Alt-c` | ändern (löschen + Einfügemodus), mit/ohne kopieren | `w` `c` ersetzt ein Wort |
-| `r` *z* | jedes Zeichen der Auswahl durch *z* ersetzen | `x` `r` `-` macht die Zeile zu Strichen |
-| `R` | Auswahl durch Kopie ersetzen | |
-| `>` / `<` | ein- / ausrücken | `x` `x` `>` rückt zwei Zeilen ein |
-| `J` | Zeilen verbinden | |
-| `~` `` ` `` `` Alt-` `` | Groß/klein tauschen, klein, GROSS | |
-| `Strg-a` / `Strg-x` | Zahl unter dem Cursor +1 / −1 | `5` `Strg-a` addiert 5 |
-| `.` | letztes Einfügen wiederholen | |
-| `_` | Leerraum am Anfang und Ende der Auswahl entfernen | |
-| `Strg-c` | Kommentar an / aus | |
-| `:fmt` | Datei mit dem Language Server formatieren ● | |
-| `:sort` / `:rsort` | Auswahlen sortieren / rückwärts sortieren | |
-
-### Kopieren & Einfügen
-
-| Befehl | Wirkung |
-|---|---|
-| `y` | Auswahl kopieren (yank) |
-| `p` / `P` | nach / vor der Auswahl einfügen |
-| `Space y` / `Space Y` | in die System-Zwischenablage kopieren (alle / nur Haupt-Auswahl) |
-| `Space p` / `Space P` | aus der System-Zwischenablage einfügen |
-| `Space R` | Auswahl durch Zwischenablage ersetzen |
-
-> [!warning] Zwei Zwischenablagen
-> `y` und `p` verwenden das **Helix-interne** Register. Nur die `Space`-Varianten sprechen mit der Zwischenablage des Betriebssystems – also mit dem Browser oder einem anderen Programm.
-
-### Rückgängig & Wiederholen
-
-| Befehl | Wirkung |
-|---|---|
-| `u` | Rückgängig |
-| `U` | Wiederherstellen (Redo) |
-| `Alt-u` / `Alt-U` | in der Änderungshistorie zurück / vor |
-| `:ear` / `:lat` | früherer / späterer Stand (auch mit Zeitangabe, z. B. `:ear 5m`) |
-
-### Register
-
-Register sind benannte Zwischenablagen. Man wählt sie mit `"` und einem Buchstaben, **bevor** man die Aktion auslöst.
-
-| Befehl | Wirkung |
-|---|---|
-| `"ay` | Auswahl in Register `a` kopieren |
-| `"ap` | Register `a` einfügen |
-| `"ad` / `"ac` | in `a` speichern, dann löschen / ändern |
-| `"_d` | löschen ins „Nichts“ – kein Register wird überschrieben |
-
-| Spezialregister | Inhalt |
-|---|---|
-| `/` | letzte Suche |
-| `:` | letzter Befehl |
-| `"` | letzte Kopie (Standard) |
-| `_` | Black Hole – schluckt alles |
-| `+` / `*` | System-Zwischenablage / Primary Selection (X11, Wayland) |
-| `%` | Name der aktuellen Datei |
-| `#` | Nummer der jeweiligen Auswahl (1, 2, 3 …) |
-
-> [!example] Nummerierung mit `#`
-> Mit fünf Cursorn (siehe [[#9 Mehrfach-Cursor]]) fügt `"#p` bei jedem Cursor seine laufende Nummer ein – praktisch für Listen oder Testdaten.
-
----
-
-## 8 Suchen und Makros
-
-| Befehl | Wirkung |
-|---|---|
-| `/` / `?` | vorwärts / rückwärts suchen (regulärer Ausdruck) |
-| `n` / `N` | nächster / voriger Treffer |
-| `*` | aktuelle Auswahl als Suchmuster übernehmen |
-| `Space /` | globale Suche im ganzen Projekt (mit Picker) |
-
-| Befehl | Wirkung |
-|---|---|
-| `Q` | Makro-Aufnahme starten / stoppen |
-| `q` | Makro abspielen (`5q` = fünfmal) |
-| `"aQ` / `"aq` | Makro in Register `a` aufnehmen / aus `a` abspielen |
-
-> [!tip] Makro oder Mehrfach-Cursor?
-> Was in allen Zeilen **gleich** passiert, geht mit Mehrfach-Cursor meist schneller. Makros lohnen sich, wenn jede Stelle erst **gesucht** werden muss.
-
----
-
-## 9 Mehrfach-Cursor
-
-Mehrfach-Cursor sind in Helix kein Zusatz, sondern Grundwerkzeug. Die zentrale Idee: **Eine große Auswahl wird in viele kleine zerlegt**, danach wirkt jede Aktion auf alle gleichzeitig.
-
-### Cursor erzeugen
-
-| Befehl | Wirkung |
-|---|---|
-| `C` / `Alt-C` | Auswahl in die Zeile darunter / darüber kopieren (neuer Cursor) |
-| `s` | in der Auswahl alle Treffer eines regulären Ausdrucks auswählen |
-| `S` | Auswahl **an** den Treffern aufteilen (die Treffer selbst fallen weg) |
-| `Alt-s` | Auswahl an Zeilenumbrüchen aufteilen – eine Auswahl pro Zeile |
-
-### Cursor verwalten
-
-| Befehl | Wirkung |
-|---|---|
-| `,` / `Alt-,` | nur Haupt-Auswahl behalten / Haupt-Auswahl entfernen |
-| `;` | jede Auswahl auf ihren Cursor zusammenziehen |
-| `K` / `Alt-K` | Auswahlen behalten / entfernen, die einen Regex enthalten |
-| `(` `)` | anderer Cursor wird Haupt-Cursor |
-| `Alt-(` `Alt-)` | **Inhalte** der Auswahlen rotieren (z. B. zwei Argumente tauschen) |
-| `&` | Auswahlen spaltenbündig ausrichten |
-| `Alt-_` | angrenzende Auswahlen verschmelzen |
-
-> [!example] Schritt für Schritt: Variablen umbenennen
-> Ausgangstext:
-> ```python
-> wert = 1
-> print(wert)
-> summe = wert + wert
-> ```
-> 1. `%` – ganze Datei auswählen
-> 2. `s` `wert` `⏎` – vier Cursor, einer pro Vorkommen
-> 3. `c` `betrag` `Esc` – alle vier gleichzeitig ersetzt
-> 4. `,` – zurück zu einem Cursor
-
-> [!example] Werte ausrichten mit `&`
-> Bei `a = 1`, `abc = 2`, `ab = 3` untereinander: alle drei Zeilen mit `x` `x` `x` wählen, `s` `=` `⏎` wählt die Gleichheitszeichen, `&` richtet sie in einer Spalte aus.
-
-### Syntaxbaum ●
-
-| Befehl | Wirkung |
-|---|---|
-| `Alt-o` | Auswahl auf den umgebenden Syntaxknoten vergrößern (Ausdruck → Anweisung → Block → Funktion) |
-| `Alt-i` | wieder verkleinern |
-| `Alt-p` / `Alt-n` | vorigen / nächsten Nachbarknoten wählen (z. B. nächstes Argument) |
-
-> [!tip] `Alt-o` mehrmals drücken
-> Das ist oft der schnellste Weg, „die ganze Funktion“ oder „den ganzen `if`-Block“ auszuwählen, ohne Zeilen zu zählen.
-
----
-
-## 10 Match & Surround
+## 7 Match & Surround
 
 ![[helix-surround-textobjekte.svg|440]]
 
@@ -401,46 +250,7 @@ Mehrfach-Cursor sind in Helix kein Zusatz, sondern Grundwerkzeug. Die zentrale I
 
 ---
 
-## 11 Goto, LSP und die Klammer-Navigation
-
-Diese Befehle brauchen einen Language Server (●). Ob einer läuft, zeigt `hx --health <sprache>`.
-
-| Befehl | Wirkung |
-|---|---|
-| `gd` / `gy` | zur Definition / Typdefinition |
-| `gr` / `gi` | zu den Referenzen / zur Implementierung |
-| `Space k` | Dokumentation zum Symbol (Hover) |
-| `Space r` | Symbol im ganzen Projekt umbenennen |
-| `Space a` | Code-Aktion anwenden (z. B. Import ergänzen) |
-| `Space h` | alle Referenzen des Symbols in der Datei auswählen (Mehrfach-Cursor!) |
-| `Space s` / `Space S` | Symbol-Picker Datei / Workspace |
-| `Space d` / `Space D` | Diagnose-Picker Datei / Workspace |
-| `:lsp-restart` / `:lsp-stop` | Language Server neu starten / stoppen |
-
-### Vorige / nächste mit `[` und `]`
-
-Auf dem Spickzettel steht dazu eine symmetrische Tabelle: **links `[` = rückwärts, rechts `]` = vorwärts**, in der Mitte das Ziel.
-
-| rückwärts | Ziel | vorwärts |
-|---|---|---|
-| `[d` | Diagnose (Fehler, Warnung) ● | `]d` |
-| `[D` | erste / letzte Diagnose | `]D` |
-| `[f` | Funktion ● | `]f` |
-| `[t` | Typ / Klasse ● | `]t` |
-| `[a` | Argument ● | `]a` |
-| `[c` | Kommentar ● | `]c` |
-| `[T` | Test ● | `]T` |
-| `[p` | Absatz | `]p` |
-| `[g` | Git-Änderung | `]g` |
-| `[G` | erste / letzte Git-Änderung | `]G` |
-| `[Space` | Leerzeile darüber / darunter einfügen | `]Space` |
-
-> [!tip] Fehler abarbeiten
-> `]d` springt zum nächsten Fehler, `Space k` zeigt die Meldung, `Space a` bietet oft direkt eine Korrektur an.
-
----
-
-## 12 Fenster und Ansicht
+## 8 Fenster und Ansicht
 
 ### Fenster
 
@@ -490,165 +300,6 @@ Auf dem Spickzettel steht dazu eine symmetrische Tabelle: **links `[` = rückwä
 
 ---
 
-## 13 Picker, Jumplist, Shell und Konfiguration
-
-### Picker (`Space`)
-
-Picker sind durchsuchbare Listen mit Unschärfesuche: Einfach ein paar Buchstaben tippen.
-
-| Befehl | Picker |
-|---|---|
-| `Space f` / `Space F` | Dateien (Projekt / aktuelles Verzeichnis) |
-| `Space b` | offene Buffer |
-| `Space j` | Jumplist |
-| `Space '` | letzten Picker wieder öffnen |
-| `Space ?` | Befehlspalette |
-
-| Im Picker | Wirkung |
-|---|---|
-| `↑` `↓` | Eintrag wählen |
-| `⏎` | öffnen |
-| `Strg-v` / `Strg-s` | senkrecht / waagerecht geteilt öffnen |
-| `Strg-t` | Vorschau ein / aus |
-| `Esc` | schließen |
-
-### Jumplist – Helix' Lesezeichen
-
-Helix kennt keine benannten Marken. Stattdessen merkt sich die Jumplist Positionen.
-
-| Befehl | Wirkung |
-|---|---|
-| `Strg-s` | aktuelle Position merken |
-| `Strg-o` / `Strg-i` | zurück / vor in der Jumplist |
-| `Space j` | alle gemerkten Positionen im Picker |
-
-### Dateien & Buffer
-
-| Befehl | Wirkung |
-|---|---|
-| `:w` / `:w pfad` | speichern / speichern unter |
-| `:wa` | alle Buffer speichern |
-| `:u` | nur speichern, wenn geändert |
-| `:q` / `:q!` | beenden / ohne Speichern beenden |
-| `:wq` = `:x`, `:wqa` = `:xa` | speichern und beenden (eine / alle Dateien) |
-| `:o datei` | Datei öffnen |
-| `:reload` / `:reload-all` | Änderungen verwerfen, neu von der Platte laden |
-| `:bc` / `:bco` / `:bca` | Buffer schließen / alle anderen / alle |
-| `gn` / `gp` | nächster / voriger Buffer |
-
-> [!note] Das Ausrufezeichen
-> Ein `!` am Ende erzwingt den Befehl trotz ungespeicherter Änderungen: `:q!`, `:bc!`, `:wqa!`.
-
-### Shell-Pipes
-
-Shell-Befehle arbeiten wie Mehrfach-Cursor: **jede Auswahl** wird einzeln verarbeitet.
-
-| Befehl | Eingabe | Ergebnis |
-|---|---|---|
-| `\|` | Auswahl → Befehl | Ausgabe **ersetzt** die Auswahl |
-| `Alt-\|` | Auswahl → Befehl | Ausgabe wird verworfen |
-| `!` | nur Befehl | Ausgabe **vor** der Auswahl einfügen |
-| `Alt-!` | nur Befehl | Ausgabe **nach** der Auswahl einfügen |
-| `$` | Auswahl → Befehl | nur Auswahlen **behalten**, bei denen der Befehl Exit-Code 0 liefert |
-
-> [!example] Praxisbeispiele
-> - Zeilen sortieren: `x` `x` `x` `|` `sort` `⏎`
-> - Datum einfügen: `!` `date +%F` `⏎`
-> - JSON formatieren: `%` `|` `jq .` `⏎`
-> - Nur Zeilen mit Zahlen behalten: Zeilen mit `x` … wählen, `Alt-s`, dann `$` `grep -q '[0-9]'` `⏎`
-
-Weitere: `:sh befehl` (ausführen, Ausgabe im Popup), `:pipe` (wie `|`), `:pipe-to` (wie `Alt-|`), `:cd` / `:pwd`.
-
-### Konfiguration
-
-| Befehl | Wirkung |
-|---|---|
-| `:theme name` | Farbschema wechseln (Tab zeigt Vorschläge) |
-| `:set option wert` / `:get option` | Option setzen / anzeigen |
-| `:toggle option` | Wahrheitswert umschalten, z. B. `:toggle soft-wrap.enable` |
-| `:lang sprache` | Sprache des Buffers festlegen |
-| `:config-open` / `:config-reload` | `config.toml` öffnen / neu laden |
-| `:config-open-workspace` | `.helix/config.toml` im Projekt öffnen |
-
-Nützliche Einzelbefehle: `:char` (Unicode-Infos zum Zeichen), `:encoding` (Kodierung), `:diffg` (Git-Änderung an der Cursorposition zurücksetzen).
-
----
-
-## 14 Rezepte
-
-Diese drei Kombinationen stehen unten auf Seite 2 des Spickzettels. Sie zeigen, wie sich die einzelnen Befehle zu Arbeitsabläufen zusammensetzen.
-
-> [!example] Alles ersetzen: `% s regex ⏎ c neu Esc`
-> 1. `%` – ganze Datei auswählen
-> 2. `s` `regex` `⏎` – jeder Treffer wird eine eigene Auswahl
-> 3. `c` `neu` `Esc` – alle Treffer gleichzeitig überschreiben
->
-> Ohne `%` wirkt das nur innerhalb der aktuellen Auswahl, etwa in einer mit `mi{` gewählten Funktion.
-
-> [!example] Wort unter dem Cursor suchen: `miw * n`
-> `miw` wählt das Wort, `*` übernimmt es als Suchmuster, `n` springt zum nächsten Vorkommen.
-> Mit Language Server geht auch `Alt-o` `*` `n`.
-
-> [!example] Blockauswahl: `C C C → l l → c`
-> Helix hat keinen Block-Modus. Stattdessen stapelt `C` Cursor nach unten, normale Bewegungen ziehen die Auswahl in die Breite, und `c`, `d` oder `i` wirken auf den ganzen Block.
-
----
-
-## 15 Lernpfad und Übungsdatei
-
-```mermaid
-flowchart LR
-    A["Tag 1<br>Modi, Kompass,<br>Einfügen, d c y p u"] --> B["Tag 2<br>word/WORD, f/t,<br>x %, Suchen"]
-    B --> C["Tag 3<br>Mehrfach-Cursor<br>s S C , ;"]
-    C --> D["Tag 4<br>Match & Surround,<br>Register, Makros"]
-    D --> E["Tag 5<br>LSP, [ ], Picker,<br>Fenster, Shell"]
-```
-
-> [!tip] Lernempfehlung
-> Pro Tag nur **eine Seite** des Spickzettels neben die Tastatur legen und die markierten Befehle bewusst benutzen. Nach einer Woche mit Seite 1 sitzt die Grammatik „Auswahl → Aktion“.
-
-### Übungsdatei
-
-Diesen Text als `uebung.py` speichern und mit `hx uebung.py` öffnen:
-
-```python
-# Übung 1: Benenne "wert" überall in "betrag" um (Rezept: Alles ersetzen)
-wert = 10
-print(wert)
-summe = wert + wert
-
-# Übung 2: Richte die Gleichheitszeichen aus (x x x, s = ⏎, &)
-a = 1
-abc = 2
-ab = 3
-
-# Übung 3: Setze "name" in Anführungszeichen (miw, ms")
-print(name)
-
-# Übung 4: Tausche die beiden Argumente (mi(, s \w+ ⏎, Alt-))
-teile(zaehler, nenner)
-
-# Übung 5: Sortiere die Zeilen alphabetisch (x x x x, | sort ⏎)
-zitrone
-apfel
-melone
-banane
-
-# Übung 6: Nummeriere die Liste (C C C, "#P)
-- punkt
-- punkt
-- punkt
-- punkt
-```
-
-> [!question]- Lösung Übung 4 (Argumente tauschen)
-> Cursor in die Klammer, `mi(` wählt `zaehler, nenner`, `s` `\w+` `⏎` wählt beide Wörter einzeln, `Alt-)` rotiert die Inhalte → `teile(nenner, zaehler)`.
-
-> [!question]- Lösung Übung 6 (Nummerieren)
-> Cursor auf das erste `p` von `punkt`, `C` `C` `C` erzeugt vier Cursor untereinander, `"#P` fügt vor jedem Cursor dessen Nummer ein → `- 1punkt` usw. Leerzeichen danach mit `a` `␣` `Esc` nachtragen.
-
----
-
 ## Anhang: Grafiken in Obsidian verwenden
 
 Die Grafiken liegen als SVG-Dateien vor und lassen sich überall im Vault einbetten.
@@ -688,6 +339,7 @@ Die Grafiken liegen als SVG-Dateien vor und lassen sich überall im Vault einbet
 
 ## Verwandt
 
+- [[Helix-Cookbook]] – allgemeine Befehlsreferenz als Rezepte, auch zu Themen ohne eigene Grafik hier (Mehrfachauswahl, LSP, Shell, Register, Suchen & Ersetzen …)
 - [[Helix_Spickzettel_A4_erweitert.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
 - [[Helix_Spickzettel_A4.pdf]] – einseitige Kurzfassung, [[Vim_Spickzettel_A4.pdf]] zum Vergleich
 - [[Helix_Tutorial_erweitert]] – Tutorial mit Übungen zu denselben Themen
