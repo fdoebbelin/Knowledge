@@ -71,3 +71,4 @@ Nichts. Eingeordnet wurden bisher:
 - [[2026-09-23 Monitoranordnung unter Sway konfigurieren]] → `02-Tech/Linux/Fedora/`
 - [[04-Türöffner (Coaching)]] → `02-Tech/Terminal/Yazi/`; dabei alle Yazi-Notizen auf `nn-Name` umbenannt
 - Helix-Cookbook Kapitel 1 (Navigation und Sprünge) → `02-Tech/Terminal/Helix/CookBook/`, dabei [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] auf die acht Grafik-Abschnitte gekürzt und die übrigen Tabellen auf neun weitere Cookbook-Kapitel verteilt, siehe [[02-Cookbook|Helix-Cookbook]]
+- [[Chrome-PWAs aus dem Flatpak im App-Launcher verfügbar machen]] → `02-Tech/Linux/Fedora/`
