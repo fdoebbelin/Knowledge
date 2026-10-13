@@ -2,54 +2,48 @@
 
 | | |
 |---|---|
-| Stand | 2026-10-07 10:48 |
+| Stand | 2026-10-13 16:25 |
 | Von Rechner | fedora |
-| Branch | main @ 9722853 (mit origin/main synchron) |
+| Branch | main @ 1378d33 (mit origin/main synchron) |
 | Uncommittet | nein |
 
 ## Ziel
-Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen, Notizen eines Themenordners in eine Lesereihenfolge `nn-Name` bringen und die Verlinkung im ganzen Vault instand halten. Zuletzt ging es um die Yazi-Notizen.
+
+Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten (Dubletten zusammenführen, Redundanz raus). Heute war der Helix-Ordner dran, analog zur Yazi-Verdichtung vom 07.10.
 
 ## Erledigt in dieser Session
-- Coaching-Leitfaden aus dem Eingang eingeordnet: `02-Tech/Terminal/Yazi/04-Türöffner (Coaching).md`, Frontmatter auf `created`/`status`/`type` angeglichen.
-- Yazi-Ordner nummeriert: `01-Einführung`, `02-Leitfaden zum Spickzettel`, `03-Installation und Konfiguration`, `04-Türöffner (Coaching)`. Alte Namen stehen als `aliases` in den Notizen.
-- Vault-weite Linkbereinigung: 233 Verweise ohne Ziel und 30 falsche Anker beseitigt (entklammert, umgelenkt oder repariert), 30 fehlerhafte Clipping-Links `[[text](url)]` korrigiert.
-- 40 verwaiste Anhänge nach `05-Notes/Archive/verwaiste-anhänge/` ausgelagert (Herkunftspfad erhalten), Indexnotiz `Verwaiste Anhänge.md` dort.
-- Merge mit der Gegenseite aufgelöst (dort waren dieselben Yazi-Notizen von fünf auf drei zusammengefasst worden); 15 Clipping-Bilder sind dadurch gelöscht, die übrigen 25 liegen im Archiv.
-- `Struktur-Übersicht.md`: Regel für Nummernpräfixe, aktueller Wartungsstand, Historieneinträge.
+
+- Cookbook-Kapitel 1 „Navigation und Sprünge“ aus der Inbox eingeordnet.
+- `Helix-Leitfaden.md` auf die acht Grafik-Abschnitte gekürzt (697 → 347 Zeilen); alle Tabellen ohne eigene Grafik ins neue `Helix-Cookbook` verlagert (`02-Tech/Terminal/Helix/CookBook/`), Kapitel 1–5 und 7–10 fertig.
+- Merge mit einer parallelen Handoff-Sitzung (Yazi-Nummerierung, vault-weite Linkbereinigung, verwaiste Anhänge) aufgelöst – nur `Eingang.md` hatte einen echten Konflikt.
+- Leitfaden und Cookbook-Übersicht auf `nn-Name` umgestellt: `01-Leitfaden zum Spickzettel`, `02-Cookbook`; neue `03-Installation` angelegt (Windows/Scoop, Quelltext-Bau-Verweis, Start-`config.toml`; Linux-Installation bewusst als offen markiert, nicht erfunden).
+- `Helix_Tutorial_erweitert.md` und `Migrating from Vim.md` aufgelöst (Übungen → Cookbook-Kapitel 4/5, Vim-Reflextabelle → neues Kapitel 13), beide Dateien gelöscht, Backlinks umgebogen.
+- `Nushell Editor setzen.md` (Fehler korrigiert: Programm heißt `hx`, nicht `helix`), `Helix aus Quelltext bauen…` (Chat-Rohformat bereinigt), `Helix - Dash Cheat Sheets.md` + `sudoedit.md` (Frontmatter ergänzt).
+- Chrome-PWA-Launcher-Leitfaden aus der Inbox nach `02-Tech/Linux/Fedora/` eingeordnet.
+- `Struktur-Übersicht.md` laufend mitgeführt (Stand, Notizzahlen, Historie).
 
 ## Nächster Schritt
-Die 25 Dateien in `05-Notes/Archive/verwaiste-anhänge/` durchsehen und entscheiden: einzeln zurückholen (an den im Pfad erhaltenen Ursprungsort) oder den Ordner samt Indexnotiz löschen. Details stehen in `05-Notes/Archive/verwaiste-anhänge/Verwaiste Anhänge.md`.
 
-Danach offen:
-- Erweitertes Helix-Spickzettel-PDF (`02-Tech/Terminal/Helix/_resources/Helix_Spickzettel_A4_erweitert.pdf`) hat kein Chat-Protokoll; außerdem nennt es „Helix Cheat Sheet v1.1 (Steve Hoy, CC BY-SA)" als Grundlage – bei Schulungseinsatz Namensnennung und gleiche Lizenz beachten.
-- Ungeklärt: Ob `Z` (zoxide) und die Bildvorschau in foot auf diesem Rechner wirklich funktionieren, wurde nie in einer echten Sitzung geprüft.
-- Prüfen, ob weitere Ordner mit Lesereihenfolge ein `nn-`-Präfix bekommen sollen (z. B. `02-Tech/Terminal/Helix`).
+Inbox ist leer, nichts Dringendes offen. Falls weiter verdichtet werden soll: Cookbook-Kapitel 6 (Surround), 11 (Markdown-Rezepte) und 12 (Eigene Belegungen) fehlen noch – dafür gibt es bislang **kein Quellmaterial im Vault**, müssten also neu geschrieben statt nur verlagert werden. Vorher klären, ob das gewünscht ist.
 
 ## Entscheidungen
-- Dateinamen im Yazi-Ordner ohne „Yazi" im Namen, Form `nn-Thema` (verworfen: `01 Yazi – Thema` mit Leerzeichen, und kleingeschriebene Kurznamen).
-- Beim Merge gewann der Inhalt der Gegenseite, die Nummerierung wurde darauf angewendet (verworfen: eigene sechs Einzelnotizen behalten, dabei wäre die neue „Einführung" verloren gegangen).
-- Chat-Protokolle liegen beim Thema, nicht in einem eigenen Protokollordner; auffindbar über Tag `chat-protokoll`.
-- Verweise auf nie geschriebene Notizen wurden zu reinem Text statt zu Stichwortnotizen; Verweise auf die vaultfremde `docs/`-Reihe stehen als Code (`docs/01-erkenntnisse`).
+
+- Leitfaden bleibt reine Grafik-Erklärung, Cookbook wird die allgemeine Befehlsreferenz (verworfen: Rezepte zusätzlich im Leitfaden duplizieren).
+- `nn-Name`-Nummerierung für den Helix-Ordner übernommen, analog zu Yazi (verworfen: sprechende Namen ohne Präfix behalten).
+- Cookbook-Kapitel 6/11/12 bewusst nicht mit Platzhalterinhalt gefüllt, nur als „offen“ markiert.
 
 ## Sackgassen und Erkenntnisse
-- Das Massen-Entklammern erwischte zunächst auch Syntaxbeispiele in Inline-Code (`` `[[Wikilinks]]` ``, `` `[[bin]]` ``); 22 Zeilen mussten aus dem Diff wiederhergestellt werden. Bei solchen Läufen Inline-Code mitmaskieren, nicht nur Codeblöcke.
-- Linkprüfskripte melden Fehlalarme bei Ankern mit Backticks (`#3.1 \`Containerfile\``) und in Dateien mit ungerader Zahl von Code-Zäunen. Vor dem „Reparieren" gegen den Rohtext gegenprüfen.
-- Die erste Zählung verwaister Anhänge (95) war zu hoch: URL-kodierte Pfade (`%20`) und `src`/`href` in HTML müssen mitgezählt werden, dann sind es 42.
-- Anker mit Backticks in Überschriften vermeiden; in zwei Fällen wurde die Überschrift entschärft (`## 9 Präfixtasten: g · , · m · c · t · e`).
+
+- Beim Anlegen der neuen `03-Installation und Konfiguration.md` zunächst eine Namenskollision mit der gleichnamigen Yazi-Datei übersehen (beide Ordner, gleicher Dateiname) – vor dem Commit bemerkt, auf `03-Installation.md` umbenannt. Bei `nn-Name`-Dateien künftig vault-weit auf Eindeutigkeit prüfen, nicht nur im eigenen Ordner.
+- Push wurde einmal zurückgewiesen, weil die parallele Sitzung zwischenzeitlich gepusht hatte. Vor dem nächsten Push immer `git fetch` + Status prüfen (siehe Skill `pickup`).
 
 ## Relevante Dateien
-- `Struktur-Übersicht.md` – Regeln, Ordnerbaum, Wartungsstand, Historie
-- `00-Inbox/Eingang.md` – Ablauf für neue Dokumente, Konventionen für Chat-Protokolle
-- `02-Tech/Terminal/Yazi/` – die vier nummerierten Notizen plus `_resources/`
-- `05-Notes/Archive/verwaiste-anhänge/Verwaiste Anhänge.md` – Liste der ausgelagerten Dateien
-- `02-Tech/AI/Claude-Skills/chat-protokoll – frontmatter.md` – Vorgabe, die im Skill `chat-protokoll` als `references/frontmatter.md` eingebunden ist
+
+- `02-Tech/Terminal/Helix/02-Cookbook.md` – Kapitelübersicht mit Fertig/Offen-Status
+- `02-Tech/Terminal/Helix/01-Leitfaden zum Spickzettel.md`
+- `02-Tech/Terminal/Helix/03-Installation.md`
+- `Struktur-Übersicht.md` – aktueller Stand, Notizzahlen, Historie
 
 ## Nicht in Git
-Die Yazi-Arbeitsumgebung selbst liegt außerhalb des Repos und fehlt auf einem anderen Rechner:
-- brew-Pakete: `yazi glow mermaid-cli rich-cli eza media-info fd ripgrep fzf zoxide resvg ouch`
-- `~/.config/yazi/` (yazi.toml, keymap.toml, theme.toml, init.lua, package.toml), Flavor `solarized-light` aus dem ZIP in `_resources`
-- Skripte `~/.local/bin/ofm-preview` und `~/.local/bin/mermaid-view`, Stile `~/.config/glow/solarized-light.json` und `~/.config/mermaid/solarized-light.json`
-- Headless-Chromium unter `~/.cache/puppeteer` (für `mmdc`), zoxide-Hook in `~/.local/share/nushell/vendor/autoload/zoxide.nu`
 
-Alle Inhalte stehen in `02-Tech/Terminal/Yazi/03-Installation und Konfiguration.md`, Abschnitt „Schnellstart".
+Nichts.
