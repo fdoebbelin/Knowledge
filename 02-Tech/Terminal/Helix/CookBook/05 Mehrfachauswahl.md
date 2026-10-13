@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]].
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]].
 
 Mehrfach-Cursor sind in Helix kein Zusatz, sondern Grundwerkzeug. Die zentrale Idee: **Eine große Auswahl wird in viele kleine zerlegt**, danach wirkt jede Aktion aus [[03 Text umformen]] oder [[02 Auswahl-Grundlagen]] auf alle gleichzeitig.
 
@@ -71,7 +71,7 @@ Mehrfach-Cursor sind in Helix kein Zusatz, sondern Grundwerkzeug. Die zentrale I
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
 - [[02 Auswahl-Grundlagen]] – `Alt-p`/`Alt-n` wählen Nachbarknoten statt neuer Cursor
 - [[04 Suchen und Ersetzen]] – `s` ist hier wie dort derselbe Befehl
 - [[07 Register und Makros]] – `"#` nummeriert Cursor, Makros als Alternative zu vielen Cursorn

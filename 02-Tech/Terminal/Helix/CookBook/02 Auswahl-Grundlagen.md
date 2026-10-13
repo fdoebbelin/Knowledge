@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]]. Das Auswahl-→-Aktion-Prinzip mit Grafik: [[Helix-Leitfaden#1 Das Grundprinzip Auswahl → Aktion]], [[Helix-Leitfaden#3 Bewegen ist Auswählen – der Kompass]].
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]]. Das Auswahl-→-Aktion-Prinzip mit Grafik: [[01-Leitfaden zum Spickzettel#1 Das Grundprinzip Auswahl → Aktion]], [[01-Leitfaden zum Spickzettel#3 Bewegen ist Auswählen – der Kompass]].
 
 Dieses Kapitel versammelt die Befehle, die zum täglichen Handwerkszeug gehören, sobald eine Auswahl steht: sie ausweiten/zurücknehmen, kopieren, einfügen, rückgängig machen – und entlang des Syntaxbaums statt entlang von Zeichen auswählen.
 
@@ -80,12 +80,12 @@ Statt Zeichen oder Wörtern zu zählen, lässt sich die Auswahl direkt am Syntax
 
 ## Textobjekte in Kürze
 
-`mi`/`ma` + Objektbuchstabe wählen **innen** bzw. **außen** ein Textobjekt – zum Beispiel `mi(` für den Inhalt der nächsten Klammer, `miw` für das Wort unter dem Cursor. Die vollständige Objekt-Tabelle und die Surround-Befehle (`ms`, `mr`, `md`) mit Grafik: [[Helix-Leitfaden#7 Match & Surround]].
+`mi`/`ma` + Objektbuchstabe wählen **innen** bzw. **außen** ein Textobjekt – zum Beispiel `mi(` für den Inhalt der nächsten Klammer, `miw` für das Wort unter dem Cursor. Die vollständige Objekt-Tabelle und die Surround-Befehle (`ms`, `mr`, `md`) mit Grafik: [[01-Leitfaden zum Spickzettel#7 Match & Surround]].
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
-- [[Helix-Leitfaden]] – Grundprinzip, Kompass-Grafik, Match & Surround
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – Grundprinzip, Kompass-Grafik, Match & Surround
 - [[01 Navigation und Sprünge]] – Bewegungen, die gleichzeitig Auswahl sind
 - [[05 Mehrfachauswahl]] – wenn aus einer Auswahl viele werden
 - [[07 Register und Makros]] – benannte Zwischenablagen statt des Standardregisters

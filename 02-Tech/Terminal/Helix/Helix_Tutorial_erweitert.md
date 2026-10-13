@@ -337,7 +337,7 @@ hidden = false             # versteckte Dateien im Picker zeigen
 
 ## Verwandt
 
-- [[Helix-Leitfaden]] – erklärt den zweiseitigen Spickzettel Block für Block, mit Grafiken und Übungen
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – erklärt den zweiseitigen Spickzettel Block für Block, mit Grafiken und Übungen
 - [[2026-09-22 Vim Helix Spickzettel Tutorial]] – Protokoll zur Entstehung der Blätter und dieses Tutorials
 - [[helix-tutor-de]] – deutsche Fassung des eingebauten `:tutor`
 - [[Migrating from Vim]]

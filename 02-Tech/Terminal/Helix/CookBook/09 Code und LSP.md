@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]].
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]].
 
 Diese Befehle brauchen einen Language Server (●). Ob einer läuft, zeigt `hx --health <sprache>`.
 
@@ -59,7 +59,7 @@ Diese Befehle brauchen einen Language Server (●). Ob einer läuft, zeigt `hx -
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
 - [[01 Navigation und Sprünge]] – `]f`/`[f` und weitere Treesitter-Sprünge zu Funktion/Typ/Argument
 - [[04 Suchen und Ersetzen]] – textbasierte Alternative zu `Space r`
 - [[05 Mehrfachauswahl]] – `Space h` erzeugt Cursor aus Referenzen

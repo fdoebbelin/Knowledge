@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]].
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]].
 
 ## Register
 
@@ -54,7 +54,7 @@ Register sind benannte Zwischenablagen – eine Erweiterung von `y`/`p` aus [[02
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
 - [[02 Auswahl-Grundlagen]] – das Standardregister bei `y`/`p`
 - [[05 Mehrfachauswahl]] – Alternative zu Makros für gleichförmige Änderungen
 - [[08 Shell-Integration]] – Auswahl statt Register durch ein Programm schicken

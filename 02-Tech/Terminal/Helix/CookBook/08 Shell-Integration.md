@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]].
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]].
 
 Shell-Befehle arbeiten wie Mehrfachauswahl (siehe [[05 Mehrfachauswahl]]): **jede Auswahl** wird einzeln an den Befehl übergeben und einzeln durch dessen Ausgabe ersetzt oder ergänzt. Das macht Konfigurationsdateien und Tabellen elegant bearbeitbar, ohne den Editor zu verlassen.
 
@@ -38,7 +38,7 @@ Weitere Befehlsmodus-Varianten: `:sh befehl` (ausführen, Ausgabe im Popup statt
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
 - [[05 Mehrfachauswahl]] – dieselbe „jede Auswahl einzeln“-Logik
 - [[10 Dateien, Buffer und Fenster]] – `:cd`, `:pwd` und weitere Befehlsmodus-Kommandos
 - [[sudoedit]] – Helix als `$SUDO_EDITOR`, verwandtes Shell-Thema

@@ -13,7 +13,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel, Lernpfad und Übungsdatei: [[Helix-Cookbook]]. Konzept und Grafiken zu Bewegung/Auswahl: [[Helix-Leitfaden#3 Bewegen ist Auswählen – der Kompass]], [[Helix-Leitfaden#5 Zeichen finden mit f und t]].
+> Übersicht aller Kapitel, Lernpfad und Übungsdatei: [[02-Cookbook|Helix-Cookbook]]. Konzept und Grafiken zu Bewegung/Auswahl: [[01-Leitfaden zum Spickzettel#3 Bewegen ist Auswählen – der Kompass]], [[01-Leitfaden zum Spickzettel#5 Zeichen finden mit f und t]].
 
 ## Vorbemerkung: Bewegen heißt in Helix auswählen
 
@@ -181,7 +181,7 @@ Die Pfeiltasten und `h` `j` `k` `l` heben eine Auswahl immer auf. Vor fast jede 
 | `Ctrl-f` | ganze Seite runter    |
 | `Ctrl-b` | ganze Seite hoch      |
 
-**Ansicht verschieben, ohne den Cursor zu bewegen** (View-Modus mit `z`, ausführlich mit Grafik: [[Helix-Leitfaden#Ansicht mit z und Z]]):
+**Ansicht verschieben, ohne den Cursor zu bewegen** (View-Modus mit `z`, ausführlich mit Grafik: [[01-Leitfaden zum Spickzettel#Ansicht mit z und Z]]):
 
 | Tasten | Wirkung                                  |
 | ------ | ----------------------------------------- |
@@ -265,6 +265,6 @@ Die Pfeiltasten und `h` `j` `k` `l` heben eine Auswahl immer auf. Vor fast jede 
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
-- [[Helix-Leitfaden]] – Grundprinzip, Kompass-Grafik, f/t-Grafik
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – Grundprinzip, Kompass-Grafik, f/t-Grafik
 - [[09 Code und LSP]] – Diagnosen-Sprünge, Symbol-Picker

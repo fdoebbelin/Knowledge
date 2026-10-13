@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]]. Helix kennt kein `:%s///` – stattdessen wird gesucht, ausgewählt und geändert. Siehe auch [[Migrating from Vim]] für die Vim-Gegenüberstellung.
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]]. Helix kennt kein `:%s///` – stattdessen wird gesucht, ausgewählt und geändert. Siehe auch [[Migrating from Vim]] für die Vim-Gegenüberstellung.
 
 ## Suchen
 
@@ -45,7 +45,7 @@ type: anleitung
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
 - [[05 Mehrfachauswahl]] – `s` ist zugleich der zentrale Mehrfachauswahl-Befehl
 - [[09 Code und LSP]] – projektweite Suche nach Symbolen statt nach Text
 - [[Migrating from Vim]] – `:%s/a/b/g` auf Helix übertragen

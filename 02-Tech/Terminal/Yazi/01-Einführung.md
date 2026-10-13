@@ -22,7 +22,7 @@ Yazi ist ein Terminal-Dateimanager, in Rust geschrieben, mit vollständig **asyn
 
 ## Das Bedienkonzept: erst Auswahl, dann Aktion
 
-Wie bei [[Helix-Leitfaden|Helix]] gilt: **erst wird ausgewählt, dann gehandelt.** `Space` markiert Dateien, danach wirkt eine Aktion (`y` kopieren, `d` löschen, `r` umbenennen …) auf **alle** markierten Dateien. Ist nichts markiert, gilt die Datei unter dem Cursor. Man sieht also immer vorher, was eine Aktion betreffen wird, statt es hinterher zu erraten.
+Wie bei [[01-Leitfaden zum Spickzettel|Helix]] gilt: **erst wird ausgewählt, dann gehandelt.** `Space` markiert Dateien, danach wirkt eine Aktion (`y` kopieren, `d` löschen, `r` umbenennen …) auf **alle** markierten Dateien. Ist nichts markiert, gilt die Datei unter dem Cursor. Man sieht also immer vorher, was eine Aktion betreffen wird, statt es hinterher zu erraten.
 
 ## Die Oberfläche: drei Spalten
 

@@ -6,12 +6,12 @@ aliases:
 tags:
   - meta
 created: 2026-09-15
-updated: 2026-09-30
+updated: 2026-10-13
 ---
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 30. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 13. Oktober 2026. Rund 1.370 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (1 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -28,7 +28,7 @@ Stand: 30. September 2026. Rund 1.360 Notizen in fünf Bereichen, dazu der Einga
 
 ```
 Knowledge/
-├── 00-Inbox/              Eingang: noch nicht eingeordnete Dokumente (0)
+├── 00-Inbox/              Eingang: noch nicht eingeordnete Dokumente (1)
 │
 ├── 01-Courses/            Lehrmaterial mit Modulstruktur (702)
 │   ├── AI/                KI-Agenten-Workshop
@@ -41,7 +41,7 @@ Knowledge/
 │   ├── STEM/              MINT-Einführungskurs (Informatik, Physik/p5.js, CAD)
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
-├── 02-Tech/               Technische Referenz, nach Themen (320)
+├── 02-Tech/               Technische Referenz, nach Themen (330)
 │   ├── AI/                Aider, Claude-Code, Claude-Skills, Foundry Local, LM-Studio, Ollama,
 │   │                      OpenClaw, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
 │   ├── Git/
@@ -168,6 +168,7 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-09-15 Phase 1** (`dfa3938`): Dubletten, leere Dateien, Secrets, Root-Dateien, FreeCAD-Iconset.
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
 - **2026-10-07**: Yazi-Notizen auf `nn-Name` nummeriert (`01-Einführung`, `02-Leitfaden zum Spickzettel`, `03-Installation und Konfiguration`, `04-Türöffner (Coaching)`); Coaching-Leitfaden eingeordnet; 40 verwaiste Anhänge nach `05-Notes/Archive/verwaiste-anhänge` ausgelagert; Links vault-weit bereinigt (Geister-Doku und Clipping-Quellen entklammert, 21 Verweise auf vorhandene Notizen umgelenkt, 28 Anker repariert, 30 fehlerhafte Clipping-Links `[[text](url)]` korrigiert).
+- **2026-10-13**: Helix-Leitfaden auf die acht Grafik-Abschnitte gekürzt (697 → 347 Zeilen), alle Tabellen ohne Grafik ins neue `Helix-Cookbook` verlagert (`02-Tech/Terminal/Helix/CookBook/`, Kapitel 1–5 und 7–10 aus dem gekürzten Material, Kapitel 6 bewusst ausgelassen – bleibt im Leitfaden). Leitfaden und Cookbook-Übersicht auf `nn-Name` nummeriert (`01-Leitfaden zum Spickzettel`, `02-Cookbook`), analog zur Yazi-Konvention vom 07.10. Parallel entstandene Handoff-Arbeit einer zweiten Sitzung (Yazi-Nummerierung, Linkbereinigung, verwaiste Anhänge) per Merge eingebracht.
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt. Chat-Protokoll zur Monitoranordnung unter Sway eingeordnet (`02-Tech/Linux/Fedora/`), mit `Fedora Sway Atomic` und dem Hyprland-Gegenstück `Mehrere Bildschirme verwalten` verlinkt.
 - **2026-09-30**: Fünf Yazi-Notizen zu dreien zusammengefasst: „Installation und Plugins“, „kommentierter Leitfaden“, „Markdown-Vorschau“ und „Mermaid-Diagramme“ verschmolzen zu `Yazi – Installation und Konfiguration` (mit vorangestelltem Schnellstart), dazu neu `Yazi – Einführung` als Kurzfassung des Konzepts; `Yazi-Leitfaden` bleibt als Spickzettel-Referenz bestehen. Die drei Notizen tragen seit dem 07.10. Nummernpräfixe.

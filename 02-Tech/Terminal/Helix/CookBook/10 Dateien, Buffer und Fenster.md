@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]]. Fenster-Aufteilung mit Grafik: [[Helix-Leitfaden#8 Fenster und Ansicht]]. Sprungliste (Lesezeichen-Ersatz): [[01 Navigation und Sprünge#1.12 Zurück zu früheren Positionen (Sprungliste)]].
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]]. Fenster-Aufteilung mit Grafik: [[01-Leitfaden zum Spickzettel#8 Fenster und Ansicht]]. Sprungliste (Lesezeichen-Ersatz): [[01 Navigation und Sprünge#1.12 Zurück zu früheren Positionen (Sprungliste)]].
 
 ## Picker (`Space`)
 
@@ -53,7 +53,7 @@ Picker sind durchsuchbare Listen mit Unschärfesuche: Einfach ein paar Buchstabe
 
 ## Fenster (Splits)
 
-Grafik und Erklärung der Richtungstasten: [[Helix-Leitfaden#8 Fenster und Ansicht]]. Kurzreferenz:
+Grafik und Erklärung der Richtungstasten: [[01-Leitfaden zum Spickzettel#8 Fenster und Ansicht]]. Kurzreferenz:
 
 | Befehl | Wirkung |
 |---|---|
@@ -79,7 +79,7 @@ Nützliche Einzelbefehle: `:char` (Unicode-Infos zum Zeichen), `:encoding` (Kodi
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
-- [[Helix-Leitfaden]] – Fenster-Grafik, Ansicht mit z/Z
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – Fenster-Grafik, Ansicht mit z/Z
 - [[01 Navigation und Sprünge]] – Sprungliste, Ctrl-o/Ctrl-i
 - [[08 Shell-Integration]] – weitere Befehlsmodus-Kommandos rund um Shell-Pipes

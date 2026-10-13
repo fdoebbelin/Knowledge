@@ -1,6 +1,7 @@
 ---
 title: "Helix – Leitfaden zum Spickzettel"
 aliases:
+  - Helix-Leitfaden
   - Helix Leitfaden
   - Helix Befehle erklärt
 tags:
@@ -19,7 +20,7 @@ type: leitfaden
 
 # Helix – Leitfaden zum Spickzettel
 
-Dieser Leitfaden erklärt die acht Grafiken des zweiseitigen Spickzettels im Zusammenhang, mit **„So liest du die Grafik“** und kurzen Übungen mit aufklappbaren Lösungen. Die allgemeine Befehlsreferenz – auch zu Themen ohne eigene Grafik – steht im [[Helix-Cookbook]].
+Dieser Leitfaden erklärt die acht Grafiken des zweiseitigen Spickzettels im Zusammenhang, mit **„So liest du die Grafik“** und kurzen Übungen mit aufklappbaren Lösungen. Die allgemeine Befehlsreferenz – auch zu Themen ohne eigene Grafik – steht im [[02-Cookbook|Helix-Cookbook]].
 
 > [!info] Begleitmaterial
 > - Spickzettel: [[Helix_Spickzettel_A4_erweitert.pdf]] (Seite 1: Grundlagen, Seite 2: Fortgeschritten)
@@ -339,7 +340,7 @@ Die Grafiken liegen als SVG-Dateien vor und lassen sich überall im Vault einbet
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – allgemeine Befehlsreferenz als Rezepte, auch zu Themen ohne eigene Grafik hier (Mehrfachauswahl, LSP, Shell, Register, Suchen & Ersetzen …)
+- [[02-Cookbook|Helix-Cookbook]] – allgemeine Befehlsreferenz als Rezepte, auch zu Themen ohne eigene Grafik hier (Mehrfachauswahl, LSP, Shell, Register, Suchen & Ersetzen …)
 - [[Helix_Spickzettel_A4_erweitert.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
 - [[Helix_Spickzettel_A4.pdf]] – einseitige Kurzfassung, [[Vim_Spickzettel_A4.pdf]] zum Vergleich
 - [[Helix_Tutorial_erweitert]] – Tutorial mit Übungen zu denselben Themen

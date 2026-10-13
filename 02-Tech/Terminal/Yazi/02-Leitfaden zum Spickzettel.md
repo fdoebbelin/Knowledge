@@ -19,7 +19,7 @@ type: leitfaden
 
 # Yazi – Leitfaden zum Spickzettel
 
-Dieser Leitfaden erklärt die Grafiken und Befehlsblöcke des zweiseitigen Yazi-Spickzettels im Zusammenhang – analog zu [[Helix-Leitfaden]]. Wer Helix kennt, erkennt das Grundprinzip sofort wieder: **erst auswählen, dann handeln.**
+Dieser Leitfaden erklärt die Grafiken und Befehlsblöcke des zweiseitigen Yazi-Spickzettels im Zusammenhang – analog zu [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]]. Wer Helix kennt, erkennt das Grundprinzip sofort wieder: **erst auswählen, dann handeln.**
 
 > [!info] Begleitmaterial
 > - Spickzettel: [[yazi-spickzettel.pdf]] (Seite 1: Grundlagen, Navigation & Dateien; Seite 2: Suchen, Tabs, Sortieren & Konfiguration)
@@ -67,7 +67,7 @@ Dieser Leitfaden erklärt die Grafiken und Befehlsblöcke des zweiseitigen Yazi-
 | Aktion | `d` `r` `y` `x` | wirkt auf **alle** markierten Dateien | ja |
 
 > [!important] Die wichtigste Denkregel
-> **Ohne Markierung zählt die Datei unter dem Cursor.** Eine Aktion wie `y` (kopieren) oder `d` (löschen) betrifft entweder die Markierung oder – falls nichts markiert ist – nur diese eine Datei. Das ist dasselbe Prinzip wie Helix' „Cursor ist immer eine Auswahl“, siehe [[Helix-Leitfaden#1 Das Grundprinzip Auswahl → Aktion]].
+> **Ohne Markierung zählt die Datei unter dem Cursor.** Eine Aktion wie `y` (kopieren) oder `d` (löschen) betrifft entweder die Markierung oder – falls nichts markiert ist – nur diese eine Datei. Das ist dasselbe Prinzip wie Helix' „Cursor ist immer eine Auswahl“, siehe [[01-Leitfaden zum Spickzettel#1 Das Grundprinzip Auswahl → Aktion]].
 
 > [!question]- Übung 1.1 – Markieren oder nicht?
 > Du willst nur `bericht.md` löschen, `daten.csv` daneben soll bleiben. Musst du `bericht.md` erst mit `Space` markieren?
@@ -477,4 +477,4 @@ Diese vier Kombinationen stehen unten auf Seite 2 des Spickzettels. Sie zeigen, 
 - [[yazi-spickzettel.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
 - [[01-Einführung]] – was Yazi ist und wie das Bedienkonzept funktioniert
 - [[03-Installation und Konfiguration]] – Installation, Hilfsprogramme, Plugin-System, Markdown-/Mermaid-Vorschau, vollständige Beispielkonfiguration
-- [[Helix-Leitfaden]] – dasselbe Auswahl-→-Aktion-Prinzip, für den Editor erklärt
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – dasselbe Auswahl-→-Aktion-Prinzip, für den Editor erklärt

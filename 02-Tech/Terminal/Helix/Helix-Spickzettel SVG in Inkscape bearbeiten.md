@@ -193,7 +193,7 @@ Damit Ergänzungen zum bestehenden Design passen:
 | `Helix_Spickzettel_A4_erweitert.pdf` | Druckvorlage, Schriften eingebettet |
 | `Helix_Spickzettel_A4_Seite1.svg` / `Seite2.svg` | SVG mit Text **als Pfade** – sieht überall gleich aus, aber nicht als Text bearbeitbar |
 | `…_editierbar.svg` (diese Dateien) | SVG mit **echtem Text** – für Änderungen in Inkscape |
-| [[Helix-Leitfaden]] | Erklärung aller Befehle und Grafiken |
+| [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] | Erklärung aller Befehle und Grafiken |
 
 > [!tip] Empfohlener Ablauf für Änderungen
 > 1. Änderungen in der editierbaren SVG vornehmen.

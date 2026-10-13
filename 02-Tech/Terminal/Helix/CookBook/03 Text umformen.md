@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[Helix-Cookbook]]. Wie eine Aktion immer auf die aktuelle Auswahl wirkt: [[Helix-Leitfaden#1 Das Grundprinzip Auswahl → Aktion]].
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]]. Wie eine Aktion immer auf die aktuelle Auswahl wirkt: [[01-Leitfaden zum Spickzettel#1 Das Grundprinzip Auswahl → Aktion]].
 
 Alle Aktionen hier wirken auf die **aktuelle Auswahl**. Das Muster ist deshalb immer: *auswählen (siehe [[01 Navigation und Sprünge]], [[02 Auswahl-Grundlagen]]), dann Taste*.
 
@@ -64,8 +64,8 @@ Alle Aktionen hier wirken auf die **aktuelle Auswahl**. Das Muster ist deshalb i
 
 ## Verwandt
 
-- [[Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
-- [[Helix-Leitfaden]] – Grundprinzip Auswahl → Aktion
+- [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – Grundprinzip Auswahl → Aktion
 - [[02 Auswahl-Grundlagen]] – Kopieren, Einfügen, Rückgängig
 - [[04 Suchen und Ersetzen]] – wenn die Änderung erst gefunden werden muss
 - [[05 Mehrfachauswahl]] – dieselbe Änderung an vielen Stellen gleichzeitig

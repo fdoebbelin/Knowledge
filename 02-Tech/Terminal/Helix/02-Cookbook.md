@@ -1,6 +1,7 @@
 ---
 title: "Helix-Cookbook"
 aliases:
+  - Helix-Cookbook
   - Helix Cookbook
 tags:
   - helix
@@ -12,7 +13,7 @@ status: draft
 type: anleitung
 ---
 
-Ein Helix-Cookbook, nach Aufgaben sortiert statt nach Tasten: nummerierte Rezepte mit Tasten, Erklärung und wo sinnvoll einem Vorher/Nachher-Beispiel. Ergänzt [[Helix-Leitfaden]], der dieselben Themen an den Grafiken des zweiseitigen Spickzettels erklärt – Konzept und Grafik dort, die konkrete Aufgabe hier.
+Ein Helix-Cookbook, nach Aufgaben sortiert statt nach Tasten: nummerierte Rezepte mit Tasten, Erklärung und wo sinnvoll einem Vorher/Nachher-Beispiel. Ergänzt [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]], der dieselben Themen an den Grafiken des zweiseitigen Spickzettels erklärt – Konzept und Grafik dort, die konkrete Aufgabe hier.
 
 > [!tip] Vor dem Start
 > `~` oder `F1` zeigt in Helix selbst alle Tastenbelegungen der installierten Version. `hx --tutor` ist das eingebaute Grundkurs-Tutorial, [[helix-tutor-de]] die deutsche Fassung davon.
@@ -26,7 +27,7 @@ Ein Helix-Cookbook, nach Aufgaben sortiert statt nach Tasten: nummerierte Rezept
 | 3 | [[03 Text umformen]] | fertig |
 | 4 | [[04 Suchen und Ersetzen]] | fertig |
 | 5 | [[05 Mehrfachauswahl]] | fertig |
-| 6 | Surround | offen – Grafik und Tabelle bleiben vorerst in [[Helix-Leitfaden#7 Match & Surround]] |
+| 6 | Surround | offen – Grafik und Tabelle bleiben vorerst in [[01-Leitfaden zum Spickzettel#7 Match & Surround]] |
 | 7 | [[07 Register und Makros]] | fertig |
 | 8 | [[08 Shell-Integration]] | fertig |
 | 9 | [[09 Code und LSP]] | fertig |
@@ -86,7 +87,7 @@ Lösungen zu Übung 4 und 6 stehen in [[05 Mehrfachauswahl]], zu Übung 1 in [[0
 
 ## Verwandt
 
-- [[Helix-Leitfaden]] – erklärt dieselben Themen an den Grafiken des Spickzettels
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – erklärt dieselben Themen an den Grafiken des Spickzettels
 - [[Helix_Spickzettel_A4_erweitert.pdf]] – der Spickzettel selbst
 - [[helix-tutor-de]] – deutsche Fassung des eingebauten `:tutor`
 - [[Helix - Dash Cheat Sheets]] – vollständige, unkommentierte Befehlsreferenz zum Nachschlagen
