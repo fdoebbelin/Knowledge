@@ -61,8 +61,8 @@ Helix als `$EDITOR` unter Nushell eintragen: [[Nushell Editor setzen]].
 > [!info] Andere Distributionen (ungeprüft)
 > Außerhalb von Fedora Atomic bringen viele Distributionen Helix direkt mit: `dnf install helix` (klassisches Fedora), `apt install helix` (Debian/Ubuntu ab einer gewissen Version), oder `cargo install helix-term` überall dort, wo kein Paket existiert. Vor Übernahme ins Vault auf dem jeweiligen System mit `hx --version` verifizieren – hier nicht nachgeprüft, da das Referenzsystem Fedora Atomic mit Homebrew ist.
 
-> [!tip] Optionaler Markdown-Language-Server
-> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) fehlt auf dem Referenzsystem noch ein Server: `brew install marksman` trägt ihn nach, Helix findet ihn automatisch (`hx --health markdown`).
+> [!tip] Markdown-Language-Server
+> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) braucht es einen Server: `brew install marksman` – auf dem Referenzsystem installiert, Helix findet ihn automatisch (`hx --health markdown`).
 
 ## Start-Konfiguration
 
