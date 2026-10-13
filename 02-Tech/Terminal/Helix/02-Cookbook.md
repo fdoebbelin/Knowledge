@@ -27,13 +27,13 @@ Ein Helix-Cookbook, nach Aufgaben sortiert statt nach Tasten: nummerierte Rezept
 | 3 | [[03 Text umformen]] | fertig |
 | 4 | [[04 Suchen und Ersetzen]] | fertig |
 | 5 | [[05 Mehrfachauswahl]] | fertig |
-| 6 | Surround | offen – Grafik und Tabelle bleiben vorerst in [[01-Leitfaden zum Spickzettel#7 Match & Surround]] |
+| 6 | [[06 Surround]] | fertig |
 | 7 | [[07 Register und Makros]] | fertig |
 | 8 | [[08 Shell-Integration]] | fertig |
 | 9 | [[09 Code und LSP]] | fertig |
 | 10 | [[10 Dateien, Buffer und Fenster]] | fertig |
-| 11 | Markdown-Rezepte | offen – noch kein Ausgangsmaterial im Vault |
-| 12 | Eigene Belegungen | offen – noch kein Ausgangsmaterial im Vault |
+| 11 | [[11 Markdown-Rezepte]] | fertig |
+| 12 | [[12 Eigene Belegungen]] | fertig |
 | 13 | [[13 Für Vim-Umsteiger]] | fertig |
 
 Installation und Startkonfiguration (Windows, Quelltext-Bau): [[03-Installation]].

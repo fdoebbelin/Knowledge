@@ -343,7 +343,7 @@ Die Grafiken liegen als SVG-Dateien vor und lassen sich überall im Vault einbet
 
 ## Verwandt
 
-- [[02-Cookbook|Helix-Cookbook]] – allgemeine Befehlsreferenz als Rezepte, auch zu Themen ohne eigene Grafik hier (Mehrfachauswahl, LSP, Shell, Register, Suchen & Ersetzen, Vim-Umstieg …)
+- [[02-Cookbook|Helix-Cookbook]] – allgemeine Befehlsreferenz als Rezepte, auch zu Themen ohne eigene Grafik hier (Mehrfachauswahl, LSP, Shell, Register, Suchen & Ersetzen, Surround, Markdown, eigene Belegungen, Vim-Umstieg …)
 - [[03-Installation]] – Installation und Startkonfiguration
 - [[Helix_Spickzettel_A4_erweitert.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
 - [[Helix_Spickzettel_A4.pdf]] – einseitige Kurzfassung, [[Vim_Spickzettel_A4.pdf]] zum Vergleich
