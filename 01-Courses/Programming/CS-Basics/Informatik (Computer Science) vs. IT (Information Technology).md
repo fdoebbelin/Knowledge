@@ -48,5 +48,5 @@ IT          ──┘
 
 ## Im deutschen Bildungssystem
 
-- [[Informatik-Studium]] (Uni/FH): theorielastig, mathematisch, akademisch.
-- [[Fachinformatiker]] (Anwendungsentwicklung / Systemintegration): IT-Berufsausbildung, praxisorientiert, ohne den theoretischen Tiefgang eines Studiums, dafür mit unmittelbarer betrieblicher Anwendbarkeit.
+- Informatik-Studium (Uni/FH): theorielastig, mathematisch, akademisch.
+- Fachinformatiker (Anwendungsentwicklung / Systemintegration): IT-Berufsausbildung, praxisorientiert, ohne den theoretischen Tiefgang eines Studiums, dafür mit unmittelbarer betrieblicher Anwendbarkeit.

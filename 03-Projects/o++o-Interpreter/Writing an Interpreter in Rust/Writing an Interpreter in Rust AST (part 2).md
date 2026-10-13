@@ -2,7 +2,7 @@
 title: "Writing an Interpreter in Rust: AST (part 2)"
 source: "https://medium.com/better-programming/writing-an-interpreter-in-rust-ast-part-2-59fd20dbc60f#ea91-3dd23bb8da31"
 author:
-  - "[[Pavel Durov]]"
+  - "Pavel Durov"
 published: 2023-09-22
 created: 2025-04-24
 description: "Here, we’ll delve into the concept of AST (Abstract Syntax Tree) and transition from parse-time evaluation to AST-time. If you haven’t already, I recommend checking out my previous article:Writing…"

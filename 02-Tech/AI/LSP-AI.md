@@ -2,7 +2,7 @@
 title: "SilasMarvin/lsp-ai: LSP-AI is an open-source language server that serves as a backend for AI-powered functionality, designed to assist and empower software engineers, not replace them."
 source: "https://github.com/SilasMarvin/lsp-ai"
 author:
-  - "[[SilasMarvin]]"
+  - "SilasMarvin"
 published:
 created: 2025-09-14
 description: "LSP-AI is an open-source language server that serves as a backend for AI-powered functionality, designed to assist and empower software engineers, not replace them. - SilasMarvin/lsp-ai"

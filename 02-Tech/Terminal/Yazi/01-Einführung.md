@@ -4,6 +4,7 @@ aliases:
   - Yazi Konzept
   - Yazi Übersicht
   - Was ist Yazi
+  - Yazi – Einführung
 tags:
   - yazi
   - terminal
@@ -17,7 +18,7 @@ status: active
 Yazi ist ein Terminal-Dateimanager, in Rust geschrieben, mit vollständig **asynchroner** Vorschau (Kopieren oder ein großes Verzeichnis blockieren die Oberfläche nie), nativer Bildanzeige über Kitty-Graphics/Sixel/iTerm2 und einem eigenen Lua-Plugin-System. Im Geiste ein Nachfolger von `ranger` und `lf`, aber mit dem Ziel, auch bei tausenden Dateien flüssig zu bleiben.
 
 > [!info] Diese Notiz ist die Kurzfassung
-> Sie erklärt nur das **Konzept** – wie Yazi zu denken ist, nicht jede Taste. Für die Einrichtung: [[Yazi – Installation und Konfiguration]]. Für alle Befehle mit Grafiken: [[Yazi-Leitfaden]].
+> Sie erklärt nur das **Konzept** – wie Yazi zu denken ist, nicht jede Taste. Für die Einrichtung: [[03-Installation und Konfiguration]]. Für alle Befehle mit Grafiken: [[02-Leitfaden zum Spickzettel]].
 
 ## Das Bedienkonzept: erst Auswahl, dann Aktion
 
@@ -33,7 +34,7 @@ Ein Tab ist ein eigenes Verzeichnis mit eigenem Cursor und eigener Auswahl. Mehr
 
 ## Erweiterbar über Plugins
 
-Yazi selbst kann wenig mehr als Navigieren, Auswählen und Dateioperationen. Alles, was darüber hinausgeht – Markdown-Vorschau mit Farbe, Mermaid-Diagramme als Bild, Git-Status in der Liste, Rechte ändern per Tastenkürzel – kommt über **Plugins**, die mit dem eingebauten Paketmanager `ya pkg` installiert werden. Das hält den Kern schlank und lässt jeden das Werkzeug auf die eigenen Bedürfnisse zuschneiden. Details: [[Yazi – Installation und Konfiguration#5 Das Plugin-System]].
+Yazi selbst kann wenig mehr als Navigieren, Auswählen und Dateioperationen. Alles, was darüber hinausgeht – Markdown-Vorschau mit Farbe, Mermaid-Diagramme als Bild, Git-Status in der Liste, Rechte ändern per Tastenkürzel – kommt über **Plugins**, die mit dem eingebauten Paketmanager `ya pkg` installiert werden. Das hält den Kern schlank und lässt jeden das Werkzeug auf die eigenen Bedürfnisse zuschneiden. Details: [[03-Installation und Konfiguration#5 Das Plugin-System]].
 
 ## Konfiguration nur für Abweichungen
 
@@ -43,6 +44,6 @@ Yazi liest seine Einstellungen aus TOML-Dateien in `~/.config/yazi/`. Keine davo
 
 | Frage | Notiz |
 |---|---|
-| Wie installiere und richte ich Yazi ein? | [[Yazi – Installation und Konfiguration]] |
-| Welche Taste macht was? | [[Yazi-Leitfaden]] |
+| Wie installiere und richte ich Yazi ein? | [[03-Installation und Konfiguration]] |
+| Welche Taste macht was? | [[02-Leitfaden zum Spickzettel]] |
 | Ich will direkt loslegen | `~` oder `F1` in Yazi zeigt alle Tastenbelegungen der installierten Version |

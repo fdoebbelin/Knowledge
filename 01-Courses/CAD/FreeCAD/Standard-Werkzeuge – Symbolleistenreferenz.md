@@ -132,8 +132,8 @@
 
 ## Querverweise
 
-- [[Sketcher – Symbolleistenreferenz]]
-- [[PartDesign – Symbolleistenreferenz]]
+- [[Sketcher-Symbolreferenz]]
+- [[Part Design – Symbolleistenreferenz]]
 - [[TechDraw – Symbolleistenreferenz]]
 - [[Assembly – Symbolleistenreferenz]]
 - [[Cheat Sheet – Tastenkürzel]]

@@ -81,6 +81,6 @@ Legen konkrete Zahlenwerte fest und reduzieren damit Freiheitsgrade.
 ## Querverweise
 
 - [[Glossar FreeCAD#Constraint (Randbedingung)]]
-- [[Glossar FreeCAD#Freiheitsgrad (DOF)]]
+- [[Glossar FreeCAD#DOF (Degrees of Freedom)]]
 - [[Cheat Sheet – Tastenkürzel]]
 - [[M03 – Sketcher Constraints]]

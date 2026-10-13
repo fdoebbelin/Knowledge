@@ -2,7 +2,7 @@
 title: "NuShell: the shell where traditional Unix meets  modern development, written in Rust"
 source: "https://medium.com/this-is-not-a-monad-tutorial/nushell-the-shell-where-traditional-unix-meets-modern-development-written-in-rust-caf92c2c7c98"
 author:
-  - "[[Federico Carrone]]"
+  - "Federico Carrone"
 published: 2020-05-14
 created: 2025-11-27
 description: "Shells have been around forever and, for better or for worse, haven’t changed much since their inception. Until NuShell, written in Rust, appeared to reinvent shells and defy our muscle memory. We interviewed both of its creators."

@@ -193,8 +193,8 @@
 
 ## Querverweise
 
-- [[PartDesign – Symbolleistenreferenz]]
-- [[Sketcher – Symbolleistenreferenz]]
+- [[Part Design – Symbolleistenreferenz]]
+- [[Sketcher-Symbolreferenz]]
 - [[M07 – Technische Zeichnung]]
 - [[Glossar FreeCAD#Schnittansicht (Section View)]]
 - [[Glossar FreeCAD#Bemaßung]]

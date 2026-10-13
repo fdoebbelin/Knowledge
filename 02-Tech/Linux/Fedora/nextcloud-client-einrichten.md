@@ -253,8 +253,8 @@ journalctl --user -f | where message =~ nextcloud | ignore
 ## Verwandte Notizen
 
 > [!note] Wikilinks ggf. an tatsächliche Dateinamen anpassen
-> - [[02-nushell-konfigurieren]]
-> - [[hyprland.lua]]
-> - [[Noctalia integrieren]]
-> - [[Qt-Theming mit Kvantum]]
-> - [[Vivaldi einrichten]]
+> - `02-nushell-konfigurieren`
+> - hyprland.lua
+> - Noctalia integrieren
+> - Qt-Theming mit Kvantum
+> - Vivaldi einrichten

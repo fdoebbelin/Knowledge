@@ -2,7 +2,7 @@
 title: "Clawdbot-Moltbot: Openclaw nach rasanten Namensänderungen unter Beschuss"
 source: "https://www.golem.de/news/clawdbot-moltbot-openclaw-nach-rasanten-namensaenderungen-unter-beschuss-2601-204840.html"
 author:
-  - "[[Michael Linden]]"
+  - "Michael Linden"
 published: 2026-01-30
 created: 2026-02-02
 description: "Nach zwei Umbenennungen ist das KI-Agent-Projekt Openclaw zu einem Sicherheitsalbtraum geworden: Es lockt Betrüger und Hacker an."

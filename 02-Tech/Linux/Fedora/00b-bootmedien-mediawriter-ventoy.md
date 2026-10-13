@@ -97,7 +97,7 @@ sudo sh ./Ventoy2Disk.sh -i -s /dev/sdX
 
 ### Schritt 4 – ISOs aufspielen
 
-Vor dem Kopieren jede ISO per Prüfsumme verifizieren (siehe [[01-fedora-iso-und-installation]] für das vollständige Vorgehen):
+Vor dem Kopieren jede ISO per Prüfsumme verifizieren (siehe `01-fedora-iso-und-installation` für das vollständige Vorgehen):
 
 ```nu
 # Kurzform: tatsächliche Prüfsumme berechnen
@@ -124,7 +124,7 @@ ls ~/Downloads/*.iso | get name | each {|iso| cp $iso $"/run/media/($env.USER)/V
 1. Stick einstecken, Rechner starten.
 2. Lenovo Yoga: beim Einschalten **F12** für das Bootmenü drücken – oder über den kleinen **Novo-Button** (Pinhole) → `Boot Menu`.
 3. Den Ventoy-Stick wählen → im Ventoy-Menü die gewünschte ISO auswählen.
-4. Fedora bootet in die Live-Sitzung; von dort aus lässt sich über Anaconda installieren (siehe [[01-fedora-iso-und-installation]]).
+4. Fedora bootet in die Live-Sitzung; von dort aus lässt sich über Anaconda installieren (siehe `01-fedora-iso-und-installation`).
 
 ### Später: Ventoy aktualisieren (ohne Datenverlust)
 
@@ -154,6 +154,6 @@ sudo sh ./Ventoy2Disk.sh -u /dev/sdX
 
 ## Verwandte Notizen
 
-- [[01-fedora-iso-und-installation]]
+- `01-fedora-iso-und-installation`
 - [[Hyprland Konfiguration]]
-- [[Flatpak einrichten]]
+- [[00 Flathub einrichten]]

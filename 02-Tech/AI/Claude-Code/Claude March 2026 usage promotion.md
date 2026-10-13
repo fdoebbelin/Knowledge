@@ -2,7 +2,7 @@
 title: "Claude March 2026 usage promotion"
 source: "https://support.claude.com/en/articles/14063676-claude-march-2026-usage-promotion"
 author:
-  - "[[Claude Help Center]]"
+  - "Claude Help Center"
 published:
 created: 2026-03-16
 description:

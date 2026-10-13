@@ -16,7 +16,7 @@
 
 Eine **Baugruppe** (Assembly) fasst mehrere Einzelteile (**Komponenten**) in einem gemeinsamen Dokument zusammen und definiert ihre räumliche Lage zueinander. Jede Komponente ist eine **Verknüpfung** auf ein externes Part-Design-Dokument – keine Kopie. Ändert sich das Original, aktualisiert sich die Baugruppe automatisch.
 
-Die räumliche Beziehung zwischen zwei Komponenten wird durch **Joints** (Verbindungen) festgelegt. Ein Joint reduziert die Freiheitsgrade ([[Glossar FreeCAD#Freiheitsgrad (DOF)]]) eines Bauteilpaares. Jede frei im Raum schwebende Komponente hat 6 DOF (3× Translation, 3× Rotation).
+Die räumliche Beziehung zwischen zwei Komponenten wird durch **Joints** (Verbindungen) festgelegt. Ein Joint reduziert die Freiheitsgrade ([[Glossar FreeCAD#DOF (Degrees of Freedom)]]) eines Bauteilpaares. Jede frei im Raum schwebende Komponente hat 6 DOF (3× Translation, 3× Rotation).
 
 | Joint | DOF verbleibend | Erlaubte Bewegung |
 |---|---|---|
@@ -183,7 +183,7 @@ Ein **Drehgelenk** (Revolute Joint) koppelt zwei zylindrische Flächen oder Achs
 - [[M05 – Part Design Vertiefung]]
 - [[M07 – Technische Zeichnung]]
 - [[M08 – Abschlussprojekt]]
-- [[Glossar FreeCAD#Baugruppe]]
+- [[Glossar FreeCAD#Baugruppe (Assembly)]]
 - [[Glossar FreeCAD#Joint (Verbindung)]]
-- [[Glossar FreeCAD#Freiheitsgrad (DOF)]]
+- [[Glossar FreeCAD#DOF (Degrees of Freedom)]]
 - [[Glossar FreeCAD#Explosionsansicht]]

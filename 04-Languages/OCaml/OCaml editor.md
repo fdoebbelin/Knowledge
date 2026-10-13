@@ -2,7 +2,7 @@
 title: "GitHub - nathanfallet/ocaml: An OCaml editor, top level, and learning place for iOS, iPadOS and macOS"
 source: "https://github.com/nathanfallet/ocaml"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "An OCaml editor, top level, and learning place for iOS, iPadOS and macOS - nathanfallet/ocaml"

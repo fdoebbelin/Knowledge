@@ -8,7 +8,7 @@ status: draft
 
 # Hyprland Konfiguration
 
-Zentrale Konfigurationsnotiz für Hyprland ab **0.55** im neuen **Lua**-Format. Die Datei liegt unter `~/.config/hypr/hyprland.lua` und wird beim Speichern automatisch neu geladen. Eingebettet sind die Anbindungen an [[Noctalia Shell installieren]] (Autostart, Launcher-Bind, Blur-Layerrule).
+Zentrale Konfigurationsnotiz für Hyprland ab **0.55** im neuen **Lua**-Format. Die Datei liegt unter `~/.config/hypr/hyprland.lua` und wird beim Speichern automatisch neu geladen. Eingebettet sind die Anbindungen an Noctalia Shell installieren (Autostart, Launcher-Bind, Blur-Layerrule).
 
 > [!info] Lua statt hyprlang
 > Seit 0.55 ist hyprlang abgelöst. Existiert eine `hyprland.lua`, wird ausschließlich diese geladen (kein Fallback auf `hyprland.conf`). Konfiguriert wird über die globale `hl`-Tabelle: `hl.config({…})`, `hl.bind(…)`, `hl.monitor({…})` usw.
@@ -17,7 +17,7 @@ Zentrale Konfigurationsnotiz für Hyprland ab **0.55** im neuen **Lua**-Format. 
 
 - [x] Hyprland ≥ 0.55 (COPR `solopasha/hyprland`)
 - [x] Kitty, Dolphin, Vivaldi installiert
-- [x] Noctalia → siehe [[Noctalia Shell installieren]]
+- [x] Noctalia → siehe Noctalia Shell installieren
 - [ ] `hyprland.lua` produktiv (diese Notiz)
 
 ## Vollständige `hyprland.lua`
@@ -50,7 +50,7 @@ local menu        = "qs -c noctalia-shell ipc call launcher toggle"
 hl.on("hyprland.start", function()
   -- Desktop-Shell (Bar, Notifications, Lockscreen, Wallpaper, Dock)
   hl.exec_cmd("qs -c noctalia-shell")
-  -- Polkit-Agent (für Dolphin-Rechteabfragen) -> siehe [[Dolphin einrichten]]
+  -- Polkit-Agent (für Dolphin-Rechteabfragen) -> siehe [[Dolphin installieren]]
   hl.exec_cmd("/usr/libexec/polkit-kde-authentication-agent-1")
   -- Zwischenablage-Verlauf (von Noctalia angezeigt)
   hl.exec_cmd("wl-paste --watch cliphist store")
@@ -259,4 +259,4 @@ hyprctl devices   # Switch-/Geräte-Namen (Lid, Touchpad)
 - [ ] Konfig wächst → in Module aufteilen via `require("module")` (z. B. `binds.lua`, `rules.lua`, `monitors.lua`)
 - [ ] `[[Yoga Bildschirmrotation]]` anlegen (iio-sensor-proxy + hyprctl-Helfer)
 - [ ] Lid-Switch-Bind nach `hyprctl devices` aktivieren
-- [ ] Querverweis in [[Noctalia Shell installieren]] auf diese Notiz prüfen
+- [ ] Querverweis in Noctalia Shell installieren auf diese Notiz prüfen

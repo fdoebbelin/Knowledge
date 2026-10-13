@@ -2,7 +2,7 @@
 title: "Strukturierte Artikel mit dem Paragraphs Modul für Drupal 8"
 source: "https://blog.novatrend.ch/2016/11/21/strukturierte-artikel-mit-dem-paragraphs-modul-fuer-drupal-8/"
 author:
-  - "[[NOVATREND Blog]]"
+  - "NOVATREND Blog"
 published: 2016-11-21
 created: 2025-04-14
 description: "Heute mal wieder ein Wunschthema! Ein immer wiederkehrendes Problem bei Content Management Systemen ist die Strukturierung der Inhalte. Wenn sich derjenige, der den Inhalt eingibt und pflegt, an di…"

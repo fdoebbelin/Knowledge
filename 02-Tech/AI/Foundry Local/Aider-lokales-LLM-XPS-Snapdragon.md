@@ -13,7 +13,7 @@ created: 2026-06-22
 status: active
 type: leitfaden
 hardware: Dell XPS 13 9345 · Snapdragon X Elite · 32 GB
-voraussetzung: "[[Foundry Local auf dem Dell XPS 13 9345 (Snapdragon X Elite)]]"
+voraussetzung: "[[Foundry-Local-XPS-13-9345-Setup]]"
 ---
 
 # Aider mit lokalem LLM auf dem XPS (Snapdragon)
@@ -21,7 +21,7 @@ voraussetzung: "[[Foundry Local auf dem Dell XPS 13 9345 (Snapdragon X Elite)]]"
 > [!abstract] Ziel
 > Aider als lokales Pair-Programming-Tool für Python, gespeist von einem für den Snapdragon X Elite passenden lokalen LLM – wahlweise ein fertiges Katalog-Modell oder ein selbst mit **Olive** kompiliertes ONNX-Modell. Anbindung läuft über den **OpenAI-kompatiblen Endpoint** von Foundry Local.
 >
-> Setzt das Setup aus [[Foundry Local auf dem Dell XPS 13 9345 (Snapdragon X Elite)]] voraus.
+> Setzt das Setup aus [[Foundry-Local-XPS-13-9345-Setup]] voraus.
 
 ---
 
@@ -316,7 +316,7 @@ Danach in Aider wie gewohnt: `--model openai/qwen-coder-1.5b`.
 
 ## Verwandte Notizen
 
-- [[Foundry Local auf dem Dell XPS 13 9345 (Snapdragon X Elite)]]
-- [[Vibe Coding – Helix + Aider + WezTerm]]
-- [[Zwei-Tier-Architektur – Desktop-GPU + XPS-Client]]
-- [[Olive Recipes – ONNX-Konvertierung Cheatsheet]]
+- [[Foundry-Local-XPS-13-9345-Setup]]
+- Vibe Coding – Helix + Aider + WezTerm
+- Zwei-Tier-Architektur – Desktop-GPU + XPS-Client
+- Olive Recipes – ONNX-Konvertierung Cheatsheet

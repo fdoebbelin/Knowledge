@@ -138,7 +138,7 @@ sudo dnf install calligra
 
 ## Verwandte Notizen
 
-- [[OnlyOffice installieren]]
-- [[OnlyOffice – Schriftdarstellung verbessern]]
-- [[Hyprland Lua-Konfiguration]]  <!-- ggf. Dateinamen anpassen -->
-- [[Qt-Kvantum-Theming einrichten]]  <!-- ggf. Dateinamen anpassen -->
+- OnlyOffice installieren
+- OnlyOffice – Schriftdarstellung verbessern
+- [[Hyprland Konfiguration]]  <!-- ggf. Dateinamen anpassen -->
+- Qt-Kvantum-Theming einrichten  <!-- ggf. Dateinamen anpassen -->

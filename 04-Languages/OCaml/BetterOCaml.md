@@ -2,7 +2,7 @@
 title: "GitHub - jbdoderlein/BetterOCaml: A small but efficient, intuitive and responsive OCaml IDE right in your browser! Ships OCaml v5.1.1, interpreter by your browser (so it works offline!), compiled with js_of_ocaml."
 source: "https://github.com/jbdoderlein/BetterOCaml"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "A small but efficient, intuitive and responsive OCaml IDE right in your browser! Ships OCaml v5.1.1, interpreter by your browser (so it works offline!), compiled with js_of_ocaml. - jbdoderlein/BetterOCaml"
@@ -23,7 +23,7 @@ Without installing any software on your laptop or smartphone, use [this web-base
 
 ## How to use ?
 
-[![[0cd4952d858e3ea7535b787a2071f817_MD5.gif]]](https://user-images.githubusercontent.com/10222041/117338097-75d6a880-ae9e-11eb-9a69-63c39bd8fd4a.gif)
+[Vorführung als GIF (Original auf GitHub)](https://user-images.githubusercontent.com/10222041/117338097-75d6a880-ae9e-11eb-9a69-63c39bd8fd4a.gif) – die lokale Kopie fehlt im Vault.
 
 The editor is made of 3 parts, as seen in this screenshot:
 

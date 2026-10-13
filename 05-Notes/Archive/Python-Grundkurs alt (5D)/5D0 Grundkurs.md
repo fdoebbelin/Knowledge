@@ -3,8 +3,8 @@ aliases:
 tags: [print]
 title: 5D0 Grundkurs
 ---
-## [[PyCharm]]
-## [[Vorlage]]
+## PyCharm
+## Vorlage
 
 ## Inhalt
 
@@ -12,7 +12,7 @@ title: 5D0 Grundkurs
 
 ### [5D0B Usereingaben und Entscheidungen](5D0B%20Usereingaben%20und%20Entscheidungen.md)
 
-### [[5D0C Module Laden]]
+### 5D0C Module Laden
 
 ### [5D0D Datenstrukturen](5D0D%20Datenstrukturen.md)
 
@@ -22,4 +22,4 @@ title: 5D0 Grundkurs
 
 ### [5D0G Klassen](5D0G%20Klassen.md)
 
-### [[5D0H Dateien]]
+### 5D0H Dateien

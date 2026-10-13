@@ -2,7 +2,7 @@
 title: "Helix - Dash Cheat Sheets"
 source: "https://kapeli.com/cheat_sheets/Helix.docset/Contents/Resources/Documents/index"
 author:
-  - "[[Kapeli]]"
+  - "Kapeli"
 published:
 created: 2026-03-05
 description: "Helix editor keyboard shortcuts and commands reference including movement, selection, editing, and search operations. Essential shortcuts for the modern terminal-based text editor. Download Dash for macOS to access this and other cheat sheets offline."

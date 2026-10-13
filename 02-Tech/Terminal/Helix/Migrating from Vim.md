@@ -2,7 +2,7 @@
 title: "Migrating from Vim"
 source: "https://github.com/helix-editor/helix/wiki/Migrating-from-Vim"
 author:
-  - "[[helix-editor]]"
+  - "helix-editor"
 published:
 created: 2025-07-14
 description: "A post-modern modal text editor. Contribute to helix-editor/helix development by creating an account on GitHub."

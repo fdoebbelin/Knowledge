@@ -11,7 +11,7 @@ type: anleitung
 # Hibernate einrichten (Ruhezustand)
 
 > [!abstract] Ziel
-> Echten **Ruhezustand** (Suspend-to-Disk / Hibernate) auf dem frisch aufgesetzten [[Fedora + Hyprland + Noctalia auf dem Lenovo Yoga 920-13IKB|Fedora-Yoga]] aktivieren — bevorzugt als **suspend-then-hibernate** (erst RAM-Suspend, nach Timeout automatisch auf Platte). Fedoras Standard-**zram** reicht dafür **nicht**; es braucht Disk-Swap plus `resume`-Kernelparameter.
+> Echten **Ruhezustand** (Suspend-to-Disk / Hibernate) auf dem frisch aufgesetzten [[Fedora-Hyprland-Noctalia-Yoga920|Fedora-Yoga]] aktivieren — bevorzugt als **suspend-then-hibernate** (erst RAM-Suspend, nach Timeout automatisch auf Platte). Fedoras Standard-**zram** reicht dafür **nicht**; es braucht Disk-Swap plus `resume`-Kernelparameter.
 
 > [!note] Keine Extra-Pakete nötig
 > `btrfs-progs`, `grubby`, `dracut` und `systemd` sind auf Fedora bereits vorhanden. Es ist reine Konfigurationsarbeit — kein `dnf install`.
@@ -159,7 +159,7 @@ HibernateDelaySec=60min
 > [!tip] Delay an mem_sleep koppeln
 > Bei nur `s2idle` (Abschnitt 0) den Wert **kürzer** setzen (z. B. `20min`), damit der Akku im Standby nicht ausläuft, bevor Hibernate greift. Neuere systemd-Versionen können die Zeit auch dynamisch schätzen (`SuspendEstimationSec`) — dann ist ein fixer Wert optional.
 
-Damit der Deckel den kombinierten Modus auslöst, das Deckel-Drop-in aus der [[Fedora + Hyprland + Noctalia auf dem Lenovo Yoga 920-13IKB|Haupt-Anleitung]] anpassen:
+Damit der Deckel den kombinierten Modus auslöst, das Deckel-Drop-in aus der [[Fedora-Hyprland-Noctalia-Yoga920|Haupt-Anleitung]] anpassen:
 
 ```nu
 "[Login]
@@ -233,4 +233,4 @@ journalctl -b -1 --no-pager | find --ignore-case hibernate
 - systemd `sleep.conf`: <https://www.freedesktop.org/software/systemd/man/latest/systemd-sleep.conf.html>
 - systemd `logind.conf`: <https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html>
 
-Siehe auch: [[Fedora + Hyprland + Noctalia auf dem Lenovo Yoga 920-13IKB]] · [[Fedora]] · [[Nushell]]
+Siehe auch: [[Fedora-Hyprland-Noctalia-Yoga920]] · Fedora · [[Nushell]]

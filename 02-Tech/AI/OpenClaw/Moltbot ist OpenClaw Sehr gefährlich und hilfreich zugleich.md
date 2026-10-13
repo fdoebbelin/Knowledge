@@ -2,7 +2,7 @@
 title: "Moltbot ist OpenClaw: Sehr gefährlich und hilfreich zugleich"
 source: "https://onlinemarketing.de/technologie/moltbot-openclaw-sehr-gefaehrlich-hilfreich"
 author:
-  - "[[Niklas Lewanczik]]"
+  - "Niklas Lewanczik"
 published: 2026-02-02
 created: 2026-02-02
 description: "OpenClaw fungiert als lokale AI-Assistenz mit Messaging-Zugriff, birgt aber massive Sicherheitslücken. Und dann ist da noch Moltbook."

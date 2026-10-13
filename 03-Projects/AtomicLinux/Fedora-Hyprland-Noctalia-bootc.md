@@ -12,7 +12,7 @@ base_image: quay.io/fedora/fedora-bootc:43
 # Fedora + Hyprland + Noctalia als bootc Custom Image
 
 > [!abstract] Ziel
-> Ein **teilbares, reproduzierbares** Fedora-Image, das Hyprland (Compositor) und Noctalia (Wayland-Shell) mitbringt — deklarativ als OCI-Image gebaut, per GitHub Actions in eine Registry gepusht und als ISO/qcow2 installierbar. Das ist der moderne, GitOps-taugliche Ersatz für einen klassischen Kickstart-Spin. Weil Noctalia **nicht** in den Fedora-Repos liegt, ist das formal ein *Fedora Remix*, kein offizieller Spin — siehe [[#8 Rechtliches Remix statt Spin]].
+> Ein **teilbares, reproduzierbares** Fedora-Image, das Hyprland (Compositor) und Noctalia (Wayland-Shell) mitbringt — deklarativ als OCI-Image gebaut, per GitHub Actions in eine Registry gepusht und als ISO/qcow2 installierbar. Das ist der moderne, GitOps-taugliche Ersatz für einen klassischen Kickstart-Spin. Weil Noctalia **nicht** in den Fedora-Repos liegt, ist das formal ein *Fedora Remix*, kein offizieller Spin — siehe [[#8 Rechtliches: Remix statt Spin]].
 
 > [!info] Mentale Modelle
 > - **Base-Image** = das nackte bootable Fedora (kein Desktop).
@@ -56,7 +56,7 @@ fedora-hyprland-noctalia/
 ```
 
 > [!tip] Obsidian-Workflow
-> Leg das Repo als eigenen Vault-Ordner an. Deine Hyprland-Dotfiles (inkl. `hypr.nu`-Modulverwaltung) versionierst du direkt unter `files/etc/skel/.config/hypr/` — dann landen sie bei *jedem* frisch installierten Rechner konsistent. Siehe [[Hyprland Config Notizen]].
+> Leg das Repo als eigenen Vault-Ordner an. Deine Hyprland-Dotfiles (inkl. `hypr.nu`-Modulverwaltung) versionierst du direkt unter `files/etc/skel/.config/hypr/` — dann landen sie bei *jedem* frisch installierten Rechner konsistent. Siehe Hyprland Config Notizen.
 
 ---
 
@@ -313,7 +313,7 @@ sudo podman run --rm -it --privileged \
 > ```
 
 > [!tip] Signieren (uBlue-Stil, empfohlen)
-> Für ein „echtes" verteilbares Image signierst du mit `cosign` und legst die Public Key + eine `containers-policy`-Ergänzung ins Image, damit `bootc upgrade` die Signatur prüft. So macht es Universal Blue / Bluefin. Details: [[bootc Image Signing mit cosign]].
+> Für ein „echtes" verteilbares Image signierst du mit `cosign` und legst die Public Key + eine `containers-policy`-Ergänzung ins Image, damit `bootc upgrade` die Signatur prüft. So macht es Universal Blue / Bluefin. Details: bootc Image Signing mit cosign.
 
 ---
 
@@ -359,7 +359,7 @@ sudo bootc rollback
 - [ ] ISO in QEMU testbooten, Login → Hyprland → Noctalia prüfen
 
 ## Verwandte Notizen
-- [[Hyprland Config Notizen]]
-- [[CachyOS Setup]]
-- [[bootc Image Signing mit cosign]]
-- [[Fedora Spin vs Remix]]
+- Hyprland Config Notizen
+- CachyOS Setup
+- bootc Image Signing mit cosign
+- Fedora Spin vs Remix

@@ -105,8 +105,8 @@ Joints definieren die erlaubten Relativbewegungen zwischen zwei Komponenten. Jed
 
 ## Querverweise
 
-- [[PartDesign – Symbolleistenreferenz]]
+- [[Part Design – Symbolleistenreferenz]]
 - [[M06 – Baugruppen & Assembly]]
-- [[Glossar FreeCAD#Baugruppe]]
+- [[Glossar FreeCAD#Baugruppe (Assembly)]]
 - [[Glossar FreeCAD#Joint (Verbindung)]]
 - [[Glossar FreeCAD#Explosionsansicht]]

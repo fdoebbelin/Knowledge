@@ -2,7 +2,7 @@
 title: "GitHub - vriteio/vrite: Open-source developer content platform"
 source: "https://github.com/vriteio/vrite"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "Open-source developer content platform. Contribute to vriteio/vrite development by creating an account on GitHub."

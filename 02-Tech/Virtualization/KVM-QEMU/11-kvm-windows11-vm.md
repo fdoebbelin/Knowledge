@@ -13,7 +13,7 @@ verifiziert_gegen: Fedora Atomic x86_64, edk2-ovmf-20260508-6.fc44, QEMU pc-q35-
 
 Gegenstück zum Hyper-V-Weg des XPS. Auf aarch64 gibt es kein `/dev/kvm`, dort
 läuft Virtualisierung über Windows — siehe
-[[docs/02-umgebung-wsl#Warum kein KVM auf diesem Gerät]]. Auf den x86_64-Kisten
+`docs/02-umgebung-wsl` (Warum kein KVM auf diesem Gerät). Auf den x86_64-Kisten
 (Yoga, Dozenten-PC) gibt es echtes KVM, also läuft die Windows-VM **nativ unter
 libvirt**, nicht über einen Umweg.
 

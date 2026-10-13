@@ -2,7 +2,7 @@
 title: "GitHub - FedericoBruzzone/caml-writer: CamlWriter is a terminal-based text editor developed using the OCaML."
 source: "https://github.com/FedericoBruzzone/caml-writer"
 author:
-  - "[[GitHub]]"
+  - "GitHub"
 published:
 created: 2025-03-13
 description: "CamlWriter is a terminal-based text editor developed using the OCaML. - FedericoBruzzone/caml-writer"

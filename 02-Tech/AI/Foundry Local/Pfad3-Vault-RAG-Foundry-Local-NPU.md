@@ -13,7 +13,7 @@ created: 2026-06-22
 status: active
 type: runbook
 hardware: Dell XPS 13 9345 · Snapdragon X Elite · 32 GB
-script: "[[vault_rag.py]]"
+script: vault_rag.py
 ---
 
 # Vault-RAG lokal & NPU-beschleunigt (Pfad 3)
@@ -108,7 +108,7 @@ uv pip install openai chromadb pyyaml
 
 ## 3. Das RAG-Skript
 
-Die vollständige, kommentierte Fassung liegt als [[vault_rag.py]] bei. Kernidee: Es spricht Foundry Local über den **OpenAI-kompatiblen Endpoint** an (versionsrobust, unabhängig von SDK-internen Methodennamen) und liest den **dynamischen Port** selbst aus `foundry service status`.
+Die vollständige, kommentierte Fassung liegt als `vault_rag.py` beim Projekt (nicht im Vault). Kernidee: Es spricht Foundry Local über den **OpenAI-kompatiblen Endpoint** an (versionsrobust, unabhängig von SDK-internen Methodennamen) und liest den **dynamischen Port** selbst aus `foundry service status`.
 
 Die vier Schritte im Code:
 
@@ -210,8 +210,8 @@ Dazu dein **direkter Draht zum Qualcomm-Support**: Laut Auskunft wird das SDK **
 
 ## Verwandte Notizen
 
-- [[Foundry Local auf dem Dell XPS 13 9345 (Snapdragon X Elite)]]
-- [[Aider mit lokalem LLM auf dem XPS (Snapdragon)]]
-- [[Nexa SDK – NPU-Inferenz auf dem XPS]]
-- [[Qualcomm AI Hub – Übernahme Nexa AI, Edge-AI-Roadmap]]
-- [[vault_rag.py]]
+- [[Foundry-Local-XPS-13-9345-Setup]]
+- Aider mit lokalem LLM auf dem XPS (Snapdragon)
+- Nexa SDK – NPU-Inferenz auf dem XPS
+- Qualcomm AI Hub – Übernahme Nexa AI, Edge-AI-Roadmap
+- `vault_rag.py` – Skript, liegt außerhalb des Vaults

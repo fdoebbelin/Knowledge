@@ -2,7 +2,7 @@
 title: "Git-Workflow | Atlassian Git Tutorial"
 source: "https://www.atlassian.com/de/git/tutorials/comparing-workflows"
 author:
-  - "[[Atlassian]]"
+  - "Atlassian"
 published:
 created: 2025-07-30
 description: "Ein Git-Feature-Branch ist ein temporärer Branch, der für Entwicklungs- oder Testzwecke verwendet wird. In diesem Leitfaden erfährst du, wie du diese Branches am besten verwaltest."

@@ -8,7 +8,7 @@ type: referenz
 ---
 
 > [!info] Konzept & Abgrenzung zu GLIM
-> Ventoy installiert einen eigenen Bootloader auf den Stick und legt eine **exFAT**-Datenpartition an. ISOs kopierst du einfach dorthin – Ventoy zeigt sie beim Booten als Menü und startet sie über eine eigene Boot-Kette (kein stumpfes GRUB-loopback). Dadurch fällt genau das weg, woran [[GLIM Multiboot-Stick einrichten]] scheitert: der Fedora-`out of memory`, der 4-GB-FAT32-Deckel (exFAT!) und der `grub2-install`-Kampf. Der Preis dafür steht unten unter **Diskussion der Probleme**.
+> Ventoy installiert einen eigenen Bootloader auf den Stick und legt eine **exFAT**-Datenpartition an. ISOs kopierst du einfach dorthin – Ventoy zeigt sie beim Booten als Menü und startet sie über eine eigene Boot-Kette (kein stumpfes GRUB-loopback). Dadurch fällt genau das weg, woran GLIM Multiboot-Stick einrichten scheitert: der Fedora-`out of memory`, der 4-GB-FAT32-Deckel (exFAT!) und der `grub2-install`-Kampf. Der Preis dafür steht unten unter **Diskussion der Probleme**.
 
 > [!warning] Der ganze Stick wird gelöscht
 > `Ventoy2Disk.sh -i` überschreibt das komplette Gerät. Willst du deinen dokumentierten GLIM-Stick behalten, **nimm einen zweiten Stick** – das passt auch zum Mittelweg (GLIM sauber, Ventoy nur für Problemfälle wie Fedora).
@@ -160,4 +160,4 @@ Weitere Punkte, ehrlich benannt:
 
 ---
 
-Verwandt: [[GLIM Multiboot-Stick einrichten]] · [[GLIM Multiboot-Stick einrichten (Debian)]] · [[Multiboot-USB Werkzeuge im Vergleich]]
+Verwandt: GLIM Multiboot-Stick einrichten · GLIM Multiboot-Stick einrichten (Debian) · Multiboot-USB Werkzeuge im Vergleich

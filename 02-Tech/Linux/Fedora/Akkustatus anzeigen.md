@@ -12,7 +12,7 @@ status: done
 
 # Akkustatus anzeigen
 
-Akkustand und Ladezustand auslesen – **ohne zusätzliche Pakete** und **ohne Statusleiste**. Nützlich im Zustand vor [[Noctalia Shell]], wenn noch kein Bar- oder Notification-Daemon läuft.
+Akkustand und Ladezustand auslesen – **ohne zusätzliche Pakete** und **ohne Statusleiste**. Nützlich im Zustand vor Noctalia Shell, wenn noch kein Bar- oder Notification-Daemon läuft.
 
 > [!info] Prinzip
 > Der Akku liegt vollständig im sysfs unter `/sys/class/power_supply/`. Für eine Einblendung *in* Hyprland reicht der eingebaute Dispatcher `hyprctl notify` – der braucht **keinen** Notification-Daemon (mako/swaync).
@@ -138,10 +138,10 @@ acpi -b
 - [x] nushell-Funktion `akku` in `config.nu`
 - [x] Skript `~/.config/hypr/scripts/akku.nu` angelegt und ausführbar gemacht
 - [x] Keybind `SUPER + A` in `hyprland.lua` eingetragen
-- [ ] Später ersetzbar durch native Akku-Anzeige in [[Noctalia Shell]]
+- [ ] Später ersetzbar durch native Akku-Anzeige in Noctalia Shell
 
 ## Verwandte Notizen
 
 - [[Hyprland Konfiguration]]
-- [[02-nushell-konfigurieren]]
-- [[Noctalia Shell]]
+- `02-nushell-konfigurieren`
+- Noctalia Shell

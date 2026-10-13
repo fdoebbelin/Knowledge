@@ -21,7 +21,7 @@ Vollwertige Desktop-Umgebungen (KDE Plasma, GNOME) werden **nicht** installiert.
 ## Empfehlung: Qt/KDE bevorzugen
 
 > [!check] Begründung für diesen Stack
-> Über [[Dolphin einrichten|Dolphin]] und [[Noctalia Shell]] (Quickshell = QML = Qt) ist dieses System ohnehin tief im Qt-Ökosystem verankert. Eine Qt-Tendenz bei sonstigen GUI-Programmen bringt:
+> Über [[Dolphin installieren|Dolphin]] und Noctalia Shell (Quickshell = QML = Qt) ist dieses System ohnehin tief im Qt-Ökosystem verankert. Eine Qt-Tendenz bei sonstigen GUI-Programmen bringt:
 > - **Theming an einer Stelle** — nur Qt (`qt6ct` + Kvantum) pflegen statt zwei parallele Theming-Systeme.
 > - **Server-Side Decorations** — Qt-Apps können die Fensterdekoration Hyprland überlassen. GTK erzwingt Client-Side Decorations (eigene Titelleisten).
 > - **Weniger DE-Zwang** — KDE-Einzelprogramme ziehen meist nur KDE-Frameworks-Bibliotheken nach, nicht den halben Desktop.
@@ -66,7 +66,7 @@ env = GDK_BACKEND,wayland,x11
 env = ELECTRON_OZONE_PLATFORM_HINT,wayland
 ```
 
-`ELECTRON_OZONE_PLATFORM_HINT` betrifft die Electron-/Chromium-Programme im Bestand — [[Obsidian einrichten|Obsidian]] und [[Vivaldi einrichten|Vivaldi]].
+`ELECTRON_OZONE_PLATFORM_HINT` betrifft die Electron-/Chromium-Programme im Bestand — Obsidian und Vivaldi.
 
 ## Prüf- und Einrichtungsbefehle
 
@@ -109,7 +109,7 @@ Relevante Umgebungsvariablen im aktuellen Prozess gegenprüfen:
 ## Verwandte Notizen
 
 - [[Hyprland Konfiguration]]
-- [[Dolphin einrichten]]
-- [[Noctalia Shell]]
-- [[Obsidian einrichten]]
-- [[Vivaldi einrichten]]
+- [[Dolphin installieren]]
+- Noctalia Shell
+- Obsidian einrichten
+- Vivaldi einrichten

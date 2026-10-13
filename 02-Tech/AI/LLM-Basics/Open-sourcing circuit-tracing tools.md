@@ -2,7 +2,7 @@
 title: "Open-sourcing circuit-tracing tools"
 source: "https://www.anthropic.com/research/open-source-circuit-tracing"
 author:
-  - "[[@AnthropicAI]]"
+  - "@AnthropicAI"
 published:
 created: 2026-01-04
 description: "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems."

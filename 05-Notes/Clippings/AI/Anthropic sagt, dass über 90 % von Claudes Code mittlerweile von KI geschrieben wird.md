@@ -2,7 +2,7 @@
 title: "Perplexity"
 source: "https://www.perplexity.ai/discover/you/anthropic-ceo-reveals-90-of-cl-zLqOWLxCQA2dPTEP3TvXWQ"
 author:
-  - "[[Perplexity AI]]"
+  - "Perplexity AI"
 published:
 created: 2026-01-21
 description: "Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question."

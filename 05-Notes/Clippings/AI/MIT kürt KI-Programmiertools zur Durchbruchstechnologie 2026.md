@@ -2,7 +2,7 @@
 title: "MIT kürt KI-Programmiertools zur Durchbruchstechnologie 2026"
 source: "https://www.perplexity.ai/discover/you/mit-technology-review-names-ge-tAXq5K_wTbWcIYUjqaSvcA"
 author:
-  - "[[Perplexity AI]]"
+  - "Perplexity AI"
 published:
 created: 2026-01-21
 description: "Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question."

@@ -173,5 +173,5 @@
 - [[Cheat Sheet – Tastenkürzel]]
 - [[M02 – Sketcher Grundlagen]]
 - [[M03 – Sketcher Constraints]]
-- [[Glossar FreeCAD#Skizze]]
+- [[Glossar FreeCAD#Skizze (Sketch)]]
 - [[Glossar FreeCAD#Constraint (Randbedingung)]]

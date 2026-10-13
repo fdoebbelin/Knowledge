@@ -18,7 +18,7 @@ Unter Hyprland werden Fenster-Schaltflächen (Minimieren / Maximieren / Schließ
 > [!info] Merksatz
 > Keine Buttons sichtbar = App malt **keine** eigenen CSD und verlässt sich auf den Compositor. Da Hyprland nichts liefert, bleibt die Titelzeile leer.
 
-Siehe auch: [[Hyprland Konfiguration]] · [[Dolphin einrichten]] · [[Vivaldi installieren]] · [[Obsidian einrichten]]
+Siehe auch: [[Hyprland Konfiguration]] · [[Dolphin installieren]] · Vivaldi installieren · Obsidian einrichten
 
 ---
 

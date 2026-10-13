@@ -25,7 +25,7 @@ Sway steht seit [[14-xps13-wslg-sway-nushell-runde1]].
 
 > [!warning] Abgrenzung — das hier ist die Werkbank
 > Nichts aus dieser Notiz wandert 1:1 ins bootc-Image. Dort gilt
-> [[09-yoga-buildumgebung]]: Pakete deklarativ im Containerfile, Drop-ins
+> `09-yoga-buildumgebung`: Pakete deklarativ im Containerfile, Drop-ins
 > nach `/usr/share/sway/config.d/`, `rpm -q`-Guard. Hier wird *erkundet*,
 > was dort *festgeschrieben* wird.
 
@@ -33,11 +33,11 @@ Sway steht seit [[14-xps13-wslg-sway-nushell-runde1]].
 
 ## 1 — Architekturentscheidung: Terra-RPM, nicht Git-Klon 🟡
 
-Zwei Wege stehen zur Wahl, [[07-referenz-quellen]] nennt beide:
+Zwei Wege stehen zur Wahl, `07-referenz-quellen` nennt beide:
 
 | | Terra-RPM (`noctalia-shell`) | `dnf install quickshell` + Git-Klon |
 |---|---|---|
-| Deckungsgleich mit dem Image | **ja** — identischer Pfad wie [[09-yoga-buildumgebung]] | nein |
+| Deckungsgleich mit dem Image | **ja** — identischer Pfad wie `09-yoga-buildumgebung` | nein |
 | Quickshell-Variante | `noctalia-qs` (Fork, von Terra) | Fedora-`quickshell` (Upstream) |
 | Version | Terra, ungepinnt, aktuell | Git-HEAD, beliebig aktuell |
 | Fremdquelle im System | **ja — und zwar tief** (s. u.) | nein |
@@ -51,8 +51,8 @@ und genau dafür ist die Werkbank da.
 
 > [!important] `quickshell` **nicht** zusätzlich installieren
 > `noctalia-qs` und `quickshell` liefern dieselben Provides und kollidieren.
-> Das ist in [[09-yoga-buildumgebung]] bereits entschieden und korrigiert die
-> ältere Annahme in [[07-referenz-quellen]]. Vorher prüfen:
+> Das ist in `09-yoga-buildumgebung` bereits entschieden und korrigiert die
+> ältere Annahme in `07-referenz-quellen`. Vorher prüfen:
 > ```nu
 > ["quickshell" "noctalia-qs" "noctalia-shell"]
 > | each {|p| {paket: $p, installiert: ((rpm -q $p | complete).exit_code == 0)} }
@@ -64,7 +64,7 @@ Im Containerfile ist Terra harmlos: ein Build, ein Ergebnis, `rpm -q`-Guard.
 Auf einer laufenden Distro mit `dnf upgrade` ist die Lage anders.
 
 > [!danger] Risiko 1 — Terra übernimmt den Qt-Stack
-> `noctalia-qs` verlangt Qt 6.11 ([[09-yoga-buildumgebung]]). Bringt Fedora 44
+> `noctalia-qs` verlangt Qt 6.11 (`09-yoga-buildumgebung`). Bringt Fedora 44
 > weniger mit, hebt dnf `qt6-qtbase` **aus Terra** an — und damit hängt der
 > gesamte Qt-Unterbau des Systems an einer Drittquelle. Im Image ist das ein
 > bewusster, eingefrorener Zustand; hier zieht jedes `dnf upgrade` daran.
@@ -74,7 +74,7 @@ Auf einer laufenden Distro mit `dnf upgrade` ist die Lage anders.
 > Es kann Fedora-Pakete (beobachtet: `nushell`) stillschweigend gegen
 > Terra-Varianten tauschen — ohne Fehler, ohne Rückfrage. Auf diesem Gerät
 > kommen `nu` und `hx` aus **brew** und sind nicht betroffen
-> ([[13-xps13-wsl-installation#Die Zwei-Schichten-Regel]]), aber die Mechanik
+> ([[13-xps13-wsl-installation#Die Zwei-Schichten-Regel: dnf unten, brew oben]]), aber die Mechanik
 > greift für jedes andere Paket genauso.
 
 **Konsequenz — Repo defensiv eintragen:** `enabled=0`, gezielt pro Befehl
@@ -86,7 +86,7 @@ umzubauen.
 
 ## 2 — Terra-Repo eintragen 🟡
 
-Bewusste Abweichung von der Image-Fassung in [[09-yoga-buildumgebung]]
+Bewusste Abweichung von der Image-Fassung in `09-yoga-buildumgebung`
 (`enabled=1`): dort ist der Build das Ziel, hier die Stabilität der Werkbank.
 
 ```nu
@@ -118,7 +118,7 @@ sudo dnf --enable-repo=terra makecache
 > in dieser Notiz durchgängig die dnf5-Form.
 
 Verfügbarkeit für **aarch64** prüfen, bevor irgendetwas installiert wird —
-Terra baut laut [[09-yoga-buildumgebung]] für beide Architekturen, aber
+Terra baut laut `09-yoga-buildumgebung` für beide Architekturen, aber
 „baut für" und „hat für fc44 im Repo" sind zwei verschiedene Aussagen:
 
 ```nu
@@ -157,7 +157,7 @@ sudo dnf --enable-repo=terra install noctalia-shell
 ```
 
 Guard — dieselbe Disziplin wie im Containerfile
-([[01-erkenntnisse]]: erfolgreicher Exit-Code ist **kein** Beweis):
+(`01-erkenntnisse`: erfolgreicher Exit-Code ist **kein** Beweis):
 
 ```nu
 ["noctalia-shell" "noctalia-qs"]
@@ -182,7 +182,7 @@ sondern äußert sich als leeres Widget:
 | each {|p| {paket: $p, da: ((rpm -q $p | complete).exit_code == 0)} }
 ```
 
-`matugen` und `cliphist` liegen laut [[01-erkenntnisse#Umgebungsbefunde WSL]]
+`matugen` und `cliphist` liegen laut `01-erkenntnisse` (Umgebungsbefunde WSL)
 offiziell für aarch64 vor — also aus **Fedora**, nicht aus Terra:
 
 ```nu
@@ -211,7 +211,7 @@ Noctalia-Anleitung unterscheidet.
 > `WLR_*` vollständig. QtQuick rendert über OpenGL. Auf diesem Gerät gibt es
 > aber keinen Render-Node: `/dev/dri` fehlt, aus `/dev/dxg` entsteht ohne
 > `d3d12`-Gallium-Treiber keiner
-> ([[01-erkenntnisse#Umgebungsbefunde WSL]]).
+> (`01-erkenntnisse` (Umgebungsbefunde WSL)).
 >
 > `sway-start` aus [[14-xps13-wslg-sway-nushell-runde1]] vererbt `WLR_RENDERER`
 > zwar an alle Kindprozesse — für Qt ist das ein wirkungsloser String.
@@ -261,7 +261,7 @@ Die Ausgabe ist der ganze Ertrag dieses Schritts. Erwartbare Fehlerbilder:
 | startet, Bar bleibt schwarz | Shader-Pfad | mit Weg B gegenprüfen |
 
 > [!tip] Erwartungsmanagement
-> [[01-erkenntnisse]] sagt es bereits: **keine Performance-Schlüsse ziehen.**
+> `01-erkenntnisse` sagt es bereits: **keine Performance-Schlüsse ziehen.**
 > Ruckelnde Animationen unter llvmpipe sind hier das *erwartete* Ergebnis und
 > kein Befund über das Image. Was diese Umgebung beweisen kann, ist:
 > *startet die Shell, findet sie ihre Konfiguration, lädt sie ihre Schriften,
@@ -271,8 +271,8 @@ Die Ausgabe ist der ganze Ertrag dieses Schritts. Erwartbare Fehlerbilder:
 
 ## 5 — Kollisionen auflösen 🟡
 
-[[01-erkenntnisse#Kollisionen mit Noctalia]] nennt zwei; unter WSL kommt eine
-dritte dazu, weil [[13-xps13-wsl-installation#Schritt 5]] `mako` mitinstalliert
+`01-erkenntnisse` (Kollisionen mit Noctalia) nennt zwei; unter WSL kommt eine
+dritte dazu, weil [[13-xps13-wsl-installation#Schritt 5 — Sway unter WSLg]] `mako` mitinstalliert
 hat.
 
 | Gegenspieler | Konflikt | Lösung hier |
@@ -292,7 +292,7 @@ hängen an der `sway-config-fedora`-Version:
 
 ### 5.1 Nebenertrag: Hier lässt sich 09s offene Frage billig klären ⬜
 
-[[09-yoga-buildumgebung]] hält fest, dass **nicht verifiziert** ist, ob
+`09-yoga-buildumgebung` hält fest, dass **nicht verifiziert** ist, ob
 `/etc/sway/config.d/` eine gleichnamige Datei aus `/usr/share/sway/config.d/`
 überschattet — und weicht deshalb im Image auf direktes Überschreiben in
 `/usr/share` aus. Diese Werkbank kann die Frage in zwei Minuten beantworten,
@@ -311,7 +311,7 @@ glob $"($env.XDG_RUNTIME_DIR)/sway/*"
 ps | where name =~ "waybar" | length      # 0 → Override greift
 ```
 
-> [!important] Der Befund gehört zurück nach [[09-yoga-buildumgebung]]
+> [!important] Der Befund gehört zurück nach `09-yoga-buildumgebung`
 > Greift der `/etc`-Override, ist der `/usr/share`-Umweg im Image eine
 > Vorsichtsmaßnahme und keine Notwendigkeit — und `/etc` bleibt für
 > maschinenspezifische Abweichungen frei, wie in 09 ohnehin vorgesehen.
@@ -324,7 +324,7 @@ ps | where name =~ "waybar" | length      # 0 → Override greift
 
 **Erst nach erfolgreichem Handstart aus 4.1.** Die Umgebungsvariablen
 gehören in die `exec`-Zeile, nicht global — dieselbe Begründung wie die
-`WLR_RENDERER`-Warnung in [[02-umgebung-wsl]]: global gesetzt suchst du
+`WLR_RENDERER`-Warnung in `02-umgebung-wsl`: global gesetzt suchst du
 Monate später, warum nichts beschleunigt läuft.
 
 ```nu
@@ -340,7 +340,7 @@ swaymsg reload
 > [!note] `reload` startet `exec`-Zeilen nicht neu
 > Sway führt `exec` nur beim Sitzungsstart aus; `exec_always` bei jedem
 > Reload. Für den Test also entweder die Session neu starten
-> (`sway-start` aus [[14-xps13-wslg-sway-nushell-runde1#5.6]]) oder
+> (`sway-start` aus [[14-xps13-wslg-sway-nushell-runde1#5 — Nushell: zwei Fehlerklassen, drei Fehler]]) oder
 > Noctalia weiter von Hand starten. Im Image ist `exec` richtig — dort gibt
 > es keinen Reload-Zyklus.
 
@@ -364,7 +364,7 @@ glob ($nu.home-dir | path join ".cache/noctalia/*")
 
 Kandidaten für die WSL-Anpassung suchen (Animationen aus, Blur aus — unter
 llvmpipe der Unterschied zwischen „ruckelt" und „benutzbar",
-vgl. [[13-xps13-wsl-installation#Schritt 5]]):
+vgl. [[13-xps13-wsl-installation#Schritt 5 — Sway unter WSLg]]):
 
 ```nu
 let cfg = ($nu.home-dir | path join ".config/noctalia/settings.json")
@@ -390,7 +390,7 @@ cp $cfg $"($cfg).bak-($ts)"
 
 ## 8 — Was diese Umgebung nicht testen kann 🟡
 
-Ergänzt die Liste aus [[01-erkenntnisse#Was der nested Container nicht testen kann]]
+Ergänzt die Liste aus `01-erkenntnisse` (Was der nested Container nicht testen kann)
 um die Noctalia-spezifischen Punkte:
 
 - **Akku- und Ladewidget** — WSL hat keine `upower`-Geräte
@@ -441,12 +441,12 @@ qs -c noctalia-shell ipc show
       Ausgabe vollständig in diese Notiz übernehmen (→ 4.1 auf ✅ oder ❌)
 - [ ] Material-Symbols: vom RPM mitgeliefert oder fehlend? (→ 3.1)
 - [ ] **`/etc`-Override-Messung** und Rückmeldung nach
-      [[09-yoga-buildumgebung]] (→ 5.1) — höchster Erkenntniswert pro Aufwand
+      `09-yoga-buildumgebung` (→ 5.1) — höchster Erkenntniswert pro Aufwand
 - [ ] `mako` aus der Sitzung nehmen und gegenprüfen, wer
       `org.freedesktop.Notifications` hält (`busctl --user list | find -i notif`)
 - [ ] `settings.json`-Schlüsselbaum dokumentieren, **nachdem** er existiert (→ 7)
 - [ ] Entscheidung nachtragen: v4 (`-legacy`) oder v5-Track — steht in
-      [[09-yoga-buildumgebung]] als offener Punkt und betrifft beide Umgebungen
+      `09-yoga-buildumgebung` als offener Punkt und betrifft beide Umgebungen
 - [ ] `terra-obsolete`-Versionsgrenze als Upstream-Bug an Fyra Labs melden
 - [ ] `verifiziert_gegen:` im Frontmatter füllen, sobald Punkt 3 durch ist
 

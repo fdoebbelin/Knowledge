@@ -2,7 +2,7 @@
 title: "Install Drupal CMS locally with DDEV"
 source: "https://new.drupal.org/docs/drupal-cms/get-started/install-drupal-cms/install-drupal-cms-locally-with-ddev"
 author:
-  - "[[Drupal.org]]"
+  - "Drupal.org"
 published:
 created: 2025-04-08
 description: "Let’s get started by creating a sandbox on your computer. Instead of jumping straight into building online, you’ll create a local space on your computer where you can experiment, make mistakes (it’s okay, we all do!), and discover how Drupal CMS works–no pressure! In this tutorial, we’ll walk through how to set up this space using DDEV, a tool that makes it possible to build out your site at your own pace. It will help you get your Drupal CMS workspace up and running without you needing to know all of the technical details."

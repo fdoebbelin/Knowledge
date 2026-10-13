@@ -17,7 +17,7 @@ status: active
 
 # Eigenes bootc-Image mit Homebrew-Toolchain — `atomic-brew`
 
-Kompletter Durchlauf vom leeren Verzeichnis bis zum aktivierten, getesteten und wieder zurückgerollten Image. Zielsystem ist [[Fedora Sway Atomic]], die Build-Toolchain wandert ins Image, [[Homebrew]] selbst zur Laufzeit nach `/var/home/linuxbrew`.
+Kompletter Durchlauf vom leeren Verzeichnis bis zum aktivierten, getesteten und wieder zurückgerollten Image. Zielsystem ist [[Fedora Sway Atomic]], die Build-Toolchain wandert ins Image, Homebrew selbst zur Laufzeit nach `/var/home/linuxbrew`.
 
 > [!abstract] Grundprinzip
 > **Ins Image (`/usr`, read-only):** Compiler, `make`, Basis-Werkzeuge – alles, was Homebrew zum Bauen braucht.
@@ -730,7 +730,7 @@ Quellen (github.com)  ──push──►  GitHub Actions  ──build+sign─�
 
 ## Verwandte Notizen
 
-- [[Homebrew auf Fedora Atomic]]
-- [[Bash Login-Shell und .bashrc]]
-- [[bootc Grundlagen]]
-- [[Coaching Fedora Sway Atomic]]
+- Homebrew auf Fedora Atomic
+- Bash Login-Shell und .bashrc
+- bootc Grundlagen
+- Coaching Fedora Sway Atomic

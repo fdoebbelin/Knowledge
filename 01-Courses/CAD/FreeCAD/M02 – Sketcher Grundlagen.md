@@ -278,7 +278,7 @@ Umschalten: ausgewählte Geometrie markieren, dann `Skizze → Sketcher-Geometri
 
 - [[M01 – FreeCAD Grundlagen]] – Navigation und Benutzeroberfläche
 - [[M03 – Sketcher Constraints]] – Nächster Schritt: Skizze vollständig bestimmen
-- [[Sketcher – Symbolleistenreferenz]] – Alle Sketcher-Werkzeuge im Überblick
+- [[Sketcher-Symbolreferenz]] – Alle Sketcher-Werkzeuge im Überblick
 - [[Cheat Sheet – Tastenkürzel]] – Kürzel für Geometriewerkzeuge (`G`, `L` usw.)
 - [[Cheat Sheet – Sketcher Constraints]] – Vorbereitung auf M03
-- [[Glossar FreeCAD#Skizze]] | [[Glossar FreeCAD#Bezugsebene (Datum Plane)]] | [[Glossar FreeCAD#Konstruktionsgeometrie]]
+- [[Glossar FreeCAD#Skizze (Sketch)]] | [[Glossar FreeCAD#Bezugsebene (Datum Plane)]] | [[Glossar FreeCAD#Konstruktionsgeometrie (Construction Geometry)]]

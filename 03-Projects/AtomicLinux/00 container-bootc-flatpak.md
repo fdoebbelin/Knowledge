@@ -16,7 +16,7 @@ schwierigkeit: mittel
 
 > [!abstract] Kurzfassung
 > **Container**, **bootc** und **Flatpak** stehen in direkter konzeptioneller Verbindung: Alle drei wenden das Prinzip der **Containerisierung und Isolierung** an – aber auf drei völlig unterschiedlichen Ebenen eines modernen Linux-Systems.
-> Zusammen bilden sie das Fundament für sogenannte **„Immutable" (unveränderliche) bzw. image-basierte Linux-Distributionen** wie [[Fedora Silverblue]], [[Fedora Kinoite]], [[Fedora Sway Atomic]] oder die Ansätze von Red Hat / CentOS („Image Mode").
+> Zusammen bilden sie das Fundament für sogenannte **„Immutable" (unveränderliche) bzw. image-basierte Linux-Distributionen** wie Fedora Silverblue, Fedora Kinoite, [[Fedora Sway Atomic]] oder die Ansätze von Red Hat / CentOS („Image Mode").
 > Das Ziel: **Dependency Hell** vermeiden und das System extrem ausfallsicher sowie leicht aktualisierbar machen.
 
 > [!info] Lernziele
@@ -245,8 +245,8 @@ Kombiniert man die drei Technologien, entsteht ein hochmodernes, modulares Syste
 
 ## Weiterführend
 
-- [[Fedora Sway Atomic – Setup]]
-- [[Immutable Distros – Vergleich CachyOS · KaOS · PikaOS · Fedora Atomic]]
-- [[Podman vs. Docker – Rootless Container]]
-- [[Distrobox & Toolbx – Entwickeln auf read-only Systemen]]
-- [[Schulungsflotte – bootc-Image-Workflow]]
+- [[Fedora Sway Atomic]]
+- Immutable Distros – Vergleich CachyOS · KaOS · PikaOS · Fedora Atomic
+- Podman vs. Docker – Rootless Container
+- Distrobox & Toolbx – Entwickeln auf read-only Systemen
+- Schulungsflotte – bootc-Image-Workflow

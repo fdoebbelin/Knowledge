@@ -22,7 +22,7 @@ cssclasses:
 # SDDM Login an Hyprland & Noctalia anpassen
 
 > [!abstract] Ziel
-> Den SDDM-Login-Screen optisch an [[Noctalia]] und [[Hyprland]] angleichen und den fehlenden Mauszeiger unter Wayland aktivieren. Als Cursor kommt **Bibata-Modern-Ice** zum Einsatz. Der Leitfaden deckt **Fedora** und **CachyOS** ab; nur Abschnitt 1 (Cursor-Installation) und die SELinux-Notiz in Abschnitt 2 sind distro-spezifisch.
+> Den SDDM-Login-Screen optisch an Noctalia und Hyprland angleichen und den fehlenden Mauszeiger unter Wayland aktivieren. Als Cursor kommt **Bibata-Modern-Ice** zum Einsatz. Der Leitfaden deckt **Fedora** und **CachyOS** ab; nur Abschnitt 1 (Cursor-Installation) und die SELinux-Notiz in Abschnitt 2 sind distro-spezifisch.
 
 > [!info] Voraussetzungen
 > - Hyprland + Noctalia auf Fedora (≥ 40) oder CachyOS
@@ -216,6 +216,6 @@ journalctl -u sddm -b 0 --no-pager | grep -iE "cursor|wayland|greeter"
 ## Siehe auch
 
 - [[Hyprland Konfiguration]]
-- [[Noctalia Shell]]
-- [[Fedora Setup]]
-- [[CachyOS Setup]]
+- Noctalia Shell
+- Fedora Setup
+- CachyOS Setup

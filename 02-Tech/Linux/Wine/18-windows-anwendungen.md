@@ -80,7 +80,7 @@ welcher Schicht FreeRDP landet.
 | **Containerfile** | **Richtige Wahl.** Reproduzierbar, flottenweit gleich, kein Sandbox-Ärger. Ein Paket, keine tiefen Abhängigkeiten außerhalb dessen, was ein Desktop-Image ohnehin hat. |
 | Homebrew | Möglich (`brew install freerdp`), aber FreeRDP ist **kein blattständiges Tool** — es will Audio (PipeWire), USB, Zwischenablage, Wayland. Verstößt gegen die Zwei-Schichten-Regel aus [[13-xps13-wsl-installation]]. |
 | Flatpak | **Von WinApps upstream ausdrücklich nicht empfohlen** — die Sandbox bricht Pfad-Weitergabe (`\\tsclient\home`), Drucker- und Geräteumleitung. Als *Test*-Vehikel brauchbar, nicht als Dauerlösung. |
-| `rpm-ostree install` | Nein. Bricht den `bootc upgrade`-Pfad ([[docs/01-erkenntnisse]]). |
+| `rpm-ostree install` | Nein. Bricht den `bootc upgrade`-Pfad (`docs/01-erkenntnisse`). |
 
 Ins Containerfile des `kvm/win11`-Moduls, neben die Virtualisierungspakete
 aus Notiz 11:
@@ -92,7 +92,7 @@ RUN dnf install -y freerdp libnotify netcat iproute dialog \
 ```
 
 Der `rpm -q`-Guard ist Pflicht — Exit 0 von dnf beweist keine Installation
-(`Obsoletes`-Falle, [[docs/01-erkenntnisse]]).
+(`Obsoletes`-Falle, `docs/01-erkenntnisse`).
 
 Version prüfen, **bevor** irgendetwas anderes passiert:
 
@@ -259,7 +259,7 @@ swaymsg -t get_tree | from json
 
 ## A.7 — HiDPI: der wahrscheinlichste Stolperstein
 
-Auf dem Yoga 920 läuft `scale 2` ([[docs/05-hidpi-und-monitore]]). Eine
+Auf dem Yoga 920 läuft `scale 2` (`docs/05-hidpi-und-monitore`). Eine
 RDP-Sitzung weiß davon nichts.
 
 > [!caution] `RDP_SCALE` kennt nur drei Werte
@@ -348,7 +348,7 @@ let progdir = ($nu.home-path | path join "Programme")
 mkdir $progdir
 flatpak override --user com.usebottles.bottles $"--filesystem=($progdir)"
 
-# Wayland-nativ, konsistent mit [[docs/05-hidpi-und-monitore]]
+# Wayland-nativ, konsistent mit `docs/05-hidpi-und-monitore`
 flatpak override --user com.usebottles.bottles --socket=wayland
 ```
 
@@ -446,7 +446,7 @@ nach der anderen ausschließen.
 
 - [[11-kvm-windows11-vm]] — die VM, auf der Weg A aufsetzt
 - [[12-dateifreigabe-host-gast]] — virtiofs, Gegenstück zu `\\tsclient\home`
-- [[docs/05-hidpi-und-monitore]] — Skalierungsgrundsätze, Basis für A.7
+- `docs/05-hidpi-und-monitore` — Skalierungsgrundsätze, Basis für A.7
 - [[office-paket-hyprland-vergleich]] — LibreOffice als Alternative zu
   Word-über-RDP
-- [[docs/01-erkenntnisse]] — warum nichts per `rpm-ostree install` kommt
+- `docs/01-erkenntnisse` — warum nichts per `rpm-ostree install` kommt

@@ -67,6 +67,7 @@ Nichts. Eingeordnet wurden bisher:
 - [[2026-09-22 Vim Helix Spickzettel Tutorial]] → `02-Tech/Terminal/Helix/`, PDFs nach `_resources/`
 - [[Helix-Leitfaden]] → `02-Tech/Terminal/Helix/`, acht SVG-Grafiken nach `_resources/`
 - [[Helix-Spickzettel SVG in Inkscape bearbeiten]] → `02-Tech/Terminal/Helix/`, editierbare SVG/PDF und `schriften/` nach `_resources/`
-- Yazi-Spickzettel (neue PDF + zwei SVG-Seiten) → `02-Tech/Terminal/Yazi/_resources/`, alte PDF ersetzt; [[Yazi-Leitfaden]] neu angelegt
+- Yazi-Spickzettel (neue PDF + zwei SVG-Seiten) → `02-Tech/Terminal/Yazi/_resources/`, alte PDF ersetzt; [[02-Leitfaden zum Spickzettel]] neu angelegt
 - [[2026-09-23 Monitoranordnung unter Sway konfigurieren]] → `02-Tech/Linux/Fedora/`
+- [[04-Türöffner (Coaching)]] → `02-Tech/Terminal/Yazi/`; dabei alle Yazi-Notizen auf `nn-Name` umbenannt
 - Helix-Cookbook Kapitel 1 (Navigation und Sprünge) → `02-Tech/Terminal/Helix/CookBook/`, dabei [[Helix-Leitfaden]] auf die acht Grafik-Abschnitte gekürzt und die übrigen Tabellen auf neun weitere Cookbook-Kapitel verteilt, siehe [[Helix-Cookbook]]

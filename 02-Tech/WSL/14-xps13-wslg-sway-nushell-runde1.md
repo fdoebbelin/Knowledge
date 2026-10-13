@@ -46,7 +46,7 @@ bestätigt.
 ### 1.2 Ursache: Parse-Reihenfolge, nicht Tastatur 🟡
 
 `/etc/sway/config` enthält die Include-Direktive in **Zeile 228**
-([[01-erkenntnisse#Das dreistufige Include-System]]). Alle Default-`bindsym`
+(`01-erkenntnisse` (Das dreistufige Include-System)). Alle Default-`bindsym`
 der Hauptkonfiguration stehen davor, `set $mod Mod4` ganz oben.
 
 **Sway expandiert Variablen zum Parse-Zeitpunkt.** Ein `set $mod Mod1` im
@@ -146,7 +146,7 @@ swaymsg reload
 
 > [!note] Voraussetzung prüfen: rofi
 > `sway-config-fedora` zieht rofi als Abhängigkeit, aber die Paketliste in
-> [[13-xps13-wsl-installation#Schritt 5]] nennt es nicht explizit:
+> [[13-xps13-wsl-installation#Schritt 5 — Sway unter WSLg]] nennt es nicht explizit:
 > ```nu
 > [rofi-wayland foot] | each {|p| {paket: $p, da: ((rpm -q $p | complete).exit_code == 0)} }
 > ```
@@ -206,7 +206,7 @@ Fenster passt nicht. Korrigiert auf `1920x1200` (siehe Drop-in oben).
 ### 2.3 Entscheidung: ganzzahlige Skalierung unter Pixman 🟡
 
 > [!important] Fraktionale Skalierung kostet unter Software-Rendering
-> Ohne Render-Node ([[01-erkenntnisse#Umgebungsbefunde WSL]]) läuft alles
+> Ohne Render-Node (`01-erkenntnisse` (Umgebungsbefunde WSL)) läuft alles
 > über Pixman. `scale 1.5` erzwingt einen Resampling-Schritt über die
 > volle Fläche — auf 2880×1800 spürbar. Regel: `scale` ganzzahlig halten
 > (`1` oder `2`); liegt der Wunsch dazwischen, stattdessen Schriftgrößen
@@ -228,7 +228,7 @@ open --raw /tmp/wslg-probe.png | bytes at 16..24 | into int --endian big
 - Breite 1440 → Windows skaliert vor → `scale 1` korrekt, `resolution`
   auf die *logische* Größe
 
-Der Befund gehört anschließend nach [[05-hidpi-und-monitore]].
+Der Befund gehört anschließend nach `05-hidpi-und-monitore`.
 
 ---
 
@@ -243,7 +243,7 @@ sudo hx …  →  sudo: hx: command not found
 Nicht Helix, sondern `secure_path` in `/etc/sudoers`: sudo ersetzt `PATH`
 durch eine feste Liste ohne `/home/linuxbrew/.linuxbrew/bin`. Direkte
 Konsequenz der Zwei-Schichten-Regel aus
-[[13-xps13-wsl-installation#Die Zwei-Schichten-Regel]].
+[[13-xps13-wsl-installation#Die Zwei-Schichten-Regel: dnf unten, brew oben]].
 
 ### 3.2 Entscheidung: `sudoedit`, nicht Pfad-Umgehung 🟡
 
@@ -582,7 +582,7 @@ scope modules | select name commands | where name =~ "noctarow"
       Alt+Enter, startet rofi auf Alt+D? (→ 1.4 von 🟡 auf ✅)
 - [ ] `sway-start` erster echter Lauf + `sway-log` gegenlesen
 - [ ] `grim`-Messung: meldet WSLg native oder vorskalierte Pixel? (→ 2.4;
-      Ergebnis nach [[05-hidpi-und-monitore]])
+      Ergebnis nach `05-hidpi-und-monitore`)
 - [ ] CapsLock-als-Super mit `wev` verifizieren (→ 1.6)
 - [ ] `sudoedit`-Weg einmal durchspielen; falls `vi` startet:
       `env_editor` prüfen (→ 3.2)

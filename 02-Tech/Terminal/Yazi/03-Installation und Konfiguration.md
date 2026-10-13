@@ -4,6 +4,11 @@ aliases:
   - Yazi Installation
   - Yazi Setup
   - Yazi Plugins
+  - Yazi – Installation und Konfiguration
+  - Yazi – Installation und Plugins
+  - Yazi – kommentierter Leitfaden
+  - Yazi – Markdown-Vorschau
+  - Yazi – Mermaid-Diagramme
 tags:
   - yazi
   - terminal
@@ -23,7 +28,7 @@ type: anleitung
 > [!abstract] Worum es geht
 > Diese Notiz ist die vollständige Setup-Referenz für Yazi: Installation über **Homebrew** auf **Fedora Sway Atomic**, Hilfsprogramme, das Plugin-System mit `ya pkg`, alle eingerichteten Plugins samt Markdown- und Mermaid-Vorschau, das Solarized-Light-Farbschema, die vollständige Beispielkonfiguration und die Übertragung auf einen weiteren Rechner.
 >
-> Was Yazi überhaupt ist und wie die Bedienung grundsätzlich funktioniert: [[Yazi – Einführung]]. Befehlsreferenz mit Grafiken: [[Yazi-Leitfaden]].
+> Was Yazi überhaupt ist und wie die Bedienung grundsätzlich funktioniert: [[01-Einführung]]. Befehlsreferenz mit Grafiken: [[02-Leitfaden zum Spickzettel]].
 
 > [!info] Geltungsbereich
 > - **System:** ausschließlich Fedora Sway Atomic
@@ -685,7 +690,7 @@ ya pkg install         # Alles aus package.toml installieren
 
 | Plugin                         | Zweck                                                  | Taste                | Details |
 | ------------------------------- | -------------------------------------------------------- | --------------------- | ------- |
-| `yazi-rs/plugins:piper`         | Shell-Kommando als Vorschau (Markdown, CSV, Notebooks)    | –                      | [[#6.1 piper – Markdown-Vorschau]], [[#6.2 piper – CSV Notebooks und reStructuredText]] |
+| `yazi-rs/plugins:piper`         | Shell-Kommando als Vorschau (Markdown, CSV, Notebooks)    | –                      | [[#6.1 piper – Markdown-Vorschau]], [[#6.2 piper – CSV, Notebooks und reStructuredText]] |
 | `yazi-rs/plugins:toggle-pane`   | Vorschau maximieren / wiederherstellen                    | `T`                    | [[#6.3 toggle-pane – Vorschau maximieren]] |
 | `yazi-rs/plugins:git`           | Git-Status pro Datei in der Liste                          | –                      | [[#6.4 git – Status pro Datei]] |
 | `ahkohd/eza-preview`            | Verzeichnisvorschau als Baum                                | `e t`, `e +`, `e -`   | [[#6.5 eza-preview – Verzeichnisse als Baum]] |
@@ -1010,7 +1015,7 @@ Abschließend prüfen: `ya pkg list` muss sieben Plugins zeigen (`piper`, `toggl
 
 ## Verwandt
 
-- [[Yazi – Einführung]] – was Yazi ist und wie das Bedienkonzept funktioniert
-- [[Yazi-Leitfaden]] – Befehlsreferenz mit Grafiken zum Spickzettel
+- [[01-Einführung]] – was Yazi ist und wie das Bedienkonzept funktioniert
+- [[02-Leitfaden zum Spickzettel]] – Befehlsreferenz mit Grafiken zum Spickzettel
 - [[00 Werkzeuge ins HOME-Verzeichnis installieren]] – warum brew-Programme in Toolbx fehlen
 - [[Nushell Editor setzen]] – Helix als `$EDITOR`

@@ -2,7 +2,7 @@
 title: "Writing interpreter in Rust (part 1)"
 source: "https://p3ld3v.medium.com/writing-interpreter-in-rust-using-grmtools-7a6a0458b99f"
 author:
-  - "[[Pavel Durov]]"
+  - "Pavel Durov"
 published: 2023-10-26
 created: 2025-04-24
 description: "This article overviews the process of writing an interpreter with Rust programming language. We will use the grmtools Rust crate to help with the parsing. We will define tokens of our language and…"

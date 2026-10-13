@@ -22,7 +22,7 @@ Aktive 2D-Zeichenebene im 3D-Raum, auf der neue *Draft*- und *BIM*-Objekte entst
 > Wenn Wände oder andere BIM-Objekte an der falschen Position entstehen, ist meist die Arbeitsebene nicht korrekt gesetzt. Als Arbeitsritual etablieren: erst Arbeitsebene prüfen, dann zeichnen.
 
 ### Assembly (Baugruppe)
-→ siehe [[#Baugruppe]]
+→ siehe [[#Baugruppe (Assembly)]]
 
 ### Aufmaß (Pad)
 Extrusion einer geschlossenen 2D-Skizze entlang einer Achse (meist Z) zu einem Volumenkörper. Grundoperation der *Part Design*-Workbench. Aufruf: `Part Design → Aufmaß`. Gegenstück: [[#Tasche (Pocket)]].
@@ -82,14 +82,14 @@ Geometrische oder maßliche Einschränkung, die Freiheitsgrade einer Skizze redu
 - **Geometrische Constraints:** Legen Beziehungen fest (z. B. Parallel, Rechtwinklig, Koinzident)
 - **Maßliche Constraints:** Legen Werte fest (z. B. Abstand = 20 mm, Radius = 5 mm)
 
-Eine vollständig bestimmte Skizze hat 0 verbleibende [[#Freiheitsgrad (DOF)]].
+Eine vollständig bestimmte Skizze hat 0 verbleibende [[#DOF (Degrees of Freedom)]].
 
 ---
 
 ## D
 
 ### DOF (Degrees of Freedom)
-→ siehe [[#Freiheitsgrad (DOF)]]
+→ siehe [[#DOF (Degrees of Freedom)]]
 
 ### Draft
 Workbench für präzises 2D-Zeichnen im 3D-Raum. Bietet Linien, Polylinien, Rechtecke, Kreise sowie Beschriftungs- und Bemaßungswerkzeuge. Im Aufbaukurs Innenarchitektur als Basis für Grundrissgeometrie und als Quelle für BIM-Wandkonturen eingesetzt. Ergänzt die *BIM*-Workbench um freie Zeichenwerkzeuge.
@@ -141,7 +141,7 @@ Horizontale Schnittdarstellung eines Gebäudes oder Raums in einer definierten H
 ## H
 
 ### Hilfslinie
-→ siehe [[#Konstruktionsgeometrie]]
+→ siehe [[#Konstruktionsgeometrie (Construction Geometry)]]
 
 ---
 
@@ -166,7 +166,7 @@ Geometrischer Constraint, der zwei Punkte auf dieselbe Position zwingt. Häufigs
 Begriff mit workbench-spezifischer Bedeutung:
 
 - **In der *Assembly*-Workbench:** Einzelteil (Body oder Sub-Assembly) innerhalb einer Baugruppe. Wird über `Assembly → Komponente einfügen` eingebunden.
-- **In der *BIM*-Workbench:** BIM-Objekt mit definierten semantischen Eigenschaften (IFC-Typ, Material, Beschreibung), das in [[#Stückliste (Bill of Materials)]]n und Flächenberechnungen erscheint. Erstellt über `BIM → Komponente erstellen`.
+- **In der *BIM*-Workbench:** BIM-Objekt mit definierten semantischen Eigenschaften (IFC-Typ, Material, Beschreibung), das in [[#Stückliste (Bill of Materials, BOM)]]n und Flächenberechnungen erscheint. Erstellt über `BIM → Komponente erstellen`.
 
 ### Konstruktionsgeometrie (Construction Geometry)
 Hilfselemente in einer Skizze, die nicht zur Kontur gehören und bei der 3D-Operation ignoriert werden. Dargestellt als blaue gestrichelte Linie. Umschalten: `Skizze → Sketcher-Geometrien → Konstruktionsmodus umschalten`. Nützlich als Referenz für Constraints oder Symmetrieachsen.
@@ -242,7 +242,7 @@ Vordefiniertes Parameterschema für ein Standardbauteil in der *BIM*-Workbench (
 → siehe [[#Constraint (Randbedingung)]]
 
 ### Raum (Space)
-BIM-Objekt, das ein abgeschlossenes Raumvolumen repräsentiert und automatisch Fläche, Umfang und Volumen berechnet. Die Raumkontur wird an den Wandinnenkanten ausgerichtet, um Nettoflächen (lichte Maße) zu erhalten. Aufruf: `BIM → Raum`. Bildet die Grundlage für [[#Stückliste (Bill of Materials)|Stücklisten]] und Flächennachweise.
+BIM-Objekt, das ein abgeschlossenes Raumvolumen repräsentiert und automatisch Fläche, Umfang und Volumen berechnet. Die Raumkontur wird an den Wandinnenkanten ausgerichtet, um Nettoflächen (lichte Maße) zu erhalten. Aufruf: `BIM → Raum`. Bildet die Grundlage für [[#Stückliste (Bill of Materials, BOM)|Stücklisten]] und Flächennachweise.
 
 > [!info] Brutto- vs. Nettofläche
 > FreeCAD unterscheidet Bruttofläche (inkl. Wandstärken) und Nettofläche (lichte Maße). Für Wohnflächenberechnungen nach WoFlV ist stets die Nettofläche relevant.
@@ -264,7 +264,7 @@ Virtueller Schnitt durch das 3D-Modell, aus dem eine 2D-Ansicht abgeleitet wird.
 Tabellenbereich am Rand einer technischen Zeichnung mit Metadaten: Teilename, Maßstab, Zeichnungsnummer, Bearbeiter, Datum, Werkstoff. In *TechDraw* als Teil der Seitenvorlage definiert.
 
 ### Sketch
-→ siehe [[#Skizze]]
+→ siehe [[#Skizze (Sketch)]]
 
 ### Sketcher
 Workbench für die Erstellung und Bearbeitung von 2D-Skizzen. Basis für alle *Part Design*-Operationen. Skizzen werden auf einer [[#Bezugsebene (Datum Plane)]] erstellt.

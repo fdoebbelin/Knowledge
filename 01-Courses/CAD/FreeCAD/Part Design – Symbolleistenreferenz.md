@@ -151,7 +151,7 @@
 
 ## Querverweise
 
-- [[Sketcher – Symbolleistenreferenz]]
+- [[Sketcher-Symbolreferenz]]
 - [[Cheat Sheet – Tastenkürzel]]
 - [[M04 – Part Design Grundlagen]]
 - [[M05 – Part Design Vertiefung]]

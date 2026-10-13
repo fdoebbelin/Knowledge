@@ -25,22 +25,22 @@ Dieser Leitfaden erklärt die Grafiken und Befehlsblöcke des zweiseitigen Yazi-
 > - Spickzettel: [[yazi-spickzettel.pdf]] (Seite 1: Grundlagen, Navigation & Dateien; Seite 2: Suchen, Tabs, Sortieren & Konfiguration)
 > - Die beiden Seiten liegen zusätzlich einzeln als SVG in `_resources/` und werden unten eingebettet.
 > - Schreibweise: `Strg` = Ctrl, **orange** Tasten/Kästen = eigene Belegung (Plugins/Skripte), nicht Yazi-Standard.
-> - Was Yazi ist und wie das Bedienkonzept funktioniert: [[Yazi – Einführung]]. Installation, Plugins und Konfiguration: [[Yazi – Installation und Konfiguration]].
+> - Was Yazi ist und wie das Bedienkonzept funktioniert: [[01-Einführung]]. Installation, Plugins und Konfiguration: [[03-Installation und Konfiguration]].
 
 > [!tip] Vor dem Start
 > `~` oder `F1` zeigt in Yazi selbst alle Tastenbelegungen der installierten Version – die verlässlichste Referenz, wenn etwas abweicht.
 
 ## Inhalt
 
-1. [[#1 Das Grundprinzip Auswahl → Aktion]]
-2. [[#2 Die Oberfläche Drei Spalten]]
+1. [[#1 Das Grundprinzip: Auswahl → Aktion]]
+2. [[#2 Die Oberfläche: Drei Spalten]]
 3. [[#3 Navigation]]
 4. [[#4 Auswählen und markieren]]
-5. [[#5 Kopieren Verschieben Löschen]]
+5. [[#5 Kopieren, Verschieben, Löschen]]
 6. [[#6 Dateien anlegen und umbenennen]]
 7. [[#7 Yazi starten und verlassen]]
 8. [[#8 Suchen und Springen nach Reichweite]]
-9. [[#9 Präfixtasten g m c t e]]
+9. [[#9 Präfixtasten: g · , · m · c · t · e]]
 10. [[#10 Tabs]]
 11. [[#11 Pfade in die Zwischenablage]]
 12. [[#12 Zeilenmodus und Sortieren]]
@@ -228,7 +228,7 @@ Dieses Drei-Spalten-Layout (Miller Columns) ist die Grundlage für alles Weitere
 | `z` / `Z` | zu Datei/Ordner (`fzf`) / häufigem Ordner (`zoxide`) springen |
 
 > [!warning] Voraussetzung
-> `s`, `S`, `z`, `Z` brauchen die externen Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide` – Installation in [[Yazi – Installation und Konfiguration#3 Hilfsprogramme]].
+> `s`, `S`, `z`, `Z` brauchen die externen Programme `fd`, `ripgrep`, `fzf` bzw. `zoxide` – Installation in [[03-Installation und Konfiguration#3 Hilfsprogramme]].
 
 > [!question]- Übung 8.1 – Welcher Befehl?
 > Du suchst in allen Unterordnern eine Datei, die den Text `TODO` enthält, weißt aber nicht, wie sie heißt.
@@ -238,7 +238,7 @@ Dieses Drei-Spalten-Layout (Miller Columns) ist die Grundlage für alles Weitere
 
 ---
 
-## 9 Präfixtasten: `g` `,` `m` `c` `t` `e`
+## 9 Präfixtasten: g · , · m · c · t · e
 
 Sechs Tasten öffnen jeweils ein Menü mit Folgetasten – Yazi blendet die Möglichkeiten nach dem Druck der ersten Taste selbst ein.
 
@@ -362,7 +362,7 @@ Details zu jedem Präfix stehen in den folgenden Abschnitten.
 > padding = { open = "", close = "" }
 > ```
 
-Ausführliche Fassung mit allen Optionen: [[Yazi – Installation und Konfiguration#4 Konfigurationsdateien – Übersicht]].
+Ausführliche Fassung mit allen Optionen: [[03-Installation und Konfiguration#4 Konfigurationsdateien – Übersicht]].
 
 ### Shell-Wrapper `y`
 
@@ -418,7 +418,7 @@ ya pkg upgrade           # aktualisieren
 ya pkg list               # anzeigen
 ```
 
-Einrichtung im Detail: [[Yazi – Installation und Konfiguration#5 Das Plugin-System]].
+Einrichtung im Detail: [[03-Installation und Konfiguration#5 Das Plugin-System]].
 
 ### Aufgaben-Fenster (`w`)
 
@@ -475,6 +475,6 @@ Diese vier Kombinationen stehen unten auf Seite 2 des Spickzettels. Sie zeigen, 
 ## Verwandt
 
 - [[yazi-spickzettel.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
-- [[Yazi – Einführung]] – was Yazi ist und wie das Bedienkonzept funktioniert
-- [[Yazi – Installation und Konfiguration]] – Installation, Hilfsprogramme, Plugin-System, Markdown-/Mermaid-Vorschau, vollständige Beispielkonfiguration
+- [[01-Einführung]] – was Yazi ist und wie das Bedienkonzept funktioniert
+- [[03-Installation und Konfiguration]] – Installation, Hilfsprogramme, Plugin-System, Markdown-/Mermaid-Vorschau, vollständige Beispielkonfiguration
 - [[Helix-Leitfaden]] – dasselbe Auswahl-→-Aktion-Prinzip, für den Editor erklärt

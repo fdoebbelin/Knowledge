@@ -758,8 +758,8 @@ Der aktive Prompt bleibt zweizeilig, alle vorherigen schrumpfen auf das reine Ei
 
 ## 12 Weiterführend
 
-- [[Nushell Grundlagen]]
-- [[Starship Module Referenz]]
-- [[Nerd Fonts einrichten]]
+- Nushell Grundlagen
+- Starship Module Referenz
+- Nerd Fonts einrichten
 - Offizielle Konfigurationsreferenz: `https://starship.rs/config/`
 - JSON-Schema für Autovervollständigung im Editor: `https://starship.rs/config-schema.json`
