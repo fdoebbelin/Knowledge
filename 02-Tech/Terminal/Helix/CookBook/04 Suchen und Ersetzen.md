@@ -12,7 +12,7 @@ type: anleitung
 ---
 
 > [!info] Zum Cookbook
-> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]]. Helix kennt kein `:%s///` – stattdessen wird gesucht, ausgewählt und geändert. Siehe auch [[Migrating from Vim]] für die Vim-Gegenüberstellung.
+> Übersicht aller Kapitel: [[02-Cookbook|Helix-Cookbook]]. Helix kennt kein `:%s///` – stattdessen wird gesucht, ausgewählt und geändert. Siehe auch [[13 Für Vim-Umsteiger]] für die Vim-Gegenüberstellung.
 
 ## Suchen
 
@@ -32,6 +32,19 @@ type: anleitung
 >
 > Ohne `%` wirkt das nur innerhalb der aktuellen Auswahl, etwa in einer mit `mi{` gewählten Funktion (siehe [[02 Auswahl-Grundlagen]]).
 
+> [!example]- Beispiel: `name` überall durch `user` ersetzen
+> Ausgangstext:
+> ```text
+> name = alice
+> name = bob
+> name = carol
+> ```
+> 1. `%` – ganze Datei auswählen
+> 2. `s` `name` `⏎` – drei Cursor, einer pro Vorkommen
+> 3. `c` `user` `Esc` – alle drei gleichzeitig ersetzt
+>
+> Der Unterschied zu Vims `:%s/name/user/g`: Alle Treffer sind schon **markiert und sichtbar**, bevor etwas geändert wird – Tippfehler im Suchmuster fallen sofort auf.
+
 ## Rezept: Wort unter dem Cursor suchen
 
 > [!example] `miw * n`
@@ -48,4 +61,4 @@ type: anleitung
 - [[02-Cookbook|Helix-Cookbook]] – Übersicht aller Kapitel, Lernpfad und Übungsdatei
 - [[05 Mehrfachauswahl]] – `s` ist zugleich der zentrale Mehrfachauswahl-Befehl
 - [[09 Code und LSP]] – projektweite Suche nach Symbolen statt nach Text
-- [[Migrating from Vim]] – `:%s/a/b/g` auf Helix übertragen
+- [[13 Für Vim-Umsteiger]] – `:%s/a/b/g` auf Helix übertragen

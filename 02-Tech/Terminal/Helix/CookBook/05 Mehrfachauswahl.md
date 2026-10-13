@@ -52,6 +52,29 @@ Mehrfach-Cursor sind in Helix kein Zusatz, sondern Grundwerkzeug. Die zentrale I
 > [!example] Werte ausrichten mit `&`
 > Bei `a = 1`, `abc = 2`, `ab = 3` untereinander: alle drei Zeilen mit `x` `x` `x` wählen, `s` `=` `⏎` wählt die Gleichheitszeichen, `&` richtet sie in einer Spalte aus.
 
+> [!example] Jede Zeile am Ende ergänzen
+> ```text
+> apfel
+> birne
+> kirsche
+> ```
+> 1. `%` ganze Datei wählen, dann `Alt-s` – ein Cursor pro Zeile.
+> 2. `A` (Anfügen am Zeilenende), tippe `,`, `Esc`.
+> 3. Jede Zeile endet jetzt mit einem Komma – ohne Makro und ohne jede Zeile einzeln anzufassen.
+
+> [!example] Nur passende Zeilen behalten, mit `K`
+> ```text
+> FEHLER: Platte voll
+> INFO: alles ok
+> FEHLER: Netzwerk weg
+> INFO: Start
+> ```
+> 1. `%` alles, `Alt-s` – ein Cursor pro Zeile.
+> 2. `K`, dann `FEHLER` tippen, `Enter` – nur die FEHLER-Zeilen bleiben ausgewählt, die restlichen Cursor verschwinden.
+> 3. Jetzt z. B. `d` zum Löschen oder `Space y` zum Kopieren der gefilterten Zeilen.
+>
+> `Alt-K` kehrt die Filterrichtung um: entfernt die passenden Auswahlen statt sie zu behalten.
+
 ## Rezept: Blockauswahl simulieren
 
 > [!example] `C C C → l l → c`

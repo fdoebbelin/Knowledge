@@ -1,92 +1,79 @@
-Perfekt 👍 – ich schreibe dir jetzt eine **komplette Anleitung für Windows PowerShell**, die Helix in dein Home-Verzeichnis unter
-
-```
-%USERPROFILE%\src\helix
-```
-
-installiert und gleich alles einrichtet.
-
+---
+title: "Helix aus Quelltext bauen (Windows on ARM, PowerShell)"
+aliases:
+  - Helix aus Quelltext bauen
+tags:
+  - helix
+  - windows
+  - powershell
+created: 2026-10-13
+status: active
+type: anleitung
+system: Windows on ARM
 ---
 
-# 📖 Anleitung: Helix aus Quelltext bauen (Windows on ARM, PowerShell)
+Für Windows on ARM oder wenn Scoop kein aktuelles Paket hat: Helix selbst aus dem Quelltext bauen, installiert ins Home-Verzeichnis unter `%USERPROFILE%\src\helix`.
 
-### 1. Ordnerstruktur vorbereiten
-
-Öffne PowerShell und lege das `src`-Verzeichnis an:
+## 1. Ordnerstruktur vorbereiten
 
 ```powershell
 mkdir $env:USERPROFILE\src -Force
 cd $env:USERPROFILE\src
 ```
 
-### 2. Helix-Quelltext klonen
+## 2. Quelltext klonen
 
 ```powershell
 git clone https://github.com/helix-editor/helix
 cd helix
 ```
 
-### 3. Helix bauen und installieren
+## 3. Bauen und installieren
 
 ```powershell
 cargo install --path helix-term --locked
 ```
 
-👉 Ergebnis:  
-Das fertige Binary liegt in
+Ergebnis: Das fertige Binary liegt unter `%USERPROFILE%\.cargo\bin\hx.exe`.
 
-```
-%USERPROFILE%\.cargo\bin\hx.exe
-```
+## 4. `HELIX_RUNTIME` setzen
 
-### 4. HELIX_RUNTIME setzen
-
-Helix benötigt den `runtime/`-Ordner aus dem Repo.  
-Dafür setzen wir die Umgebungsvariable **dauerhaft** (gilt für alle neuen Shells):
+Helix braucht zusätzlich den `runtime/`-Ordner aus dem Repository. Dauerhaft für alle neuen Shells:
 
 ```powershell
 setx HELIX_RUNTIME "$env:USERPROFILE\src\helix\runtime"
 ```
 
-### 5. Installation testen
+## 5. Installation prüfen
 
-Neue PowerShell öffnen und prüfen:
+Neue PowerShell öffnen, dann:
 
 ```powershell
 hx --health
 ```
 
-Wenn alles klappt, bekommst du einen Statusbericht mit Infos über Runtime, Syntaxgrammatiken, LSP etc.
+Liefert bei Erfolg einen Statusbericht zu Runtime, Syntaxgrammatiken und LSP.
 
----
+## Nützliche Zusatzbefehle
 
-## 🔧 Nützliche Zusatzbefehle
+```powershell
+hx --grammar fetch
+hx --grammar build
+```
 
-- Grammatikdateien neu laden:
-    
-    ```powershell
-    hx --grammar fetch
-    hx --grammar build
-    ```
-    
-- Automatisches Bauen der Grammatiken deaktivieren:
-    
-    ```powershell
-    setx HELIX_DISABLE_AUTO_GRAMMAR_BUILD 1
-    ```
-    
+Automatisches Bauen der Grammatiken deaktivieren:
 
----
+```powershell
+setx HELIX_DISABLE_AUTO_GRAMMAR_BUILD 1
+```
 
-Damit bist du startklar:
+## Ergebnis
 
-- Quellcode liegt unter `src\helix`
-    
-- Binary unter `.cargo\bin\hx.exe`
-    
-- Runtime ist per `HELIX_RUNTIME` registriert.
-    
+- Quellcode liegt unter `src\helix`
+- Binary unter `.cargo\bin\hx.exe`
+- Runtime ist per `HELIX_RUNTIME` registriert
 
----
+## Verwandt
 
-👉 Soll ich dir aus diesen Schritten auch gleich ein **fertiges PowerShell-Skript** schreiben, das du einfach nur ausführen musst und alles automatisch erledigt?
+- [[03-Installation]] – Windows (Scoop), Linux, Startkonfiguration
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – Bedienung

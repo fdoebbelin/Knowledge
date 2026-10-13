@@ -1,58 +1,69 @@
-Das ist der klassische „Henne-Ei“-Moment: Du möchtest die Konfiguration mit einem Editor öffnen, aber Nushell weiß noch nicht, dass **Helix** dein Auserwählter ist.
-
-Da `config env` gerade nicht funktioniert, weil der Link zum Editor fehlt, gehen wir den direkten Weg über die Nushell-Befehle, um das dauerhaft zu fixen.
-
-### 1. Den Editor in der Umgebung setzen
-
-Tippe diesen Befehl direkt in dein Terminal ein. Er öffnet die Datei `env.nu` (wo Umgebungsvariablen hingehören) direkt mit Helix, indem wir den Programmnamen explizit davor schreiben:
-
-```nushell
-helix $nu.env-path
-```
-
-### 2. Die Variablen eintragen
-
-Scrolle ans Ende der Datei und füge diese zwei Zeilen hinzu:
-
-```nushell
-$env.EDITOR = "helix"
-$env.VISUAL = "helix"
-```
-
-_Speichern und Schließen: Drücke `Esc`, tippe `:wq` und drücke `Enter`._
-
-### 3. Den "Buffer Editor" in der Config setzen
-
-Nushell hat eine eigene Einstellung für den Editor, der bei Tastenkombinationen genutzt wird. Das behebt genau deine Warnmeldung. Tippe:
-
-```nushell
-helix $nu.config-path
-```
-
-Suche in der Datei nach dem Bereich `buffer_editor` (oder scrolle einfach nach ganz unten) und füge dies hinzu:
-
-```nushell
-$env.config = ($env.config | upsert buffer_editor "helix")
-```
-
-_Wieder speichern und schließen mit `Esc`, `:wq`, `Enter`._
-
+---
+title: "Helix als Editor in Nushell setzen"
+aliases:
+  - Nushell Editor setzen
+tags:
+  - helix
+  - nushell
+  - terminal
+created: 2026-10-13
+status: active
+type: anleitung
 ---
 
-### 4. Aktivieren
+Henne-Ei-Moment: Die Konfiguration soll mit Helix geöffnet werden, aber Nushell weiß noch nicht, dass `hx` der gewählte Editor ist. `config env`/`config nu` scheitern deshalb zunächst am fehlenden Editor-Link. Lösung: die Nushell-Befehle direkt verwenden, dann dauerhaft eintragen.
 
-Damit die Änderungen sofort greifen, ohne das Terminal neu zu starten, tippe:
+> [!warning] Programmname ist `hx`, nicht `helix`
+> Helix heißt als ausführbares Programm `hx` – auch wenn das Projekt selbst „Helix“ heißt. `helix …` als Befehl existiert nicht, außer man hat selbst einen Alias angelegt.
 
-```nushell
+## 1. Editor in der Umgebung setzen
+
+Öffnet `env.nu` (dort gehören Umgebungsvariablen hin) direkt mit Helix, indem der Programmname vorangestellt wird:
+
+```nu
+hx $nu.env-path
+```
+
+Am Ende der Datei ergänzen:
+
+```nu
+$env.EDITOR = "hx"
+$env.VISUAL = "hx"
+```
+
+Speichern und schließen: `Esc`, `:wq`, `Enter`.
+
+## 2. Buffer-Editor in der Config setzen
+
+Nushell hat eine eigene Einstellung für den Editor, der bei Tastenkombinationen (z. B. Mehrzeilen-Bearbeitung) genutzt wird:
+
+```nu
+hx $nu.config-path
+```
+
+In der Datei nach `buffer_editor` suchen (oder ans Ende scrollen) und ergänzen:
+
+```nu
+$env.config = ($env.config | upsert buffer_editor "hx")
+```
+
+Wieder speichern und schließen: `Esc`, `:wq`, `Enter`.
+
+## 3. Aktivieren
+
+Damit die Änderungen sofort greifen, ohne das Terminal neu zu starten:
+
+```nu
 exec nu
 ```
 
-**Jetzt funktioniert es:**
+`config env` bzw. `config nu` öffnen die jeweilige Datei jetzt direkt in Helix.
 
-Wenn du nun `config env` oder `config nu` eingibst, öffnet sich Helix sofort im „Vibe“-Modus.
+> [!tip] Unter Windows
+> Meldet Windows, dass es `hx` nicht findet: einmal ein neues Terminal öffnen, damit der PATH nach der Installation aktualisiert ist (siehe [[03-Installation]]). Hilft das nicht, den vollständigen Pfad statt `"hx"` eintragen, z. B. `"C:\Program Files\Helix\hx.exe"`.
 
-**Pro-Tipp für Windows:**
+## Verwandt
 
-Falls Windows meckert, dass es `hx` nicht finden kann, stelle sicher, dass du Helix einmal in einem neuen Terminal gestartet hast, damit der Pfad (PATH) aktualisiert wurde. Wenn alle Stricke reißen, schreibe statt `"hx"` den kompletten Pfad in die Config (z.B. `"C:\Program Files\Helix\hx.exe"`).
-
-Klappt das Öffnen der Config jetzt reibungslos?
+- [[03-Installation]] – Helix installieren
+- [[sudoedit]] – Helix als `$SUDO_EDITOR`
+- [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – Bedienung

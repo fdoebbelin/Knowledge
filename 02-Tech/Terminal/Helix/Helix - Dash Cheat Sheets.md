@@ -1,14 +1,24 @@
 ---
-title: "Helix - Dash Cheat Sheets"
+title: "Helix – Dash Cheat Sheets"
+aliases:
+  - Helix Dash Cheat Sheets
 source: "https://kapeli.com/cheat_sheets/Helix.docset/Contents/Resources/Documents/index"
 author:
   - "Kapeli"
-published:
 created: 2026-03-05
+updated: 2026-10-13
 description: "Helix editor keyboard shortcuts and commands reference including movement, selection, editing, and search operations. Essential shortcuts for the modern terminal-based text editor. Download Dash for macOS to access this and other cheat sheets offline."
 tags:
-  - "clippings"
+  - clippings
+  - helix
+  - editor
+status: active
+type: referenz
 ---
+
+> [!info] Unbearbeitete, vollständige Referenz
+> Original-Clipping, englisch, nicht redigiert. Dient als lückenlose Nachschlagequelle (auch die `:commands`-Liste vollständig) – für Erklärung und Übungen siehe [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] und [[02-Cookbook|Helix-Cookbook]].
+
 ## Movement
 
 | `h`  `Left` | Move left |

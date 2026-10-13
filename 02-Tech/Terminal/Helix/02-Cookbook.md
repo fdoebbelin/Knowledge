@@ -34,7 +34,9 @@ Ein Helix-Cookbook, nach Aufgaben sortiert statt nach Tasten: nummerierte Rezept
 | 10 | [[10 Dateien, Buffer und Fenster]] | fertig |
 | 11 | Markdown-Rezepte | offen – noch kein Ausgangsmaterial im Vault |
 | 12 | Eigene Belegungen | offen – noch kein Ausgangsmaterial im Vault |
-| 13 | Für Vim-Umsteiger | offen – Quellmaterial in [[Migrating from Vim]] und [[Helix_Tutorial_erweitert]], noch nicht zusammengeführt |
+| 13 | [[13 Für Vim-Umsteiger]] | fertig |
+
+Installation und Startkonfiguration (Windows, Quelltext-Bau): [[03-Installation]].
 
 ## Lernpfad
 
@@ -88,6 +90,7 @@ Lösungen zu Übung 4 und 6 stehen in [[05 Mehrfachauswahl]], zu Übung 1 in [[0
 ## Verwandt
 
 - [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] – erklärt dieselben Themen an den Grafiken des Spickzettels
+- [[03-Installation]] – Installation und Startkonfiguration
 - [[Helix_Spickzettel_A4_erweitert.pdf]] – der Spickzettel selbst
 - [[helix-tutor-de]] – deutsche Fassung des eingebauten `:tutor`
 - [[Helix - Dash Cheat Sheets]] – vollständige, unkommentierte Befehlsreferenz zum Nachschlagen

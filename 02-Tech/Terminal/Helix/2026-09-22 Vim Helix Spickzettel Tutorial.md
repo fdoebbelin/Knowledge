@@ -182,7 +182,8 @@ hx --tutor      # startet den eingebauten Grundkurs
 > - Alle Tastenkürzel gegen die offizielle Helix-Keymap verifizieren. Sachlich, Code-Blöcke mit Sprachangabe.
 > ```
 
-`![[Helix_Tutorial_erweitert.md]]` – liegt im Vault neben dieser Notiz.
+> [!note] Später aufgelöst (2026-10-13)
+> `Helix_Tutorial_erweitert.md` wurde am 13.10.2026 aufgelöst: Übungen und Vim-Reflextabelle sind in [[13 Für Vim-Umsteiger]], [[04 Suchen und Ersetzen]] und [[05 Mehrfachauswahl]] im [[02-Cookbook|Helix-Cookbook]] aufgegangen, Installation/`config.toml` in [[03-Installation]]. Die Datei selbst existiert nicht mehr.
 
 ## Entscheidungen
 

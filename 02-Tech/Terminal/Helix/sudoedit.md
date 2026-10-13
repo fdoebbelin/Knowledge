@@ -1,3 +1,16 @@
+---
+title: "Helix mit sudoedit als root-Datei bearbeiten"
+aliases:
+  - sudoedit
+tags:
+  - helix
+  - linux
+  - terminal
+created: 2026-10-13
+status: active
+type: anleitung
+---
+
 `sudoedit` kopiert die Datei in eine temporäre, dir gehörende Kopie, lässt dich als normaler User editieren und schreibt sie danach zurück. Vorteil: Helix läuft **nicht** als root, lädt also deine eigene Config/Plugins statt root's – und das gefürchtete „Editor mit vollen Rechten"-Problem entfällt.
 
 In Bash:
@@ -29,3 +42,8 @@ sudo hx /etc/hosts
 ```
 
 Funktioniert, aber Helix läuft komplett als root und liest `/root/.config/helix/` statt deiner Konfiguration. Für eine schnelle Einzelzeile okay, dauerhaft aber `sudoedit` vorziehen.
+
+## Verwandt
+
+- [[03-Installation]] – Helix installieren und als `$EDITOR` setzen
+- [[Nushell Editor setzen]] – `$EDITOR`/`$VISUAL` dauerhaft in Nushell setzen

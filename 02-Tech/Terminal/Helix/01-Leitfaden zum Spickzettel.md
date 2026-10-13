@@ -237,17 +237,20 @@ Die Wort-Bewegungen `w` `b` `e` (und groß `W` `B` `E`) **wählen den überstric
 | `mr([` | umschließendes `( )` durch `[ ]` ersetzen |
 | `md"` | umschließende `" "` entfernen |
 
-> [!question]- Übung 10.1
+> [!question]- Übung 7.1
 > Aus `print(name)` soll `print("name")` werden. Der Cursor steht irgendwo auf `name`.
 >
 > > [!success]- Lösung
 > > `miw` wählt `name`, `ms"` umschließt es mit Anführungszeichen. Alternativ `mi(` statt `miw`, falls der Klammerinhalt länger ist.
 
-> [!question]- Übung 10.2
+> [!question]- Übung 7.2
 > Lösche den kompletten Funktionsaufruf-Inhalt von `f(x, "hi there")`, also `x, "hi there"`, und tippe stattdessen `y`.
 >
 > > [!success]- Lösung
 > > `mi(` `c` `y` `Esc`
+
+> [!example] Surround kombiniert mit Mehrfachauswahl
+> `rot grün blau` → `"rot" "grün" "blau"`: `%` alles wählen, `s` `\w+` `⏎` wählt jedes Wort einzeln (siehe [[05 Mehrfachauswahl]] im Cookbook), `ms"` umschließt **alle gleichzeitig** mit Anführungszeichen.
 
 ---
 
@@ -340,10 +343,9 @@ Die Grafiken liegen als SVG-Dateien vor und lassen sich überall im Vault einbet
 
 ## Verwandt
 
-- [[02-Cookbook|Helix-Cookbook]] – allgemeine Befehlsreferenz als Rezepte, auch zu Themen ohne eigene Grafik hier (Mehrfachauswahl, LSP, Shell, Register, Suchen & Ersetzen …)
+- [[02-Cookbook|Helix-Cookbook]] – allgemeine Befehlsreferenz als Rezepte, auch zu Themen ohne eigene Grafik hier (Mehrfachauswahl, LSP, Shell, Register, Suchen & Ersetzen, Vim-Umstieg …)
+- [[03-Installation]] – Installation und Startkonfiguration
 - [[Helix_Spickzettel_A4_erweitert.pdf]] – der Spickzettel, den dieser Leitfaden erklärt
 - [[Helix_Spickzettel_A4.pdf]] – einseitige Kurzfassung, [[Vim_Spickzettel_A4.pdf]] zum Vergleich
-- [[Helix_Tutorial_erweitert]] – Tutorial mit Übungen zu denselben Themen
 - [[helix-tutor-de]] – deutsche Fassung des eingebauten `:tutor`
-- [[Migrating from Vim]] – Umstiegshilfe
 - [[Nushell Editor setzen]] – Helix als `$EDITOR`
