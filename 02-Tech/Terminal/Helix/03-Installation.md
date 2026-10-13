@@ -6,6 +6,8 @@ tags:
   - helix
   - editor
   - terminal
+  - homebrew
+  - atomic
 created: 2026-10-13
 status: active
 type: anleitung
@@ -33,10 +35,34 @@ hx --tutor             # eingebautes Grundkurs-Tutorial
 
 Für Windows on ARM oder wenn Scoop kein aktuelles Paket hat: [[Helix aus Quelltext bauen (Windows on ARM, PowerShell)]].
 
-## Linux
+## Linux (Fedora Sway Atomic, Homebrew)
 
-> [!todo] Noch nicht dokumentiert
-> Für dieses Vault liegt bisher keine verifizierte Linux-Installationsanleitung für Helix vor (anders als bei Yazi, siehe [[03-Installation und Konfiguration]], wo der Homebrew-Weg getestet dokumentiert ist). Üblich sind `rpm-ostree install helix` auf Fedora Atomic, `dnf install helix`/`apt install helix` auf klassischen Distributionen, oder `cargo install helix-term`. Vor Übernahme ins Vault auf dem Referenzsystem prüfen und mit `hx --version` verifizieren.
+Gleicher Weg wie bei Yazi (siehe [[03-Installation und Konfiguration|Yazi-Installation]] Abschnitt 2): Das Basisimage von Fedora Atomic ist schreibgeschützt, Homebrew installiert ohne Layering und ohne Neustart nach `/home/linuxbrew/.linuxbrew`.
+
+```nu
+brew install helix
+
+hx --version
+hx --health             # Runtime, Clipboard, Sprachübersicht
+hx --health python       # Language-Server für eine bestimmte Sprache prüfen
+```
+
+Update:
+
+```nu
+brew upgrade helix
+```
+
+Helix als `$EDITOR` unter Nushell eintragen: [[Nushell Editor setzen]].
+
+> [!warning] „Runtime directory does not exist“ in `hx --health`
+> Auf dem Referenzsystem meldet `hx --health` zwei fehlende Runtime-Pfade (`~/.config/helix/runtime` und einen Cellar-Unterpfad). Harmlos, solange mindestens einer der gelisteten Pfade existiert – Tree-sitter-Highlighting, Textobjekte und Einrückung funktionieren trotz der Warnung (geprüft mit `hx --health rust`/`hx --health markdown`: Parser, Highlight- und Textobjekt-Queries stehen auf ✓). Nur falls **gar keine** Sprache mehr markiert wird, `HELIX_RUNTIME` wie im Windows-Abschnitt oben setzen.
+
+> [!info] Andere Distributionen (ungeprüft)
+> Außerhalb von Fedora Atomic bringen viele Distributionen Helix direkt mit: `dnf install helix` (klassisches Fedora), `apt install helix` (Debian/Ubuntu ab einer gewissen Version), oder `cargo install helix-term` überall dort, wo kein Paket existiert. Vor Übernahme ins Vault auf dem jeweiligen System mit `hx --version` verifizieren – hier nicht nachgeprüft, da das Referenzsystem Fedora Atomic mit Homebrew ist.
+
+> [!tip] Optionaler Markdown-Language-Server
+> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) fehlt auf dem Referenzsystem noch ein Server: `brew install marksman` trägt ihn nach, Helix findet ihn automatisch (`hx --health markdown`).
 
 ## Start-Konfiguration
 
