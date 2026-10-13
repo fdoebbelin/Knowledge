@@ -2,48 +2,49 @@
 
 | | |
 |---|---|
-| Stand | 2026-10-13 16:25 |
-| Von Rechner | fedora |
-| Branch | main @ 1378d33 (mit origin/main synchron) |
+| Stand | 2026-10-13 21:49 |
+| Von Rechner | fedora.fritz.box |
+| Branch | main @ de08519 |
 | Uncommittet | nein |
 
 ## Ziel
 
-Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten (Dubletten zusammenführen, Redundanz raus). Heute war der Helix-Ordner dran, analog zur Yazi-Verdichtung vom 07.10.
+Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Zuletzt war der Helix-Ordner dran (Fortsetzung der Vorsitzung vom 13.10., siehe Commit `50acff1`).
 
 ## Erledigt in dieser Session
 
-- Cookbook-Kapitel 1 „Navigation und Sprünge“ aus der Inbox eingeordnet.
-- `Helix-Leitfaden.md` auf die acht Grafik-Abschnitte gekürzt (697 → 347 Zeilen); alle Tabellen ohne eigene Grafik ins neue `Helix-Cookbook` verlagert (`02-Tech/Terminal/Helix/CookBook/`), Kapitel 1–5 und 7–10 fertig.
-- Merge mit einer parallelen Handoff-Sitzung (Yazi-Nummerierung, vault-weite Linkbereinigung, verwaiste Anhänge) aufgelöst – nur `Eingang.md` hatte einen echten Konflikt.
-- Leitfaden und Cookbook-Übersicht auf `nn-Name` umgestellt: `01-Leitfaden zum Spickzettel`, `02-Cookbook`; neue `03-Installation` angelegt (Windows/Scoop, Quelltext-Bau-Verweis, Start-`config.toml`; Linux-Installation bewusst als offen markiert, nicht erfunden).
-- `Helix_Tutorial_erweitert.md` und `Migrating from Vim.md` aufgelöst (Übungen → Cookbook-Kapitel 4/5, Vim-Reflextabelle → neues Kapitel 13), beide Dateien gelöscht, Backlinks umgebogen.
-- `Nushell Editor setzen.md` (Fehler korrigiert: Programm heißt `hx`, nicht `helix`), `Helix aus Quelltext bauen…` (Chat-Rohformat bereinigt), `Helix - Dash Cheat Sheets.md` + `sudoedit.md` (Frontmatter ergänzt).
-- Chrome-PWA-Launcher-Leitfaden aus der Inbox nach `02-Tech/Linux/Fedora/` eingeordnet.
-- `Struktur-Übersicht.md` laufend mitgeführt (Stand, Notizzahlen, Historie).
+- Drei zuvor offene Cookbook-Kapitel neu geschrieben: `06 Surround.md` (aus Leitfaden-Abschnitt „7 Match & Surround“ in Rezeptform gebracht), `11 Markdown-Rezepte.md` und `12 Eigene Belegungen.md` (beide ohne Vault-Vorlage neu verfasst, gegen die offizielle Helix-Doku zu `languages.toml`/Key-Remapping geprüft). Alle in `02-Tech/Terminal/Helix/CookBook/`.
+- Cookbook-Übersicht (`02-Cookbook.md`) und Leitfaden-Querverweis (`01-Leitfaden zum Spickzettel.md`, Abschnitt „Verwandt“) entsprechend aktualisiert.
+- Linux-Installation in `03-Installation.md` dokumentiert (war vorher ein offener Platzhalter): Helix kommt auf diesem Referenzsystem über Homebrew, analog zu Yazi. Mit `hx --health`, `hx --health rust`, `hx --health markdown` direkt geprüft, inkl. der harmlosen „Runtime directory does not exist“-Meldung.
+- `marksman` (Markdown-Language-Server) per `brew install marksman` installiert und in der Doku als „installiert“ vermerkt.
+- `Struktur-Übersicht.md` laufend mitgeführt (Notizzahl 02-Tech jetzt 334, Historie-Eintrag ergänzt).
 
 ## Nächster Schritt
 
-Inbox ist leer, nichts Dringendes offen. Falls weiter verdichtet werden soll: Cookbook-Kapitel 6 (Surround), 11 (Markdown-Rezepte) und 12 (Eigene Belegungen) fehlen noch – dafür gibt es bislang **kein Quellmaterial im Vault**, müssten also neu geschrieben statt nur verlagert werden. Vorher klären, ob das gewünscht ist.
+**Notiz von Fritz-Rainer:** Installation von Helix in allen Artikeln auf lokales Binary umstellen, da das über brew installierte Programm nicht in der Toolbox verfügbar ist, als weiteren Installationsweg definieren, wie im Artikel „00 Werkzeuge ins HOME-Verzeichnis installieren“ beschrieben.
+
+Kontext dazu: `02-Tech/Linux/Fedora/00 Werkzeuge ins HOME-Verzeichnis installieren.md` beschreibt bereits am Beispiel Helix den Weg über `~/.local/share/helix/<version>/` + Symlink in `~/.local/bin` (Abschnitt 2–5), inklusive Installationsskript und der Begründung, warum Homebrew in Toolbx-Containern nicht sichtbar ist (Abschnitt 1, „Warum nicht Homebrew“). Die aktuell in `03-Installation.md` dokumentierte Linux-Installation nutzt aber ausschließlich Homebrew. Zu klären/umzusetzen:
+- `03-Installation.md`, Abschnitt „Linux“: Homebrew-Weg als eine Option stehen lassen, lokalen-Binary-Weg als zweite Option ergänzen (mit Verweis auf die 00-Notiz statt Duplizierung).
+- Prüfen, ob weitere Helix-Notizen im Ordner (z. B. `Nushell Editor setzen.md`, `CookBook/12 Eigene Belegungen.md`) implizit von einem bestimmten Installationsweg ausgehen und ggf. anzupassen sind.
+- Ungeklärt: ob auf diesem Referenzsystem künftig auf den lokalen Binary-Weg umgestellt werden soll (brew-Installation deinstallieren) oder beide Wege nur dokumentiert, aber brew weiter genutzt wird.
 
 ## Entscheidungen
 
-- Leitfaden bleibt reine Grafik-Erklärung, Cookbook wird die allgemeine Befehlsreferenz (verworfen: Rezepte zusätzlich im Leitfaden duplizieren).
-- `nn-Name`-Nummerierung für den Helix-Ordner übernommen, analog zu Yazi (verworfen: sprechende Namen ohne Präfix behalten).
-- Cookbook-Kapitel 6/11/12 bewusst nicht mit Platzhalterinhalt gefüllt, nur als „offen“ markiert.
+- Cookbook-Kapitel 6/11/12 wurden bewusst neu geschrieben statt nur als Platzhalter zu belassen; Kapitel 6 aus vorhandenem Leitfaden-Material, 11/12 komplett neu (siehe oben).
+- Bei fehlenden Fakten zu Helix-Konfiguration (Markdown-LSP, Key-Remapping-Syntax) wurde offizielle Helix-Doku/`languages.toml` per WebFetch geprüft statt aus dem Gedächtnis geschrieben.
 
 ## Sackgassen und Erkenntnisse
 
-- Beim Anlegen der neuen `03-Installation und Konfiguration.md` zunächst eine Namenskollision mit der gleichnamigen Yazi-Datei übersehen (beide Ordner, gleicher Dateiname) – vor dem Commit bemerkt, auf `03-Installation.md` umbenannt. Bei `nn-Name`-Dateien künftig vault-weit auf Eindeutigkeit prüfen, nicht nur im eigenen Ordner.
-- Push wurde einmal zurückgewiesen, weil die parallele Sitzung zwischenzeitlich gepusht hatte. Vor dem nächsten Push immer `git fetch` + Status prüfen (siehe Skill `pickup`).
+- `git push` schlug zunächst mit 403 fehl: Die hinterlegten GitHub-Credentials gehörten zu einem anderen Account (`metarow`) ohne Schreibrecht auf `fdoebbelin/Knowledge.git`. Nach Umstellung auf den richtigen Account funktionierte der Push. Vor einem Push auf diesem Rechner ggf. mit `git push` testen, ob das noch passt.
+- Commit-Autor wird automatisch auf `Fritz-Rainer Döbbelin <fritz@fedora.fritz.box>` gesetzt, frühere Commits liefen unter `fritz-rainer@doebbelin` – kosmetisch, aber auffällig in `git log`.
 
 ## Relevante Dateien
 
-- `02-Tech/Terminal/Helix/02-Cookbook.md` – Kapitelübersicht mit Fertig/Offen-Status
-- `02-Tech/Terminal/Helix/01-Leitfaden zum Spickzettel.md`
-- `02-Tech/Terminal/Helix/03-Installation.md`
-- `Struktur-Übersicht.md` – aktueller Stand, Notizzahlen, Historie
+- `02-Tech/Terminal/Helix/CookBook/06 Surround.md`, `11 Markdown-Rezepte.md`, `12 Eigene Belegungen.md` – neu
+- `02-Tech/Terminal/Helix/03-Installation.md` – Linux-Abschnitt, als Nächstes um lokalen Binary-Weg zu ergänzen
+- `02-Tech/Linux/Fedora/00 Werkzeuge ins HOME-Verzeichnis installieren.md` – Quelle für den lokalen Binary-Weg
+- `02-Tech/Terminal/Helix/02-Cookbook.md` – Kapitelübersicht
 
 ## Nicht in Git
 
-Nichts.
+`marksman` wurde auf diesem Rechner per `brew install marksman` installiert (nicht Teil des Vaults, nur in der Doku vermerkt).
