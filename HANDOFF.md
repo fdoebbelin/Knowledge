@@ -2,14 +2,14 @@
 
 | | |
 |---|---|
-| Stand | 2026-10-21 |
+| Stand | 2026-10-21 16:48 |
 | Von Rechner | fedora |
-| Branch | main @ 19aad95 (+ dieser Handoff-Commit), mit origin/main synchron |
+| Branch | main @ 12084a0 (+ dieser Handoff-Commit), mit origin/main synchron |
 | Uncommittet | nein |
 
 ## Ziel
 
-Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Heute: Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ (claude.ai, 19.–21.10.) samt Artefakten.
+Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Heute: (1) Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ (claude.ai, 19.–21.10.) samt Artefakten eingeordnet, (2) offenen Helix-Punkt der Vorsitzung erledigt: lokaler Binary-Weg dokumentiert und Referenzsystem darauf umgestellt.
 
 ## Erledigt in dieser Session
 
@@ -24,14 +24,14 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 - Querverweise in `Fedora Sway Atomic`, `LINUX Live-ISOs`, `ddrescue`, `11-kvm-windows11-vm`, `KVM-QEMU Leitfaden`; `Eingang.md` und `Struktur-Übersicht.md` nachgeführt (02-Tech jetzt 340 Notizen). Alle Wikilinks/Anker der geänderten Notizen geprüft.
 - Commit `19aad95`, gepusht.
 - Danach Helix-Binary-Weg dokumentiert: `02-Tech/Terminal/Helix/03-Installation.md` hat unter „Linux“ jetzt eine Vergleichstabelle und zwei Wege (Homebrew / lokales Binary in `~/.local/bin`). Weg 2 als Kurzfassung mit Ankerverweisen auf `00 Werkzeuge ins HOME-Verzeichnis installieren` (Abschnitte 3, 5.1, 6, 7), kein doppeltes Skript. Ergänzt: Hinweis „beide Wege gleichzeitig“ (`which -a hx`) und marksman-Einschränkung. `Nushell Editor setzen.md`: Toolbx-Hinweis. `sudoedit.md`: `sudo hx` scheitert am `secure_path`. Rücklink in der 00-Notiz. `CookBook/11` und `12` setzen keinen Installationsweg voraus, dort nichts geändert. Commit `b45f971`, gepusht.
-- Referenzsystem auf Weg 2 umgestellt: `~/.local/bin/install-helix.nu` aus Abschnitt 3 der 00-Notiz übernommen (lief unverändert, Helix 25.07.1 nach `~/.local/share/helix/25.07.1`), `HELIX_RUNTIME` auf oberster Ebene in `~/.config/nushell/env.nu` (vor dem Toolbx-Block), `brew uninstall helix`. Geprüft: Host und Toolbox `tauri-dev` finden `~/.local/bin/hx`, Runtime ok, im Container `rust-analyzer` ✓. `03-Installation.md` entsprechend aktualisiert.
-- `marksman` fehlte (entgegen dem Vermerk der Vorsitzung) und wurde per `brew install marksman` neu installiert (2026-02-08); `hx --health markdown` zeigt ✓.
+- Referenzsystem auf Weg 2 umgestellt: `~/.local/bin/install-helix.nu` aus Abschnitt 3 der 00-Notiz übernommen (lief unverändert, Helix 25.07.1 nach `~/.local/share/helix/25.07.1`), `HELIX_RUNTIME` auf oberster Ebene in `~/.config/nushell/env.nu` (vor dem Toolbx-Block), `brew uninstall helix`. Geprüft: Host und Toolbox `tauri-dev` finden `~/.local/bin/hx`, Runtime ok, im Container `rust-analyzer` ✓. `03-Installation.md` entsprechend aktualisiert. Commit `a20f83d`, gepusht.
+- `marksman` fehlte (entgegen dem Vermerk der Vorsitzung) und wurde per `brew install marksman` neu installiert (2026-02-08); `hx --health markdown` zeigt ✓. Doku nachgeführt, Commit `12084a0`, gepusht.
 
 ## Nächster Schritt
 
 1. **Gegenlesen** (Nutzer): In 02 und 03 stehen kurze eigene Ergänzungen, die nicht wörtlich aus dem Protokoll stammen – Rolle von `bootuuid.cfg`/statischer `grub.cfg` (02, Schritt 4) und `btrfs subvolume list` zur ID-Zuordnung (03).
 2. **Nach dem ersten echten Umbau** eines Schulungs-PCs: Ausgabe von `bootupctl status` in `02-…#Offen` nachtragen, Warnhinweis „nicht auf Hardware getestet“ anpassen, Tabelle in `Schulungs-PCs – Stand der Umstellung` aktualisieren (nach Neuinstallation P8B75-M auch die Disk-ID).
-3. Andere Rechner auf Weg 2 nachziehen: `install-helix.nu` anlegen und ausführen, `HELIX_RUNTIME` in `env.nu`, `brew uninstall helix`.
+3. **Andere Rechner nachziehen** (nach `git pull`): `install-helix.nu` aus `00 Werkzeuge ins HOME-Verzeichnis installieren` Abschnitt 3 anlegen und ausführen, `HELIX_RUNTIME` in `env.nu` (siehe `03-Installation.md`, Weg 2), `brew uninstall helix`, `brew install marksman` falls fehlend; prüfen mit `which -a hx` und `hx --health markdown`.
 4. Nicht verifiziert: dass Fedoras `secure_path` keine Benutzerpfade enthält (sudo verlangte ein Passwort) – in `sudoedit.md` mit Prüfbefehl formuliert.
 
 ## Entscheidungen
