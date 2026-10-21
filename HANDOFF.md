@@ -2,49 +2,57 @@
 
 | | |
 |---|---|
-| Stand | 2026-10-13 21:49 |
-| Von Rechner | fedora.fritz.box |
-| Branch | main @ de08519 |
+| Stand | 2026-10-21 |
+| Von Rechner | fedora |
+| Branch | main @ 19aad95 (+ dieser Handoff-Commit), mit origin/main synchron |
 | Uncommittet | nein |
 
 ## Ziel
 
-Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Zuletzt war der Helix-Ordner dran (Fortsetzung der Vorsitzung vom 13.10., siehe Commit `50acff1`).
+Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Heute: Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ (claude.ai, 19.–21.10.) samt Artefakten.
 
 ## Erledigt in dieser Session
 
-- Drei zuvor offene Cookbook-Kapitel neu geschrieben: `06 Surround.md` (aus Leitfaden-Abschnitt „7 Match & Surround“ in Rezeptform gebracht), `11 Markdown-Rezepte.md` und `12 Eigene Belegungen.md` (beide ohne Vault-Vorlage neu verfasst, gegen die offizielle Helix-Doku zu `languages.toml`/Key-Remapping geprüft). Alle in `02-Tech/Terminal/Helix/CookBook/`.
-- Cookbook-Übersicht (`02-Cookbook.md`) und Leitfaden-Querverweis (`01-Leitfaden zum Spickzettel.md`, Abschnitt „Verwandt“) entsprechend aktualisiert.
-- Linux-Installation in `03-Installation.md` dokumentiert (war vorher ein offener Platzhalter): Helix kommt auf diesem Referenzsystem über Homebrew, analog zu Yazi. Mit `hx --health`, `hx --health rust`, `hx --health markdown` direkt geprüft, inkl. der harmlosen „Runtime directory does not exist“-Meldung.
-- `marksman` (Markdown-Language-Server) per `brew install marksman` installiert und in der Doku als „installiert“ vermerkt.
-- `Struktur-Übersicht.md` laufend mitgeführt (Notizzahl 02-Tech jetzt 334, Historie-Eintrag ergänzt).
+- Neuer Ordner `02-Tech/Linux/UEFI-Boot/` (nn-Nummerierung):
+  - `01-UEFI-Booteinträge anlegen.md` – Artefakt aus dem Chat, fast unverändert (Alias auf alten Namen, Verweise ergänzt).
+  - `02-Legacy-zu-UEFI bei Fedora Atomic.md` – neues Runbook, verdichtet aus Protokoll Teil B und dem Vorprüfungs-PDF (Vorprüfung, Weg A/B, Schritte 0 und 3–6, Verifikation, verworfene Ansätze).
+  - `03-btrfs und SMART im Live-System prüfen.md` – neu, aus Protokoll-Problem 10/11 und dem btrfs-PDF (Prüfblock, Ergebnis aus dem Live-System retten, Bewertungstabellen, Fallbeispiel P8B75-M).
+  - `Schulungs-PCs – Stand der Umstellung.md` – Statustabelle der vier PCs und offene Punkte (nur als Notiz, kein Projektordner – Nutzerentscheidung).
+  - Protokoll `2026-10-21 Windows-SSD und Legacy-zu-UEFI Umstellung.md` als Quelle, mit Einordnungshinweis; drei tote Wikilinks entfernt.
+  - `_resources/uefi-pruefung.sh` und `_resources/Schritt-3-ESP-anlegen.pdf` (einziges behaltenes PDF, als Beispiel).
+- Teil A (Windows-SSD/WinPE) als `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm.md`, `winpe-vm.nu` vollständig eingebettet.
+- Querverweise in `Fedora Sway Atomic`, `LINUX Live-ISOs`, `ddrescue`, `11-kvm-windows11-vm`, `KVM-QEMU Leitfaden`; `Eingang.md` und `Struktur-Übersicht.md` nachgeführt (02-Tech jetzt 340 Notizen). Alle Wikilinks/Anker der geänderten Notizen geprüft.
+- Commit `19aad95`, gepusht.
 
 ## Nächster Schritt
 
-**Notiz von Fritz-Rainer:** Installation von Helix in allen Artikeln auf lokales Binary umstellen, da das über brew installierte Programm nicht in der Toolbox verfügbar ist, als weiteren Installationsweg definieren, wie im Artikel „00 Werkzeuge ins HOME-Verzeichnis installieren“ beschrieben.
-
-Kontext dazu: `02-Tech/Linux/Fedora/00 Werkzeuge ins HOME-Verzeichnis installieren.md` beschreibt bereits am Beispiel Helix den Weg über `~/.local/share/helix/<version>/` + Symlink in `~/.local/bin` (Abschnitt 2–5), inklusive Installationsskript und der Begründung, warum Homebrew in Toolbx-Containern nicht sichtbar ist (Abschnitt 1, „Warum nicht Homebrew“). Die aktuell in `03-Installation.md` dokumentierte Linux-Installation nutzt aber ausschließlich Homebrew. Zu klären/umzusetzen:
-- `03-Installation.md`, Abschnitt „Linux“: Homebrew-Weg als eine Option stehen lassen, lokalen-Binary-Weg als zweite Option ergänzen (mit Verweis auf die 00-Notiz statt Duplizierung).
-- Prüfen, ob weitere Helix-Notizen im Ordner (z. B. `Nushell Editor setzen.md`, `CookBook/12 Eigene Belegungen.md`) implizit von einem bestimmten Installationsweg ausgehen und ggf. anzupassen sind.
-- Ungeklärt: ob auf diesem Referenzsystem künftig auf den lokalen Binary-Weg umgestellt werden soll (brew-Installation deinstallieren) oder beide Wege nur dokumentiert, aber brew weiter genutzt wird.
+1. **Gegenlesen** (Nutzer): In 02 und 03 stehen kurze eigene Ergänzungen, die nicht wörtlich aus dem Protokoll stammen – Rolle von `bootuuid.cfg`/statischer `grub.cfg` (02, Schritt 4) und `btrfs subvolume list` zur ID-Zuordnung (03).
+2. **Nach dem ersten echten Umbau** eines Schulungs-PCs: Ausgabe von `bootupctl status` in `02-…#Offen` nachtragen, Warnhinweis „nicht auf Hardware getestet“ anpassen, Tabelle in `Schulungs-PCs – Stand der Umstellung` aktualisieren (nach Neuinstallation P8B75-M auch die Disk-ID).
+3. **Weiterhin offen aus der Vorsitzung (13.10.)** – Helix-Installation um den lokalen Binary-Weg ergänzen:
+   - `02-Tech/Terminal/Helix/03-Installation.md`, Abschnitt „Linux“: Homebrew als eine Option lassen, lokalen Binary-Weg als zweite Option mit Verweis auf `02-Tech/Linux/Fedora/00 Werkzeuge ins HOME-Verzeichnis installieren.md` (Abschnitt 1–5, Begründung: brew in Toolbx nicht sichtbar).
+   - Prüfen, ob `Nushell Editor setzen.md` oder `CookBook/12 Eigene Belegungen.md` einen bestimmten Installationsweg voraussetzen.
+   - Ungeklärt: brew auf dem Referenzsystem durch lokales Binary ersetzen oder nur beide Wege dokumentieren.
 
 ## Entscheidungen
 
-- Cookbook-Kapitel 6/11/12 wurden bewusst neu geschrieben statt nur als Platzhalter zu belassen; Kapitel 6 aus vorhandenem Leitfaden-Material, 11/12 komplett neu (siehe oben).
-- Bei fehlenden Fakten zu Helix-Konfiguration (Markdown-LSP, Key-Remapping-Syntax) wurde offizielle Helix-Doku/`languages.toml` per WebFetch geprüft statt aus dem Gedächtnis geschrieben.
+- Zielordner `02-Tech/Linux/UEFI-Boot/` statt unter `Fedora/`, weil Notiz 01 nicht Fedora-spezifisch ist.
+- Von fünf PDFs nur `Schritt-3-ESP-anlegen.pdf` als Beispiel behalten; Vorprüfungs-, btrfs- und die zwei PC-Varianten-PDFs sowie die reportlab-Generatoren (`quellen/`) und das Übergabe-ZIP nicht übernommen – Inhalt steckt in 02, 03 und der Statusnotiz.
+- `winpe-vm.nu` (142 Zeilen) in die Notiz eingebettet, `uefi-pruefung.sh` (252 Zeilen) nur als Datei in `_resources/`.
+- Schulungs-PC-Stand als Notiz im Tech-Ordner, nicht als `03-Projects/`.
 
 ## Sackgassen und Erkenntnisse
 
-- `git push` schlug zunächst mit 403 fehl: Die hinterlegten GitHub-Credentials gehörten zu einem anderen Account (`metarow`) ohne Schreibrecht auf `fdoebbelin/Knowledge.git`. Nach Umstellung auf den richtigen Account funktionierte der Push. Vor einem Push auf diesem Rechner ggf. mit `git push` testen, ob das noch passt.
-- Commit-Autor wird automatisch auf `Fritz-Rainer Döbbelin <fritz@fedora.fritz.box>` gesetzt, frühere Commits liefen unter `fritz-rainer@doebbelin` – kosmetisch, aber auffällig in `git log`.
+- Die losen Dateien in der Inbox waren byte-identisch mit dem Inhalt des Übergabe-ZIPs; nur `quellen/` war zusätzlich.
+- Das ZIP lag zur Sicherheit noch im Session-Scratchpad (`/tmp/claude-1000/…`) – nach einem Neustart weg. Wer die PDF-Generatoren doch braucht: Original-Chat auf claude.ai.
+- Push mit den aktuellen GitHub-Credentials auf diesem Rechner funktionierte ohne Nacharbeit.
 
 ## Relevante Dateien
 
-- `02-Tech/Terminal/Helix/CookBook/06 Surround.md`, `11 Markdown-Rezepte.md`, `12 Eigene Belegungen.md` – neu
-- `02-Tech/Terminal/Helix/03-Installation.md` – Linux-Abschnitt, als Nächstes um lokalen Binary-Weg zu ergänzen
-- `02-Tech/Linux/Fedora/00 Werkzeuge ins HOME-Verzeichnis installieren.md` – Quelle für den lokalen Binary-Weg
-- `02-Tech/Terminal/Helix/02-Cookbook.md` – Kapitelübersicht
+- `02-Tech/Linux/UEFI-Boot/` – alle neuen Notizen, Skript, Beispiel-PDF
+- `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm.md` – neu
+- `02-Tech/Terminal/Helix/03-Installation.md` – offener Helix-Schritt
+- `Struktur-Übersicht.md`, `00-Inbox/Eingang.md` – nachgeführt
 
 ## Nicht in Git
 
-`marksman` wurde auf diesem Rechner per `brew install marksman` installiert (nicht Teil des Vaults, nur in der Doku vermerkt).
+Nichts Neues. (Aus der Vorsitzung: `marksman` per brew installiert, nur in der Doku vermerkt.)
