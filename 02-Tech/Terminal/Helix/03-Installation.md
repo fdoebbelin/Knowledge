@@ -110,7 +110,7 @@ Update, Rückrollen und Deinstallation: [[00 Werkzeuge ins HOME-Verzeichnis inst
 > Außerhalb von Fedora Atomic bringen viele Distributionen Helix direkt mit: `dnf install helix` (klassisches Fedora), `apt install helix` (Debian/Ubuntu ab einer gewissen Version), oder `cargo install helix-term` überall dort, wo kein Paket existiert. Vor Übernahme ins Vault auf dem jeweiligen System mit `hx --version` verifizieren – hier nicht nachgeprüft, da das Referenzsystem Fedora Atomic mit Homebrew ist.
 
 > [!tip] Markdown-Language-Server
-> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) braucht es einen Server: `brew install marksman` – Helix findet ihn dann automatisch (`hx --health markdown`). Auf dem Referenzsystem ist er derzeit **nicht** installiert (Stand 21.10.2026, `which marksman` leer). Bei Weg 2 gilt dieselbe Einschränkung wie für Helix selbst: Ein per Homebrew installierter `marksman` ist im Container nicht sichtbar.
+> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) braucht es einen Server: `brew install marksman` – Helix findet ihn automatisch (`hx --health markdown` → `✓ marksman`). Auf dem Referenzsystem so installiert (21.10.2026, Version 2026-02-08). Ein per Homebrew installierter `marksman` ist im Container nicht sichtbar; das ist gewollt, weil Markdown (der Vault) nur auf dem Host bearbeitet wird. Nur nötig für die LSP-Befehle – Highlighting und Textobjekte kommen von Tree-sitter.
 
 ## Start-Konfiguration
 

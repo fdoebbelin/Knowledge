@@ -25,18 +25,19 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 - Commit `19aad95`, gepusht.
 - Danach Helix-Binary-Weg dokumentiert: `02-Tech/Terminal/Helix/03-Installation.md` hat unter „Linux“ jetzt eine Vergleichstabelle und zwei Wege (Homebrew / lokales Binary in `~/.local/bin`). Weg 2 als Kurzfassung mit Ankerverweisen auf `00 Werkzeuge ins HOME-Verzeichnis installieren` (Abschnitte 3, 5.1, 6, 7), kein doppeltes Skript. Ergänzt: Hinweis „beide Wege gleichzeitig“ (`which -a hx`) und marksman-Einschränkung. `Nushell Editor setzen.md`: Toolbx-Hinweis. `sudoedit.md`: `sudo hx` scheitert am `secure_path`. Rücklink in der 00-Notiz. `CookBook/11` und `12` setzen keinen Installationsweg voraus, dort nichts geändert. Commit `b45f971`, gepusht.
 - Referenzsystem auf Weg 2 umgestellt: `~/.local/bin/install-helix.nu` aus Abschnitt 3 der 00-Notiz übernommen (lief unverändert, Helix 25.07.1 nach `~/.local/share/helix/25.07.1`), `HELIX_RUNTIME` auf oberster Ebene in `~/.config/nushell/env.nu` (vor dem Toolbx-Block), `brew uninstall helix`. Geprüft: Host und Toolbox `tauri-dev` finden `~/.local/bin/hx`, Runtime ok, im Container `rust-analyzer` ✓. `03-Installation.md` entsprechend aktualisiert.
+- `marksman` fehlte (entgegen dem Vermerk der Vorsitzung) und wurde per `brew install marksman` neu installiert (2026-02-08); `hx --health markdown` zeigt ✓.
 
 ## Nächster Schritt
 
 1. **Gegenlesen** (Nutzer): In 02 und 03 stehen kurze eigene Ergänzungen, die nicht wörtlich aus dem Protokoll stammen – Rolle von `bootuuid.cfg`/statischer `grub.cfg` (02, Schritt 4) und `btrfs subvolume list` zur ID-Zuordnung (03).
 2. **Nach dem ersten echten Umbau** eines Schulungs-PCs: Ausgabe von `bootupctl status` in `02-…#Offen` nachtragen, Warnhinweis „nicht auf Hardware getestet“ anpassen, Tabelle in `Schulungs-PCs – Stand der Umstellung` aktualisieren (nach Neuinstallation P8B75-M auch die Disk-ID).
-3. **marksman fehlt:** Laut Vorsitzung per brew installiert, am 21.10. aber weder in `brew list` noch im PATH. Doku in `03-Installation.md` korrigiert („derzeit nicht installiert“). Klären: per brew neu installieren (nur Host) oder ebenfalls als lokales Binary (dann auch im Container) – Muster aus Abschnitt 8 der 00-Notiz.
-4. Andere Rechner auf Weg 2 nachziehen: `install-helix.nu` anlegen und ausführen, `HELIX_RUNTIME` in `env.nu`, `brew uninstall helix`.
-5. Nicht verifiziert: dass Fedoras `secure_path` keine Benutzerpfade enthält (sudo verlangte ein Passwort) – in `sudoedit.md` mit Prüfbefehl formuliert.
+3. Andere Rechner auf Weg 2 nachziehen: `install-helix.nu` anlegen und ausführen, `HELIX_RUNTIME` in `env.nu`, `brew uninstall helix`.
+4. Nicht verifiziert: dass Fedoras `secure_path` keine Benutzerpfade enthält (sudo verlangte ein Passwort) – in `sudoedit.md` mit Prüfbefehl formuliert.
 
 ## Entscheidungen
 
 - Helix: beide Linux-Wege dokumentiert; Referenzsystem auf Nutzerwunsch auf Weg 2 (lokales Binary) umgestellt, damit `hx` auch in Toolbx-Containern verfügbar ist.
+- `marksman` bewusst per Homebrew, nur auf dem Host – wird in der Toolbox nicht gebraucht (Nutzerentscheidung).
 - Zielordner `02-Tech/Linux/UEFI-Boot/` statt unter `Fedora/`, weil Notiz 01 nicht Fedora-spezifisch ist.
 - Von fünf PDFs nur `Schritt-3-ESP-anlegen.pdf` als Beispiel behalten; Vorprüfungs-, btrfs- und die zwei PC-Varianten-PDFs sowie die reportlab-Generatoren (`quellen/`) und das Übergabe-ZIP nicht übernommen – Inhalt steckt in 02, 03 und der Statusnotiz.
 - `winpe-vm.nu` (142 Zeilen) in die Notiz eingebettet, `uefi-pruefung.sh` (252 Zeilen) nur als Datei in `_resources/`.
@@ -62,4 +63,4 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 - `~/.local/bin/install-helix.nu` (Kopie des Skripts aus der 00-Notiz)
 - `~/.local/share/helix/25.07.1/` (Binary und Runtime), Symlink `~/.local/bin/hx`
 - `~/.config/nushell/env.nu`: `HELIX_RUNTIME` ergänzt; Sicherung `env.nu.bak-2026-10-21` daneben
-- Homebrew-`helix` deinstalliert
+- Homebrew-`helix` deinstalliert, Homebrew-`marksman` installiert
