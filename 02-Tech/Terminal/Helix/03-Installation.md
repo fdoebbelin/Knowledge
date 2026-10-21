@@ -8,7 +8,9 @@ tags:
   - terminal
   - homebrew
   - atomic
+  - toolbx
 created: 2026-10-13
+updated: 2026-10-21
 status: active
 type: anleitung
 ---
@@ -35,9 +37,24 @@ hx --tutor             # eingebautes Grundkurs-Tutorial
 
 Für Windows on ARM oder wenn Scoop kein aktuelles Paket hat: [[Helix aus Quelltext bauen (Windows on ARM, PowerShell)]].
 
-## Linux (Fedora Sway Atomic, Homebrew)
+## Linux (Fedora Sway Atomic)
 
-Gleicher Weg wie bei Yazi (siehe [[03-Installation und Konfiguration|Yazi-Installation]] Abschnitt 2): Das Basisimage von Fedora Atomic ist schreibgeschützt, Homebrew installiert ohne Layering und ohne Neustart nach `/home/linuxbrew/.linuxbrew`.
+Das Basisimage von Fedora Atomic ist schreibgeschützt. Ohne Layering gibt es zwei Wege, die sich in einem Punkt unterscheiden: ob `hx` auch **in Toolbx-Containern** verfügbar ist.
+
+| | Weg 1: Homebrew | Weg 2: lokales Binary im `$HOME` |
+|---|---|---|
+| Ort | `/home/linuxbrew/.linuxbrew/bin/hx` | `~/.local/share/helix/<Version>/hx`, Symlink `~/.local/bin/hx` |
+| Auf dem Host | ✓ | ✓ |
+| In Toolbx/Distrobox | ✗ – der Pfad liegt außerhalb von `$HOME` und existiert im Container nicht | ✓ – `$HOME` wird durchgereicht |
+| Update | `brew upgrade helix` | Installationsskript erneut ausführen |
+| Runtime | findet Homebrew selbst | `HELIX_RUNTIME` in `env.nu` setzen |
+| Geeignet, wenn | Helix nur auf dem Host gebraucht wird | Helix auch im Container laufen soll, z. B. mit `rust-analyzer` aus einer Toolbx |
+
+Auf dem Referenzsystem ist derzeit **Weg 1** installiert.
+
+### Weg 1: Homebrew
+
+Gleicher Weg wie bei Yazi (siehe [[03-Installation und Konfiguration|Yazi-Installation]] Abschnitt 2): Homebrew installiert ohne Layering und ohne Neustart nach `/home/linuxbrew/.linuxbrew`.
 
 ```nu
 brew install helix
@@ -58,11 +75,37 @@ Helix als `$EDITOR` unter Nushell eintragen: [[Nushell Editor setzen]].
 > [!warning] „Runtime directory does not exist“ in `hx --health`
 > Auf dem Referenzsystem meldet `hx --health` zwei fehlende Runtime-Pfade (`~/.config/helix/runtime` und einen Cellar-Unterpfad). Harmlos, solange mindestens einer der gelisteten Pfade existiert – Tree-sitter-Highlighting, Textobjekte und Einrückung funktionieren trotz der Warnung (geprüft mit `hx --health rust`/`hx --health markdown`: Parser, Highlight- und Textobjekt-Queries stehen auf ✓). Nur falls **gar keine** Sprache mehr markiert wird, `HELIX_RUNTIME` wie im Windows-Abschnitt oben setzen.
 
+### Weg 2: lokales Binary im `$HOME`
+
+Ausführlich mit Skript und Erklärung jeder Zeile: [[00 Werkzeuge ins HOME-Verzeichnis installieren]]. Kurzfassung:
+
+1. Installationsskript aus [[00 Werkzeuge ins HOME-Verzeichnis installieren#3 Das Installationsskript|Abschnitt 3]] als `~/.local/bin/install-helix.nu` speichern, `chmod +x`, ausführen. Es holt das aktuelle Release von GitHub, legt es versioniert unter `~/.local/share/helix/` ab und setzt den Symlink `~/.local/bin/hx`.
+2. `HELIX_RUNTIME` auf oberster Ebene von `env.nu` setzen (sonst startet Helix über den Symlink ohne Syntax-Highlighting), siehe [[00 Werkzeuge ins HOME-Verzeichnis installieren#5.1 Runtime-Verzeichnis bekannt machen|Abschnitt 5.1]]:
+
+```nu
+$env.HELIX_RUNTIME = ($env.HOME | path join ".local/bin/hx"
+    | path expand | path dirname | path join "runtime")
+```
+
+3. Prüfen – auf dem Host und einmal im Container:
+
+```nu
+which -a hx              # erwartet: ~/.local/bin/hx
+hx --version
+hx --health | first 12
+toolbox run -c tauri-dev hx --version
+```
+
+Update, Rückrollen und Deinstallation: [[00 Werkzeuge ins HOME-Verzeichnis installieren#7 Update und Deinstallation|Abschnitt 7]]. Sprachserver gehören weiterhin in den Container ([[00 Werkzeuge ins HOME-Verzeichnis installieren#6 Sprachserver gehören in den Container|Abschnitt 6]]).
+
+> [!warning] Beide Wege gleichzeitig
+> Sind Homebrew-Helix und lokales Binary installiert, gewinnt auf dem Host der Eintrag, der in `$env.PATH` zuerst steht – im Container gibt es nur das lokale Binary. `which -a hx` zeigt alle Fundstellen in Suchreihenfolge. Beim Wechsel auf Weg 2 die Homebrew-Fassung mit `brew uninstall helix` entfernen, damit Host und Container dieselbe Version nutzen.
+
 > [!info] Andere Distributionen (ungeprüft)
 > Außerhalb von Fedora Atomic bringen viele Distributionen Helix direkt mit: `dnf install helix` (klassisches Fedora), `apt install helix` (Debian/Ubuntu ab einer gewissen Version), oder `cargo install helix-term` überall dort, wo kein Paket existiert. Vor Übernahme ins Vault auf dem jeweiligen System mit `hx --version` verifizieren – hier nicht nachgeprüft, da das Referenzsystem Fedora Atomic mit Homebrew ist.
 
 > [!tip] Markdown-Language-Server
-> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) braucht es einen Server: `brew install marksman` – auf dem Referenzsystem installiert, Helix findet ihn automatisch (`hx --health markdown`).
+> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) braucht es einen Server: `brew install marksman` – auf dem Referenzsystem installiert, Helix findet ihn automatisch (`hx --health markdown`). Bei Weg 2 gilt dieselbe Einschränkung wie für Helix selbst: Ein per Homebrew installierter `marksman` ist im Container nicht sichtbar.
 
 ## Start-Konfiguration
 
@@ -108,3 +151,4 @@ hidden = false             # versteckte Dateien im Picker zeigen
 - [[Helix aus Quelltext bauen (Windows on ARM, PowerShell)]] – Build-Anleitung im Detail
 - [[sudoedit]] – Helix als `$SUDO_EDITOR`
 - [[Nushell Editor setzen]] – Helix als `$EDITOR` unter Nushell
+- [[00 Werkzeuge ins HOME-Verzeichnis installieren]] – Weg 2 im Detail, Muster auch für andere Werkzeuge

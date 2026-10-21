@@ -41,7 +41,7 @@ $env.EDITOR = "hx"
 sudo hx /etc/hosts
 ```
 
-Funktioniert, aber Helix läuft komplett als root und liest `/root/.config/helix/` statt deiner Konfiguration. Für eine schnelle Einzelzeile okay, dauerhaft aber `sudoedit` vorziehen.
+Funktioniert nur, wenn `sudo` das Programm findet: Es sucht über seinen eigenen `secure_path` (anzeigen mit `sudo -l | grep secure_path`), und der enthält bei Fedora standardmäßig nur Systempfade – weder `/home/linuxbrew/.linuxbrew/bin` noch `~/.local/bin`. Bei beiden Linux-Wegen aus [[03-Installation]] heißt es dann `command not found`; in Nushell hilft `sudo (which hx | get path.0) /etc/hosts`. Außerdem läuft Helix komplett als root und liest `/root/.config/helix/` statt deiner Konfiguration. Für eine schnelle Einzelzeile okay, dauerhaft aber `sudoedit` vorziehen.
 
 ## Verwandt
 

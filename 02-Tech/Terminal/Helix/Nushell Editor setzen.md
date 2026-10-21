@@ -59,6 +59,9 @@ exec nu
 
 `config env` bzw. `config nu` öffnen die jeweilige Datei jetzt direkt in Helix.
 
+> [!note] Fedora Atomic mit Toolbx
+> `env.nu` gilt auch im Container, `$env.EDITOR = "hx"` also ebenfalls. Dort gibt es `hx` aber nur, wenn Helix als lokales Binary unter `~/.local/bin` installiert ist – eine Homebrew-Installation ist im Container nicht sichtbar. Siehe [[03-Installation#Linux (Fedora Sway Atomic)]].
+
 > [!tip] Unter Windows
 > Meldet Windows, dass es `hx` nicht findet: einmal ein neues Terminal öffnen, damit der PATH nach der Installation aktualisiert ist (siehe [[03-Installation]]). Hilft das nicht, den vollständigen Pfad statt `"hx"` eintragen, z. B. `"C:\Program Files\Helix\hx.exe"`.
 

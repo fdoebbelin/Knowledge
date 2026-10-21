@@ -458,4 +458,6 @@ Das Skript lässt sich mit drei Änderungen übertragen: Repository-URL, Asset-M
 > 2. **Abhängigkeiten gehören in den Container** — Sprachserver, Compiler, Header. Sie brauchen Systembibliotheken, die es nur dort gibt.
 > 3. **Nichts davon gehört ins Basisimage** — kein Layering, kein Reboot, keine Drift vom Flotten-Image.
 
+Vergleich mit dem Homebrew-Weg: [[03-Installation#Linux (Fedora Sway Atomic)|Helix-Installation]].
+
 Verwandte Unterlagen: leitfaden-toolbx-tauri-flatpak für die vollständige Werkzeugkette, spickzettel-toolbx für die Abgrenzung zu Distrobox.
