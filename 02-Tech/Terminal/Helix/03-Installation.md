@@ -50,7 +50,7 @@ Das Basisimage von Fedora Atomic ist schreibgeschützt. Ohne Layering gibt es zw
 | Runtime | findet Homebrew selbst | `HELIX_RUNTIME` in `env.nu` setzen |
 | Geeignet, wenn | Helix nur auf dem Host gebraucht wird | Helix auch im Container laufen soll, z. B. mit `rust-analyzer` aus einer Toolbx |
 
-Auf dem Referenzsystem ist derzeit **Weg 1** installiert.
+Auf dem Referenzsystem ist seit dem 21.10.2026 **Weg 2** installiert (Helix 25.07.1, Homebrew-Fassung entfernt). Weg 1 bleibt als Alternative beschrieben.
 
 ### Weg 1: Homebrew
 
@@ -90,11 +90,16 @@ $env.HELIX_RUNTIME = ($env.HOME | path join ".local/bin/hx"
 3. Prüfen – auf dem Host und einmal im Container:
 
 ```nu
-which -a hx              # erwartet: ~/.local/bin/hx
+which -a hx              # erwartet: nur ~/.local/bin/hx
 hx --version
-hx --health | first 12
-toolbox run -c tauri-dev hx --version
+hx --health | first 12   # "Runtime directories" muss ~/.local/share/helix/<Version>/runtime enthalten
+
+toolbox enter tauri-dev
+which hx                 # derselbe Pfad wie auf dem Host
+hx --health rust         # rust-analyzer aus dem CARGO_HOME der Toolbox: ✓
 ```
+
+Auf dem Referenzsystem so geprüft (21.10.2026): Host und `tauri-dev` finden `/var/home/fritz/.local/bin/hx`, Tree-sitter-Parser und Queries stehen auf ✓, im Container zusätzlich `rust-analyzer`. Die Meldung `Runtime directory does not exist: ~/.config/helix/runtime` erscheint auch hier und ist harmlos (siehe Weg 1).
 
 Update, Rückrollen und Deinstallation: [[00 Werkzeuge ins HOME-Verzeichnis installieren#7 Update und Deinstallation|Abschnitt 7]]. Sprachserver gehören weiterhin in den Container ([[00 Werkzeuge ins HOME-Verzeichnis installieren#6 Sprachserver gehören in den Container|Abschnitt 6]]).
 
@@ -105,7 +110,7 @@ Update, Rückrollen und Deinstallation: [[00 Werkzeuge ins HOME-Verzeichnis inst
 > Außerhalb von Fedora Atomic bringen viele Distributionen Helix direkt mit: `dnf install helix` (klassisches Fedora), `apt install helix` (Debian/Ubuntu ab einer gewissen Version), oder `cargo install helix-term` überall dort, wo kein Paket existiert. Vor Übernahme ins Vault auf dem jeweiligen System mit `hx --version` verifizieren – hier nicht nachgeprüft, da das Referenzsystem Fedora Atomic mit Homebrew ist.
 
 > [!tip] Markdown-Language-Server
-> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) braucht es einen Server: `brew install marksman` – auf dem Referenzsystem installiert, Helix findet ihn automatisch (`hx --health markdown`). Bei Weg 2 gilt dieselbe Einschränkung wie für Helix selbst: Ein per Homebrew installierter `marksman` ist im Container nicht sichtbar.
+> Für die LSP-Befehle in [[11 Markdown-Rezepte]] (Gliederung über `Space s`, Diagnosen für kaputte Links) braucht es einen Server: `brew install marksman` – Helix findet ihn dann automatisch (`hx --health markdown`). Auf dem Referenzsystem ist er derzeit **nicht** installiert (Stand 21.10.2026, `which marksman` leer). Bei Weg 2 gilt dieselbe Einschränkung wie für Helix selbst: Ein per Homebrew installierter `marksman` ist im Container nicht sichtbar.
 
 ## Start-Konfiguration
 
