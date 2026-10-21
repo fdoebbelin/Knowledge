@@ -11,7 +11,7 @@ updated: 2026-10-13
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 13. Oktober 2026. Rund 1.370 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 21. Oktober 2026. Rund 1.380 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -41,18 +41,18 @@ Knowledge/
 │   ├── STEM/              MINT-Einführungskurs (Informatik, Physik/p5.js, CAD)
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
-├── 02-Tech/               Technische Referenz, nach Themen (334)
+├── 02-Tech/               Technische Referenz, nach Themen (340)
 │   ├── AI/                Aider, Claude-Code, Claude-Skills, Foundry Local, LM-Studio, Ollama,
 │   │                      OpenClaw, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
 │   ├── Git/
 │   ├── Hardware/          AI-Workstation, Lenovo Yoga 920, Dell XPS 13 9345, Arduino
-│   ├── Linux/             Fedora (Hyprland, Noctalia, bootc-nah), Wine, Allgemeines
+│   ├── Linux/             Fedora (Hyprland, Noctalia, bootc-nah), UEFI-Boot, Wine, Allgemeines
 │   ├── macOS/
 │   ├── Obsidian/
 │   ├── PDF-Tools/
 │   ├── Python-Tooling/    JupyterLab, uv, Pixi, PyCharm, Conda
 │   ├── Terminal/          Nushell (mit nu-scripts), Helix, Zellij, Yazi
-│   ├── Virtualization/    Docker, Podman, KVM-QEMU, Incus, Marktüberblick
+│   ├── Virtualization/    Docker, Podman, KVM-QEMU (inkl. WinPE-Rettungs-VM), Incus, Marktüberblick
 │   ├── Web/               Drupal, Flask, Grav CMS, NextCloud, Opigno, Hosting
 │   ├── Windows/           PowerShell, Scoop, RDP, Systemeinstellungen
 │   └── WSL/               WSL-Distributionen, XPS-13-Reihe (Sway/Noctalia unter WSLg)
@@ -67,7 +67,7 @@ Knowledge/
 │   ├── Python/            Referenz, Arbeitsblätter, Buch (Notebook-Entwürfe)
 │   └── Rust/              Dioxus, SurrealDB, Tauri, Rustlings, Playground, Windsurf
 │
-└── 05-Notes/              (122)
+└── 05-Notes/              (123)
     ├── Archive/           Projektmanagement alt (ProjeQtOr), Python-Grundkurs alt (5D),
     │                      Migrationsdokumente 2026-02, abgelöste Leitfäden
     └── Clippings/         Unsortierte Artikel (Eingang), Clippings/AI
@@ -169,6 +169,7 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-09-15 Phase 2** (`f39369b`): fünf Bereiche, 04-Software und Important aufgelöst, 1.151 Dateien verschoben.
 - **2026-10-07**: Yazi-Notizen auf `nn-Name` nummeriert (`01-Einführung`, `02-Leitfaden zum Spickzettel`, `03-Installation und Konfiguration`, `04-Türöffner (Coaching)`); Coaching-Leitfaden eingeordnet; 40 verwaiste Anhänge nach `05-Notes/Archive/verwaiste-anhänge` ausgelagert; Links vault-weit bereinigt (Geister-Doku und Clipping-Quellen entklammert, 21 Verweise auf vorhandene Notizen umgelenkt, 28 Anker repariert, 30 fehlerhafte Clipping-Links `[[text](url)]` korrigiert).
 - **2026-10-13**: Helix-Leitfaden auf die acht Grafik-Abschnitte gekürzt (697 → 347 Zeilen), alle Tabellen ohne Grafik ins neue `Helix-Cookbook` verlagert (`02-Tech/Terminal/Helix/CookBook/`, Kapitel 1–5 und 7–10 aus dem gekürzten Material, Kapitel 6 bewusst ausgelassen – bleibt im Leitfaden). Leitfaden und Cookbook-Übersicht auf `nn-Name` nummeriert (`01-Leitfaden zum Spickzettel`, `02-Cookbook`), analog zur Yazi-Konvention vom 07.10. Parallel entstandene Handoff-Arbeit einer zweiten Sitzung (Yazi-Nummerierung, Linkbereinigung, verwaiste Anhänge) per Merge eingebracht. Anschließend `Helix_Tutorial_erweitert.md` und `Migrating from Vim.md` aufgelöst (Übungen und Vim-Reflextabelle ins neue Cookbook-Kapitel 13 sowie Kapitel 4/5 überführt), neue `03-Installation` angelegt (vorher nirgends gebündelt), `Nushell Editor setzen.md` (falscher Befehl `helix` statt `hx` korrigiert) und `Helix aus Quelltext bauen…` vom Chat-Rohformat bereinigt, `Helix - Dash Cheat Sheets.md` und `sudoedit.md` mit vollständigem Frontmatter versehen. Chrome-PWA-Launcher-Leitfaden aus der Inbox nach `02-Tech/Linux/Fedora/` eingeordnet. Danach die drei zuvor offenen Cookbook-Kapitel neu geschrieben: `06 Surround` (aus dem Leitfaden-Abschnitt „7 Match & Surround“ in Rezeptform gebracht), `11 Markdown-Rezepte` und `12 Eigene Belegungen` (beide ohne Vault-Vorlage neu verfasst, gegen die offizielle Helix-Doku zu `languages.toml` und Key-Remapping geprüft). Cookbook-Übersicht und Leitfaden-Verweise entsprechend aktualisiert. Außerdem die bis dahin offene Linux-Installation in `03-Installation.md` dokumentiert: Helix kommt auf dem Referenzsystem (Fedora Sway Atomic) wie Yazi über Homebrew, direkt am Referenzsystem mit `hx --health`/`hx --health rust`/`hx --health markdown` geprüft (inkl. der harmlosen „Runtime directory does not exist“-Meldung).
+- **2026-10-21**: Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ samt Artefakten eingeordnet und verdichtet. Neuer Ordner `02-Tech/Linux/UEFI-Boot/` mit `01-UEFI-Booteinträge anlegen` (Artefakt), den neu aus dem Protokoll und den PDF-Arbeitsblättern verdichteten Runbooks `02-Legacy-zu-UEFI bei Fedora Atomic` und `03-btrfs und SMART im Live-System prüfen`, der Statusnotiz `Schulungs-PCs – Stand der Umstellung` und dem Protokoll als Quelle; in `_resources/` das Prüfskript `uefi-pruefung.sh` und ein Arbeitsblatt (`Schritt-3-ESP-anlegen.pdf`) als Beispiel. Die übrigen vier PDFs, die reportlab-Generatoren und das Übergabe-ZIP wurden nicht übernommen. Teil A (Windows-SSD) als `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm` mit eingebettetem `winpe-vm.nu`. Querverweise in `Fedora Sway Atomic`, `LINUX Live-ISOs`, `ddrescue`, `11-kvm-windows11-vm` und `KVM-QEMU Leitfaden`.
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt. Chat-Protokoll zur Monitoranordnung unter Sway eingeordnet (`02-Tech/Linux/Fedora/`), mit `Fedora Sway Atomic` und dem Hyprland-Gegenstück `Mehrere Bildschirme verwalten` verlinkt.
 - **2026-09-30**: Fünf Yazi-Notizen zu dreien zusammengefasst: „Installation und Plugins“, „kommentierter Leitfaden“, „Markdown-Vorschau“ und „Mermaid-Diagramme“ verschmolzen zu `Yazi – Installation und Konfiguration` (mit vorangestelltem Schnellstart), dazu neu `Yazi – Einführung` als Kurzfassung des Konzepts; `Yazi-Leitfaden` bleibt als Spickzettel-Referenz bestehen. Die drei Notizen tragen seit dem 07.10. Nummernpräfixe.

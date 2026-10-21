@@ -489,3 +489,7 @@ virt-xml "Windows 11 Pro" --connect qemu:///system --edit --video model=qxl
 - [ ] Entscheidung `host-passthrough` vs. `host-model` für die Schulungsflotte
 - [ ] Neuanlage-Abschnitt („Neue VM anlegen") einmal live durchspielen, dann
       Notiz komplett auf `verifiziert` heben
+
+## Verwandt
+
+- [[13-winpe-rettungs-vm]] – physische Windows-SSD per WinPE in einer VM prüfen

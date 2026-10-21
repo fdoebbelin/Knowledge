@@ -45,3 +45,4 @@ Ausführlich mit Begründung: [[00 Werkzeuge ins HOME-Verzeichnis installieren]]
 - [[Bluefin]] – fertiges Atomic-Image auf derselben Grundlage
 - [[00 container-bootc-flatpak]] – Container, bootc und Flatpak im Zusammenspiel
 - [[03-Installation und Konfiguration|Yazi – Installation und Konfiguration]] – Beispiel für den brew-Weg
+- [[02-Legacy-zu-UEFI bei Fedora Atomic]] – Legacy-Installation nachträglich auf UEFI umstellen (bootupd)

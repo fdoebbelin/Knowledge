@@ -45,3 +45,4 @@ ddrescuelog -t disc.map          # Stand der Rettung ansehen
 
 - [[2026-09-21 Lexikothek CD-Archivierung]]
 - [[Bertelsmann Lexikothek]]
+- [[03-btrfs und SMART im Live-System prüfen]] – Dateisystem und SSD-Zustand vom Live-Stick prüfen

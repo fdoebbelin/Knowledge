@@ -34,3 +34,8 @@
 - Pop!_OS — [https://pop.system76.com/](https://pop.system76.com/)
 - Zorin OS — [https://zorin.com/os/download/](https://zorin.com/os/download/)
 - MX Linux — [https://mxlinux.org/download-links/](https://mxlinux.org/download-links/)
+
+## Verwandt
+
+- [[03-btrfs und SMART im Live-System prüfen]] – Live-System als Prüfumgebung, Ergebnis sichern
+- [[02-Legacy-zu-UEFI bei Fedora Atomic]] – Live-Stick im UEFI-Modus für den Umbau

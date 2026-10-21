@@ -277,3 +277,8 @@ Die Integration von KVM/QEMU in Nushell bietet eine mächtige, flexible und auto
 ---
 
 Dieser Leitfaden bietet eine umfassende, praxisorientierte Anleitung zur Nutzung von KVM/QEMU über die Konsole mit Fokus auf Nushell, inklusive vollständiger Skriptbeispiele und Erklärungen zu den Nu-spezifischen Besonderheiten. Die Kombination aus KVM/QEMU und Nushell ermöglicht eine effiziente, automatisierte und flexible Verwaltung von Virtualisierungsumgebungen.
+
+## Verwandt
+
+- [[11-kvm-windows11-vm]] – Windows-11-VM unter Fedora Atomic
+- [[13-winpe-rettungs-vm]] – Windows-SSD per WinPE in einer VM prüfen

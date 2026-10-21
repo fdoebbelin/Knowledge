@@ -5,7 +5,7 @@ aliases:
 tags:
   - meta
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-10-21
 ---
 
 # Eingang (00-Inbox)
@@ -72,3 +72,4 @@ Nichts. Eingeordnet wurden bisher:
 - [[04-Türöffner (Coaching)]] → `02-Tech/Terminal/Yazi/`; dabei alle Yazi-Notizen auf `nn-Name` umbenannt
 - Helix-Cookbook Kapitel 1 (Navigation und Sprünge) → `02-Tech/Terminal/Helix/CookBook/`, dabei [[01-Leitfaden zum Spickzettel|Helix-Leitfaden]] auf die acht Grafik-Abschnitte gekürzt und die übrigen Tabellen auf neun weitere Cookbook-Kapitel verteilt, siehe [[02-Cookbook|Helix-Cookbook]]
 - [[Chrome-PWAs aus dem Flatpak im App-Launcher verfügbar machen]] → `02-Tech/Linux/Fedora/`
+- [[2026-10-21 Windows-SSD und Legacy-zu-UEFI Umstellung]] → `02-Tech/Linux/UEFI-Boot/`, verdichtet zu [[01-UEFI-Booteinträge anlegen]], [[02-Legacy-zu-UEFI bei Fedora Atomic]], [[03-btrfs und SMART im Live-System prüfen]] und [[Schulungs-PCs – Stand der Umstellung]]; Teil A als [[13-winpe-rettungs-vm]] nach `02-Tech/Virtualization/KVM-QEMU/`; von fünf PDFs nur eines als Beispiel behalten
