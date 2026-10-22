@@ -29,6 +29,7 @@ Der Kurs `01-Courses/Programming/Tauri-Kompaktkurs` ist didaktisch umgebaut word
   - `Anhang Begleitung und Vorbereitung`: Restverweise auf „Kurstag“, „Vortag“ und „eine halbe Stunde“ zeitfrei formuliert.
 - **Vault-weit geprüft**: alle Wikilinks im Kursordner aufgelöst (Ausnahme behoben: `[[bin]]` in der Rust-Strukturliste war ein toter Link), Frontmatter-Schlüssel `ue`, `kurstag`, `dauer` aus dem Kursmaterial entfernt.
 - `Struktur-Übersicht.md` nachgeführt: neuer Abschnitt „Kursstruktur Tauri-Kompaktkurs“, Ordnerbaum, Zähler 01-Courses 702 → 706, Gesamtzahl rund 1.390, Historie-Eintrag 22.10.2026 (2).
+- **Chat-Protokoll** zum Umbau angelegt: `01-Courses/Programming/Tauri-Kompaktkurs/2026-10-22 Tauri-Kompaktkurs didaktisch umgebaut.md` (Typ `chat-protokoll`), in der Kursübersicht und in [[Eingang]] verlinkt. Es dokumentiert die Problemlösungen, die Entscheidungen und je Artefakt einen Reproduktions-Prompt.
 
 ## Nächster Schritt
 

@@ -36,6 +36,7 @@ tags:
 - Anschluss
 - Risiken und Gegenmaßnahmen
 - Offene Punkte
+- Verknüpfung
 
 > [!abstract] Kurzbeschreibung
 > Drei Teilnehmende ohne Vorkenntnisse in Webtechniken bauen eine kleine, lauffähige Desktop-Anwendung. HTML, CSS und JavaScript werden von Grund auf eingeführt, aber ausschließlich an dem einen Projekt, das am Ende als Flatpak auf dem eigenen Rechner installiert ist.
@@ -169,3 +170,11 @@ Nach diesem Kurs ist der Übergang in [[00 Kurskonzept Tauri]] möglich, allerdi
 - [ ] Befehlskarte drucken
 - [ ] Prüfen, ob im Raum drei ausreichend große Bildschirme stehen. Zwei Dateien nebeneinander sind hier kein Luxus.
 - [ ] Klären, ob die Teilnehmenden ihre Geräte behalten. Falls nein, Ergebnis als Bundle mitgeben.
+
+## Verknüpfung
+
+Anhänge: [[Anhang Befehlskarte]] · [[Anhang Sprachumfang JavaScript]] · [[Anhang Begleitung und Vorbereitung]]
+
+Umfangreicherer Kurs: [[00 Kurskonzept Tauri]]
+
+Protokoll zum didaktischen Umbau: [[2026-10-22 Tauri-Kompaktkurs didaktisch umgebaut]]
