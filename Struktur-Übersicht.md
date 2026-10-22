@@ -6,12 +6,12 @@ aliases:
 tags:
   - meta
 created: 2026-09-15
-updated: 2026-10-13
+updated: 2026-10-22
 ---
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 21. Oktober 2026. Rund 1.380 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 22. Oktober 2026. Rund 1.380 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -20,7 +20,7 @@ Stand: 21. Oktober 2026. Rund 1.380 Notizen in fünf Bereichen, dazu der Eingang
 - **Projekte** haben eigene Ordner unter `03-Projects`; projektbezogene Recherchen und Clippings liegen dort, nicht in den Notizen.
 - **Anhänge** liegen im `_resources`-Ordner neben der Notiz (Obsidian-Einstellung). Ein Unterordner bleibt nur bestehen, wenn er mehr als eine Handvoll Notizen hat.
 - **Keine Zugangsdaten, Schlüssel oder Kontodaten** in diesem Vault; der Vault ist ein Git-Repository.
-- **Eingang.** Neues, das noch einzuordnen ist, liegt in `00-Inbox` und wird von dort mit Claude Code einsortiert, siehe [[Eingang]]. Der Ordner bleibt leer, wenn nichts offen ist.
+- **Eingang.** Neues, das noch einzuordnen ist, liegt in `00-Inbox` und wird von dort mit dem KI-Agenten einsortiert (seit 22.10.2026 OpenCode, siehe [[00 OpenCode]]), siehe [[Eingang]]. Der Ordner bleibt leer, wenn nichts offen ist.
 - **Nummernpräfix bei Lesereihenfolge.** Hat ein Ordner eine sinnvolle Reihenfolge, tragen die Notizen ein Präfix `nn-` (Beispiel `02-Tech/Terminal/Yazi`: `01-Einführung` … `04-Türöffner (Coaching)`). Der frühere Name bleibt als `aliases`-Eintrag erhalten, damit ältere Verweise weiter aufgehen.
 - **Dateinamen** sind eindeutig im gesamten Vault (Wikilinks lösen über den Namen auf). Keine „Unbenannt“, keine „(1)“-Kopien, keine „alt“-Versionen neben der aktuellen; Altes wandert nach `05-Notes/Archive`.
 
@@ -28,6 +28,11 @@ Stand: 21. Oktober 2026. Rund 1.380 Notizen in fünf Bereichen, dazu der Eingang
 
 ```
 Knowledge/
+├── AGENTS.md              Projektregeln für KI-Agenten, von OpenCode automatisch gelesen
+├── HANDOFF.md             Übergabe zwischen den Sitzungen
+├── README.md              Kurzfassung für GitHub
+├── Struktur-Übersicht.md  diese Datei
+│
 ├── 00-Inbox/              Eingang: noch nicht eingeordnete Dokumente (0)
 │
 ├── 01-Courses/            Lehrmaterial mit Modulstruktur (702)
@@ -41,9 +46,9 @@ Knowledge/
 │   ├── STEM/              MINT-Einführungskurs (Informatik, Physik/p5.js, CAD)
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
-├── 02-Tech/               Technische Referenz, nach Themen (340)
+├── 02-Tech/               Technische Referenz, nach Themen (341)
 │   ├── AI/                Aider, Claude-Code, Claude-Skills, Foundry Local, LM-Studio, Ollama,
-│   │                      OpenClaw, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
+│   │                      OpenClaw, OpenCode, IOPaint, LLM-Basics (Modelle, Hardware, Grundlagen)
 │   ├── Git/
 │   ├── Hardware/          AI-Workstation, Lenovo Yoga 920, Dell XPS 13 9345, Arduino
 │   ├── Linux/             Fedora (Hyprland, Noctalia, bootc-nah), UEFI-Boot, Wine, Allgemeines
@@ -77,7 +82,7 @@ Knowledge/
 
 | Was | Wohin |
 |---|---|
-| Noch nicht eingeordnet, soll mit Claude Code sortiert werden | `00-Inbox/` – siehe [[Eingang]] |
+| Noch nicht eingeordnet, soll mit dem KI-Agenten sortiert werden | `00-Inbox/` – siehe [[Eingang]] |
 | Chat-Protokoll (Skill `chat-protokoll`) | nach Thema, wie jede andere Notiz; Tag `chat-protokoll` macht sie auffindbar |
 | Neuer Kurs oder neues Kursmodul | `01-Courses/<Bereich>/<Kursname>/` |
 | Anleitung zu einem Werkzeug oder System | `02-Tech/<Thema>/` (vorhandenen Ordner nutzen) |
@@ -171,6 +176,7 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-10-13**: Helix-Leitfaden auf die acht Grafik-Abschnitte gekürzt (697 → 347 Zeilen), alle Tabellen ohne Grafik ins neue `Helix-Cookbook` verlagert (`02-Tech/Terminal/Helix/CookBook/`, Kapitel 1–5 und 7–10 aus dem gekürzten Material, Kapitel 6 bewusst ausgelassen – bleibt im Leitfaden). Leitfaden und Cookbook-Übersicht auf `nn-Name` nummeriert (`01-Leitfaden zum Spickzettel`, `02-Cookbook`), analog zur Yazi-Konvention vom 07.10. Parallel entstandene Handoff-Arbeit einer zweiten Sitzung (Yazi-Nummerierung, Linkbereinigung, verwaiste Anhänge) per Merge eingebracht. Anschließend `Helix_Tutorial_erweitert.md` und `Migrating from Vim.md` aufgelöst (Übungen und Vim-Reflextabelle ins neue Cookbook-Kapitel 13 sowie Kapitel 4/5 überführt), neue `03-Installation` angelegt (vorher nirgends gebündelt), `Nushell Editor setzen.md` (falscher Befehl `helix` statt `hx` korrigiert) und `Helix aus Quelltext bauen…` vom Chat-Rohformat bereinigt, `Helix - Dash Cheat Sheets.md` und `sudoedit.md` mit vollständigem Frontmatter versehen. Chrome-PWA-Launcher-Leitfaden aus der Inbox nach `02-Tech/Linux/Fedora/` eingeordnet. Danach die drei zuvor offenen Cookbook-Kapitel neu geschrieben: `06 Surround` (aus dem Leitfaden-Abschnitt „7 Match & Surround“ in Rezeptform gebracht), `11 Markdown-Rezepte` und `12 Eigene Belegungen` (beide ohne Vault-Vorlage neu verfasst, gegen die offizielle Helix-Doku zu `languages.toml` und Key-Remapping geprüft). Cookbook-Übersicht und Leitfaden-Verweise entsprechend aktualisiert. Außerdem die bis dahin offene Linux-Installation in `03-Installation.md` dokumentiert: Helix kommt auf dem Referenzsystem (Fedora Sway Atomic) wie Yazi über Homebrew, direkt am Referenzsystem mit `hx --health`/`hx --health rust`/`hx --health markdown` geprüft (inkl. der harmlosen „Runtime directory does not exist“-Meldung).
 - **2026-10-21**: Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ samt Artefakten eingeordnet und verdichtet. Neuer Ordner `02-Tech/Linux/UEFI-Boot/` mit `01-UEFI-Booteinträge anlegen` (Artefakt), den neu aus dem Protokoll und den PDF-Arbeitsblättern verdichteten Runbooks `02-Legacy-zu-UEFI bei Fedora Atomic` und `03-btrfs und SMART im Live-System prüfen`, der Statusnotiz `Schulungs-PCs – Stand der Umstellung` und dem Protokoll als Quelle; in `_resources/` das Prüfskript `uefi-pruefung.sh` und ein Arbeitsblatt (`Schritt-3-ESP-anlegen.pdf`) als Beispiel. Die übrigen vier PDFs, die reportlab-Generatoren und das Übergabe-ZIP wurden nicht übernommen. Teil A (Windows-SSD) als `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm` mit eingebettetem `winpe-vm.nu`. Querverweise in `Fedora Sway Atomic`, `LINUX Live-ISOs`, `ddrescue`, `11-kvm-windows11-vm` und `KVM-QEMU Leitfaden`.
 - **2026-10-21 (2)**: Helix-Installation unter Linux um den zweiten Weg „lokales Binary im `$HOME`“ ergänzt (`03-Installation`: Vergleichstabelle Homebrew vs. `~/.local/bin`, Kurzfassung mit Verweisen auf `00 Werkzeuge ins HOME-Verzeichnis installieren` statt Duplizierung); Toolbx-Hinweis in `Nushell Editor setzen`, `secure_path`-Hinweis zu `sudo hx` in `sudoedit`. Anschließend das Referenzsystem auf Weg 2 umgestellt (Skript aus der 00-Notiz unverändert lauffähig, `HELIX_RUNTIME` in `env.nu`, `brew uninstall helix`) und auf dem Host sowie in der Toolbox `tauri-dev` geprüft.
+- **2026-10-22**: Verwaltung des Vaults von Claude Code auf **OpenCode** umgestellt. Neu: `AGENTS.md` im Wurzelordner als Projektgedächtnis – Ordnerlogik, Frontmatter-Konvention, Wikilink-Regeln, Secrets-Regel und Git-Workflow als imperative Regeln, die OpenCode bei jedem Sitzungsstart einliest. Dazu die Einweisung `02-Tech/AI/OpenCode/00 OpenCode` (Installation, Provider, `AGENTS.md` vs. `CLAUDE.md`, Konfiguration, Agenten/Befehle/Skills, Berechtigungen, Vergleich zu Claude Code, Einsatz im Vault). `HANDOFF.md` bleibt die Übergabe zwischen den Sitzungen und verweist jetzt auf `AGENTS.md`. `00-Inbox/Eingang.md` und diese Übersicht auf den neuen Werkzeugnamen umgestellt.
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt. Chat-Protokoll zur Monitoranordnung unter Sway eingeordnet (`02-Tech/Linux/Fedora/`), mit `Fedora Sway Atomic` und dem Hyprland-Gegenstück `Mehrere Bildschirme verwalten` verlinkt.
 - **2026-09-30**: Fünf Yazi-Notizen zu dreien zusammengefasst: „Installation und Plugins“, „kommentierter Leitfaden“, „Markdown-Vorschau“ und „Mermaid-Diagramme“ verschmolzen zu `Yazi – Installation und Konfiguration` (mit vorangestelltem Schnellstart), dazu neu `Yazi – Einführung` als Kurzfassung des Konzepts; `Yazi-Leitfaden` bleibt als Spickzettel-Referenz bestehen. Die drei Notizen tragen seit dem 07.10. Nummernpräfixe.

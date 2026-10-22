@@ -5,7 +5,7 @@ aliases:
 tags:
   - meta
 created: 2026-09-22
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 
 # Eingang (00-Inbox)
@@ -13,12 +13,12 @@ updated: 2026-10-21
 Durchgangsstation für Dokumente, die noch keinen Platz in der Wissensbasis haben: Chat-Protokolle, exportierte Unterlagen, Entwürfe, Fundstücke. Hier liegt nichts dauerhaft.
 
 > [!info] Unterschied zu `05-Notes/Clippings`
-> `Clippings` sind Web-Artikel, die beim Lesen anfallen. In `00-Inbox` landet alles, was **gemeinsam mit Claude Code** eingeordnet werden soll.
+> `Clippings` sind Web-Artikel, die beim Lesen anfallen. In `00-Inbox` landet alles, was **gemeinsam mit dem KI-Agenten** eingeordnet werden soll – seit dem 22.10.2026 mit OpenCode, siehe [[00 OpenCode]].
 
 ## Ablauf
 
 1. **Ablegen:** Datei nach `00-Inbox/` legen. Dateiname frei, bei Protokollen bewährt: `JJJJ-MM-TT Thema.md`.
-2. **Einordnen:** In Claude Code sagen, was eingeordnet werden soll. Dabei wird geklärt: Zielordner, Dateiname, Frontmatter, Verweise auf vorhandene Notizen.
+2. **Einordnen:** In OpenCode sagen, was eingeordnet werden soll. Dabei wird geklärt: Zielordner, Dateiname, Frontmatter, Verweise auf vorhandene Notizen. Die Projektregeln dazu stehen in [[AGENTS]].
 3. **Verschieben:** mit `git mv`, damit die Historie erhalten bleibt.
 4. **Verlinken:** Ziel-Ordner und verwandte Notizen gegenseitig verbinden, Struktur-Übersicht bei neuen Ordnern ergänzen.
 

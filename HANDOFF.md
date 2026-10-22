@@ -2,14 +2,15 @@
 
 | | |
 |---|---|
-| Stand | 2026-10-21 16:48 |
+| Stand | 2026-10-22 |
 | Von Rechner | fedora |
 | Branch | main @ 12084a0 (+ dieser Handoff-Commit), mit origin/main synchron |
-| Uncommittet | nein |
+| Uncommittet | ja – OpenCode-Einweisung und `AGENTS.md` (siehe unten) |
+| Werkzeug | OpenCode v2.1.2, Projektwissen in `AGENTS.md` (bisher Claude Code) |
 
 ## Ziel
 
-Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Heute: (1) Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ (claude.ai, 19.–21.10.) samt Artefakten eingeordnet, (2) offenen Helix-Punkt der Vorsitzung erledigt: lokaler Binary-Weg dokumentiert und Referenzsystem darauf umgestellt.
+Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Heute: (1) Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ (claude.ai, 19.–21.10.) samt Artefakten eingeordnet, (2) offenen Helix-Punkt der Vorsitzung erledigt: lokaler Binary-Weg dokumentiert und Referenzsystem darauf umgestellt, (3) Vault-Verwaltung von Claude Code auf OpenCode umgestellt.
 
 ## Erledigt in dieser Session
 
@@ -26,6 +27,11 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 - Danach Helix-Binary-Weg dokumentiert: `02-Tech/Terminal/Helix/03-Installation.md` hat unter „Linux“ jetzt eine Vergleichstabelle und zwei Wege (Homebrew / lokales Binary in `~/.local/bin`). Weg 2 als Kurzfassung mit Ankerverweisen auf `00 Werkzeuge ins HOME-Verzeichnis installieren` (Abschnitte 3, 5.1, 6, 7), kein doppeltes Skript. Ergänzt: Hinweis „beide Wege gleichzeitig“ (`which -a hx`) und marksman-Einschränkung. `Nushell Editor setzen.md`: Toolbx-Hinweis. `sudoedit.md`: `sudo hx` scheitert am `secure_path`. Rücklink in der 00-Notiz. `CookBook/11` und `12` setzen keinen Installationsweg voraus, dort nichts geändert. Commit `b45f971`, gepusht.
 - Referenzsystem auf Weg 2 umgestellt: `~/.local/bin/install-helix.nu` aus Abschnitt 3 der 00-Notiz übernommen (lief unverändert, Helix 25.07.1 nach `~/.local/share/helix/25.07.1`), `HELIX_RUNTIME` auf oberster Ebene in `~/.config/nushell/env.nu` (vor dem Toolbx-Block), `brew uninstall helix`. Geprüft: Host und Toolbox `tauri-dev` finden `~/.local/bin/hx`, Runtime ok, im Container `rust-analyzer` ✓. `03-Installation.md` entsprechend aktualisiert. Commit `a20f83d`, gepusht.
 - `marksman` fehlte (entgegen dem Vermerk der Vorsitzung) und wurde per `brew install marksman` neu installiert (2026-02-08); `hx --health markdown` zeigt ✓. Doku nachgeführt, Commit `12084a0`, gepusht.
+- Vault-Verwaltung von Claude Code auf **OpenCode** umgestellt:
+  - `AGENTS.md` neu im Wurzelordner – Projektgedächtnis als kompakte, imperative Regelsammlung (Ordnerlogik, Frontmatter, Wikilinks, Secrets, Einordnungs- und Git-Workflow). Wird von OpenCode bei jedem Sitzungsstart gelesen; Claude Code liest sie **nicht** (V2 kennt kein `CLAUDE.md`-Fallback).
+  - `02-Tech/AI/OpenCode/00 OpenCode.md` neu – Einweisung mit Vault-Fokus: Installation, Provider, `AGENTS.md` vs. `CLAUDE.md`, `opencode.json(c)` vs. `cli.json`, Agenten/Befehle/Skills/MCP, Berechtigungen, Vergleichstabelle Claude Code ↔ OpenCode, Einsatz im Vault, Grenzen.
+  - `Struktur-Übersicht.md` nachgeführt (neuer Ordner `02-Tech/AI/OpenCode`, Zähler 02-Tech 340 → 341, Wurzeldateien im Ordnerbaum, Historie-Eintrag 22.10.2026); `00-Inbox/Eingang.md` von „Claude Code“ auf den generischen Werkzeugbegriff plus OpenCode umgestellt.
+  - Nicht committet und nicht gepusht (Nutzerentscheidung).
 
 ## Nächster Schritt
 
@@ -33,6 +39,7 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 2. **Nach dem ersten echten Umbau** eines Schulungs-PCs: Ausgabe von `bootupctl status` in `02-…#Offen` nachtragen, Warnhinweis „nicht auf Hardware getestet“ anpassen, Tabelle in `Schulungs-PCs – Stand der Umstellung` aktualisieren (nach Neuinstallation P8B75-M auch die Disk-ID).
 3. **Andere Rechner nachziehen** (nach `git pull`): `install-helix.nu` aus `00 Werkzeuge ins HOME-Verzeichnis installieren` Abschnitt 3 anlegen und ausführen, `HELIX_RUNTIME` in `env.nu` (siehe `03-Installation.md`, Weg 2), `brew uninstall helix`, `brew install marksman` falls fehlend; prüfen mit `which -a hx` und `hx --health markdown`.
 4. Nicht verifiziert: dass Fedoras `secure_path` keine Benutzerpfade enthält (sudo verlangte ein Passwort) – in `sudoedit.md` mit Prüfbefehl formuliert.
+5. **Gegenlesen** (Nutzer): `02-Tech/AI/OpenCode/00 OpenCode.md` und `AGENTS.md` gegenlesen. Offen: Die Provider-Anbindung auf dem Referenzsystem ist noch nicht konfiguriert (kein `/connect` gelaufen) – die Notiz beschreibt den Weg, der Stand ist aber unbelegt.
 
 ## Entscheidungen
 
@@ -42,6 +49,8 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 - Von fünf PDFs nur `Schritt-3-ESP-anlegen.pdf` als Beispiel behalten; Vorprüfungs-, btrfs- und die zwei PC-Varianten-PDFs sowie die reportlab-Generatoren (`quellen/`) und das Übergabe-ZIP nicht übernommen – Inhalt steckt in 02, 03 und der Statusnotiz.
 - `winpe-vm.nu` (142 Zeilen) in die Notiz eingebettet, `uefi-pruefung.sh` (252 Zeilen) nur als Datei in `_resources/`.
 - Schulungs-PC-Stand als Notiz im Tech-Ordner, nicht als `03-Projects/`.
+- Werkzeugwechsel zu OpenCode: `AGENTS.md` im Wurzelordner statt `CLAUDE.md` im Wurzelordner – OpenCode V2 kennt keinen `CLAUDE.md`-Fallback. Die Claude-Code-Notizen in `02-Tech/AI/Claude-Code/` bleiben als Vorgänger-Referenz stehen.
+- Kein `opencode.json` im Vault angelegt: Für diesen Anwendungsfall (reine Wissensbasis, keine Codebasis) reicht die `AGENTS.md`; Projekt- und Terminal-Konfiguration bleiben global in `~/.config/opencode/`.
 
 ## Sackgassen und Erkenntnisse
 
@@ -50,12 +59,15 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 - `toolbox run -c tauri-dev …` scheiterte aus der nicht-interaktiven Claude-Shell („Nushell launched as a REPL, but STDIN is not a TTY“); der Container-Test lief stattdessen über `podman exec --user fritz … tauri-dev`. In der Doku steht deshalb `toolbox enter`.
 - `nu -c` lädt `env.nu` nicht – zum Testen `nu --env-config ~/.config/nushell/env.nu -c …`.
 - Push mit den aktuellen GitHub-Credentials auf diesem Rechner funktionierte ohne Nacharbeit.
+- Claude Code hat den Vault nie über eine `CLAUDE.md` im Wurzelordner gesteuert – das Wissen lag in `HANDOFF.md`, `Struktur-Übersicht.md` und `00-Inbox/Eingang.md`. Für OpenCode ist das in `AGENTS.md` gebündelt; die drei Dateien bleiben als menschliche Arbeitsgrundlage bestehen.
 
 ## Relevante Dateien
 
 - `02-Tech/Linux/UEFI-Boot/` – alle neuen Notizen, Skript, Beispiel-PDF
 - `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm.md` – neu
 - `02-Tech/Terminal/Helix/03-Installation.md` – zwei Linux-Wege, Referenzsystem auf Weg 2
+- `AGENTS.md` – neu, Projektregeln für den KI-Agenten (im Wurzelordner)
+- `02-Tech/AI/OpenCode/00 OpenCode.md` – neu, Einweisung mit Vault-Fokus
 - `Struktur-Übersicht.md`, `00-Inbox/Eingang.md` – nachgeführt
 
 ## Nicht in Git
