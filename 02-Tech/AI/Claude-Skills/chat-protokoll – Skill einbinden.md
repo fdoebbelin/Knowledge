@@ -6,7 +6,7 @@ tags:
   - obsidian
   - chat-protokoll
 created: 2026-09-22
-updated: 2026-09-22
+updated: 2026-10-22
 status: active
 ---
 
@@ -55,7 +55,7 @@ Wenn der Skill aus einer einzigen Datei bestehen soll: den Abschnitt „Vorlage"
 Diese Punkte haben sich an den ersten beiden Protokollen gezeigt:
 
 - **Dateiname** `YYYY-MM-TT Thema.md`, eindeutig im ganzen Vault.
-- **Ablage:** Neue Protokolle nach `00-Inbox/`, nicht in die Wurzel. Einsortiert wird später, siehe [[Eingang]].
+- **Ablage:** Der Skill sucht den Ablageort im Projektverzeichnis in dieser Reihenfolge und nimmt den ersten vorhandenen Ordner: `/mnt/user-data/outputs/` (Standardfall), sonst `00-Inbox/`, sonst das Projektverzeichnis selbst. In `00-Inbox/` und in der Wurzel bleibt die Datei liegen – nicht umbenennen, nicht in einen Themenordner verschieben, nicht verlinken. Das Einordnen passiert später, siehe [[Eingang]].
 - **Platzhalter statt echter Daten:** IP-Adressen, Hostnamen, Seriennummern und Zugangsdaten ersetzen und im Abschnitt „Hinweise zur Vollständigkeit" auflisten. Der Vault ist ein Git-Repository.
 - **Falsches als falsch kennzeichnen:** Irrtümer aus dem Chat nicht stillschweigend korrigieren, sondern als Irrtum benennen. Das ist in beiden Protokollen bereits so gelöst und hat sich bewährt.
 - **Wikilinks sparsam:** Nur auf Themen verweisen, zu denen es eine Notiz gibt oder geben soll. Jeder Verweis ins Leere ist Nacharbeit – nach den ersten beiden Protokollen waren sieben Stichwortnotizen nachzutragen.

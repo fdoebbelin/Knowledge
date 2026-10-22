@@ -30,6 +30,7 @@ Der Kurs `01-Courses/Programming/Tauri-Kompaktkurs` ist didaktisch umgebaut word
 - **Vault-weit geprüft**: alle Wikilinks im Kursordner aufgelöst (Ausnahme behoben: `[[bin]]` in der Rust-Strukturliste war ein toter Link), Frontmatter-Schlüssel `ue`, `kurstag`, `dauer` aus dem Kursmaterial entfernt.
 - `Struktur-Übersicht.md` nachgeführt: neuer Abschnitt „Kursstruktur Tauri-Kompaktkurs“, Ordnerbaum, Zähler 01-Courses 702 → 706, Gesamtzahl rund 1.390, Historie-Eintrag 22.10.2026 (2).
 - **Chat-Protokoll** zum Umbau angelegt: `01-Courses/Programming/Tauri-Kompaktkurs/2026-10-22 Tauri-Kompaktkurs didaktisch umgebaut.md` (Typ `chat-protokoll`), in der Kursübersicht und in [[Eingang]] verlinkt. Es dokumentiert die Problemlösungen, die Entscheidungen und je Artefakt einen Reproduktions-Prompt.
+- **Skill `chat-protokoll` angepasst**: Der Ablageort wird jetzt im Projektverzeichnis gesucht – zuerst `/mnt/user-data/outputs/`, sonst `00-Inbox/`, sonst die Wurzel. In `00-Inbox/` und in der Wurzel bleibt die Datei ohne weitere Bearbeitung liegen (nicht umbenennen, nicht verschieben, nicht verlinken). Dokumentiert in [[chat-protokoll – Skill einbinden]].
 
 ## Nächster Schritt
 
@@ -68,3 +69,4 @@ Der Kurs `01-Courses/Programming/Tauri-Kompaktkurs` ist didaktisch umgebaut word
 ## Nicht in Git
 
 - Unverändert gegenüber der vorherigen Session: `~/.local/bin/install-helix.nu`, `~/.local/share/helix/25.07.1/`, `~/.config/nushell/env.nu` mit `HELIX_RUNTIME`, Homebrew-`helix` deinstalliert, Homebrew-`marksman` installiert.
+- Der Skill `chat-protokoll` liegt **außerhalb** des Vaults unter `~/.config/opencode/skills/chat-protokoll/` und ist nicht versioniert. Die geänderte `SKILL.md` dort gilt erst ab dem nächsten Aufruf.
