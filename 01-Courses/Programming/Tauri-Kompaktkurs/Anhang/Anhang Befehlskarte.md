@@ -10,7 +10,7 @@ status: draft
 > [!tip] Zum Ausdrucken
 > Eine Seite, liegt während des gesamten Kurses auf dem Tisch. Nichts davon muss auswendig gelernt werden.
 
-## Jeden Morgen
+## Anwendung starten
 
 ```nu
 toolbox enter tauri-dev
@@ -46,7 +46,9 @@ open index.html
 ls ~/.local/share/de.metarow.Lernkarten
 ```
 
-## Nur am letzten Tag
+## Anwendung als Flatpak bauen und starten
+
+Nur im Modul [[K7 Als Anwendung ausliefern]] nötig.
 
 ```nu
 exit                                    # zuerst raus aus dem Container
@@ -79,4 +81,4 @@ flatpak info --show-permissions de.metarow.Lernkarten
 
 ## Verknüpfung
 
-[[00 Kompaktkonzept Tauri Grundlagen]]
+[[00 Kompaktkurs Tauri Grundlagen]]

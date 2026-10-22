@@ -22,7 +22,7 @@ Attribute: `id`, `class`, `placeholder`, `type`
 
 Selektoren: `element`, `.klasse`, `#id`, `element:hover`
 
-Eigenschaften: `color`, `background-color`, `font-family`, `font-size`, `font-weight`, `padding`, `margin`, `border`, `border-radius`, `width`, `max-width`, `display: flex`, `flex-direction`, `gap`, `justify-content`, `align-items`, `cursor`
+Eigenschaften: `color`, `background-color`, `font-family`, `font-size`, `font-weight`, `padding`, `margin`, `border`, `border-radius`, `box-shadow`, `width`, `max-width`, `display: flex`, `flex-direction`, `gap`, `justify-content`, `align-items`, `cursor`
 
 Farben ausschließlich als Hex-Wert.
 
@@ -41,6 +41,16 @@ Farben ausschließlich als Hex-Wert.
 | Ausgabe | `console.log()`, `confirm()` |
 | Dokument | `document.querySelector`, `.textContent`, `.value`, `.innerHTML = ""`, `document.createElement`, `.appendChild`, `.addEventListener("click", ...)` |
 | Tauri | `window.__TAURI__.core.invoke`, `async`, `await` |
+
+## Bedingt erlaubt
+
+Nur in [[K6 Feinschliff]] und nur, wenn die jeweilige Verbesserung gewählt wurde. Wird die Form einmal erklärt, ist sie eine vollständige Zeile – kein Selbstbauen, keine Erweiterung.
+
+| Form | Wann | Wie |
+|---|---|---|
+| `liste.indexOf(element)` | Löschknopf pro Listeneintrag | Rezept: die Stelle des Elements in der Liste finden |
+| `liste.splice(pos, 1)` | Löschknopf pro Listeneintrag | Rezept: ein Element an der Stelle `pos` entfernen |
+| `element.className` / `element.classList` | Karte je nach Zustand einfärben | Rezept: die Klasse eines Elements setzen |
 
 ## Nicht erlaubt
 
@@ -65,4 +75,4 @@ Der Umfang ist so gewählt, dass die Lernkarten-Anwendung vollständig damit geb
 
 ## Verknüpfung
 
-[[00 Kompaktkonzept Tauri Grundlagen]] · [[K3 JavaScript – die Bausteine]]
+[[00 Kompaktkurs Tauri Grundlagen]] · [[K3 JavaScript – die Bausteine]]

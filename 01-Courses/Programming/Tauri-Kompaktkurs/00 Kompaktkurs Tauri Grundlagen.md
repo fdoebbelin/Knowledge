@@ -1,5 +1,7 @@
 ---
 title: Vom Web zur Desktop-App – Kompaktkurs mit Tauri
+aliases:
+  - 00 Kompaktkonzept Tauri Grundlagen
 typ: kurskonzept
 variante: kompakt
 zielgruppe: Vorbereitungskurs Fachinformatiker-Umschulung
@@ -11,9 +13,8 @@ umgebung: Toolbx-Container "tauri-dev"
 shell: Nushell
 stack: [tauri-2, html, css, javascript, flatpak]
 werkzeugkette: cargo (ohne Node, ohne npm)
-umfang_ue: 30
-status: draft
-version: 0.1
+status: active
+version: 0.2
 tags:
   - tauri/kompaktkurs
   - kurskonzept
@@ -21,15 +22,30 @@ tags:
 
 # Vom Web zur Desktop-App – Kompaktkurs mit Tauri
 
+## Inhaltsübersicht
+
+- Kurzbeschreibung und Abgrenzung zum ausführlichen Kurskonzept
+- Ehrliche Zielsetzung: was am Ende geht, was ausdrücklich noch nicht
+- Technologieentscheidung: kein Framework, `cargo` allein, Flatpak
+- Voraussetzung: vorbereitete Umgebung
+- Das Projekt: Lernkarten
+- Modulübersicht K0 bis K7
+- Didaktik bei drei Teilnehmenden
+- Sprachumfang
+- Lernstandsprüfung
+- Anschluss
+- Risiken und Gegenmaßnahmen
+- Offene Punkte
+
 > [!abstract] Kurzbeschreibung
-> Drei Teilnehmende ohne Vorkenntnisse in Webtechniken bauen in 30 Unterrichtseinheiten eine kleine, lauffähige Desktop-Anwendung. HTML, CSS und JavaScript werden von Grund auf eingeführt, aber ausschließlich an dem einen Projekt, das am Ende als Flatpak auf dem eigenen Rechner installiert ist.
+> Drei Teilnehmende ohne Vorkenntnisse in Webtechniken bauen eine kleine, lauffähige Desktop-Anwendung. HTML, CSS und JavaScript werden von Grund auf eingeführt, aber ausschließlich an dem einen Projekt, das am Ende als Flatpak auf dem eigenen Rechner installiert ist.
 
 > [!important] Nicht zu verwechseln mit [[00 Kurskonzept Tauri]]
-> Das ausführliche Konzept setzt Web-Vorkenntnisse voraus, arbeitet mit Vue 3, Vite und Node und umfasst 64 UE. Dieses Konzept hier ist eigenständig, nicht dessen Kurzfassung. Es teilt lediglich Umgebung und Zielsystem.
+> Das ausführliche Konzept setzt Web-Vorkenntnisse voraus, arbeitet mit Vue 3, Vite und Node und ist deutlich umfangreicher. Dieses Konzept hier ist eigenständig, nicht dessen Kurzfassung. Es teilt lediglich Umgebung und Zielsystem.
 
 ## Ehrliche Zielsetzung
 
-30 UE sind 22,5 Zeitstunden. HTML, CSS, JavaScript und Tauri sind in dieser Zeit nicht als Handwerk erlernbar. Das Kursziel ist deshalb verschoben:
+HTML, CSS, JavaScript und Tauri sind in einem Kompaktkurs nicht als Handwerk erlernbar. Das Kursziel ist deshalb verschoben:
 
 **Was die Teilnehmenden am Ende können**
 
@@ -49,7 +65,7 @@ tags:
 - Rust schreiben. Der Rust-Anteil ist vollständig vorbereitet und wird nur gelesen.
 
 > [!tip] Formulierung für die Kursbeschreibung
-> „Sie bauen Ihre erste eigene Desktop-Anwendung und verstehen, wie Webtechniken dahinterstecken." Nicht: „Sie lernen HTML, CSS und JavaScript." Die zweite Formulierung erzeugt eine Erwartung, die 30 UE nicht einlösen.
+> „Sie bauen Ihre erste eigene Desktop-Anwendung und verstehen, wie Webtechniken dahinterstecken." Nicht: „Sie lernen HTML, CSS und JavaScript." Die zweite Formulierung erzeugt eine Erwartung, die ein Kompaktkurs nicht einlöst.
 
 ## Technologieentscheidung
 
@@ -66,12 +82,12 @@ Damit gilt in diesem Kurs wieder wörtlich, was der Leitfaden [[Von der leeren T
 
 ## Voraussetzung: vorbereitete Umgebung
 
-> [!danger] Entscheidend für die Zeitplanung
-> Dieses Konzept setzt voraus, dass die Kursleitung Container und Projektgerüst **vorab** einrichtet. Die Teilnehmenden bekommen am ersten Tag eine fertige Umgebung und eine geführte Kurzeinführung von 2 UE.
+> [!danger] Entscheidend für das Gelingen
+> Dieses Konzept setzt voraus, dass die Kursleitung Container und Projektgerüst **vorab** einrichtet. Die Teilnehmenden bekommen eine fertige Umgebung und eine geführte Kurzeinführung.
 >
-> Wird stattdessen der vollständige Leitfaden mit den Teilnehmenden durchlaufen, kostet das etwa 8 UE. Bei 30 UE Gesamtbudget bleiben dann 22 UE für die Inhalte, und das Kursziel ist nicht mehr erreichbar. In diesem Fall bitte das Budget auf 38 UE erhöhen oder das Ausliefern als Flatpak streichen.
+> Wird stattdessen der vollständige Leitfaden mit den Teilnehmenden durchlaufen, bindet das einen erheblichen Teil des Kursbudgets, und das Kursziel ist nicht mehr erreichbar. In diesem Fall das Budget erhöhen oder das Ausliefern als Flatpak streichen.
 
-Alles Vorzubereitende steht in [[Anhang Vorbereitung durch die Kursleitung]].
+Alles Vorzubereitende steht in [[Anhang Begleitung und Vorbereitung]].
 
 ## Das Projekt: Lernkarten
 
@@ -93,32 +109,20 @@ flowchart LR
 
 ## Modulübersicht
 
-| # | Baustein | UE | Ergebnis am Ende |
-|---|---|---|---|
-| K0 | [[K0 Ankommen und erste eigene Änderung]] | 2 | Fenster läuft, eigener Text steht drin |
-| K1 | [[K1 HTML – die Struktur]] | 4 | vollständige Oberfläche, noch ohne Funktion |
-| K2 | [[K2 CSS – das Aussehen]] | 5 | Oberfläche sieht aus wie eine Anwendung |
-| K3 | [[K3 JavaScript – die Bausteine]] | 6 | erste eigene Funktionen, Ausgabe in der Konsole |
-| K4 | [[K4 JavaScript im Fenster]] | 4 | Knöpfe funktionieren, Karten erscheinen |
-| K5 | [[K5 Daten behalten]] | 4 | Karten überleben den Neustart |
-| K6 | [[K6 Feinschliff]] | 2 | eigene Gestaltung, kleine Verbesserungen |
-| K7 | [[K7 Als Anwendung ausliefern]] | 3 | Flatpak im Anwendungsmenü |
-
-Summe: 30 Unterrichtseinheiten à 45 Minuten.
-
-**Anhänge:** [[Anhang Befehlskarte]] · [[Anhang Vorbereitung durch die Kursleitung]] · [[Anhang Sprachumfang JavaScript]]
-
-## Tagesplan
-
-| Tag | UE | Inhalt |
+| # | Modul | Ergebnis am Ende |
 |---|---|---|
-| 1 | 8 | K0 (2), K1 (4), K2 Beginn (2) |
-| 2 | 8 | K2 Abschluss (3), K3 Beginn (5) |
-| 3 | 7 | K3 Abschluss (1), K4 (4), K5 Beginn (2) |
-| 4 | 7 | K5 Abschluss (2), K6 (2), K7 (3) |
+| K0 | [[K0 Ankommen und erste eigene Änderung]] | Fenster läuft, eigener Text steht drin |
+| K1 | [[K1 HTML – die Struktur]] | vollständige Oberfläche, noch ohne Funktion |
+| K2 | [[K2 CSS – das Aussehen]] | Oberfläche sieht aus wie eine Anwendung |
+| K3 | [[K3 JavaScript – die Bausteine]] | erste eigene Funktionen, Ausgabe in der Konsole |
+| K4 | [[K4 JavaScript im Fenster]] | Knöpfe funktionieren, Karten erscheinen |
+| K5 | [[K5 Daten behalten]] | Karten überleben den Neustart |
+| K6 | [[K6 Feinschliff]] | eigene Gestaltung, kleine Verbesserungen |
+| K7 | [[K7 Als Anwendung ausliefern]] | Flatpak im Anwendungsmenü |
 
-> [!note] Warum die Module über Tagesgrenzen laufen
-> Der Zuschnitt folgt dem Stoff, nicht dem Kalender. Wichtiger ist, dass **jeder Tag mit einem lauffähigen Stand endet**, den die Teilnehmenden vorführen können. Das ist bei dieser Aufteilung gegeben.
+Zu jedem Modul gehören drei Notizen: der **Leitfaden** als Nachschlage- und Lernstoff, das **Merkblatt** als kompakte Tafel zum Danebenlegen und das **Übungsblatt** als Frage-und-Antwort-Sammlung zur Festigung. Der Leitfaden eines Moduls ist immer die Notiz ohne Zusatz (`K0 Ankommen und erste eigene Änderung`, `K1 HTML – die Struktur` usw.), die beiden Beiblätter liegen in den Ordnern `Merkblatt/` und `Übungen/`.
+
+**Anhänge:** [[Anhang Befehlskarte]] · [[Anhang Begleitung und Vorbereitung]] · [[Anhang Sprachumfang JavaScript]]
 
 ## Didaktik bei drei Teilnehmenden
 
@@ -136,9 +140,9 @@ Bewusst begrenzt. Was nicht in [[Anhang Sprachumfang JavaScript]] steht, kommt i
 
 ## Lernstandsprüfung
 
-Keine Noten. Stattdessen an drei Stellen ein kurzes Gespräch am Bildschirm:
+Keine Noten. Stattdessen an drei Stellen ein kurzes Gespräch am Bildschirm, siehe [[Anhang Begleitung und Vorbereitung]]:
 
-| Nach | Frage |
+| Nach Modul | Frage |
 |---|---|
 | K2 | Ändern Sie die Hintergrundfarbe der Karte und erklären Sie, welche Datei Sie dafür anfassen. |
 | K4 | Was passiert zwischen dem Klick auf den Knopf und der Änderung im Fenster? |
@@ -146,22 +150,22 @@ Keine Noten. Stattdessen an drei Stellen ein kurzes Gespräch am Bildschirm:
 
 ## Anschluss
 
-Nach diesem Kurs ist der Übergang in [[00 Kurskonzept Tauri]] möglich, allerdings nicht unmittelbar. Empfohlen ist dazwischen ein vertiefender Web-Grundlagenkurs von etwa 40 UE mit CSS Grid, Formularverarbeitung, Funktionen höherer Ordnung und asynchroner Programmierung.
+Nach diesem Kurs ist der Übergang in [[00 Kurskonzept Tauri]] möglich, allerdings nicht unmittelbar. Empfohlen ist dazwischen ein vertiefender Web-Grundlagenkurs mit CSS Grid, Formularverarbeitung, Funktionen höherer Ordnung und asynchroner Programmierung.
 
 ## Risiken und Gegenmaßnahmen
 
 | Risiko | Wann es auftritt | Gegenmaßnahme |
 |---|---|---|
-| JavaScript überfordert | typischerweise ab UE 14 | strenger Sprachumfang, K3 notfalls um 1 UE aus K6 verlängern |
-| Tippfehler blockieren einzelne Teilnehmende | durchgehend | fertige Zwischenstände je Baustein bereithalten, siehe Anhang |
+| JavaScript überfordert | sobald Listen und Objekte zusammenkommen | strenger Sprachumfang, K3 notfalls auf Kosten von K6 verlängern |
+| Tippfehler blockieren einzelne Teilnehmende | durchgehend | fertige Zwischenstände je Modul bereithalten, siehe Anhang |
 | Flatpak-Bau scheitert | K7 | Manifest und Metadaten vollständig vorbereitet, K7 ist reine Mitmach-Vorführung |
-| Weißes Fenster beim Start | Tag 1 | `WEBKIT_DISABLE_DMABUF_RENDERER` vorab dauerhaft im Container setzen |
-| Ungleiches Tempo bei drei Personen | ab Tag 2 | Zusatzaufgaben je Baustein für Schnellere, nie neuer Stoff |
+| Weißes Fenster beim Start | beim ersten Start | `WEBKIT_DISABLE_DMABUF_RENDERER` vorab dauerhaft im Container setzen |
+| Ungleiches Tempo bei drei Personen | ab K2 | Zusatzaufgaben je Modul für Schnellere, nie neuer Stoff |
 
 ## Offene Punkte
 
 - [ ] Drei vorbereitete Container anlegen und testen
-- [ ] Zwischenstände für alle acht Bausteine erzeugen und ablegen
+- [ ] Zwischenstände für alle Module erzeugen und ablegen
 - [ ] Befehlskarte drucken
 - [ ] Prüfen, ob im Raum drei ausreichend große Bildschirme stehen. Zwei Dateien nebeneinander sind hier kein Luxus.
 - [ ] Klären, ob die Teilnehmenden ihre Geräte behalten. Falls nein, Ergebnis als Bundle mitgeben.
