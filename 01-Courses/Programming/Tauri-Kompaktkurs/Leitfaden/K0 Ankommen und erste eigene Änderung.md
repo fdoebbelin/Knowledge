@@ -96,7 +96,7 @@ cargo tauri dev
 >
 > Diese Ansage gehört **vor** das Drücken der Eingabetaste. Ein langer Textstrom ohne Vorwarnung wirkt bei Anfängern wie ein Absturz.
 
-Die Wartezeit sinnvoll nutzen: die [[Anhang Befehlskarte]] gemeinsam durchgehen, Abschnitte „Jeden Morgen" und „Wenn etwas nicht geht".
+Die Wartezeit sinnvoll nutzen: die [[Anhang Befehlskarte]] gemeinsam durchgehen, Abschnitte „Anwendung starten" und „Wenn etwas nicht geht".
 
 **Fenster nebeneinander anordnen:**
 

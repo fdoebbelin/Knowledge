@@ -21,7 +21,7 @@ status: active
 - Material auf dem Tisch
 - Ablaufbegleitung: Was die Kursleitung je Modul beobachtet
 - Was tun, wenn es klemmt
-- Puffer ohne Zeitplan
+- Puffer im Kursablauf
 - Verknüpfung
 
 ## Umgebung je Gerät
@@ -307,9 +307,9 @@ Erwartet in Kurssprache: Der Klick löst die Funktion aus, die Funktion liest di
 > [!warning] Wenn Eingaben aus dem Netz kopiert werden
 > Freundlich einfangen: „Alles, was Sie brauchen, steht auf Ihrem Merkblatt. Was Sie kopieren, können Sie später nicht reparieren."
 
-## Puffer ohne Zeitplan
+## Puffer im Kursablauf
 
-Der Kurs ist stofflich dicht gepackt. Puffer entsteht ausschließlich aus:
+Der Kurs ist stofflich dicht gepackt. Freiraum entsteht ausschließlich aus:
 
 - [[K6 Feinschliff]] kann auf die halbe Länge gekürzt werden – er enthält bewusst nichts, was für [[K7 Als Anwendung ausliefern]] nötig ist
 - die Zusatzaufgaben sind optional und werden nur bei Vorsprung ausgegeben

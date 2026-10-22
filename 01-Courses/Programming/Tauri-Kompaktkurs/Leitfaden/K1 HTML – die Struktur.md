@@ -243,7 +243,7 @@ Es fühlt sich falsch an, etwas Leeres hinzuschreiben. Aber genau das ist der Un
 Die zehn `id`-Namen: `eingabe`, `frage-feld`, `antwort-feld`, `knopf-neu`, `anzeige`, `karte-frage`, `karte-antwort`, `knopf-umdrehen`, `knopf-weiter`, `karten-liste`.
 
 > [!tip] Der Gegenlese-Schritt ist der Kern
-> Er ersetzt in [[K4 JavaScript im Fenster]] eine halbe Stunde Fehlersuche und wird deshalb nicht gekürzt.
+> Er ersetzt in [[K4 JavaScript im Fenster]] eine lange Fehlersuche und wird deshalb nicht gekürzt.
 
 ### Die fertige Datei
 
