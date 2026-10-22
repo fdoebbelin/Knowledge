@@ -11,7 +11,7 @@ updated: 2026-10-22
 
 # Knowledge Vault – Struktur-Übersicht
 
-Stand: 22. Oktober 2026. Rund 1.380 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
+Stand: 22. Oktober 2026. Rund 1.390 Notizen in fünf Bereichen, dazu der Eingang `00-Inbox` (0 offen). Persönliches, Geschäftliches und Zugangsdaten liegen im separaten Vault **Personal**.
 
 ## Grundregeln
 
@@ -35,14 +35,15 @@ Knowledge/
 │
 ├── 00-Inbox/              Eingang: noch nicht eingeordnete Dokumente (0)
 │
-├── 01-Courses/            Lehrmaterial mit Modulstruktur (702)
+├── 01-Courses/            Lehrmaterial mit Modulstruktur (706)
 │   ├── AI/                KI-Agenten-Workshop
 │   ├── Business/          Office-Basics, Office-Short, Project-Management, UML-Basics
 │   ├── CAD/               FreeCAD-Intensivkurs, Civil 3D
 │   ├── Databases/         Database-Intro, SQL-Course, SQL-Tools
 │   ├── Programming/       Python-Basics (M01–M20), Python-OOP (M21–M40),
 │   │                      Programming-Basics, CS-Basics, JavaScript-STEM,
-│   │                      Tauri-Kurs, Tauri-Kompaktkurs, PythonAugmentedDevelopment
+│   │                      Tauri-Kurs, Tauri-Kompaktkurs (je Modul: Leitfaden,
+│   │                      Merkblatt, Übungsblatt), PythonAugmentedDevelopment
 │   ├── STEM/              MINT-Einführungskurs (Informatik, Physik/p5.js, CAD)
 │   └── Training/          BFD-Programs, IT-Career, Military
 │
@@ -120,6 +121,18 @@ Nur für Notizen, die es brauchen (Leitfäden, Kursbausteine, Clippings, Protoko
 - **Werkzeugleitfäden:** Versionsschlüssel wie `yazi_version`.
 - Der Schlüssel `tag` (Singular) ist für Obsidian-Tags reserviert und wird nicht als Kurstag verwendet.
 
+### Kursstruktur Tauri-Kompaktkurs
+
+`01-Courses/Programming/Tauri-Kompaktkurs/` ist seit dem 22.10.2026 didaktisch umgebaut. Je Modul (K0 … K7) liegen **drei** Notizen:
+
+| Ordner | Notiz | `typ` | Zweck |
+|---|---|---|---|
+| `Leitfaden/` | `K0 Ankommen und erste eigene Änderung` … | `leitfaden` | Lernstoff und Nachschlagewerk für die Teilnehmenden |
+| `Merkblatt/` | `K0 Merkblatt` … | `merkblatt` | kompakte Tafel zum Danebenlegen, ohne Einleitung |
+| `Übungen/` | `K0 Übungsblatt` … | `uebungsblatt` | reine Frage-und-Antwort-Sammlung, Antworten in Klappkästen |
+
+Der Leitfaden trägt den Modulnamen ohne Zusatz, die beiden Beiblätter liegen in ihren Ordnern. Zeitangaben (`ue`, `kurstag`, `dauer`, `Block`) sind in diesem Kurs **entfallen** – der Kurs beschreibt den Stoff, nicht die Uhr.
+
 ### Chat-Protokolle (Skill chat-protokoll)
 
 Zielbild mit englischen Schlüsseln, damit Protokolle in denselben Abfragen auftauchen wie der Rest:
@@ -177,6 +190,7 @@ Die beiden vorhandenen Protokolle sind am 22.09.2026 umgestellt worden. Vorgabe 
 - **2026-10-21**: Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ samt Artefakten eingeordnet und verdichtet. Neuer Ordner `02-Tech/Linux/UEFI-Boot/` mit `01-UEFI-Booteinträge anlegen` (Artefakt), den neu aus dem Protokoll und den PDF-Arbeitsblättern verdichteten Runbooks `02-Legacy-zu-UEFI bei Fedora Atomic` und `03-btrfs und SMART im Live-System prüfen`, der Statusnotiz `Schulungs-PCs – Stand der Umstellung` und dem Protokoll als Quelle; in `_resources/` das Prüfskript `uefi-pruefung.sh` und ein Arbeitsblatt (`Schritt-3-ESP-anlegen.pdf`) als Beispiel. Die übrigen vier PDFs, die reportlab-Generatoren und das Übergabe-ZIP wurden nicht übernommen. Teil A (Windows-SSD) als `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm` mit eingebettetem `winpe-vm.nu`. Querverweise in `Fedora Sway Atomic`, `LINUX Live-ISOs`, `ddrescue`, `11-kvm-windows11-vm` und `KVM-QEMU Leitfaden`.
 - **2026-10-21 (2)**: Helix-Installation unter Linux um den zweiten Weg „lokales Binary im `$HOME`“ ergänzt (`03-Installation`: Vergleichstabelle Homebrew vs. `~/.local/bin`, Kurzfassung mit Verweisen auf `00 Werkzeuge ins HOME-Verzeichnis installieren` statt Duplizierung); Toolbx-Hinweis in `Nushell Editor setzen`, `secure_path`-Hinweis zu `sudo hx` in `sudoedit`. Anschließend das Referenzsystem auf Weg 2 umgestellt (Skript aus der 00-Notiz unverändert lauffähig, `HELIX_RUNTIME` in `env.nu`, `brew uninstall helix`) und auf dem Host sowie in der Toolbox `tauri-dev` geprüft.
 - **2026-10-22**: Verwaltung des Vaults von Claude Code auf **OpenCode** umgestellt. Neu: `AGENTS.md` im Wurzelordner als Projektgedächtnis – Ordnerlogik, Frontmatter-Konvention, Wikilink-Regeln, Secrets-Regel und Git-Workflow als imperative Regeln, die OpenCode bei jedem Sitzungsstart einliest. Dazu die Einweisung `02-Tech/AI/OpenCode/00 OpenCode` (Installation, Provider, `AGENTS.md` vs. `CLAUDE.md`, Konfiguration, Agenten/Befehle/Skills, Berechtigungen, Vergleich zu Claude Code, Einsatz im Vault). `HANDOFF.md` bleibt die Übergabe zwischen den Sitzungen und verweist jetzt auf `AGENTS.md`. `00-Inbox/Eingang.md` und diese Übersicht auf den neuen Werkzeugnamen umgestellt.
+- **2026-10-22 (2)**: `01-Courses/Programming/Tauri-Kompaktkurs/` didaktisch umgebaut. Je Modul (K0–K7) jetzt drei Notizen in eigenen Ordnern: `Leitfaden/` (Lernstoff), `Merkblatt/` (kompakte Nachschlagetafel), `Übungen/` (reine Frage-und-Antwort-Sammlung, Antworten in Klappkästen). Trainerskripte entfernt, Handouts zu Merkblättern verdichtet, Übungsblätter auf F/A ohne Bauanleitungen reduziert, sämtliche Zeitangaben (`ue`, `kurstag`, `dauer`, `Block`) aus dem Kursmaterial entfernt. `00 Kompaktkonzept Tauri Grundlagen` → `00 Kompaktkurs Tauri Grundlagen`, `Anhang Vorbereitung durch die Kursleitung` → `Anhang Begleitung und Vorbereitung` (Alias gesetzt). Der Ordner `Bausteine/` entfällt; Zähler 01-Courses 702 → 706.
 - **2026-09-22**: Eingang `00-Inbox` eingeführt; erste zwei Chat-Protokolle eingeordnet (Lexikothek → `03-Projects/Lexikothek`, Netzwerkdrucker → `02-Tech/Linux/Fedora`); sieben Stichwortnotizen für offene Verweise angelegt; Frontmatter vereinheitlicht: englische Schlüssel in den Protokollen, `status` in 78 Notizen auf `draft`/`active`/`done` umgestellt.
 - **2026-09-23**: Helix-Spickzettel um editierbare SVG/PDF-Quelldateien und Schriften ergänzt, dazu Inkscape-Anleitung eingeordnet (`02-Tech/Terminal/Helix/`). Yazi-Spickzettel von HTML- auf SVG-Erzeugung umgestellt (neue PDF + zwei SVG-Seiten), `Yazi-Leitfaden.md` analog zu `Helix-Leitfaden.md` neu angelegt. Chat-Protokoll zur Monitoranordnung unter Sway eingeordnet (`02-Tech/Linux/Fedora/`), mit `Fedora Sway Atomic` und dem Hyprland-Gegenstück `Mehrere Bildschirme verwalten` verlinkt.
 - **2026-09-30**: Fünf Yazi-Notizen zu dreien zusammengefasst: „Installation und Plugins“, „kommentierter Leitfaden“, „Markdown-Vorschau“ und „Mermaid-Diagramme“ verschmolzen zu `Yazi – Installation und Konfiguration` (mit vorangestelltem Schnellstart), dazu neu `Yazi – Einführung` als Kurzfassung des Konzepts; `Yazi-Leitfaden` bleibt als Spickzettel-Referenz bestehen. Die drei Notizen tragen seit dem 07.10. Nummernpräfixe.

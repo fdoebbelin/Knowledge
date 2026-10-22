@@ -4,76 +4,66 @@
 |---|---|
 | Stand | 2026-10-22 |
 | Von Rechner | fedora |
-| Branch | main @ 389afc2 (+ dieser Handoff-Commit), mit origin/main synchron |
+| Branch | main @ 23d74f3 (+ die Commits dieser Session), mit origin/main synchron |
 | Uncommittet | nein |
-| Werkzeug | OpenCode v2.1.2, Projektwissen in `AGENTS.md` (bisher Claude Code) |
+| Werkzeug | OpenCode v2.1.2, Projektwissen in `AGENTS.md` |
 | Fortsetzung | auf einem anderen System: `git pull`, dann `opencode` starten – `AGENTS.md` wird automatisch gelesen |
 
 ## Ziel
 
-Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen und Notizen eines Themenordners verdichten. Heute: (1) Chat-Protokoll „Windows-SSD und Legacy-zu-UEFI-Umstellung“ (claude.ai, 19.–21.10.) samt Artefakten eingeordnet, (2) offenen Helix-Punkt der Vorsitzung erledigt: lokaler Binary-Weg dokumentiert und Referenzsystem darauf umgestellt, (3) Vault-Verwaltung von Claude Code auf OpenCode umgestellt.
+Der Kurs `01-Courses/Programming/Tauri-Kompaktkurs` ist didaktisch umgebaut worden: Trainerskripte entfernt, Handouts zu Merkblättern verdichtet, Übungsblätter auf reine Frage-und-Antwort-Sammlungen reduziert, sämtliche Zeitangaben aus dem Kursmaterial entfernt. Ab K4 ist alles neu nach demselben Standard angelegt.
 
 ## Erledigt in dieser Session
 
-- Neuer Ordner `02-Tech/Linux/UEFI-Boot/` (nn-Nummerierung):
-  - `01-UEFI-Booteinträge anlegen.md` – Artefakt aus dem Chat, fast unverändert (Alias auf alten Namen, Verweise ergänzt).
-  - `02-Legacy-zu-UEFI bei Fedora Atomic.md` – neues Runbook, verdichtet aus Protokoll Teil B und dem Vorprüfungs-PDF (Vorprüfung, Weg A/B, Schritte 0 und 3–6, Verifikation, verworfene Ansätze).
-  - `03-btrfs und SMART im Live-System prüfen.md` – neu, aus Protokoll-Problem 10/11 und dem btrfs-PDF (Prüfblock, Ergebnis aus dem Live-System retten, Bewertungstabellen, Fallbeispiel P8B75-M).
-  - `Schulungs-PCs – Stand der Umstellung.md` – Statustabelle der vier PCs und offene Punkte (nur als Notiz, kein Projektordner – Nutzerentscheidung).
-  - Protokoll `2026-10-21 Windows-SSD und Legacy-zu-UEFI Umstellung.md` als Quelle, mit Einordnungshinweis; drei tote Wikilinks entfernt.
-  - `_resources/uefi-pruefung.sh` und `_resources/Schritt-3-ESP-anlegen.pdf` (einziges behaltenes PDF, als Beispiel).
-- Teil A (Windows-SSD/WinPE) als `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm.md`, `winpe-vm.nu` vollständig eingebettet.
-- Querverweise in `Fedora Sway Atomic`, `LINUX Live-ISOs`, `ddrescue`, `11-kvm-windows11-vm`, `KVM-QEMU Leitfaden`; `Eingang.md` und `Struktur-Übersicht.md` nachgeführt (02-Tech jetzt 340 Notizen). Alle Wikilinks/Anker der geänderten Notizen geprüft.
-- Commit `19aad95`, gepusht.
-- Danach Helix-Binary-Weg dokumentiert: `02-Tech/Terminal/Helix/03-Installation.md` hat unter „Linux“ jetzt eine Vergleichstabelle und zwei Wege (Homebrew / lokales Binary in `~/.local/bin`). Weg 2 als Kurzfassung mit Ankerverweisen auf `00 Werkzeuge ins HOME-Verzeichnis installieren` (Abschnitte 3, 5.1, 6, 7), kein doppeltes Skript. Ergänzt: Hinweis „beide Wege gleichzeitig“ (`which -a hx`) und marksman-Einschränkung. `Nushell Editor setzen.md`: Toolbx-Hinweis. `sudoedit.md`: `sudo hx` scheitert am `secure_path`. Rücklink in der 00-Notiz. `CookBook/11` und `12` setzen keinen Installationsweg voraus, dort nichts geändert. Commit `b45f971`, gepusht.
-- Referenzsystem auf Weg 2 umgestellt: `~/.local/bin/install-helix.nu` aus Abschnitt 3 der 00-Notiz übernommen (lief unverändert, Helix 25.07.1 nach `~/.local/share/helix/25.07.1`), `HELIX_RUNTIME` auf oberster Ebene in `~/.config/nushell/env.nu` (vor dem Toolbx-Block), `brew uninstall helix`. Geprüft: Host und Toolbox `tauri-dev` finden `~/.local/bin/hx`, Runtime ok, im Container `rust-analyzer` ✓. `03-Installation.md` entsprechend aktualisiert. Commit `a20f83d`, gepusht.
-- `marksman` fehlte (entgegen dem Vermerk der Vorsitzung) und wurde per `brew install marksman` neu installiert (2026-02-08); `hx --health markdown` zeigt ✓. Doku nachgeführt, Commit `12084a0`, gepusht.
-- Vault-Verwaltung von Claude Code auf **OpenCode** umgestellt:
-  - `AGENTS.md` neu im Wurzelordner – Projektgedächtnis als kompakte, imperative Regelsammlung (Ordnerlogik, Frontmatter, Wikilinks, Secrets, Einordnungs- und Git-Workflow). Wird von OpenCode bei jedem Sitzungsstart gelesen; Claude Code liest sie **nicht** (V2 kennt kein `CLAUDE.md`-Fallback).
-  - `02-Tech/AI/OpenCode/00 OpenCode.md` neu – Einweisung mit Vault-Fokus: Installation, Provider, `AGENTS.md` vs. `CLAUDE.md`, `opencode.json(c)` vs. `cli.json`, Agenten/Befehle/Skills/MCP, Berechtigungen, Vergleichstabelle Claude Code ↔ OpenCode, Einsatz im Vault, Grenzen.
-  - `Struktur-Übersicht.md` nachgeführt (neuer Ordner `02-Tech/AI/OpenCode`, Zähler 02-Tech 340 → 341, Wurzeldateien im Ordnerbaum, Historie-Eintrag 22.10.2026); `00-Inbox/Eingang.md` von „Claude Code“ auf den generischen Werkzeugbegriff plus OpenCode umgestellt.
-  - Committet als `389afc2`, gepusht.
+- **Struktur** in `01-Courses/Programming/Tauri-Kompaktkurs/`:
+  - Neu: `Leitfaden/`, `Merkblatt/`, `Übungen/` – je Modul (K0–K7) drei Notizen.
+  - `00 Kompaktkonzept Tauri Grundlagen` → `00 Kompaktkurs Tauri Grundlagen` (zeitfrei, Alias gesetzt).
+  - `Anhang Vorbereitung durch die Kursleitung` → `Anhang Begleitung und Vorbereitung` (Trainerabschnitte gerettet, Alias gesetzt).
+  - Ordner `Bausteine/` mit 20 Altnotizen entfallen.
+- **K0–K3 umgebaut** (bestehende Struktur umgebaut, nicht neu erfunden): Leitfaden, Merkblatt, Übungsblatt mit den Fragen `F1`–`F8` (K0), `F1`–`F6` (K1), `F1`–`F10` (K2), `F1`–`F10` (K3). Antworten jeweils in `> [!success]- Antwort FN`-Klappkästen.
+- **K4–K7 neu angelegt** nach demselben Standard: Leitfaden, Merkblatt, Übungsblatt (`F1`–`F8`, `F1`–`F7`, `F1`–`F6`, `F1`–`F6`).
+  - K6 bekommt ein Merkblatt mit der **Werkzeug-Brückentabelle** (Wunsch → Baustein → Modul).
+- **Anhänge bereinigt**:
+  - `Anhang Befehlskarte`: „Jeden Morgen“ → „Anwendung starten“, „Nur am letzten Tag“ → „Anwendung als Flatpak bauen und starten“, Links auf die neue 00-Notiz umgestellt.
+  - `Anhang Sprachumfang JavaScript`: `box-shadow` ergänzt, Abschnitt „Bedingt erlaubt“ für `indexOf`, `splice`, `className`/`classList` (nur K6) eingefügt.
+  - `Anhang Begleitung und Vorbereitung`: Restverweise auf „Kurstag“, „Vortag“ und „eine halbe Stunde“ zeitfrei formuliert.
+- **Vault-weit geprüft**: alle Wikilinks im Kursordner aufgelöst (Ausnahme behoben: `[[bin]]` in der Rust-Strukturliste war ein toter Link), Frontmatter-Schlüssel `ue`, `kurstag`, `dauer` aus dem Kursmaterial entfernt.
+- `Struktur-Übersicht.md` nachgeführt: neuer Abschnitt „Kursstruktur Tauri-Kompaktkurs“, Ordnerbaum, Zähler 01-Courses 702 → 706, Gesamtzahl rund 1.390, Historie-Eintrag 22.10.2026 (2).
 
 ## Nächster Schritt
 
-1. **Gegenlesen** (Nutzer): In 02 und 03 stehen kurze eigene Ergänzungen, die nicht wörtlich aus dem Protokoll stammen – Rolle von `bootuuid.cfg`/statischer `grub.cfg` (02, Schritt 4) und `btrfs subvolume list` zur ID-Zuordnung (03).
-2. **Nach dem ersten echten Umbau** eines Schulungs-PCs: Ausgabe von `bootupctl status` in `02-…#Offen` nachtragen, Warnhinweis „nicht auf Hardware getestet“ anpassen, Tabelle in `Schulungs-PCs – Stand der Umstellung` aktualisieren (nach Neuinstallation P8B75-M auch die Disk-ID).
-3. **Andere Rechner nachziehen** (nach `git pull`): `install-helix.nu` aus `00 Werkzeuge ins HOME-Verzeichnis installieren` Abschnitt 3 anlegen und ausführen, `HELIX_RUNTIME` in `env.nu` (siehe `03-Installation.md`, Weg 2), `brew uninstall helix`, `brew install marksman` falls fehlend; prüfen mit `which -a hx` und `hx --health markdown`.
-4. Nicht verifiziert: dass Fedoras `secure_path` keine Benutzerpfade enthält (sudo verlangte ein Passwort) – in `sudoedit.md` mit Prüfbefehl formuliert.
-5. **Gegenlesen** (Nutzer): `02-Tech/AI/OpenCode/00 OpenCode.md` und `AGENTS.md` gegenlesen. Offen: Die Provider-Anbindung ist noch auf keinem System konfiguriert (kein `/connect` gelaufen) – die Notiz beschreibt den Weg, der Stand ist aber unbelegt. Auf dem System, auf dem es weitergeht: `opencode` installieren, `/connect` und `/models` durchlaufen, dann gegen die Notiz prüfen und die Abweichungen nachtragen.
+1. **Gegenlesen** (Nutzer): die 24 neuen Notizen in `Leitfaden/`, `Merkblatt/`, `Übungen/` querlesen – vor allem die Übungsblätter, weil dort der F/A-Umfang festgelegt wurde.
+2. **Push** erst nach Freigabe. Die Commits dieser Session sind lokal.
+3. **Optional**: `05-Notes/Archive/` prüfen – die Altdateien wurden auf Nutzerwunsch **gelöscht** statt archiviert; die Sicherung liegt in der Git-Historie (`23d74f3` und älter). Wer sie doch behalten will: `git checkout 23d74f3 -- "01-Courses/Programming/Tauri-Kompaktkurs/Bausteine/"`.
+4. **Offen für den nächsten Kursdurchlauf**: die Zwischenstände `stand-k1` … `stand-k6` aus `Anhang Begleitung und Vorbereitung` müssen noch erzeugt werden (steht in der Liste der offenen Punkte der 00-Notiz).
 
 ## Entscheidungen
 
-- Helix: beide Linux-Wege dokumentiert; Referenzsystem auf Nutzerwunsch auf Weg 2 (lokales Binary) umgestellt, damit `hx` auch in Toolbx-Containern verfügbar ist.
-- `marksman` bewusst per Homebrew, nur auf dem Host – wird in der Toolbox nicht gebraucht (Nutzerentscheidung).
-- Zielordner `02-Tech/Linux/UEFI-Boot/` statt unter `Fedora/`, weil Notiz 01 nicht Fedora-spezifisch ist.
-- Von fünf PDFs nur `Schritt-3-ESP-anlegen.pdf` als Beispiel behalten; Vorprüfungs-, btrfs- und die zwei PC-Varianten-PDFs sowie die reportlab-Generatoren (`quellen/`) und das Übergabe-ZIP nicht übernommen – Inhalt steckt in 02, 03 und der Statusnotiz.
-- `winpe-vm.nu` (142 Zeilen) in die Notiz eingebettet, `uefi-pruefung.sh` (252 Zeilen) nur als Datei in `_resources/`.
-- Schulungs-PC-Stand als Notiz im Tech-Ordner, nicht als `03-Projects/`.
-- Werkzeugwechsel zu OpenCode: `AGENTS.md` im Wurzelordner statt `CLAUDE.md` im Wurzelordner – OpenCode V2 kennt keinen `CLAUDE.md`-Fallback. Die Claude-Code-Notizen in `02-Tech/AI/Claude-Code/` bleiben als Vorgänger-Referenz stehen.
-- Kein `opencode.json` im Vault angelegt: Für diesen Anwendungsfall (reine Wissensbasis, keine Codebasis) reicht die `AGENTS.md`; Projekt- und Terminal-Konfiguration bleiben global in `~/.config/opencode/`.
+- **Drei Notizen je Modul** in eigenen Ordnern statt einer Datei mit Anhängen: Leitfaden (Lernstoff), Merkblatt (Nachschlagetafel), Übungsblatt (Frage und Antwort). Der Leitfaden behält den Modulnamen ohne Zusatz, damit die Wikilinks aus der Kursübersicht unverändert gültig bleiben.
+- **Merkblatt ohne Einleitung und ohne Selbsteinschätzung**, Übungsblatt ohne Abschlusskontrolle, ohne Zusatzaufgaben und ohne Schritt-für-Schritt-Bauanleitungen – nur Frage und Antwort zu behandelten Themen.
+- **Keine Zeitangaben** im Kursmaterial: kein `ue`, `kurstag`, `dauer`, keine „Block A“, keine „am ersten Tag“. Ersatzformulierungen verweisen auf Module statt auf Tage.
+- **Altdateien gelöscht, nicht archiviert** (Nutzerentscheidung). Git-Historie als Sicherung.
+- **K6 mit Merkblatt**, obwohl das Modul keinen neuen Stoff bringt – die Werkzeug-Brückentabelle ist dort der eigentliche Nutzen.
+- `indexOf`, `splice` und `className`/`classList` stehen bewusst **außerhalb** der allgemeinen Sprachliste, unter „Bedingt erlaubt“ im Anhang.
 
 ## Sackgassen und Erkenntnisse
 
-- Die losen Dateien in der Inbox waren byte-identisch mit dem Inhalt des Übergabe-ZIPs; nur `quellen/` war zusätzlich.
-- Das ZIP lag zur Sicherheit noch im Session-Scratchpad (`/tmp/claude-1000/…`) – nach einem Neustart weg. Wer die PDF-Generatoren doch braucht: Original-Chat auf claude.ai.
-- `toolbox run -c tauri-dev …` scheiterte aus der nicht-interaktiven Claude-Shell („Nushell launched as a REPL, but STDIN is not a TTY“); der Container-Test lief stattdessen über `podman exec --user fritz … tauri-dev`. In der Doku steht deshalb `toolbox enter`.
-- `nu -c` lädt `env.nu` nicht – zum Testen `nu --env-config ~/.config/nushell/env.nu -c …`.
-- Push mit den aktuellen GitHub-Credentials auf diesem Rechner funktionierte ohne Nacharbeit.
-- Claude Code hat den Vault nie über eine `CLAUDE.md` im Wurzelordner gesteuert – das Wissen lag in `HANDOFF.md`, `Struktur-Übersicht.md` und `00-Inbox/Eingang.md`. Für OpenCode ist das in `AGENTS.md` gebündelt; die drei Dateien bleiben als menschliche Arbeitsgrundlage bestehen.
+- Der Ordner `Bausteine/` lässt sich nach dem Umbau nicht mehr mit `git mv` auflösen, weil die Altdateien gelöscht und die neuen unter anderen Namen geschrieben wurden. Git erkennt die Umbenennungen beim Commit trotzdem an der Ähnlichkeit – `git log --follow` zeigt sie.
+- Die `id`-Liste aus K1 ist die Nahtstelle des ganzen Kurses: Ohne sie steht K4 still. Deshalb ist sie im Anhang ausdrücklich als nicht verhandelbar vermerkt.
+- Die Merkblätter führen `aliases` auf die gelöschten Quellnotizen (`K1b Handout`, `K2c Übungsblatt` …). Alte Verweise aus anderen Notizen laufen dadurch weiter auf.
+- Bei der Linkprüfung fällt auf, dass Rust-Toml-Syntax wie `[[bin]]` in Obsidian als Wikilink gelesen wird. Als Inline-Code schreiben.
 
 ## Relevante Dateien
 
-- `02-Tech/Linux/UEFI-Boot/` – alle neuen Notizen, Skript, Beispiel-PDF
-- `02-Tech/Virtualization/KVM-QEMU/13-winpe-rettungs-vm.md` – neu
-- `02-Tech/Terminal/Helix/03-Installation.md` – zwei Linux-Wege, Referenzsystem auf Weg 2
-- `AGENTS.md` – neu, Projektregeln für den KI-Agenten (im Wurzelordner)
-- `02-Tech/AI/OpenCode/00 OpenCode.md` – neu, Einweisung mit Vault-Fokus
-- `Struktur-Übersicht.md`, `00-Inbox/Eingang.md` – nachgeführt
+- `01-Courses/Programming/Tauri-Kompaktkurs/00 Kompaktkurs Tauri Grundlagen.md` – Kursübersicht, Modultabelle
+- `01-Courses/Programming/Tauri-Kompaktkurs/Leitfaden/` – 8 Leitfäden
+- `01-Courses/Programming/Tauri-Kompaktkurs/Merkblatt/` – 8 Merkblätter
+- `01-Courses/Programming/Tauri-Kompaktkurs/Übungen/` – 8 Übungsblätter
+- `01-Courses/Programming/Tauri-Kompaktkurs/Anhang/Anhang Begleitung und Vorbereitung.md` – Kursleitungsbegleitung
+- `01-Courses/Programming/Tauri-Kompaktkurs/Anhang/Anhang Befehlskarte.md` – Befehle für die Teilnehmenden
+- `01-Courses/Programming/Tauri-Kompaktkurs/Anhang/Anhang Sprachumfang JavaScript.md` – verbindlicher Sprachumfang
+- `Struktur-Übersicht.md` – nachgeführt
 
 ## Nicht in Git
 
-- `~/.local/bin/install-helix.nu` (Kopie des Skripts aus der 00-Notiz)
-- `~/.local/share/helix/25.07.1/` (Binary und Runtime), Symlink `~/.local/bin/hx`
-- `~/.config/nushell/env.nu`: `HELIX_RUNTIME` ergänzt; Sicherung `env.nu.bak-2026-10-21` daneben
-- Homebrew-`helix` deinstalliert, Homebrew-`marksman` installiert
+- Unverändert gegenüber der vorherigen Session: `~/.local/bin/install-helix.nu`, `~/.local/share/helix/25.07.1/`, `~/.config/nushell/env.nu` mit `HELIX_RUNTIME`, Homebrew-`helix` deinstalliert, Homebrew-`marksman` installiert.
