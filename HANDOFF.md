@@ -4,9 +4,10 @@
 |---|---|
 | Stand | 2026-10-22 |
 | Von Rechner | fedora |
-| Branch | main @ 12084a0 (+ dieser Handoff-Commit), mit origin/main synchron |
-| Uncommittet | ja – OpenCode-Einweisung und `AGENTS.md` (siehe unten) |
+| Branch | main @ 389afc2 (+ dieser Handoff-Commit), mit origin/main synchron |
+| Uncommittet | nein |
 | Werkzeug | OpenCode v2.1.2, Projektwissen in `AGENTS.md` (bisher Claude Code) |
+| Fortsetzung | auf einem anderen System: `git pull`, dann `opencode` starten – `AGENTS.md` wird automatisch gelesen |
 
 ## Ziel
 
@@ -31,7 +32,7 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
   - `AGENTS.md` neu im Wurzelordner – Projektgedächtnis als kompakte, imperative Regelsammlung (Ordnerlogik, Frontmatter, Wikilinks, Secrets, Einordnungs- und Git-Workflow). Wird von OpenCode bei jedem Sitzungsstart gelesen; Claude Code liest sie **nicht** (V2 kennt kein `CLAUDE.md`-Fallback).
   - `02-Tech/AI/OpenCode/00 OpenCode.md` neu – Einweisung mit Vault-Fokus: Installation, Provider, `AGENTS.md` vs. `CLAUDE.md`, `opencode.json(c)` vs. `cli.json`, Agenten/Befehle/Skills/MCP, Berechtigungen, Vergleichstabelle Claude Code ↔ OpenCode, Einsatz im Vault, Grenzen.
   - `Struktur-Übersicht.md` nachgeführt (neuer Ordner `02-Tech/AI/OpenCode`, Zähler 02-Tech 340 → 341, Wurzeldateien im Ordnerbaum, Historie-Eintrag 22.10.2026); `00-Inbox/Eingang.md` von „Claude Code“ auf den generischen Werkzeugbegriff plus OpenCode umgestellt.
-  - Nicht committet und nicht gepusht (Nutzerentscheidung).
+  - Committet als `389afc2`, gepusht.
 
 ## Nächster Schritt
 
@@ -39,7 +40,7 @@ Der Knowledge-Vault wird aufgeräumt: neue Dokumente aus `00-Inbox` einordnen un
 2. **Nach dem ersten echten Umbau** eines Schulungs-PCs: Ausgabe von `bootupctl status` in `02-…#Offen` nachtragen, Warnhinweis „nicht auf Hardware getestet“ anpassen, Tabelle in `Schulungs-PCs – Stand der Umstellung` aktualisieren (nach Neuinstallation P8B75-M auch die Disk-ID).
 3. **Andere Rechner nachziehen** (nach `git pull`): `install-helix.nu` aus `00 Werkzeuge ins HOME-Verzeichnis installieren` Abschnitt 3 anlegen und ausführen, `HELIX_RUNTIME` in `env.nu` (siehe `03-Installation.md`, Weg 2), `brew uninstall helix`, `brew install marksman` falls fehlend; prüfen mit `which -a hx` und `hx --health markdown`.
 4. Nicht verifiziert: dass Fedoras `secure_path` keine Benutzerpfade enthält (sudo verlangte ein Passwort) – in `sudoedit.md` mit Prüfbefehl formuliert.
-5. **Gegenlesen** (Nutzer): `02-Tech/AI/OpenCode/00 OpenCode.md` und `AGENTS.md` gegenlesen. Offen: Die Provider-Anbindung auf dem Referenzsystem ist noch nicht konfiguriert (kein `/connect` gelaufen) – die Notiz beschreibt den Weg, der Stand ist aber unbelegt.
+5. **Gegenlesen** (Nutzer): `02-Tech/AI/OpenCode/00 OpenCode.md` und `AGENTS.md` gegenlesen. Offen: Die Provider-Anbindung ist noch auf keinem System konfiguriert (kein `/connect` gelaufen) – die Notiz beschreibt den Weg, der Stand ist aber unbelegt. Auf dem System, auf dem es weitergeht: `opencode` installieren, `/connect` und `/models` durchlaufen, dann gegen die Notiz prüfen und die Abweichungen nachtragen.
 
 ## Entscheidungen
 
