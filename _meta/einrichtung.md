@@ -51,6 +51,12 @@ gh api --method POST repos/fdoebbelin/Knowledge/pages -f build_type=workflow
 
 (oder Settings → Pages → Source: „GitHub Actions“). Danach baut jeder Push auf `main` die Website: <https://fdoebbelin.github.io/Knowledge/>
 
+Der erste Push aus Schritt 3 läuft vor dem Einschalten von Pages und scheitert beim Veröffentlichen (`Failed to create deployment (status: 404)`), die Seite bleibt auf 404. Den Workflow daher einmal neu anstoßen – mit einem weiteren Push oder direkt:
+
+```nu
+gh workflow run pages.yml
+```
+
 ## 5. Kurse als eigene Repositorys herauslösen
 
 Je Kurs aus einem frischen Klon des Archivs, mit Historie (`git filter-repo` muss installiert sein):
