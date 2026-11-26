@@ -27,6 +27,7 @@ Ein Kurskonzept für angehende Fachinformatiker Anwendungsentwicklung mit Web-Vo
 ## Verwandte Quellen
 
 - [[Kompaktkurs Tauri-Grundlagen]] – eigenständige Einsteigervariante ohne Framework und ohne Node, teilt Umgebung und Zielsystem
+- [[Von der leeren Toolbx zur installierten Flatpak-App]] – der Leitfaden, den der Kurs als vorbereitete Umgebung voraussetzt
 
 ## Daraus entstandene Zettel
 

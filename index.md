@@ -11,3 +11,4 @@ Wissensbasis zu Linux, Softwareentwicklung, Virtualisierung und Containern – a
 ## Themen
 
 - [[Zettelkasten]] – wie diese Wissensbasis aufgebaut ist
+- [[Entwickeln auf Fedora Atomic]] – Toolbx, Flatpak und Tauri auf einem unveränderlichen System

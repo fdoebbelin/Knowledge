@@ -27,6 +27,7 @@ Ein Kurs für Einsteiger ohne Vorwissen in Webtechniken: In acht Modulen (K0–K
 ## Verwandte Quellen
 
 - [[Tauri-Kurs mit Vue 3 und Flatpak]] – der ausführliche Kurs mit Vue 3 und Vite; setzt Web-Vorkenntnisse voraus und ist der empfohlene Anschluss nach einem Zwischenschritt
+- [[Von der leeren Toolbx zur installierten Flatpak-App]] – der Leitfaden, den der Kurs als vorbereitete Umgebung voraussetzt
 
 ## Daraus entstandene Zettel
 
