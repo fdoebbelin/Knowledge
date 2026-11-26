@@ -11,4 +11,5 @@ Wissensbasis zu Linux, Softwareentwicklung, Virtualisierung und Containern – a
 ## Themen
 
 - [[Zettelkasten]] – wie diese Wissensbasis aufgebaut ist
+- [[Grundlagen der Informatik]] – Begriffe, Geschichte und Grundmechanismen: Berechenbarkeit, Speicherverwaltung, Grafikkoordinaten
 - [[Entwickeln auf Fedora Atomic]] – Toolbx, Flatpak und Tauri auf einem unveränderlichen System
