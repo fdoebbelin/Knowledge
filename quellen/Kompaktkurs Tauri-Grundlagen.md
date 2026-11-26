@@ -24,6 +24,10 @@ Ein Kurs für Einsteiger ohne Vorwissen in Webtechniken: In acht Modulen (K0–K
 - Die Kursleitung richtet Container und Projektgerüst vorher ein. Sonst geht ein großer Teil der Kurszeit für die Einrichtung verloren.
 - Ein durchgehendes, nach jedem Modul benutzbares Projekt (Lernkarten als Liste aus Objekten in einer JSON-Datei) trägt die Einführung von Arrays und Objekten.
 
+## Verwandte Quellen
+
+- [[Tauri-Kurs mit Vue 3 und Flatpak]] – der ausführliche Kurs mit Vue 3 und Vite; setzt Web-Vorkenntnisse voraus und ist der empfohlene Anschluss nach einem Zwischenschritt
+
 ## Daraus entstandene Zettel
 
 Noch keine.
