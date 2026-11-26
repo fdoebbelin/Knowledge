@@ -4,6 +4,7 @@
 #
 #   nu scripts/migration.nu status "02-Tech/Terminal/Helix/01-Helix installieren.md"
 #   nu scripts/migration.nu eintragen "02-Tech/…/Notiz.md" uebernommen "Abschnitt X veraltet"
+#   nu scripts/migration.nu eintragen "01-Courses/Programming/Tauri-Kurs" uebernommen   # ganzer Ordner
 #   nu scripts/migration.nu offen 02-Tech/Terminal
 #   nu scripts/migration.nu uebersicht
 
@@ -27,6 +28,11 @@ def archiv [] {
     $a | path expand
 }
 
+# Ist eine Altnotiz erledigt? Direkt eingetragen oder unter einem eingetragenen Ordner
+def erledigt [pfad: string, eintraege: list<string>] {
+    $eintraege | any {|e| $pfad == $e or ($pfad | str starts-with $"($e)/") }
+}
+
 # Zettel/Quellen, deren herkunft auf die Altnotiz zeigt
 def abgeleitet [altpfad: string] {
     notizen
@@ -36,7 +42,7 @@ def abgeleitet [altpfad: string] {
 
 # Stand einer Altnotiz: Protokolleintrag und abgeleitete Notizen
 def "main status" [altpfad: string] {
-    let eintrag = (protokoll | where altpfad == $altpfad)
+    let eintrag = (protokoll | where {|r| erledigt $altpfad [$r.altpfad] })
     let notizen = (abgeleitet $altpfad)
     if ($eintrag | is-empty) and ($notizen | is-empty) {
         print $"offen: ($altpfad)"
@@ -72,7 +78,7 @@ def "main offen" [ordner?: string] {
     let erledigt = (protokoll | get -o altpfad | default [])
     glob $"($basis)/**/*.md" --exclude ['**/.git/**' '**/.obsidian/**']
     | each { path relative-to $a }
-    | where {|p| not ($p in $erledigt) }
+    | where {|p| not (erledigt $p $erledigt) }
     | sort
 }
 
@@ -82,7 +88,7 @@ def "main uebersicht" [] {
     let erledigt = (protokoll | get -o altpfad | default [])
     glob $"($a)/**/*.md" --exclude ['**/.git/**' '**/.obsidian/**']
     | each { path relative-to $a }
-    | each {|p| {ordner: ($p | path split | first), erledigt: ($p in $erledigt)} }
+    | each {|p| {ordner: ($p | path split | first), erledigt: (erledigt $p $erledigt)} }
     | group-by ordner
     | items {|k, v| {ordner: $k, gesamt: ($v | length), erledigt: ($v | where erledigt | length)} }
     | insert anteil {|r| $"(($r.erledigt * 100 / $r.gesamt) | math round)%" }
