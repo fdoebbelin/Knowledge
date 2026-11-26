@@ -30,3 +30,4 @@ Die Altnotiz datiert die Von-Neumann-Architektur auf 1949; beschrieben wurde sie
 - [[Die Turing-Maschine beschreibt, was überhaupt berechenbar ist]]
 - [[Die Von-Neumann-Architektur legt Programm und Daten in denselben Speicher]]
 - [[Die Rechnergenerationen sind nach ihrem Schaltelement benannt]]
+- [[Programmieren galt anfangs als wenig angesehene Frauenarbeit]]

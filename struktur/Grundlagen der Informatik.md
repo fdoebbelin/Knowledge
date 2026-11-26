@@ -18,6 +18,7 @@ Begriffe, Geschichte und Grundmechanismen der Informatik – das, was unter den 
 - [[Die Turing-Maschine beschreibt, was überhaupt berechenbar ist]] – das theoretische Fundament, noch vor jedem elektronischen Rechner
 - [[Die Von-Neumann-Architektur legt Programm und Daten in denselben Speicher]] – wie aus dem Modell ein gebauter Rechner wurde
 - [[Die Rechnergenerationen sind nach ihrem Schaltelement benannt]] – wie die Bauteiltechnik den Takt vorgab
+- [[Programmieren galt anfangs als wenig angesehene Frauenarbeit]] – wer anfangs programmierte und warum sich das änderte
 
 ## Quellen
 
