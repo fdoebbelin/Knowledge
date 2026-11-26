@@ -18,4 +18,5 @@ Dazwischen liegt ein breiter Übergang. Softwareentwicklung und DevOps stehen in
 
 ## Verbindungen
 
+- [[Die Turing-Maschine beschreibt, was überhaupt berechenbar ist]] – die Grundfrage der Informatik, was berechenbar ist, in ihrer klassischen Form
 - [[Grundlagen der Informatik]] – Strukturzettel zu diesem Thema
