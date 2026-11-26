@@ -1,0 +1,12 @@
+# Obsidian: arbeitsplatzbezogene Dateien
+.obsidian/workspace*.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+.trash/
+
+# Quartz-Build (lokal)
+_build/
+
+# System
+.DS_Store
+Thumbs.db

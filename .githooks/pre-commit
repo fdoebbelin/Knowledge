@@ -1,0 +1,8 @@
+#!/bin/sh
+# Prüft den Vault vor jedem Commit. Einrichten: git config core.hooksPath .githooks
+# Notfalls überspringen: git commit --no-verify
+if ! command -v nu >/dev/null 2>&1; then
+    echo "pre-commit: Nushell (nu) nicht gefunden – Prüfung übersprungen" >&2
+    exit 0
+fi
+exec nu "$(git rev-parse --show-toplevel)/scripts/pruefen.nu" --nur-fehler

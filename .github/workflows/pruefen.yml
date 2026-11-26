@@ -1,0 +1,16 @@
+name: Vault prüfen
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: hustcer/setup-nu@v3
+        with:
+          version: "0.117.0"
+      - name: Frontmatter, Dateinamen und Links prüfen
+        run: nu scripts/pruefen.nu
