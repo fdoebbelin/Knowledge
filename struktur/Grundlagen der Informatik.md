@@ -26,6 +26,12 @@ Begriffe, Geschichte und Grundmechanismen der Informatik – das, was unter den 
 - [[Mark-Sweep markiert erst alles Erreichbare und räumt dann den Rest weg]] – das Grundverfahren mit der Dreifarben-Abstraktion
 - [[Wann ein Garbage Collector läuft, ist ein Tausch zwischen Durchsatz und Latenz]] – wann gesammelt wird und was es kostet
 
+## Koordinaten in der Grafik
+
+- [[Der Bildschirm-Ursprung oben links stammt aus der Abtastreihenfolge der Bildröhre]] – woher der Ursprung oben links kommt
+- [[Die Richtung der y-Achse hängt von der Domäne ab, nicht von der Epoche]] – warum beide Richtungen bis heute nebeneinander bestehen
+- [[OpenGL-Texturen stehen auf dem Kopf, weil Bilddateien oben beginnen]] – das klassische Beispiel für die Reibung zwischen beiden
+
 ## Quellen
 
 - [[Geschichte der Informatik – Abriss]] – die Zeittafel, aus der der Abschnitt Geschichte stammt
