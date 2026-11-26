@@ -15,10 +15,11 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 - Schritt 5 für zwei Kurse: `fdoebbelin/Tauri-Kompaktkurs` und `fdoebbelin/Tauri-Kurs`, beide **privat**; ihre Quellen tragen `draft: true`
 - Leitfaden im Wortlaut als Anhang in `fdoebbelin/Tauri-Kurs`
 - `migration.nu`: Ordnereinträge decken alle Dateien darunter ab
+- CS-Basics war kein Kurs, sondern eine Notizsammlung: als 11 Zettel, 2 Quellen und Strukturzettel „Grundlagen der Informatik“ migriert, kein eigenes Repo
 
 ## Nächster Schritt
 
-Weitere Kurse herauslösen (19 offen, Liste mit `nu scripts/migration.nu offen 01-Courses`). Auffällig: CS-Basics bindet 3 SVGs aus `02-Tech/_resources/` ein, Python-Basics 1 SVG aus `_resources/`.
+Weitere Kurse herauslösen (18 offen, Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. Python-Basics bindet 1 SVG aus `_resources/` ein; STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“).
 
 ## Offene Entscheidungen
 
