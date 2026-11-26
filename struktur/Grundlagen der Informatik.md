@@ -20,6 +20,13 @@ Begriffe, Geschichte und Grundmechanismen der Informatik – das, was unter den 
 - [[Die Rechnergenerationen sind nach ihrem Schaltelement benannt]] – wie die Bauteiltechnik den Takt vorgab
 - [[Programmieren galt anfangs als wenig angesehene Frauenarbeit]] – wer anfangs programmierte und warum sich das änderte
 
+## Speicherverwaltung
+
+- [[Ein Garbage Collector gibt frei, was von den Wurzeln aus nicht erreichbar ist]] – das Kriterium: erreichbar oder nicht
+- [[Mark-Sweep markiert erst alles Erreichbare und räumt dann den Rest weg]] – das Grundverfahren mit der Dreifarben-Abstraktion
+- [[Wann ein Garbage Collector läuft, ist ein Tausch zwischen Durchsatz und Latenz]] – wann gesammelt wird und was es kostet
+
 ## Quellen
 
 - [[Geschichte der Informatik – Abriss]] – die Zeittafel, aus der der Abschnitt Geschichte stammt
+- [[Crafting Interpreters – Garbage Collection]] – ein Garbage Collector Schritt für Schritt in C
