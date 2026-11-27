@@ -7,7 +7,15 @@ tags:
 created: 2026-11-27
 ---
 
-Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt bei den Agenten: was sie von einem Chatbot unterscheidet, wie sie vorgehen und welche Grenzen sie brauchen, bevor sie auf echten Systemen arbeiten.
+Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt bei Sprachmodellen auf dem eigenen Rechner – was sie an Hardware brauchen und wie man sie anspricht – und geht dann zu den Agenten: was sie von einem Chatbot unterscheidet, wie sie vorgehen und welche Grenzen sie brauchen, bevor sie auf echten Systemen arbeiten.
+
+## Lokale Modelle
+
+- [[Der Speicherbedarf eines Sprachmodells folgt aus Parameterzahl und Bitbreite]] – vor dem Download ausrechnen, ob ein Modell passt
+- [[Quantisierung tauscht Genauigkeit gegen Speicher und Tempo]] – die Stufen von F16 bis Q4 und wie man wählt
+- [[Eine NPU beschleunigt Inferenz nur mit eigens übersetzten Modellen]] – warum der KI-Chip im Notebook so wenig Modelle ausführt
+- [[Lokale Modellserver sprechen die OpenAI-API]] – Ollama, LM Studio und Co. mit derselben Schnittstelle ansprechen
+- [[RAG gibt dem Modell passende Textstellen aus den eigenen Dokumenten mit]] – Fragen an die eigenen Notizen
 
 ## Agenten
 
