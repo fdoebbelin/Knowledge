@@ -24,7 +24,14 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 
 ## Nächster Schritt
 
-Weitere Kurse herauslösen (14 offen; in `Programming/` noch PythonAugmentedDevelopment; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. Python-Basics bindet 1 SVG aus `_resources/` ein; STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“).
+**PythonAugmentedDevelopment** übernehmen – gesichtet, Vorschlag steht, Freigabe fehlt noch:
+
+- Befund: kein fertiger Kurs, sondern ein Kurskonzept „Python-Lehrgang im Zeitalter generativer KI“ (7 Dateien, ~2.500 Zeilen, in sich geschlossen, 1 Commit). `00 Projektwissen` (KI-Chat-Kontext), `01` didaktisches Konzept (Drei-Phasen-Modell KI-frei → KI-augmentiert → KI-Dirigent:in, sechs Leitprinzipien), `02` Modulstruktur M1–M11, `03` Werkzeug-Stack Obsidian + Jupyter, `04` interaktive Übungsformate in JupyterLab (Tracing, Parsons-Puzzles), `M02` Ausarbeitung des KI-freien Moduls.
+- Auffällig: `00 Projektwissen` enthält Auftraggeber (BFD, Agentur für Arbeit, BWSA), Hardware und das veraltete CachyOS. `Demo interaktive Widgets.md` ist ein Chat-Rest über eine ZIP (`m2-uebungen-demo`), die im Archiv fehlt. `01` und `04` sind KI-Rechercheausgaben; die zitierten Studien und Beschlüsse (Prather et al. 2024, KMK 10.10.2024 u. a.) sind ungeprüft.
+- Vorschlag: Repo `fdoebbelin/Python-KI-Lehrgang` (privat, alle Dateien unverändert); Quelle „Python-Lehrgang im Zeitalter generativer KI – Kurskonzept“ (`art: kurs`, `draft: true`, Studienangaben als ungeprüft vermerkt), verlinkt mit Python-Grundlagenkurs und p5-Kurs (alle mit Jupytext-Notebooks); Zettel-Kandidaten für später: „KI-freie Fundierung vor KI-Nutzung“, „Tracing-Aufgaben bekommen bewusst keine automatische Prüfung“, „Parsons-Puzzles als Übungsformat“.
+- Zu klären: Repo-Name und Titel recht? Chat-Rest `Demo interaktive Widgets.md` mit ins Repo oder weglassen?
+
+Danach ist `Programming/` erledigt. Weitere Kurse herauslösen (14 offen; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. Python-Basics bindet 1 SVG aus `_resources/` ein; STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“).
 
 Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`, die `nu scripts/…` nicht lädt. Aus bash heraus mitgeben: `KNOWLEDGE_ARCHIV=$HOME/Projekte/Knowledge-Archiv nu scripts/migration.nu …`
 
