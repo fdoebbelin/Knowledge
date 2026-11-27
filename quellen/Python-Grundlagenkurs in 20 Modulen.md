@@ -30,6 +30,7 @@ Ein Einsteigerkurs Python in 20 Modulen, von der ersten Installation bis zum Arb
 - [[Tauri-Kurs mit Vue 3 und Flatpak]] – ein weiterer Kurs aus derselben Reihe, dort mit Web-Frontend und Desktop-App
 - [[Python-Aufbaukurs zu OOP, Debugging und Testing]] – die Fortsetzung ab M21 mit OOP, Debugging und Testen
 - [[Einführung in die Programmierung mit Python und Thonny]] – ein kürzeres Kurskonzept zum selben Einstieg, dort mit Thonny
+- [[Python-Lehrgang im Zeitalter generativer KI]] – ein neueres Konzept zum selben Einstieg, das generative KI einplant
 
 ## Daraus entstandene Zettel
 

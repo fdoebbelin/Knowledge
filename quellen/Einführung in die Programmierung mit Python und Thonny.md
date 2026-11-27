@@ -27,6 +27,7 @@ Ein Kurskonzept für den Einstieg ins Programmieren mit Python. Es ist kürzer a
 ## Verwandte Quellen
 
 - [[Python-Grundlagenkurs in 20 Modulen]] – der ausführlichere Kurs zum selben Einstieg, dort mit JupyterLab statt Thonny
+- [[Python-Lehrgang im Zeitalter generativer KI]] – ein neueres Konzept zum selben Einstieg, das generative KI einplant
 
 ## Daraus entstandene Zettel
 
