@@ -23,10 +23,11 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 - `pruefen.nu`: Punkt im Titel (p5.js) gilt nicht mehr als Dateiendung
 - Schritt 5 für PythonAugmentedDevelopment: `fdoebbelin/PythonAugmentedDevelopment` (privat), Quelle „Python-Lehrgang im Zeitalter generativer KI“ mit `draft: true`. `Programming/` ist damit abgeschlossen
 - Training: nur zettelfähiges Wissen übernommen (kein Repo): 6 Zettel, Strukturzettel „Web und Browser“; Military und BFD-Programs `teilweise`, Teilnehmerdatei `verworfen`. Vereinbart: für KI-Recherchen keine Quelle, nur `herkunft`
+- Office-Basics und Office-Short zu `fdoebbelin/Office-365` (privat) zusammengeführt: Grundkurs (12 Blöcke) + Aufbaumodule Word, Excel, Verknüpfung, Szenario Haus Lichtblick, Microsoft 365 mit neuem Outlook, Copilot als Ausblick; PDFs entfernt. Quelle „Microsoft 365 im Facility Management – Grundkurs und Aufbaumodule“ mit `draft: true`; `herkunft` darf jetzt eine Liste sein
 
 ## Nächster Schritt
 
-Weitere Kurse herauslösen (offen: Business, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). `Training/IT-Career` ist zurückgestellt für den KI-Durchgang.
+Weitere Kurse herauslösen (offen: Business/Project-Management, Business/UML-Basics, `Business/00 Lernfeld Geschäftsprozesse.md`, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). `Training/IT-Career` ist zurückgestellt für den KI-Durchgang.
 
 Hinweis für Agenten: `git filter-repo` ist nicht installiert, `uvx git-filter-repo` funktioniert. Befehlsketten mit `set -o pipefail`, sonst läuft `gh repo create` nach einem Fehler weiter.
 
@@ -41,6 +42,7 @@ Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`
 - Python-OOP vor dem Veröffentlichen sichten: Projektdateien tragen Vornamen von Teilnehmern (M21 02–04), M37–M39 fehlen, Datei „teile den folgenden Code richtig auf und gib Komme.md“ (`.pylintrc`, gehört wohl zu M40) umbenennen.
 - KI-Durchgang: Zettel zur Rolle von Programmierern und Systemintegratoren mit KI aus `Training/IT-Career` (zwei KI-Texte; die Behauptung zur IHK-Prüfung „eigener Anteil > 50 %“ vorher prüfen) zusammen mit den Kandidaten aus PythonAugmentedDevelopment.
 - PythonAugmentedDevelopment vor dem Veröffentlichen sichten: `00 Projektwissen` mit persönlichen Angaben (Auftraggeber, Hardware), `Demo interaktive Widgets` ist eine unbearbeitete Chat-Antwort. Zettel-Kandidaten: Vibe Coding vs. Agentic Engineering, METR-Studie (gefühlte vs. gemessene Beschleunigung), Parsons-Puzzles – Studienangaben gegen Originale prüfen.
+- Office-365: README listet fehlende Übungs-, Lösungs- und Präsentationsdateien und Angaben zum neuen Outlook, die an einer laufenden Installation zu prüfen sind (Serien-Schaltfläche, Einstellungspfade, Serien-E-Mail über neues Outlook). Materialien zu Zellbezügen und Pivot behalten ihre eigenen Beispiele (TechVision, Online-Shop) – ins Szenario übertragen?
 - Programming-Basics: Die Teams-Aufgabe (99a) verweist auf eine Word-Datei mit den Fragen, die im Archiv fehlt.
 - Python-Basics vor dem Veröffentlichen sichten: `00 Kursorganisation` mit Zertifikatsvorlage und Projektideen.
 - `Knowledge-Archiv` archivieren (Ende Schritt 1), erst wenn alle Kurse herausgelöst sind.
