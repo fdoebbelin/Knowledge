@@ -28,6 +28,7 @@ Ein Einsteigerkurs Python in 20 Modulen, von der ersten Installation bis zum Arb
 ## Verwandte Quellen
 
 - [[Tauri-Kurs mit Vue 3 und Flatpak]] – ein weiterer Kurs aus derselben Reihe, dort mit Web-Frontend und Desktop-App
+- [[Python-Aufbaukurs zu OOP, Debugging und Testing]] – die Fortsetzung ab M21 mit OOP, Debugging und Testen
 
 ## Daraus entstandene Zettel
 
