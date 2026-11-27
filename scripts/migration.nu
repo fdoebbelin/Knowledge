@@ -37,7 +37,7 @@ def erledigt [pfad: string, eintraege: list<string>] {
 def abgeleitet [altpfad: string] {
     notizen
     | each {|n| let fm = (frontmatter $n.text | default {}); {pfad: $n.pfad, id: ($fm | get -o id | default '' | into string), herkunft: ($fm | get -o herkunft | default '')} }
-    | where herkunft == $altpfad
+    | where {|r| $altpfad in ([$r.herkunft] | flatten) }   # herkunft: Pfad oder Liste von Pfaden
 }
 
 # Stand einer Altnotiz: Protokolleintrag und abgeleitete Notizen

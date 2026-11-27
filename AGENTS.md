@@ -65,7 +65,7 @@ created: 2026-11-19
 ---
 ```
 
-Optional: `aliases` (frühere Titel), `herkunft` (Pfad der Altnotiz im Archiv, siehe Migration), `status: entwurf` (noch nicht fertig), `draft: true` (nicht veröffentlichen). Bei `quelle` zusätzlich `autor`, `url`, `art` (buch | artikel | doku | video | kurs | archiv).
+Optional: `aliases` (frühere Titel), `herkunft` (Pfad der Altnotiz im Archiv, siehe Migration; stammt eine Notiz aus mehreren Altnotizen, eine Liste von Pfaden), `status: entwurf` (noch nicht fertig), `draft: true` (nicht veröffentlichen). Bei `quelle` zusätzlich `autor`, `url`, `art` (buch | artikel | doku | video | kurs | archiv).
 
 Die `id` ist die Identität des Zettels. Sie bleibt beim Umbenennen gleich und verknüpft Zettel mit dem Migrationsprotokoll.
 
