@@ -24,10 +24,14 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 - Schritt 5 für PythonAugmentedDevelopment: `fdoebbelin/PythonAugmentedDevelopment` (privat), Quelle „Python-Lehrgang im Zeitalter generativer KI“ mit `draft: true`. `Programming/` ist damit abgeschlossen
 - Training: nur zettelfähiges Wissen übernommen (kein Repo): 6 Zettel, Strukturzettel „Web und Browser“; Military und BFD-Programs `teilweise`, Teilnehmerdatei `verworfen`. Vereinbart: für KI-Recherchen keine Quelle, nur `herkunft`
 - Office-Basics und Office-Short zu `fdoebbelin/Office-365` (privat) zusammengeführt: Grundkurs (12 Blöcke) + Aufbaumodule Word, Excel, Verknüpfung, Szenario Haus Lichtblick, Microsoft 365 mit neuem Outlook, Copilot als Ausblick; PDFs entfernt. Quelle „Microsoft 365 im Facility Management – Grundkurs und Aufbaumodule“ mit `draft: true`; `herkunft` darf jetzt eine Liste sein
+- Office-365 wird in seinem eigenen Projekt weiterbearbeitet
+- `01-Courses/AI` (KI-generierter Halbtags-Workshop „Agentische KI“, Modul 2 des BFD-Orientierungsseminars): 7 Zettel zu Agenten und ihrer Absicherung, neuer Strukturzettel „Künstliche Intelligenz“; kein Repo, keine Quelle, Ergebnis `teilweise`
 
 ## Nächster Schritt
 
-Weitere Kurse herauslösen (offen: Business/Project-Management, Business/UML-Basics, `Business/00 Lernfeld Geschäftsprozesse.md`, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). `Training/IT-Career` ist zurückgestellt für den KI-Durchgang.
+`02-Tech/AI` sichten (Werkzeuge: Ollama, LM-Studio, Aider, Claude Code, OpenCode, OpenClaw, LLM-Basics …), Zettel unter „Künstliche Intelligenz“ einhängen. Dazu gehören `05-Notes/Clippings/AI` und der zurückgestellte KI-Durchgang (Vibe Coding und Entwicklerrolle aus `01-Courses/AI` Kap. 03/06, PythonAugmentedDevelopment, `Training/IT-Career`).
+
+Danach: Weitere Kurse herauslösen (offen: Business/Project-Management, Business/UML-Basics, `Business/00 Lernfeld Geschäftsprozesse.md`, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). `Training/IT-Career` ist zurückgestellt für den KI-Durchgang.
 
 Hinweis für Agenten: `git filter-repo` ist nicht installiert, `uvx git-filter-repo` funktioniert. Befehlsketten mit `set -o pipefail`, sonst läuft `gh repo create` nach einem Fehler weiter.
 
