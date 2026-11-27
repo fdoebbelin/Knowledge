@@ -6,6 +6,8 @@ tags:
   - programmieren/didaktik
   - javascript/p5
 created: 2026-11-27
+aliases:
+  - Learning p5.js – Lernjournal zu Learning Processing
 herkunft: 01-Courses/Programming/JavaScript-STEM
 autor: Dan Weiner
 url: https://github.com/danweiner/learning-p5-js
@@ -14,7 +16,7 @@ art: kurs
 
 ## Worum es geht
 
-Ein englischsprachiges Lernprotokoll auf GitHub: Der Autor arbeitet Daniel Shiffmans Lehrbuch *Learning Processing* durch, überträgt es auf p5.js und verweist je Kapitel auf Shiffmans portierte Beispiele und die passenden Coding-Train-Videos. Dazwischen stehen „Detours“ zu GitHub, Kommandozeile und Markdown sowie eigene Überlegungen dazu, wie man Programmieren lernt. Das Archiv enthielt eine Kopie des README, keinen eigenen Kurs.
+Ein englischsprachiges Lernprotokoll auf GitHub: Der Autor arbeitet Daniel Shiffmans Lehrbuch *Learning Processing* durch, überträgt es auf p5.js und verweist je Kapitel auf Shiffmans portierte Beispiele und die passenden Coding-Train-Videos. Dazwischen stehen „Detours“ zu GitHub, Kommandozeile und Markdown sowie eigene Überlegungen dazu, wie man Programmieren lernt. Das Archiv enthielt eine Kopie des README, keinen eigenen Kurs. Das Repository hat keine Lizenz.
 
 ## Kernaussagen
 
@@ -24,6 +26,10 @@ Ein englischsprachiges Lernprotokoll auf GitHub: Der Autor arbeitet Daniel Shiff
 - Ein Bug ist ein technisches Problem und ein Fehler im eigenen Bild vom Programm zugleich.
 - Ohne passend schwere Aufgaben und ohne Menschen, die man fragen kann, scheitern Einsteiger leicht an der Fehlersuche.
 - Die Einleitung fasst ausführlich Bret Victors Essay [[Learnable Programming]] zusammen.
+
+## Verwandte Quellen
+
+- [[Kreatives Programmieren mit p5.js]] – der eigene Kurs, der diese Themenfolge mit neuen Texten und Sketches umsetzt
 
 ## Daraus entstandene Zettel
 

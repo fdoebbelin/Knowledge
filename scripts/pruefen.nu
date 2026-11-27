@@ -93,7 +93,7 @@ def main [
             $b = ($b | append (befund fehler $l.von link-leer $"Leerer Link ($l.roh)"))
             continue
         }
-        if (ist-anhang $l.ziel) {
+        if (ist-anhang $l.ziel) and not ($l.ziel in $stems) {   # "p5.js" im Titel ist kein Anhang
             if not ($l.ziel in $anhaenge) {
                 let klein = ($anhaenge | where {|a| ($a | str lowercase) == ($l.ziel | str lowercase) })
                 let msg = if ($klein | is-not-empty) { $"Anhang anders geschrieben: ($l.roh) → ($klein | first)" } else { $"Anhang fehlt in _resources/: ($l.roh)" }
@@ -123,7 +123,7 @@ def main [
     let aus_struktur = ($links | where von_ordner == struktur or von == 'index.md' | get ziel | uniq)
     let mit_eingang = ($links | where {|l| $l.ziel != $l.von_stem } | get ziel | uniq)
     for n in ($alle | where ordner == zettel) {
-        let raus = ($links | where von == $n.pfad and ziel != '' and ziel != $n.stem and not (ist-anhang $it.ziel))
+        let raus = ($links | where von == $n.pfad and ziel != '' and ziel != $n.stem and (not (ist-anhang $it.ziel) or ($it.ziel in $stems)))
         if ($raus | is-empty) {
             $b = ($b | append (befund hinweis $n.pfad netz-ohne-links "Zettel verlinkt keinen anderen Zettel"))
         }
