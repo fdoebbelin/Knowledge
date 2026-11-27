@@ -22,6 +22,7 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 - JavaScript-STEM war kein eigener Kurs, sondern Kopien von danweiner/learning-p5-js (ohne Lizenz) und javascript.info: 7 Zettel, 3 Quellen, neuer Strukturzettel „Programmieren lernen“, Ergebnis `teilweise`. Auf einem zweiten Rechner entstand parallel nach dessen Gliederung der **eigene Kurs** `fdoebbelin/p5-Kreativ-Programmieren` (privat; 12 Lektionen als Jupytext-Markdown mit Zellmagie `%%p5`, Prüfskript mit headless Firefox), Quelle „Kreatives Programmieren mit p5.js“ mit `draft: true`
 - Parallelarbeit zweier Rechner per Merge zusammengeführt: doppelte Quelle „Learning p5.js – Lernjournal zu Learning Processing“ ist jetzt Alias von „…Notizen zu Learning Processing“, beide `pruefen`-Fixes behalten (lib.nu: Punkt mitten im Titel, pruefen.nu: Titel, der auf „.js“ endet). `pull.ff only` gesetzt – vor jeder Sitzung `git pull`
 - `02-Tech/AI` Durchgang 1 (lokale Modelle: LLM-Basics teilweise, LM-Studio, Ollama, Foundry Local, Nexa SDK, GPT4ALL): 5 Zettel im Abschnitt „Lokale Modelle“ von „Künstliche Intelligenz“; Installationsanleitungen und Modelllisten verworfen
+- `02-Tech/AI` Durchgang 2 (Coding-Agenten): 4 Zettel im Abschnitt „Coding-Agenten“, Quelle „Claude-Hilfe – Nutzungs- und Längengrenzen“; Antigravity, Tampermonkey, Le Chat, n8n, LSP-AI, IOPaint und übrige Claude-Code-Notizen verworfen
 - `pruefen.nu`: Punkt im Titel (p5.js) gilt nicht mehr als Dateiendung
 - Schritt 5 für PythonAugmentedDevelopment: `fdoebbelin/PythonAugmentedDevelopment` (privat), Quelle „Python-Lehrgang im Zeitalter generativer KI“ mit `draft: true`. `Programming/` ist damit abgeschlossen
 - Training: nur zettelfähiges Wissen übernommen (kein Repo): 6 Zettel, Strukturzettel „Web und Browser“; Military und BFD-Programs `teilweise`, Teilnehmerdatei `verworfen`. Vereinbart: für KI-Recherchen keine Quelle, nur `herkunft`
@@ -31,11 +32,13 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 
 ## Nächster Schritt
 
-`02-Tech/AI` in vier Durchgängen (vereinbart): 1 lokale Modelle ✓ · 2 Coding-Agenten (Claude Code, OpenCode, Aider, Claude-Skills: AGENTS.md, Skills, Aider-Commits, Kontextfenster vs. Nutzungslimit) · 3 OpenClaw (Artikel als Quellen; Messenger-Steuerung, fremde Skills, offene Kontrollpanels, Gedächtnis) · 4 KI-Durchgang (Vibe Coding/Agentic Engineering, METR, Entwicklerrolle; `05-Notes/Clippings/AI` gegen Originale prüfen; `01-Courses/AI` Kap. 03/06, PythonAugmentedDevelopment, `Training/IT-Career`; dazu DeepSeek-Zensur, Circuit-Tracing, Simanowski – Quelle mit `status: entwurf` oder weglassen, offen). Rest verwerfen: Installationsanleitungen, Chat-Protokolle, Werkzeuglisten, abgelaufene Angebote.
+`02-Tech/AI` in vier Durchgängen (vereinbart): 1 lokale Modelle ✓ · 2 Coding-Agenten ✓ · 3 OpenClaw (Artikel als Quellen; Messenger-Steuerung, fremde Skills, offene Kontrollpanels, Gedächtnis) · 4 KI-Durchgang (Vibe Coding/Agentic Engineering, METR, Entwicklerrolle; `05-Notes/Clippings/AI` gegen Originale prüfen; `01-Courses/AI` Kap. 03/06, PythonAugmentedDevelopment, `Training/IT-Career`; dazu DeepSeek-Zensur, Circuit-Tracing, Simanowski – Quelle mit `status: entwurf` oder weglassen, offen). Rest verwerfen: Installationsanleitungen, Chat-Protokolle, Werkzeuglisten, abgelaufene Angebote.
 
 Danach: Weitere Kurse herauslösen (offen: Business/Project-Management, Business/UML-Basics, `Business/00 Lernfeld Geschäftsprozesse.md`, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). `Training/IT-Career` ist zurückgestellt für den KI-Durchgang.
 
 Hinweis für Agenten: `git filter-repo` ist nicht installiert, `uvx git-filter-repo` funktioniert. Befehlsketten mit `set -o pipefail`, sonst läuft `gh repo create` nach einem Fehler weiter.
+
+Hinweis für Agenten: `migration.nu eintragen` verlangt, dass eine Notiz `herkunft` **exakt** auf den eingetragenen Pfad setzt (Ordner ≠ Datei darin); sonst Abbruch „Keine Notiz trägt diese herkunft“.
 
 Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`, die `nu scripts/…` nicht lädt. Aus bash heraus mitgeben: `KNOWLEDGE_ARCHIV=$HOME/Projekte/Knowledge-Archiv nu scripts/migration.nu …`
 

@@ -23,6 +23,13 @@ Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt be
 - [[Der ReAct-Zyklus wechselt zwischen Denken, Handeln und Beobachten]] – wie ein Agent Schritt für Schritt vorgeht
 - [[Ein Agenten-Prompt nennt Ziel, Kontext, Werkzeuge, Grenzen und Stoppbedingung]] – wie man einen Agenten beauftragt
 
+## Coding-Agenten
+
+- [[AGENTS.md ist das Projektgedächtnis eines Coding-Agenten]] – was ein Agent bei jedem Start über das Projekt erfährt
+- [[Ein Skill ist ein Ordner mit einer SKILL.md, die der Agent erst bei Bedarf lädt]] – Verfahren mitgeben, ohne den Kontext zu füllen
+- [[Das Kontextfenster begrenzt ein Gespräch, das Nutzungslimit die Zeit]] – die beiden Grenzen, an die man stößt
+- [[Aider macht jede Änderung zu einem Git-Commit]] – Git als Sicherheitsnetz für Agentenarbeit
+
 ## Agenten absichern
 
 - [[Je weniger umkehrbar eine Aktion ist, desto eher braucht ein Agent eine Freigabe]] – wo der Mensch entscheidet

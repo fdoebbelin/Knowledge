@@ -18,9 +18,21 @@ altpfad,ergebnis,zettel,datum,notiz
 01-Courses/Training/BFD-Programs,teilweise,202611271058 202611271059 202611271100 202611271101,2026-11-27,"4 Zettel aus dem KI-Kurskonzept Web 3.0/Solid; Träger-, Förder- und Lizenzrecherchen, Clippings und Trägervorgaben weggelassen; keine Quelle (KI-Recherche)"
 01-Courses/Training/Military,teilweise,202611271056 202611271057,2026-11-27,"2 Zettel aus der KI-Recherche zu Game-Frameworks; Begrüßung, MetaRow-Idee und Beispielspiele weggelassen; keine Quelle (KI-Recherche)"
 01-Courses/Training/Teilnehmer & Themen im Einzelcoaching.md,verworfen,,2026-11-27,personenbezogene Teilnehmerdaten
+02-Tech/AI/Aider,teilweise,202611271315 202611271321,2026-11-27,"Zettel Git-Commits; Setup CachyOS/Ollama, Gemini-Konfiguration und Modellempfehlungen veraltet"
+02-Tech/AI/Antigravity.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/AI/AnythingLLM vs Nexa SDK.md,teilweise,202611271316,2026-11-27,in Zettel NPU eingeflossen; Werkzeugvergleich veraltet
+02-Tech/AI/Claude-Code/00 Claude Code.md,verworfen,,2026-11-27,"Windows-Installation/Preise, Sitzungsprotokoll, abgelaufene Aktion, Konto-Übertragung oder leere Datei"
+02-Tech/AI/Claude-Code/00 Claude-Code.md,verworfen,,2026-11-27,"Windows-Installation/Preise, Sitzungsprotokoll, abgelaufene Aktion, Konto-Übertragung oder leere Datei"
+02-Tech/AI/Claude-Code/01 Beginn unter Windows.md,verworfen,,2026-11-27,"Windows-Installation/Preise, Sitzungsprotokoll, abgelaufene Aktion, Konto-Übertragung oder leere Datei"
+02-Tech/AI/Claude-Code/02 weiter unter Linux.md,verworfen,,2026-11-27,"Windows-Installation/Preise, Sitzungsprotokoll, abgelaufene Aktion, Konto-Übertragung oder leere Datei"
+02-Tech/AI/Claude-Code/Claude March 2026 usage promotion.md,verworfen,,2026-11-27,"Windows-Installation/Preise, Sitzungsprotokoll, abgelaufene Aktion, Konto-Übertragung oder leere Datei"
+02-Tech/AI/Claude-Code/Nutzungs- und Längenbeschränkungen verstehen.md,uebernommen,202611271318 202611271322,2026-11-27,Hilfeartikel als Quelle + Zettel Kontextfenster/Nutzungslimit
+02-Tech/AI/Claude-Code/Projekte und Chats auf ein anderes Konto übertragen.md,verworfen,,2026-11-27,"Windows-Installation/Preise, Sitzungsprotokoll, abgelaufene Aktion, Konto-Übertragung oder leere Datei"
+02-Tech/AI/Claude-Skills,teilweise,202611271320,2026-11-27,"Zettel Skill-Aufbau; die Frontmatter-Vorgabe für Chat-Protokolle gehört zum Skill chat-protokoll, nicht in den Vault"
 02-Tech/AI/Foundry Local,teilweise,202611271315 202611271316 202611271317,2026-11-27,"Zettel NPU, OpenAI-API, RAG; XPS-Setup, Aider-Anleitung, Demo-Runbook und Nexa/Qualcomm-Ausblick weggelassen"
 02-Tech/AI/GPT4ALL,verworfen,,2026-11-27,"Installationsanleitung (Arch/Flatpak), veraltet"
+02-Tech/AI/Gemini-Chat ChatGPT Tampermonkey Userscript.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
+02-Tech/AI/IOPaint,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/AI/LLM-Basics/Building llama.cpp on Windows on ARM.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/DirectML für NPUs Vorteile.md,teilweise,202611271316,2026-11-27,in Zettel NPU eingeflossen; Werbeaussagen (NPU übertrifft GPU beim Training) weggelassen
 02-Tech/AI/LLM-Basics/Enable DeepSeek on Snapdragon X Elite.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
@@ -34,6 +46,10 @@ altpfad,ergebnis,zettel,datum,notiz
 02-Tech/AI/LLM-Basics/ki_leitfaden_snapdragon.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/maximale Leistung bei der Arbeit mit LLMs.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LM-Studio,teilweise,202611271313 202611271315,2026-11-27,"Zettel Speicherbedarf und OpenAI-API; Installationsanleitung (CachyOS), Modelllisten (VRAM-Tabelle fehlerhaft), Python-Beispiele, PyGPT-Recherche weggelassen"
+02-Tech/AI/LSP-AI.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
+02-Tech/AI/Le Chat – Lektoratsunterstützung.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/AI/Nexa SDK,teilweise,202611271316,2026-11-27,in Zettel NPU eingeflossen; Installation unter CachyOS veraltet
 02-Tech/AI/Ollama,teilweise,202611271315,2026-11-27,Zettel OpenAI-API; Installation und Fehlersuche unter CachyOS veraltet
+02-Tech/AI/OpenCode,teilweise,202611271319,2026-11-27,"Zettel AGENTS.md; Installation, Provider, Konfiguration und Berechtigungen (OpenCode V2) als Werkzeugdoku weggelassen"
+02-Tech/AI/n8n Workflow für PDFD-Analyse und Dateinamenerstellung.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 04-Languages/Rust/Tauri/Von der leeren Toolbx zur installierten Flatpak-App.md,uebernommen,202611262015 202611262016 202611262017 202611262018 202611262019 202611262020 202611262021 202611262022 202611262023 202611262024 202611262025 202611262026 202611262027 202611262028 202611262029 202611262030 202611262031,2026-11-26,"16 Zettel + Quelle; Volltext als Anhang in fdoebbelin/Tauri-Kurs; Versionsstände, Beispiel-App, Setup-Skript, Spickzettel weggelassen; Nushell-Präfix-Aussage überholt"
