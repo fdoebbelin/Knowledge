@@ -81,9 +81,11 @@ export def wikilinks [text: string] {
 }
 
 # Ist das Ziel ein Anhang (Endung, aber nicht .md)?
+# Endung wie bei Quartz: nur Buchstaben und Ziffern nach dem letzten Punkt,
+# damit Titel wie „p5.js ist …“ nicht als Datei gelten.
 export def ist-anhang [ziel: string] {
     let ext = ($ziel | path parse | get extension)
-    ($ext | is-not-empty) and ($ext | str lowercase) != 'md'
+    ($ext =~ '^[A-Za-z0-9]+$') and ($ext | str lowercase) != 'md'
 }
 
 # Unzulässige Zeichen in Dateinamen
