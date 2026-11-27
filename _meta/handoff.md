@@ -7,7 +7,7 @@
 
 ## Stand
 
-Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration abgeschlossen: der Leitfaden „Von der leeren Toolbx zur installierten Flatpak-App“ als 16 Zettel, Quelle und Strukturzettel „Entwickeln auf Fedora Atomic“.
+Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Kurse aus `01-Courses` größtenteils herausgelöst; `02-Tech/AI` zur Hälfte migriert (Durchgänge 1 und 2 von 4), Strukturzettel „Künstliche Intelligenz“ mit 16 Zetteln. Es wird auf zwei Rechnern gearbeitet: **vor Sitzungsbeginn `git pull`** (`pull.ff only` ist gesetzt).
 
 ## Erledigt
 
@@ -32,7 +32,7 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 
 ## Nächster Schritt
 
-`02-Tech/AI` in vier Durchgängen (vereinbart): 1 lokale Modelle ✓ · 2 Coding-Agenten ✓ · 3 OpenClaw (Artikel als Quellen; Messenger-Steuerung, fremde Skills, offene Kontrollpanels, Gedächtnis) · 4 KI-Durchgang (Vibe Coding/Agentic Engineering, METR, Entwicklerrolle; `05-Notes/Clippings/AI` gegen Originale prüfen; `01-Courses/AI` Kap. 03/06, PythonAugmentedDevelopment, `Training/IT-Career`; dazu DeepSeek-Zensur, Circuit-Tracing, Simanowski – Quelle mit `status: entwurf` oder weglassen, offen). Rest verwerfen: Installationsanleitungen, Chat-Protokolle, Werkzeuglisten, abgelaufene Angebote.
+**Morgen weiter mit Durchgang 3 (OpenClaw, 12 Notizen in `02-Tech/AI/OpenClaw`).** `02-Tech/AI` in vier Durchgängen (vereinbart): 1 lokale Modelle ✓ · 2 Coding-Agenten ✓ · 3 OpenClaw (Artikel als Quellen; Messenger-Steuerung, fremde Skills, offene Kontrollpanels, Gedächtnis) · 4 KI-Durchgang (Vibe Coding/Agentic Engineering, METR, Entwicklerrolle; `05-Notes/Clippings/AI` gegen Originale prüfen; `01-Courses/AI` Kap. 03/06, PythonAugmentedDevelopment, `Training/IT-Career`; dazu DeepSeek-Zensur, Circuit-Tracing, Simanowski – Quelle mit `status: entwurf` oder weglassen, offen). Rest verwerfen: Installationsanleitungen, Chat-Protokolle, Werkzeuglisten, abgelaufene Angebote.
 
 Danach: Weitere Kurse herauslösen (offen: Business/Project-Management, Business/UML-Basics, `Business/00 Lernfeld Geschäftsprozesse.md`, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). `Training/IT-Career` ist zurückgestellt für den KI-Durchgang.
 
