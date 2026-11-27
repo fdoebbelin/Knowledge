@@ -32,7 +32,13 @@ Begriffe, Geschichte und Grundmechanismen der Informatik – das, was unter den 
 - [[Die Richtung der y-Achse hängt von der Domäne ab, nicht von der Epoche]] – warum beide Richtungen bis heute nebeneinander bestehen
 - [[OpenGL-Texturen stehen auf dem Kopf, weil Bilddateien oben beginnen]] – das klassische Beispiel für die Reibung zwischen beiden
 
+## Grafik programmieren
+
+- [[p5.js ist Processing für den Browser]] – eine Bibliothek, mit der man im Browser sofort zeichnet
+- [[Ein p5.js-Sketch besteht aus setup, das einmal läuft, und draw, das jedes Bild läuft]] – wie aus Zeichenbefehlen eine Animation wird
+
 ## Quellen
 
 - [[Geschichte der Informatik – Abriss]] – die Zeittafel, aus der der Abschnitt Geschichte stammt
 - [[Crafting Interpreters – Garbage Collection]] – ein Garbage Collector Schritt für Schritt in C
+- [[Learning p5.js – Notizen zu Learning Processing]] – Herkunft des Abschnitts Grafik programmieren
