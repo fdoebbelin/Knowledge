@@ -31,6 +31,7 @@ Die Tags werden in ihrer Reihenfolge ausgeführt, das zweite Skript kann also au
 
 - [[p5.js ist Processing für den Browser]] – auch eine p5.js-Seite bindet Bibliothek und Sketch als zwei getrennte script-Tags ein
 - [[Programmieren lernen]] – Strukturzettel, Abschnitt erste Schritte im Browser
+- [[Web und Browser]] – Strukturzettel, Abschnitt Code im Browser
 
 ## Quellen
 
