@@ -18,11 +18,13 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 - Schritt 5 für Python-Basics: `fdoebbelin/Python-Basics` (privat), Quelle „Python-Grundlagenkurs in 20 Modulen“ mit `draft: true`
 - Schritt 5 für Python-OOP: `fdoebbelin/Python-OOP` (privat), Quelle „Python-Aufbaukurs zu OOP, Debugging und Testing“ mit `draft: true`, gegenseitig mit dem Grundlagenkurs verlinkt
 - Schritt 5 für Programming-Basics: `fdoebbelin/Programming-Basics` (privat), Quelle „Einführung in die Programmierung mit Python und Thonny“ mit `draft: true`
+- JavaScript-STEM war fremder Text ohne Lizenz (danweiner/learning-p5-js) plus ein Stück javascript.info: Quelle „Learning p5.js – Lernjournal zu Learning Processing“; nach dessen Gliederung **neuer eigener Kurs** `fdoebbelin/p5-Kreativ-Programmieren` (privat, lokal `~/Projekte/p5-Kreativ-Programmieren`), 12 Lektionen als Jupytext-Markdown mit Zellmagie `%%p5`, Prüfskript mit headless Firefox; Quelle „Kreatives Programmieren mit p5.js“ mit `draft: true`
+- `pruefen.nu`: Notiztitel mit Punkt (z. B. „p5.js“) gelten nicht mehr als Anhang
 - CS-Basics war kein Kurs, sondern eine Notizsammlung: als 11 Zettel, 2 Quellen und Strukturzettel „Grundlagen der Informatik“ migriert, kein eigenes Repo
 
 ## Nächster Schritt
 
-Weitere Kurse herauslösen (15 offen; in `Programming/` noch JavaScript-STEM und PythonAugmentedDevelopment; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. Python-Basics bindet 1 SVG aus `_resources/` ein; STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“).
+Weitere Kurse herauslösen (14 offen; in `Programming/` noch PythonAugmentedDevelopment; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. Python-Basics bindet 1 SVG aus `_resources/` ein; STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“).
 
 Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`, die `nu scripts/…` nicht lädt. Aus bash heraus mitgeben: `KNOWLEDGE_ARCHIV=$HOME/Projekte/Knowledge-Archiv nu scripts/migration.nu …`
 
@@ -33,6 +35,7 @@ Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`
 - Der Leitfaden im Tauri-Kurs behauptet, Nushell kenne kein Variablen-Präfix – dort korrigieren.
 - Wiederverwendbares Wissen aus den Kursen als Zettel übernehmen (z. B. Python-Basics: Closures, Dekoratoren, Git Flow vs. GitHub Flow) – eigener Durchgang.
 - Python-OOP vor dem Veröffentlichen sichten: Projektdateien tragen Vornamen von Teilnehmern (M21 02–04), M37–M39 fehlen, Datei „teile den folgenden Code richtig auf und gib Komme.md“ (`.pylintrc`, gehört wohl zu M40) umbenennen.
+- p5-Kurs: Lizenz für das Repo festlegen, bevor es öffentlich wird. Inhalte vor dem Veröffentlichen gegenlesen (von Claude geschrieben, technisch geprüft, didaktisch noch nicht).
 - Programming-Basics: Die Teams-Aufgabe (99a) verweist auf eine Word-Datei mit den Fragen, die im Archiv fehlt.
 - Python-Basics vor dem Veröffentlichen sichten: `00 Kursorganisation` mit Zertifikatsvorlage und Projektideen.
 - `Knowledge-Archiv` archivieren (Ende Schritt 1), erst wenn alle Kurse herausgelöst sind.
