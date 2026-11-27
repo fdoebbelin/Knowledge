@@ -21,10 +21,13 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Erste Migration 
 - CS-Basics war kein Kurs, sondern eine Notizsammlung: als 11 Zettel, 2 Quellen und Strukturzettel „Grundlagen der Informatik“ migriert, kein eigenes Repo
 - JavaScript-STEM war kein eigener Kurs, sondern Kopien von danweiner/learning-p5-js und javascript.info: 7 Zettel, 3 Quellen, neuer Strukturzettel „Programmieren lernen“, Ergebnis `teilweise`
 - `pruefen.nu`: Punkt im Titel (p5.js) gilt nicht mehr als Dateiendung
+- Schritt 5 für PythonAugmentedDevelopment: `fdoebbelin/PythonAugmentedDevelopment` (privat), Quelle „Python-Lehrgang im Zeitalter generativer KI“ mit `draft: true`. `Programming/` ist damit abgeschlossen
 
 ## Nächster Schritt
 
-Weitere Kurse herauslösen (14 offen; in `Programming/` noch PythonAugmentedDevelopment, ein Kurskonzept „Python im Zeitalter generativer KI“ mit 7 Dateien; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. Python-Basics bindet 1 SVG aus `_resources/` ein; STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“).
+Weitere Kurse herauslösen (13 offen: Business, CAD, Databases, STEM, Training; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“).
+
+Hinweis für Agenten: `git filter-repo` ist nicht installiert, `uvx git-filter-repo` funktioniert. Befehlsketten mit `set -o pipefail`, sonst läuft `gh repo create` nach einem Fehler weiter.
 
 Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`, die `nu scripts/…` nicht lädt. Aus bash heraus mitgeben: `KNOWLEDGE_ARCHIV=$HOME/Projekte/Knowledge-Archiv nu scripts/migration.nu …`
 
@@ -35,6 +38,7 @@ Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`
 - Der Leitfaden im Tauri-Kurs behauptet, Nushell kenne kein Variablen-Präfix – dort korrigieren.
 - Wiederverwendbares Wissen aus den Kursen als Zettel übernehmen (z. B. Python-Basics: Closures, Dekoratoren, Git Flow vs. GitHub Flow) – eigener Durchgang.
 - Python-OOP vor dem Veröffentlichen sichten: Projektdateien tragen Vornamen von Teilnehmern (M21 02–04), M37–M39 fehlen, Datei „teile den folgenden Code richtig auf und gib Komme.md“ (`.pylintrc`, gehört wohl zu M40) umbenennen.
+- PythonAugmentedDevelopment vor dem Veröffentlichen sichten: `00 Projektwissen` mit persönlichen Angaben (Auftraggeber, Hardware), `Demo interaktive Widgets` ist eine unbearbeitete Chat-Antwort. Zettel-Kandidaten: Vibe Coding vs. Agentic Engineering, METR-Studie (gefühlte vs. gemessene Beschleunigung), Parsons-Puzzles – Studienangaben gegen Originale prüfen.
 - Programming-Basics: Die Teams-Aufgabe (99a) verweist auf eine Word-Datei mit den Fragen, die im Archiv fehlt.
 - Python-Basics vor dem Veröffentlichen sichten: `00 Kursorganisation` mit Zertifikatsvorlage und Projektideen.
 - `Knowledge-Archiv` archivieren (Ende Schritt 1), erst wenn alle Kurse herausgelöst sind.
