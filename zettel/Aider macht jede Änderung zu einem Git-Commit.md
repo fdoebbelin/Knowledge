@@ -24,5 +24,6 @@ Der Gedanke gilt über Aider hinaus: Ein Agent, der Dateien ändert, sollte in e
 
 - [[Je weniger umkehrbar eine Aktion ist, desto eher braucht ein Agent eine Freigabe]] – Git macht Dateiänderungen umkehrbar und senkt so die Schwelle für Freigaben
 - [[Versionsverzeichnis und Symlink machen Updates umkehrbar]] – dieselbe Idee bei Installationen
+- [[Eine gelöschte Datei bleibt in der Git-Historie]] – warum sich auch Gelöschtes zurückholen lässt
 - [[Lokale Modellserver sprechen die OpenAI-API]] – so lässt sich Aider an ein lokales Modell hängen
 - [[Künstliche Intelligenz]] – Strukturzettel zu diesem Thema

@@ -16,3 +16,4 @@ Wissensbasis zu Linux, Softwareentwicklung, Virtualisierung und Containern – a
 - [[Web und Browser]] – Internet und Web, Code im Browser, Solid und Linked Data
 - [[Künstliche Intelligenz]] – lokale Sprachmodelle und KI-Agenten: wie sie arbeiten und wie man sie absichert
 - [[Entwickeln auf Fedora Atomic]] – Toolbx, Flatpak und Tauri auf einem unveränderlichen System
+- [[Git und Dateiablage]] – wie Git Dateien speichert und wie man sie zwischen Projekten weiterreicht

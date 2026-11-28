@@ -27,6 +27,8 @@ Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt be
 
 - [[AGENTS.md ist das Projektgedächtnis eines Coding-Agenten]] – was ein Agent bei jedem Start über das Projekt erfährt
 - [[Ein Skill ist ein Ordner mit einer SKILL.md, die der Agent erst bei Bedarf lädt]] – Verfahren mitgeben, ohne den Kontext zu füllen
+- [[Einen Skill mit Nebenwirkungen startet nur der Mensch]] – das Laden bei Bedarf gezielt abschalten
+- [[additionalDirectories gibt Claude Code nur Dateizugriff]] – Nachbarordner freigeben, ohne deren Konfiguration zu laden
 - [[Das Kontextfenster begrenzt ein Gespräch, das Nutzungslimit die Zeit]] – die beiden Grenzen, an die man stößt
 - [[Aider macht jede Änderung zu einem Git-Commit]] – Git als Sicherheitsnetz für Agentenarbeit
 
@@ -36,3 +38,5 @@ Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt be
 - [[Ein KI-Agent bekommt nur die Rechte, die seine Aufgabe braucht]] – die technische Grenze, die immer hält
 - [[Indirekte Prompt Injection versteckt Anweisungen in Daten, die der Agent liest]] – der Angriff über die Daten, die der Agent verarbeitet
 - [[Ein Agent meldet Erfolg erst nach geprüftem Ergebnis]] – Halluzinationen abfangen, bevor sie Folgen haben
+- [[Ein Geheimnis-Check sucht nach echten Werten statt nach Wörtern]] – eine Prüfregel, die nicht ständig falsch anschlägt
+- [[Ein gepushtes Geheimnis muss man austauschen]] – was zu tun ist, wenn doch eines durchgerutscht ist

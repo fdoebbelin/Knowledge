@@ -25,4 +25,5 @@ Rechte sind die Sicherung, die auch dann hält, wenn alle anderen versagen: Eine
 - [[Indirekte Prompt Injection versteckt Anweisungen in Daten, die der Agent liest]] – der Fall, in dem knappe Rechte den Angriff ins Leere laufen lassen
 - [[Je weniger umkehrbar eine Aktion ist, desto eher braucht ein Agent eine Freigabe]] – Freigabe als organisatorische, Rechte als technische Grenze
 - [[Toolbx ist keine Sandbox]] – ein Container allein trennt den Agenten nicht vom eigenen Home-Verzeichnis
+- [[additionalDirectories gibt Claude Code nur Dateizugriff]] – wie man einem Coding-Agenten weitere Ordner öffnet
 - [[Künstliche Intelligenz]] – Strukturzettel zu diesem Thema
