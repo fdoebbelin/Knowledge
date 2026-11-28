@@ -31,6 +31,7 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Kurse aus `01-Co
 - `01-Courses/AI` (KI-generierter Halbtags-Workshop „Agentische KI“, Modul 2 des BFD-Orientierungsseminars): 7 Zettel zu Agenten und ihrer Absicherung, neuer Strukturzettel „Künstliche Intelligenz“; kein Repo, keine Quelle, Ergebnis `teilweise`
 - Erste Sendung aus `00-Poststelle` verarbeitet (Inbox ist leer): 10 Zettel, Quelle „Anleitung zum Aufbau einer Poststelle für Projektdateien“, neuer Strukturzettel „Git und Dateiablage“. Volltext liegt in `00-Poststelle/docs/anleitung/` (Commit `1d1b579`, noch nicht gepusht)
 - `lib.nu`, `pruefen.nu`: Glob-Muster liefen unter Windows nicht (Backslashes), neue Funktion `muster`
+- GitHub CLI: `02-Tech/Git/Arbeitsblatt-GitHub-CLI-gh.md` übernommen (4 Zettel), dazu 1 Zettel aus der Poststellen-Anleitung; neuer Abschnitt „GitHub auf der Kommandozeile“ in „Git und Dateiablage“. Kernfunktionen mit den Hilfetexten von `gh` 2.98.0 abgeglichen, Fehlermeldungen nicht nachgestellt
 
 ## Nächster Schritt
 
@@ -44,9 +45,11 @@ Hinweis für Agenten: `migration.nu eintragen` verlangt, dass eine Notiz `herkun
 
 Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`, die `nu scripts/…` nicht lädt. Aus bash heraus mitgeben: `KNOWLEDGE_ARCHIV=$HOME/Projekte/Knowledge-Archiv nu scripts/migration.nu …`
 
+Vorgabe für die Übernahme von `02-Tech/Git/Mit Git auf dem Server verbinden.md`: Das Skript darin übergibt ein E-Mail-Passwort im Klartext. Für eine Übernahme **einen anderen Weg zur Übermittlung vorsehen**: Das Passwort steht weder im Skript noch in der Notiz und wird nicht als Kommandozeilenargument übergeben, sondern zur Laufzeit aus einem geschützten Speicher gelesen. Den alten Wert nirgends übernehmen; das Passwort ist laut Eigentümer geändert (2026-11-28). Die Altnotiz steht weiter im öffentlichen Archiv.
+
 ## Offene Entscheidungen
 
-- `migration.nu` hat dasselbe Glob-Muster wie vorher `lib.nu`; unter Windows ungetestet. Vor der nächsten Migration dort prüfen, auch die Pfadtrenner beim Vergleich mit `migration.csv`.
+- `migration.nu offen <Unterordner>` bricht unter Windows mit `failed to parse glob expression` ab (Zeile 79), mit `\` wie mit `/` in `KNOWLEDGE_ARCHIV`; Ursache nicht untersucht. `status` und `eintragen` liefen für eine einzelne Datei. Pfadtrenner beim Vergleich mit `migration.csv` bei `offen` noch prüfen.
 - Poststelle: Der Skill `zustellen` vergleicht mit `git hash-object` ohne `--no-filters`. Bei Dateien mit CRLF prüfen, ob das Fehlalarme gibt (ungetestet).
 - Kurs-Repos sichten und öffentlich schalten? Dann `draft: true` aus den Kursquellen nehmen. Zu prüfen vor allem `Training/Military`, `Training/BFD-Programs`, `STEM-Intro/_INTERN_`, `Project-Management/_WICHTIG_`.
 - Tauri-Kompaktkurs verlinkt per Wikilink noch auf `[[00 Kurskonzept Tauri]]` und den Leitfaden, die jetzt im Repo Tauri-Kurs liegen: durch URLs ersetzen?
@@ -59,5 +62,5 @@ Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`
 - p5-Kurs: Lizenz für das Repo festlegen, bevor es öffentlich wird. Inhalte vor dem Veröffentlichen gegenlesen (von Claude geschrieben, technisch geprüft, didaktisch noch nicht).
 - Programming-Basics: Die Teams-Aufgabe (99a) verweist auf eine Word-Datei mit den Fragen, die im Archiv fehlt.
 - Python-Basics vor dem Veröffentlichen sichten: `00 Kursorganisation` mit Zertifikatsvorlage und Projektideen.
-- `Knowledge-Archiv` archivieren (Ende Schritt 1), erst wenn alle Kurse herausgelöst sind.
+- `Knowledge-Archiv` ist laut GitHub bereits archiviert und öffentlich (abgefragt 2026-11-28), obwohl noch nicht alle Kurse herausgelöst sind. Auf privat stellen oder die Historie bereinigen? Das Archiv ist nicht gezielt auf weitere Geheimnisse geprüft.
 - Eigene Domain für GitHub Pages? Dann `baseUrl` in `_meta/quartz/quartz.config.yaml` anpassen.
