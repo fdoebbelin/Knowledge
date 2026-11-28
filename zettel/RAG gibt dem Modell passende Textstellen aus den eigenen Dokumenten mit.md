@@ -25,4 +25,5 @@ Weil nur die Inferenz an einem Modell hängt, lässt sich das Modell tauschen, o
 
 - [[Lokale Modellserver sprechen die OpenAI-API]] – über diese Schnittstelle laufen Embedding und Antwort auch ganz ohne Cloud
 - [[Indirekte Prompt Injection versteckt Anweisungen in Daten, die der Agent liest]] – was im Index steht, landet ungeprüft im Prompt
+- [[Ein Agentengedächtnis aus Markdown-Dateien wird durch einen Suchindex nutzbar]] – die Suche über das, was ein Agent selbst notiert hat
 - [[Künstliche Intelligenz]] – Strukturzettel zu diesem Thema

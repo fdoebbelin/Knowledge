@@ -31,4 +31,5 @@ Das Format stammt von Anthropic; OpenCode liest Skills im selben Aufbau aus `.op
 - [[AGENTS.md ist das Projektgedächtnis eines Coding-Agenten]] – immer geladen, im Gegensatz zum Skill
 - [[Das Kontextfenster begrenzt ein Gespräch, das Nutzungslimit die Zeit]] – der Grund für das gestufte Laden
 - [[Einen Skill mit Nebenwirkungen startet nur der Mensch]] – wann der Agent nicht selbst entscheiden soll
+- [[Ein fremder Skill ist ungeprüfter Code mit den Rechten des Agenten]] – warum man einen Skill vor dem Aktivieren liest
 - [[Künstliche Intelligenz]] – Strukturzettel zu diesem Thema

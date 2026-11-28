@@ -50,6 +50,7 @@ altpfad,ergebnis,zettel,datum,notiz
 02-Tech/AI/Le Chat – Lektoratsunterstützung.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/AI/Nexa SDK,teilweise,202611271316,2026-11-27,in Zettel NPU eingeflossen; Installation unter CachyOS veraltet
 02-Tech/AI/Ollama,teilweise,202611271315,2026-11-27,Zettel OpenAI-API; Installation und Fehlersuche unter CachyOS veraltet
+02-Tech/AI/OpenClaw,teilweise,202611281502 202611281503 202611281508 202611281509 202611281507 202611281505 202611281506 202611281504,2026-11-28,"Verworfen: VM-Installation, Linkliste, Architektur (widersprüchlich), OnlineMarketing- und Hostinger-Artikel; KI-Texte nur als Material. Aussagen zu OpenClaw an der Dokumentation geprüft (Stand 2026-11-28)"
 02-Tech/AI/OpenCode,teilweise,202611271319,2026-11-27,"Zettel AGENTS.md; Installation, Provider, Konfiguration und Berechtigungen (OpenCode V2) als Werkzeugdoku weggelassen"
 02-Tech/AI/n8n Workflow für PDFD-Analyse und Dateinamenerstellung.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/Git/Arbeitsblatt-GitHub-CLI-gh.md,uebernommen,202611281433 202611281432 202611281435 202611281434,2026-11-28,"Weggelassen: Lernziele, Übungen, Kontrollfragen, Installation, Passkey-Einrichtung, Kontowechsel im Web, Beispielausgaben"

@@ -22,6 +22,7 @@ Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt be
 - [[Ein KI-Agent handelt, ein Chatbot antwortet]] – der Grundunterschied: Werkzeuge, eigene Schrittfolge, Ergebnisprüfung
 - [[Der ReAct-Zyklus wechselt zwischen Denken, Handeln und Beobachten]] – wie ein Agent Schritt für Schritt vorgeht
 - [[Ein Agenten-Prompt nennt Ziel, Kontext, Werkzeuge, Grenzen und Stoppbedingung]] – wie man einen Agenten beauftragt
+- [[Ein Agentengedächtnis aus Markdown-Dateien wird durch einen Suchindex nutzbar]] – wie ein Agent über Sitzungen hinweg etwas behält
 
 ## Coding-Agenten
 
@@ -37,6 +38,11 @@ Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt be
 - [[Je weniger umkehrbar eine Aktion ist, desto eher braucht ein Agent eine Freigabe]] – wo der Mensch entscheidet
 - [[Ein KI-Agent bekommt nur die Rechte, die seine Aufgabe braucht]] – die technische Grenze, die immer hält
 - [[Indirekte Prompt Injection versteckt Anweisungen in Daten, die der Agent liest]] – der Angriff über die Daten, die der Agent verarbeitet
+- [[Ein dauerhaftes Gedächtnis macht aus einer Prompt Injection ein bleibendes Problem]] – was sich ändert, wenn der Agent sich erinnert
+- [[Ein per Messenger erreichbarer Agent braucht eine Liste erlaubter Absender]] – wer dem Agenten Aufträge geben darf
+- [[Ein offenes Kontrollpanel eines Agenten gibt seine Zugangsdaten preis]] – die Verwaltungsoberfläche schützen
+- [[Ein fremder Skill ist ungeprüfter Code mit den Rechten des Agenten]] – Vorsicht bei Erweiterungen aus fremder Hand
+- [[Ein dauerhaft laufender Agent braucht eine Kostengrenze]] – die Grenze für das, was unbemerkt Geld kostet
 - [[Ein Agent meldet Erfolg erst nach geprüftem Ergebnis]] – Halluzinationen abfangen, bevor sie Folgen haben
 - [[Ein Geheimnis-Check sucht nach echten Werten statt nach Wörtern]] – eine Prüfregel, die nicht ständig falsch anschlägt
 - [[Ein gepushtes Geheimnis muss man austauschen]] – was zu tun ist, wenn doch eines durchgerutscht ist

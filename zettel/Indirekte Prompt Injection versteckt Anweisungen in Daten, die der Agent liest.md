@@ -28,4 +28,5 @@ Filtern hilft nur begrenzt, weil sich Anweisungen beliebig umformulieren lassen.
 
 - [[Ein KI-Agent bekommt nur die Rechte, die seine Aufgabe braucht]] – ohne Ausführungsrecht bleibt die eingeschleuste Anweisung folgenlos
 - [[Ein KI-Agent handelt, ein Chatbot antwortet]] – erst die Werkzeuge machen aus einer Täuschung einen Angriff
+- [[Ein dauerhaftes Gedächtnis macht aus einer Prompt Injection ein bleibendes Problem]] – wenn die Anweisung die Sitzung überdauert
 - [[Künstliche Intelligenz]] – Strukturzettel zu diesem Thema

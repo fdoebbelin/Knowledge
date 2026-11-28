@@ -28,4 +28,5 @@ Die Werkzeuge suchen meist auch global (etwa `~/.config/opencode/AGENTS.md`) und
 - [[Das Kontextfenster begrenzt ein Gespräch, das Nutzungslimit die Zeit]] – warum die Datei knapp bleiben muss
 - [[Ein Skill ist ein Ordner mit einer SKILL.md, die der Agent erst bei Bedarf lädt]] – das Gegenstück für Wissen, das nur manchmal gebraucht wird
 - [[Ein Agenten-Prompt nennt Ziel, Kontext, Werkzeuge, Grenzen und Stoppbedingung]] – AGENTS.md liefert Kontext und Grenzen dauerhaft, der Prompt das Ziel
+- [[Ein Agentengedächtnis aus Markdown-Dateien wird durch einen Suchindex nutzbar]] – die Ausbaustufe, in der der Agent selbst Erinnerungen schreibt und sucht
 - [[Künstliche Intelligenz]] – Strukturzettel zu diesem Thema
