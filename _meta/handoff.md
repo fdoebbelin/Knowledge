@@ -7,7 +7,7 @@
 
 ## Stand
 
-Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Kurse aus `01-Courses` größtenteils herausgelöst; `02-Tech/AI` zur Hälfte migriert (Durchgänge 1 und 2 von 4), Strukturzettel „Künstliche Intelligenz“ mit 16 Zetteln. Es wird auf zwei Rechnern gearbeitet: **vor Sitzungsbeginn `git pull`** (`pull.ff only` ist gesetzt).
+Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Kurse aus `01-Courses` größtenteils herausgelöst; `02-Tech/AI` in 4 Durchgängen bearbeitet, eine Notiz ist noch offen (Simanowski). Es wird auf zwei Rechnern gearbeitet: **vor Sitzungsbeginn `git pull`** (`pull.ff only` ist gesetzt).
 
 ## Erledigt
 
@@ -33,12 +33,11 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Kurse aus `01-Co
 - `lib.nu`, `pruefen.nu`: Glob-Muster liefen unter Windows nicht (Backslashes), neue Funktion `muster`
 - GitHub CLI: `02-Tech/Git/Arbeitsblatt-GitHub-CLI-gh.md` übernommen (4 Zettel), dazu 1 Zettel aus der Poststellen-Anleitung; neuer Abschnitt „GitHub auf der Kommandozeile“ in „Git und Dateiablage“. Kernfunktionen mit den Hilfetexten von `gh` 2.98.0 abgeglichen, Fehlermeldungen nicht nachgestellt
 - `02-Tech/AI` Durchgang 3 (OpenClaw): 6 Zettel, 2 Quellen (Golem, IT-Administrator), Ergebnis `teilweise`. Aussagen zu OpenClaw an dessen Dokumentation geprüft (Stand 2026-11-28, über zusammenfassende Seitenabrufe). Die KI-Texte im Ordner sind teils falsch oder veraltet. Golem war nur als Cookie-Abfrage abrufbar; die Quelle beruht auf der Kopie im Archiv
+- `02-Tech/AI` Durchgang 4 (Programmieren mit KI): 6 Zettel (3 in „Künstliche Intelligenz“, 3 in „Programmieren lernen“), 3 Quellen (METR; Circuit-Tracing und DeepSeek-Vergleich als Entwurf). METR, Vibe Coding und Circuit-Tracing an Webseiten geprüft (zusammenfassende Seitenabrufe); METR nennt die Studie von 2025 inzwischen veraltet. Karpathys genaues Datum und die Herkunft von „Agentic Engineering“ nicht belegt und weggelassen. Die Perplexity-Clippings sind KI-Zusammenfassungen und keine Quellen
 
 ## Nächster Schritt
 
-**Weiter mit Durchgang 4.** `02-Tech/AI` in vier Durchgängen (vereinbart): 1 lokale Modelle ✓ · 2 Coding-Agenten ✓ · 3 OpenClaw ✓ · 4 KI-Durchgang (Vibe Coding/Agentic Engineering, METR, Entwicklerrolle; `05-Notes/Clippings/AI` gegen Originale prüfen; `01-Courses/AI` Kap. 03/06, PythonAugmentedDevelopment, `Training/IT-Career`; dazu DeepSeek-Zensur, Circuit-Tracing, Simanowski – Quelle mit `status: entwurf` oder weglassen, offen). Rest verwerfen: Installationsanleitungen, Chat-Protokolle, Werkzeuglisten, abgelaufene Angebote.
-
-Danach: Weitere Kurse herauslösen (offen: Business/Project-Management, Business/UML-Basics, `Business/00 Lernfeld Geschäftsprozesse.md`, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). `Training/IT-Career` ist zurückgestellt für den KI-Durchgang.
+Weitere Kurse herauslösen (offen: Business/Project-Management, Business/UML-Basics, `Business/00 Lernfeld Geschäftsprozesse.md`, CAD, Databases, STEM; Liste mit `nu scripts/migration.nu offen 01-Courses`). Vorher je Kurs prüfen, ob es wirklich ein Kurs ist oder eine Notizsammlung wie CS-Basics. STEM-Intro verlinkt auf `Geschichte-Informatik` (jetzt Quelle „Geschichte der Informatik – Abriss“). In `Training/IT-Career` ist noch die Notiz zum IT-Arbeitsplatz mit europäischer Hard- und Software offen.
 
 Hinweis für Agenten: `git filter-repo` ist nicht installiert, `uvx git-filter-repo` funktioniert. Befehlsketten mit `set -o pipefail`, sonst läuft `gh repo create` nach einem Fehler weiter.
 
@@ -57,8 +56,8 @@ Vorgabe für die Übernahme von `02-Tech/Git/Mit Git auf dem Server verbinden.md
 - Der Leitfaden im Tauri-Kurs behauptet, Nushell kenne kein Variablen-Präfix – dort korrigieren.
 - Wiederverwendbares Wissen aus den Kursen als Zettel übernehmen (z. B. Python-Basics: Closures, Dekoratoren, Git Flow vs. GitHub Flow) – eigener Durchgang.
 - Python-OOP vor dem Veröffentlichen sichten: Projektdateien tragen Vornamen von Teilnehmern (M21 02–04), M37–M39 fehlen, Datei „teile den folgenden Code richtig auf und gib Komme.md“ (`.pylintrc`, gehört wohl zu M40) umbenennen.
-- KI-Durchgang: Zettel zur Rolle von Programmierern und Systemintegratoren mit KI aus `Training/IT-Career` (zwei KI-Texte; die Behauptung zur IHK-Prüfung „eigener Anteil > 50 %“ vorher prüfen) zusammen mit den Kandidaten aus PythonAugmentedDevelopment.
-- PythonAugmentedDevelopment vor dem Veröffentlichen sichten: `00 Projektwissen` mit persönlichen Angaben (Auftraggeber, Hardware), `Demo interaktive Widgets` ist eine unbearbeitete Chat-Antwort. Zettel-Kandidaten: Vibe Coding vs. Agentic Engineering, METR-Studie (gefühlte vs. gemessene Beschleunigung), Parsons-Puzzles, KI-freie Fundierung vor KI-Nutzung, Tracing-Aufgaben bewusst ohne automatische Prüfung – Studienangaben gegen Originale prüfen.
+- Simanowski, *Sprachmaschinen* (`02-Tech/AI/LLM-Basics/`): bewusst noch nicht übernommen, im Migrationsprotokoll offen. Die Altnotiz beruht auf KI-Zusammenfassungen; eine Quelle erst nach Prüfung am Buch anlegen. `draft: true` reicht zum Zurückhalten nicht, weil das Repository öffentlich ist.
+- PythonAugmentedDevelopment vor dem Veröffentlichen sichten: `00 Projektwissen` mit persönlichen Angaben (Auftraggeber, Hardware), `Demo interaktive Widgets` ist eine unbearbeitete Chat-Antwort. Das Konzept nennt weitere Studien, die nicht am Original geprüft sind (nur METR ist geprüft).
 - Office-365: README listet fehlende Übungs-, Lösungs- und Präsentationsdateien und Angaben zum neuen Outlook, die an einer laufenden Installation zu prüfen sind (Serien-Schaltfläche, Einstellungspfade, Serien-E-Mail über neues Outlook). Materialien zu Zellbezügen und Pivot behalten ihre eigenen Beispiele (TechVision, Online-Shop) – ins Szenario übertragen?
 - p5-Kurs: Lizenz für das Repo festlegen, bevor es öffentlich wird. Inhalte vor dem Veröffentlichen gegenlesen (von Claude geschrieben, technisch geprüft, didaktisch noch nicht).
 - Programming-Basics: Die Teams-Aufgabe (99a) verweist auf eine Word-Datei mit den Fragen, die im Archiv fehlt.
