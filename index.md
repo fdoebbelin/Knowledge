@@ -13,6 +13,7 @@ Wissensbasis zu Linux, Softwareentwicklung, Virtualisierung und Containern – a
 - [[Zettelkasten]] – wie diese Wissensbasis aufgebaut ist
 - [[Grundlagen der Informatik]] – Begriffe, Geschichte und Grundmechanismen: Berechenbarkeit, Speicherverwaltung, Grafikkoordinaten
 - [[Programmieren lernen]] – Lernumgebungen, Vorgehen in kleinen Schritten und Fehlersuche
+- [[Software modellieren mit UML]] – die Diagrammarten und zwei leicht verwechselte Beziehungen
 - [[Web und Browser]] – Internet und Web, Code im Browser, Solid und Linked Data
 - [[Künstliche Intelligenz]] – lokale Sprachmodelle und KI-Agenten: wie sie arbeiten und wie man sie absichert
 - [[Entwickeln auf Fedora Atomic]] – Toolbx, Flatpak und Tauri auf einem unveränderlichen System
