@@ -36,6 +36,7 @@ Der zweite Befehl überschreibt eine vorhandene `.gitignore`. Außerdem wirkt di
 
 ## Verbindungen
 
+- [[gh repo create legt ein neues Repository an und klont es sofort]] – der Weg für ein Projekt, das erst beginnt
 - [[Ein gepushtes Geheimnis muss man austauschen]] – was folgt, wenn die Prüfung vor dem Push ausbleibt
 - [[Ein Geheimnis-Check sucht nach echten Werten statt nach Wörtern]] – wie man vor dem Push prüft
 - [[gh liefert Git das Token für HTTPS]] – damit der Push ohne Passwortabfrage läuft

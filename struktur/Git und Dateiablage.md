@@ -23,6 +23,7 @@ Was Git mit den Dateien macht, die man ihm anvertraut, und wie man Dateien geord
 - [[gh liefert Git das Token für HTTPS]] – wie Git sich über die GitHub CLI anmeldet
 - [[Das Konto in gh ist unabhängig vom Konto im Browser]] – die Ursache, wenn ein Push mit dem falschen Konto scheitert
 - [[gh repo create bringt ein lokales Repository zu GitHub]] – ein vorhandenes Projekt hochladen
+- [[gh repo create legt ein neues Repository an und klont es sofort]] – ein neues Projekt auf GitHub beginnen
 - [[gh repo clone richtet bei Forks ein upstream-Remote ein]] – ein Repository auf den Rechner holen
 
 ## Dateien weiterreichen

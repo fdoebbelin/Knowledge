@@ -40,7 +40,7 @@ Die erste Zustellung war die Anleitung selbst. Gegenüber ihrem Text wurde laut 
 
 ## Nicht übernommen
 
-Die Einrichtungsschritte mit allen Dateiinhalten, die Liste der Zielprojekte, Angaben zu den eigenen Rechnern, der Probelauf, die Pflegeroutine und die offenen Aufgabenlisten.
+Die Einrichtungsschritte mit allen Dateiinhalten (aus dem Anlegen des Repositorys stammt nur die Nutzung von `gh repo create` und `gh repo view`), die Liste der Zielprojekte, Angaben zu den eigenen Rechnern, der Probelauf, die Pflegeroutine und die offenen Aufgabenlisten.
 
 ## Daraus entstandene Zettel
 
@@ -54,3 +54,4 @@ Die Einrichtungsschritte mit allen Dateiinhalten, die Liste der Zielprojekte, An
 - [[Ein Geheimnis-Check sucht nach echten Werten statt nach Wörtern]]
 - [[additionalDirectories gibt Claude Code nur Dateizugriff]]
 - [[Einen Skill mit Nebenwirkungen startet nur der Mensch]]
+- [[gh repo create legt ein neues Repository an und klont es sofort]]
