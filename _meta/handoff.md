@@ -2,7 +2,7 @@
 
 | | |
 |---|---|
-| Stand | 2026-11-27 |
+| Stand | 2026-11-28 |
 | Branch | main |
 
 ## Stand
@@ -29,6 +29,8 @@ Website läuft unter <https://fdoebbelin.github.io/Knowledge/>. Kurse aus `01-Co
 - Office-Basics und Office-Short zu `fdoebbelin/Office-365` (privat) zusammengeführt: Grundkurs (12 Blöcke) + Aufbaumodule Word, Excel, Verknüpfung, Szenario Haus Lichtblick, Microsoft 365 mit neuem Outlook, Copilot als Ausblick; PDFs entfernt. Quelle „Microsoft 365 im Facility Management – Grundkurs und Aufbaumodule“ mit `draft: true`; `herkunft` darf jetzt eine Liste sein
 - Office-365 wird in seinem eigenen Projekt weiterbearbeitet
 - `01-Courses/AI` (KI-generierter Halbtags-Workshop „Agentische KI“, Modul 2 des BFD-Orientierungsseminars): 7 Zettel zu Agenten und ihrer Absicherung, neuer Strukturzettel „Künstliche Intelligenz“; kein Repo, keine Quelle, Ergebnis `teilweise`
+- Erste Sendung aus `00-Poststelle` verarbeitet (Inbox ist leer): 10 Zettel, Quelle „Anleitung zum Aufbau einer Poststelle für Projektdateien“, neuer Strukturzettel „Git und Dateiablage“. Volltext liegt in `00-Poststelle/docs/anleitung/` (Commit `1d1b579`, noch nicht gepusht)
+- `lib.nu`, `pruefen.nu`: Glob-Muster liefen unter Windows nicht (Backslashes), neue Funktion `muster`
 
 ## Nächster Schritt
 
@@ -44,6 +46,8 @@ Hinweis für Agenten: `KNOWLEDGE_ARCHIV` steht nur in `~/.config/nushell/env.nu`
 
 ## Offene Entscheidungen
 
+- `migration.nu` hat dasselbe Glob-Muster wie vorher `lib.nu`; unter Windows ungetestet. Vor der nächsten Migration dort prüfen, auch die Pfadtrenner beim Vergleich mit `migration.csv`.
+- Poststelle: Der Skill `zustellen` vergleicht mit `git hash-object` ohne `--no-filters`. Bei Dateien mit CRLF prüfen, ob das Fehlalarme gibt (ungetestet).
 - Kurs-Repos sichten und öffentlich schalten? Dann `draft: true` aus den Kursquellen nehmen. Zu prüfen vor allem `Training/Military`, `Training/BFD-Programs`, `STEM-Intro/_INTERN_`, `Project-Management/_WICHTIG_`.
 - Tauri-Kompaktkurs verlinkt per Wikilink noch auf `[[00 Kurskonzept Tauri]]` und den Leitfaden, die jetzt im Repo Tauri-Kurs liegen: durch URLs ersetzen?
 - Der Leitfaden im Tauri-Kurs behauptet, Nushell kenne kein Variablen-Präfix – dort korrigieren.
