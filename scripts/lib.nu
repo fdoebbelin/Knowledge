@@ -5,6 +5,12 @@ export def vault-root [] {
     $env.FILE_PWD | path dirname
 }
 
+# Glob-Muster unterhalb eines Ordners. glob liest „\“ als Escape-Zeichen,
+# Windows-Pfade brauchen deshalb Schrägstriche.
+export def muster [basis: string, rest: string] {
+    $"($basis | str replace --all '\' '/')/($rest)"
+}
+
 # Ordner, die Notizen enthalten, und der erwartete Typ
 export const TYP_ORDNER = {
     inbox: inbox
@@ -21,7 +27,7 @@ export def notizen [] {
         $ordner
         | each {|o|
             let dir = ($root | path join $o)
-            if ($dir | path exists) { glob $"($dir)/**/*.md" } else { [] }
+            if ($dir | path exists) { glob (muster $dir '**/*.md') } else { [] }
         }
         | flatten
         | append ($root | path join index.md)

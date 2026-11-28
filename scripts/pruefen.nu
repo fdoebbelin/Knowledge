@@ -22,7 +22,7 @@ def main [
     let inbox_stems = ($alle | where ordner == inbox | get stem)
     let entwuerfe = ($alle | where {|n| ($n.fm | get -o draft | default false) == true } | get stem)
     let anhaenge = (
-        glob $"($root)/_resources/**/*"
+        glob (muster $root '_resources/**/*')
         | where {|p| ($p | path type) == file }
         | each { path basename }
     )
@@ -147,7 +147,7 @@ def main [
     let cc = ($root | path join .claude commands)
     let oc = ($root | path join .opencode commands)
     if ($cc | path exists) and ($oc | path exists) {
-        let namen = (glob $"($cc)/*.md" | append (glob $"($oc)/*.md") | each { path basename } | uniq)
+        let namen = (glob (muster $cc '*.md') | append (glob (muster $oc '*.md')) | each { path basename } | uniq)
         for name in $namen {
             let a = ($cc | path join $name)
             let o = ($oc | path join $name)
