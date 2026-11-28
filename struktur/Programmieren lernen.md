@@ -20,6 +20,12 @@ Wie man Programmieren lernt und lehrt: was eine Lernumgebung leisten muss, wie m
 - [[Abstraktion lernt man, indem man konkreten Code schrittweise verallgemeinert]] – erst konstant, dann variabel; erst eines, dann viele
 - [[Ein Bug ist ein technischer Fehler und ein falsches Bild im Kopf zugleich]] – warum man erst verstehen und dann reparieren sollte
 
+## Üben mit und ohne KI
+
+- [[Wer KI-Code prüfen soll, braucht ein eigenes Programmverständnis]] – warum man mit einer Phase ohne KI beginnen kann
+- [[Eine Tracing-Aufgabe verlangt eine eigene Vorhersage vor der Lösung]] – Abläufe im Kopf durchspielen üben
+- [[Parsons-Puzzles üben den Programmaufbau ohne die Hürde der Syntax]] – Programme aus vorgegebenen Zeilen zusammensetzen
+
 ## Erste Schritte im Browser
 
 - [[Ein script-Tag mit src ignoriert seinen Inhalt]] – eine stille Falle beim Einbinden von JavaScript

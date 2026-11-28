@@ -16,8 +16,11 @@ altpfad,ergebnis,zettel,datum,notiz
 01-Courses/Programming/Tauri-Kompaktkurs,uebernommen,202611262002,2026-11-26,Kurs als Repo fdoebbelin/Tauri-Kompaktkurs (privat) herausgelöst; Quelle draft
 01-Courses/Programming/Tauri-Kurs,uebernommen,202611262007,2026-11-26,Kurs als Repo fdoebbelin/Tauri-Kurs (privat) herausgelöst; Quelle draft
 01-Courses/Training/BFD-Programs,teilweise,202611271058 202611271059 202611271100 202611271101,2026-11-27,"4 Zettel aus dem KI-Kurskonzept Web 3.0/Solid; Träger-, Förder- und Lizenzrecherchen, Clippings und Trägervorgaben weggelassen; keine Quelle (KI-Recherche)"
+01-Courses/Training/IT-Career/Welche Fertigkeiten braucht dann der Programmierer zukünftig.md,teilweise,202611281526,2026-11-28,KI-Text; IHK-Angabe weggelassen; keine Quelle
+01-Courses/Training/IT-Career/Welche Fertigkeiten braucht der Systemintegrator.md,teilweise,202611281526,2026-11-28,KI-Text; keine Quelle
 01-Courses/Training/Military,teilweise,202611271056 202611271057,2026-11-27,"2 Zettel aus der KI-Recherche zu Game-Frameworks; Begrüßung, MetaRow-Idee und Beispielspiele weggelassen; keine Quelle (KI-Recherche)"
 01-Courses/Training/Teilnehmer & Themen im Einzelcoaching.md,verworfen,,2026-11-27,personenbezogene Teilnehmerdaten
+02-Tech/AI/00 Vibe Coding mit Gemini CLI.md,teilweise,202611281525,2026-11-28,"Nur Begriff; Installation, Kontingente, Bedienung und Beispielprojekte weggelassen"
 02-Tech/AI/Aider,teilweise,202611271315 202611271321,2026-11-27,"Zettel Git-Commits; Setup CachyOS/Ollama, Gemini-Konfiguration und Modellempfehlungen veraltet"
 02-Tech/AI/Antigravity.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/AI/AnythingLLM vs Nexa SDK.md,teilweise,202611271316,2026-11-27,in Zettel NPU eingeflossen; Werkzeugvergleich veraltet
@@ -33,15 +36,19 @@ altpfad,ergebnis,zettel,datum,notiz
 02-Tech/AI/GPT4ALL,verworfen,,2026-11-27,"Installationsanleitung (Arch/Flatpak), veraltet"
 02-Tech/AI/Gemini-Chat ChatGPT Tampermonkey Userscript.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/AI/IOPaint,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
+02-Tech/AI/LLM-Basics/0 Literatur.md,verworfen,,2026-11-28,Linkliste
 02-Tech/AI/LLM-Basics/Building llama.cpp on Windows on ARM.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/DirectML für NPUs Vorteile.md,teilweise,202611271316,2026-11-27,in Zettel NPU eingeflossen; Werbeaussagen (NPU übertrifft GPU beim Training) weggelassen
 02-Tech/AI/LLM-Basics/Enable DeepSeek on Snapdragon X Elite.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/Hardware-Vergleich.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/HarmBench - A Standardized Evaluation Framework for Automated Red Teaming and Robust Refusal.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
+02-Tech/AI/LLM-Basics/Natural Language Processing mit Transformern.md,verworfen,,2026-11-28,Nur Buchverweise
 02-Tech/AI/LLM-Basics/Open Source Chat AIs.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/Open Source Coding AIs.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
+02-Tech/AI/LLM-Basics/Open-sourcing circuit-tracing tools.md,uebernommen,202611281522,2026-11-28,"Quelle (Entwurf), am Original geprüft"
 02-Tech/AI/LLM-Basics/Quantisierungs-Optionen für RTX 4070 Ti Super.md,teilweise,202611271313 202611271314,2026-11-27,Zettel Speicherbedarf und Quantisierung; Empfehlung für RTX 4070 Ti Super und Nexa-Bezug weggelassen
 02-Tech/AI/LLM-Basics/Test Coding AIs.md,verworfen,,2026-11-27,"persönliche Konto- und Zahlungsangaben, nichts übernommen"
+02-Tech/AI/LLM-Basics/Vergleich DeepSeek R1.md,uebernommen,202611281524,2026-11-28,Quelle (Entwurf); Antworten nur knapp wiedergegeben
 02-Tech/AI/LLM-Basics/Zeitplan Qualcomm Hexgon NPU Unterstützung.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/ki_leitfaden_snapdragon.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
 02-Tech/AI/LLM-Basics/maximale Leistung bei der Arbeit mit LLMs.md,verworfen,,2026-11-27,"veraltete Hardware-, Werkzeug- oder Modellübersicht bzw. fremdes Tutorial/README"
@@ -55,3 +62,8 @@ altpfad,ergebnis,zettel,datum,notiz
 02-Tech/AI/n8n Workflow für PDFD-Analyse und Dateinamenerstellung.md,verworfen,,2026-11-27,"Chat-Protokoll, Werkzeugliste, README-Kopie oder veraltetes Angebot"
 02-Tech/Git/Arbeitsblatt-GitHub-CLI-gh.md,uebernommen,202611281433 202611281432 202611281435 202611281434,2026-11-28,"Weggelassen: Lernziele, Übungen, Kontrollfragen, Installation, Passkey-Einrichtung, Kontowechsel im Web, Beispielausgaben"
 04-Languages/Rust/Tauri/Von der leeren Toolbx zur installierten Flatpak-App.md,uebernommen,202611262015 202611262016 202611262017 202611262018 202611262019 202611262020 202611262021 202611262022 202611262023 202611262024 202611262025 202611262026 202611262027 202611262028 202611262029 202611262030 202611262031,2026-11-26,"16 Zettel + Quelle; Volltext als Anhang in fdoebbelin/Tauri-Kurs; Versionsstände, Beispiel-App, Setup-Skript, Spickzettel weggelassen; Nushell-Präfix-Aussage überholt"
+"05-Notes/Clippings/AI/Anthropic sagt, dass über 90 % von Claudes Code mittlerweile von KI geschrieben wird.md",verworfen,,2026-11-28,KI-Zusammenfassung mit zeitgebundenen Zahlen
+05-Notes/Clippings/AI/KI-Programmiertools verlagern den Fokus von Geschwindigkeit zu Governance.md,verworfen,,2026-11-28,KI-Zusammenfassung mit zeitgebundenen Zahlen
+05-Notes/Clippings/AI/MIT kürt KI-Programmiertools zur Durchbruchstechnologie 2026.md,verworfen,,2026-11-28,KI-Zusammenfassung mit zeitgebundenen Zahlen
+"05-Notes/Clippings/AI/Node.js-Erfinder sagt, die Ära des menschlichen Programmierens ist vorbei.md",teilweise,202611281526,2026-11-28,"KI-Zusammenfassung, nur als Material; Zahlen und Aussagen von Personen weggelassen"
+"05-Notes/Clippings/AI/Nvidia-Chef sagt, er möchte, dass Ingenieure vollständig aufhören zu programmieren.md",teilweise,202611281521 202611281527 202611281526,2026-11-28,KI-Zusammenfassung; METR am Original geprüft

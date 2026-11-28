@@ -33,6 +33,14 @@ Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt be
 - [[Das Kontextfenster begrenzt ein Gespräch, das Nutzungslimit die Zeit]] – die beiden Grenzen, an die man stößt
 - [[Aider macht jede Änderung zu einem Git-Commit]] – Git als Sicherheitsnetz für Agentenarbeit
 
+## Programmieren mit KI
+
+- [[Vibe Coding übernimmt KI-Code, ohne ihn zu prüfen]] – der Begriff und die Grenze zur verantworteten Entwicklung
+- [[Mit Coding-Agenten verschiebt sich Entwicklerarbeit vom Schreiben zum Vorgeben und Prüfen]] – was dabei vom Menschen verlangt ist
+- [[Gefühlte Beschleunigung durch KI ist kein Messergebnis]] – warum man den Nutzen messen sollte
+
+Wie man dabei programmieren lernt, steht unter [[Programmieren lernen]].
+
 ## Agenten absichern
 
 - [[Je weniger umkehrbar eine Aktion ist, desto eher braucht ein Agent eine Freigabe]] – wo der Mensch entscheidet
@@ -46,3 +54,10 @@ Wie KI-Systeme arbeiten und wie man sie sicher einsetzt. Der Lesepfad beginnt be
 - [[Ein Agent meldet Erfolg erst nach geprüftem Ergebnis]] – Halluzinationen abfangen, bevor sie Folgen haben
 - [[Ein Geheimnis-Check sucht nach echten Werten statt nach Wörtern]] – eine Prüfregel, die nicht ständig falsch anschlägt
 - [[Ein gepushtes Geheimnis muss man austauschen]] – was zu tun ist, wenn doch eines durchgerutscht ist
+
+## Weitere Quellen
+
+Entwürfe, aus denen noch keine Zettel entstanden sind:
+
+- [[Anthropic – Open-sourcing circuit-tracing tools]] – Werkzeuge, um interne Schritte eines Sprachmodells zu untersuchen
+- [[Tian'anmen-Frage an DeepSeek und an Perplexity mit DeepSeek R1]] – ein einzelner Vergleich zweier Antworten auf eine politisch heikle Frage
