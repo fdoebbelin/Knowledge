@@ -11,12 +11,13 @@ herkunft:
 autor: Fritz-Rainer Döbbelin
 url: https://github.com/fdoebbelin/Office-365
 art: kurs
-draft: true
 ---
 
 ## Worum es geht
 
 Ein Kurs für Einsteigerinnen und Einsteiger in Outlook, Word und Excel aus Microsoft 365. Er besteht aus einem zweitägigen Grundkurs in zwölf Blöcken und drei Aufbaumodulen für Word, Excel und das Zusammenspiel der Programme. Alle Übungen spielen in einem erfundenen Berliner Bürogebäude, „Haus Lichtblick“, das die Teilnehmenden als Koordination des Facility Managements betreuen. Der Kurs entstand aus zwei älteren Kursen, einem Grundkurs für Office 2019 und einzelnen Word- und Excel-Sitzungen ohne Versionsbezug; beim Zusammenführen wurde alles auf Microsoft 365 mit dem neuen Outlook umgestellt.
+
+Der Kurs ist auch als Website erreichbar: <https://fdoebbelin.github.io/Office-365/>.
 
 ## Kernaussagen
 
